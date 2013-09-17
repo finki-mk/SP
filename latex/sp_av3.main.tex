@@ -100,19 +100,7 @@ int main() {
 Да се напише програма со која ќе се отпечати максимумот од два броја чии вредности се читаат од тастатура.
 \pause 
 	\begin{exampleblock}{Решение}
-		\begin{lstlisting}
-		#include <stdio.h>
-		int main() {
-		    int a, b;
-		    printf("Vnesete gi vrednostite na a i b: \n"); 
-		    scanf("%d %d", &a, &b);
-		    if(a > b)
-		        printf("Vrednosta na maksimumot e %d.\n", a); 
-		    else 
-		        printf("Vrednosta na maksimumot e %d.\n", b); 
-		    return 0; 
-		}
-		\end{lstlisting}
+	\lstinputlisting{src/av3/p1.c}
 	\end{exampleblock}
 
 \end{frame}
@@ -122,19 +110,7 @@ int main() {
 Пример: \texttt{1976, 2000, 2004, 2008, 2012...}
 \pause
 	\begin{exampleblock}{Решение}
-		\begin{lstlisting}
-		#include <stdio.h>
-int main() { 
-    int godina;
-    printf ("Vnesete ja godinata: \n"); 
-    scanf ("%d", &godina); 
-    if((godina % 4 == 0 && godina % 100 != 0) || godina % 400 == 0) 
-        printf("%d godina e prestapna.\n", godina); 
-    else 
-        printf("%d godina ne e prestapna.\n", godina); 
-    return 0; 
-}
-		\end{lstlisting}
+	\lstinputlisting{src/av3/p2.c}
 	\end{exampleblock}
 \end{frame}
 
@@ -145,19 +121,7 @@ int main() {
 \end{scriptsize}
 \pause
 	\begin{exampleblock}{Решение 1 дел}
-	\begin{lstlisting}
-		#include <stdio.h> 
-int main () { 
-    float x, y;
-    printf ("Vnesete kootdinati \n"); 
-    scanf ("%f %f", &x, &y); 
-    if(x > 0) { 
-        if(y > 0) 
-            printf("I Kvadrant.\n");
-        else if(y < 0)
-            printf("IV kvadrant.\n"); 
-        else printf("Poz. x oska.\n");
-		\end{lstlisting}
+	\lstinputlisting[lastline=11]{src/av3/p3.c}
 	\end{exampleblock}
 \end{frame}
 
@@ -165,25 +129,7 @@ int main () {
 
 \begin{frame}[fragile]{Задача 3}{Решение}
 	\begin{exampleblock}{Решение 2 дел}
-		\begin{lstlisting}
-		 } else if(x < 0) {
-        if(y > 0)
-            printf("II kvadrant.\n");
-        else if(y < 0) 
-            printf("III kvadrant.\n");
-        else
-            printf("Neg. x oska.\n");
-    } else {
-        if(y > 0)
-            printf("Poz. y oska.\n");
-        else if(y < 0)
-                printf("Neg. y oska.\n");
-            else
-                printf("Koord. pocetok\n");
-    }
-    return 0; 
-}
-		\end{lstlisting}
+	\lstinputlisting[firstline=12]{src/av3/p3.c}
 	\end{exampleblock}
 \end{frame}
 
@@ -206,25 +152,8 @@ int main () {
 \end{frame}
 
 \begin{frame}[fragile]{Задача 4}{Решение}
-\begin{exampleblock}{Решение}
-		\begin{lstlisting}
-		#include <stdio.h>
-int main () { 
-    int i, ocenka = 0;
-    printf("Vnesete poeni: \n");
-    scanf("%d", &i);
-    if(i >= 0 && i <= 50) ocenka = 5;
-    else if(i > 50 && i <= 60) ocenka = 6;
-    else if(i > 60 && i <= 70) ocenka = 7;
-    else if(i > 70 && i <= 80) ocenka = 8;
-    else if(i > 80 && i <= 90) ocenka = 9;
-    else if(i > 90 && i <= 100) ocenka = 10;
-    else printf("Vnesen e pogreshen broj za poenite!!\n"); 
-    if(ocenka) 
-        printf("Studentot dobil ocena %d.\n", ocenka);
-    return 0;
-}
-		\end{lstlisting}
+    \begin{exampleblock}{Решение}
+    \lstinputlisting[lastline=11]{src/av3/p4.c}
 	\end{exampleblock}
 \end{frame}
 
@@ -246,22 +175,7 @@ int main () {
 
 \begin{frame}[fragile]{Задача 5}{Решение}
 	\begin{exampleblock}{Решение}
-		\begin{lstlisting}
-		... 
-		// isto kako od prethodnata zadaca (zadaca 4)
-    char znak = ' ';
-    if(ocenka) {
-        int p = i % 10;
-        if(ocenka != 5) {
-            if(p >= 1 && p <= 3) znak = '-';
-                else if(ocenka != 10 && (p >= 8 || p == 0)) 
-                    znak = '+';
-        }
-    	printf("Studentot dobil ocena %d%c.\n", ocenka, znak);
-    }
-    return 0;
-}
-		\end{lstlisting}
+	\lstinputlisting[firstline=13]{src/av3/p5.c}
 	\end{exampleblock}
 \end{frame}
 
@@ -280,68 +194,24 @@ int main () {
 
 \begin{frame}[fragile]{Задача 6}{Решение}
 	\begin{exampleblock}{Решение}
-		\begin{lstlisting}
-		#include <stdio.h>
-int main() {
-    char op; float br1, br2, rezultat;
-    printf("Vnesete dva broja i operator vo format\n");
-    printf(" broj1 operator broj2\n");
-    scanf("%f %c %f", &br1, &op, &br2);
-    if(op == '*') rezultat = br1 * br2;
-    else if(op == '+') rezultat = br1 + br2;
-    else if(op == '-') rezultat = br1 - br2;
-    else if(op == '/') {
-        if(br2) rezultat = br1 / br2;
-        else {
-            printf("Ne se deli so 0!\n");
-            return 0;
-        }
-    } else {
-        printf("Nevaliden operator!\n");
-        return 0;
-    }
-    printf("%f %c %f = %f\n", br1, op, br2, rezultat);
-    return 0;
-}
-		\end{lstlisting}
+	\lstinputlisting{src/av3/p6.c}
 	\end{exampleblock}
 \end{frame}
 
 
 \begin{frame}[fragile]{Задача 7}
-Од тастатура се внесуваат три броја кои не мора да се сортирани. Внесените броеви претставуваат должини на страните на правоаголен триаголник. Да се напише програма која што ќе проверува дали може да се конструира триаголник од дадените должини, при што ако може, треба да се провери дали истиот е правоаголен и да се пресмета неговата плоштина. Во спротивно, треба да се испечатат соодветни пораки.
+Од тастатура се внесуваат три броја кои не мора да се сортирани. Внесените
+броеви претставуваат должини на страните на правоаголен триаголник. Да се напише
+програма која што ќе проверува дали може да се конструира триаголник од дадените
+должини, при што ако може, треба да се провери дали истиот е правоаголен и да се
+пресмета неговата плоштина. Во спротивно, треба да се испечатат соодветни
+пораки.
 \end{frame}
 
 
 \begin{frame}[fragile]{Задача 7}{Решение}
 	\begin{exampleblock}{Решение}
-		\begin{lstlisting}
-#include <stdio.h> 
-int main() {
-    int a, b, c, tmp;
-    printf("Vnesi gi dolzinite na stranite: \n");
-    scanf("%d %d %d", &a, &b, &c);
-    if((a + b <= c) || (a + c <= b) || (b + c <= a))
-        printf("Ne moze da se konstruira triagolnik so tie strani.\n");
-    else {
-        if(a >= b) {
-            tmp=a; a = b; b = tmp;
-        }
-        if(a >= c) {
-            tmp = a; a = c; c = tmp;
-        }
-        if(b >= c) {
-            tmp = b; b = c; c = tmp;
-        }
-        if(c * c == a * a + b * b) {
-            printf("Triagolnikot e pravoagolen.\n");
-            printf("Plostinata e %7.3f.\n", a * b / 2.0);
-        }
-        else { printf("Triagolnikot e ne pravoagolen.\n"); }
-    }
-    return 0;
-}
-		\end{lstlisting}
+	\lstinputlisting{src/av3/p7.c}
 	\end{exampleblock}
 \end{frame}
 

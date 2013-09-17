@@ -1,9 +1,12 @@
 #include <stdio.h>
-int main() {
-    char del;
-    int delbroj;
-    float cena;
-	scanf("%c%d%f", &del, &delbroj, &cena);
-    return 0;
-}
 
+int main() {
+	int a, b;
+	printf("Vnesete gi vrednostite na a i b: \n"); 
+	scanf("%d %d", &a, &b);
+	if (a > b) 
+		printf("Vrednosta na maksimumot e %d.\n", a); 
+	else 
+		printf("Vrednosta na maksimumot e %d.\n", b); 
+	return 0; 
+}

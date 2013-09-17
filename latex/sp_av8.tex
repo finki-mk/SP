@@ -1,0 +1,40 @@
+\documentclass{beamer}
+\usetheme{FINKI}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{listings}
+\renewcommand\mathfamilydefault{\rmdefault}
+%\renewcommand*\ttdefault{lcmtt}
+
+\pdfinfo
+{
+  /Title       (KRS)
+  /Creator     (TeX)
+  /Author      (Tomche Delev)
+}
+
+
+\title[АВ8]{Аудиториски вежби 8}
+\subtitle{Покажувачи}
+\author{Концепти за развој на софтвер}
+\date{}
+\pgfdeclareimage[width=0.6\paperwidth]{finki_logo}{finki_name}
+\titlegraphic{\pgfuseimage{finki_logo}}
+
+\input{code_style_tiny.tex}
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+\input{sections.tex}
+
+\input{krs_av8.main.tex}
+
+\input{end_frame.tex}
+
+\end{document}

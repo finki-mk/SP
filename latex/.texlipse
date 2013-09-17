@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Tue Sep 17 23:02:51 CEST 2013
+markTmpDer=true
+builderNum=2
+outputDir=out/
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=sp_av2.tex
+outputFile=sp_av2.pdf
+langSpell=
+markDer=true
+srcDir=

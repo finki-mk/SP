@@ -1,0 +1,37 @@
+\documentclass{beamer}
+\usetheme{FINKI}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,bulgarian]{babel}
+\usepackage{verbatim}
+\usepackage{listings}
+\renewcommand\mathfamilydefault{\rmdefault}
+%\renewcommand*\ttdefault{lcmtt}
+
+\pdfinfo
+{
+  /Title       (KRS)
+  /Creator     (TeX)
+  /Author      (Tomche Delev)
+}
+
+
+\title[АВ5]{Аудиториски вежби 5}
+\subtitle{Колоквиумски задачи}
+\author{Концепти за развој на софтвер}
+\date{}
+\pgfdeclareimage[width=0.6\paperwidth]{finki_logo}{finki_name}
+\titlegraphic{\pgfuseimage{finki_logo}}
+
+\input{code_style_tiny.tex}
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+\input{sections.tex}
+\input{krs_I_kol.main.tex}
+\input{end_frame.tex}
+\end{document}

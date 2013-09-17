@@ -1,0 +1,643 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{циклуси}
+\begin{frame}[fragile]{Задачa 1а}
+Да се напише програма за пресметување на сумата на сите парни двоцифрени броеви. Добиената сума се печати на екран.
+\pause
+\begin{exampleblock}{Решение}
+	\begin{lstlisting}
+#include <stdio.h> 
+int main () { 
+    int i = 10, suma = 0; 
+    while (i <= 98) { 
+        suma = suma + i; 
+        i+=2; 
+    } 
+    printf("Sumata na site parni dvocifreni broevi e %d\n", suma); 
+    return 0; 
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задачa 1б}
+\begin{scriptsize}
+Да се напише програма за пресметување на сумата на сите непарни двоцифрени броеви. Програмата ја печати сумата на екран во следниот формат:	\texttt{11 + 13 + 15 + 17 + ... + 97 + 99 = 2475}\\
+\textbf{Забелешка: Програмата да се направи без користење на наредбата if}
+\end{scriptsize}
+\pause
+\begin{columns}
+\column{.5\textwidth}
+\begin{exampleblock}{Решение - Верзија 1}
+\begin{lstlisting}
+#include <stdio.h>
+int main () { 
+    int i = 11, suma = 0; 
+    printf("%d", i); 
+    suma = i; 
+    i=i+2; 
+    while (i <= 99){ 
+        printf(" + %d", i); 
+        suma = suma + i; 
+        i+=2; 
+    } 
+    printf(" = %d\n", suma); 
+    return 0; 
+}
+\end{lstlisting}
+\end{exampleblock}
+\pause
+\column{.5\textwidth}
+\begin{exampleblock}{Решение - Верзија 2}
+\begin{lstlisting}
+#include <stdio.h> 
+int main () { 
+    int i = 11, suma = 0; 
+    while (i <= 97) { 
+        printf("%d + ", i); 
+        suma = suma + i; 
+        i+=2; 
+    } 
+    printf(" %d", i); 
+    suma = suma + i; 
+    printf(" = %d\n", suma); 
+    return 0; 
+} 
+\end{lstlisting}
+\end{exampleblock}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 2}{Решение со употреба на \texttt{while} и
+\texttt{do\ldots while}} Да се напише програма за пресметување на $y = x^n$ за
+даден природен број $n, n>=1$ и реален број $x$.
+\pause
+\begin{columns}
+\column{.5\textwidth}
+\begin{exampleblock}{Решение - со употреба на \texttt{while}}
+\begin{lstlisting}
+#include <stdio.h> 
+int main () { 
+    int brojac = 0, n; 
+    float x, y = 1; 
+    printf("vnesi ja osnovata: "); 
+    scanf("%f", &x); 
+    printf("vnesi go eksponentot: "); 
+    scanf("%d", &n);    
+    while (brojac < n) { 
+        y *= x; 
+        brojac++; 
+    } 
+    printf("%f^%d = %f\n", x, n, y); 
+    return 0; 
+}
+\end{lstlisting}
+\end{exampleblock}
+\pause
+\column{.5\textwidth}
+\begin{exampleblock}{Решение - со употреба на \texttt{do...while}}
+\begin{lstlisting}
+#include <stdio.h> 
+int main () { 
+    int brojac = 0, n; 
+    float x, y = 1; 
+    printf("vnesi ja osnovata: "); 
+    scanf("%f", &x); 
+    printf("vnesi go eksponentot: "); 
+    scanf("%d", &n); 
+    do { 
+        y *= x; 
+        brojac++; 
+    } while (brojac < n); 
+    printf("%f^%d = %f\n", x, n, y); 
+    return 0; 
+ }
+\end{lstlisting}
+\end{exampleblock}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 2}{Решение со употреба на \texttt{for}}
+Да се напише програма за пресметување на $y = x^n$ за даден природен број $n,
+n>=1$ и реален број $x$.
+\pause
+\begin{exampleblock}{Решение со употреба на \texttt{for}}
+\begin{lstlisting}
+#include <stdio.h> 
+int main () { 
+    int brojac = 0, n; 
+    float x, y = 1; 
+    printf("vnesi ja osnovata: "); 
+    scanf("%f", &x); 
+    printf("vnesi go eksponentot: "); 
+    scanf("%d", &n); 
+    for(brojac = 1, y = x; brojac < n; brojac++) {
+    //for(; brojac < n; brojac++) {
+    	y *= x;
+    } 
+    printf("%f^%d = %f\n", x, n, y); 
+    return 0; 
+ }
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задачa 3}
+Да се напише програма која од n броеви (внесени од тастатура) ќе го определи бројот на броеви што се деливи со 3, при делењето со 3 имаат остаток 1, односно 2.\\
+\textbf{Забелeшка: Задачата да се реши со while, do…while и for}
+\end{frame}
+
+
+\begin{frame}[fragile]{Решение на задачa 3}{\texttt{while}}
+\begin{exampleblock}{Решение на задачата со употреба на \texttt{while}}
+\begin{lstlisting}
+#include <stdio.h> 
+int main () { 
+    int n = 1, i = 0, broj, del, os1, os2; 
+    del = os1 = os2 = 0; 
+    printf("Kolku broevi treba da se proveruvaat za delivost so 3?\n"); 
+    scanf("%d", &n); 
+    while (i < n) { 
+        printf("Vnesete broj za proverka: "); 
+        scanf("%d", &broj); 
+        if (broj % 3 == 0) 
+            del++; 
+        else if (broj % 3 == 1) 
+            os1++;
+        else os2++; 
+        i++; 
+    }
+    printf("%d broj(a) se delivi so 3.\n", del); 
+    printf("%d broj(a) imaat ostatok 1, pri delenje so 3.\n", os1); 
+    printf("%d broj(a) imaat ostatok 2, pri delenje so 3.\n", os2); 
+    return 0; 
+} 
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Решение на задачa 3}{\texttt{do while}}
+\begin{exampleblock}{Решение на задачата со употреба на \texttt{do\ldots while}}
+\begin{lstlisting}
+#include <stdio.h>
+int main () { 
+    int n = 1, i = 0, broj, del, os1, os2; 
+    del = os1 = os2 = 0;
+    printf("Kolku broevi treba da se proveruvaat za delivost so 3?\n"); 
+    scanf("%d", &n); 
+    do { 
+        printf("Vnesete broj za proverka: "); 
+        scanf("%d", &broj); 
+        if (broj % 3 == 0) 
+            del++; 
+        else if (broj % 3 == 1) 
+            os1++; 
+        else 
+            os2++; 
+        i++; 
+    } while (i < n); 
+    printf("%d broj(a) se delivi so 3.\n", del); 
+    printf("%d broj(a) imaat ostatok 1, pri delenje so 3.\n", os1); 
+    printf("%d broj(a) imaat ostatok 2, pri delenje so 3.\n", os2); 
+    return 0; 
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Решение на задачa 3}{\texttt{for}}
+\begin{exampleblock}{Решение на задачата со употреба на \texttt{for}}
+\begin{lstlisting}
+#include <stdio.h> 
+int main () { 
+    int n = 1, i = 0, broj, del, os1, os2; 
+    del = os1 = os2 = 0; 
+    printf("Kolku broevi treba da se proveruvaat za delivost so 3?\n"); 
+    scanf("%d", &n); 
+    for (i = 0; i < n;i++) { 
+        printf("Vnesete broj za proverka: "); 
+        scanf("%d", &broj); 
+        if (broj % 3 == 0) 
+            del++; 
+        else if ( broj % 3 == 1) 
+            os1++; 
+        else 
+            os2++; 
+    }
+    printf("%d broj(a) se delivi so 3.\n", del); 
+    printf("%d broj(a) imaat ostatok 1, pri delenje so 3.\n", os1); 
+    printf("%d broj(a) imaat ostatok 2, pri delenje so 3.\n", os2); 
+    return 0; 
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 4}
+Да се напише програма која на екран ќе ги испечати сите четири-цифрени броеви кај кои збирот на трите 
+најмалку значајни цифри е еднаков со најзначајната цифра.
+\begin{exampleblock}{Пример}
+	\texttt{4031 (4=0+3+1), 5131 (5=1+3+1)}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Решение на задачa 4}
+\begin{exampleblock}{Решение}
+	\begin{lstlisting}
+#include <stdio.h> 
+int main() { 
+    int i, n, suma, prva_cifra, cifra; 
+    i = 1000; 
+    while (i<=9999) { 
+        prva_cifra = i/1000; 
+        n = i % 1000; 
+        suma = 0; 
+        while (n > 0) { 
+            cifra = n % 10; 
+            suma += cifra; 
+            n /= 10; 
+        } 
+        if (suma == prva_cifra) printf("%d\t", i); 
+        i++; 
+    } 
+    return 0; 
+}
+	\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 5}
+Да се напише програма која ќе ги испечати сите броеви од зададен опсег кои исто
+се читаат и одлево надесно и оддесно налево.
+\begin{exampleblock}{Пример}
+\texttt{12345    54321}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Решение 5}
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h> 
+int main () { 
+    int i, odb, dob, pom, prev, cifra; 
+    printf("Vnesete vrednost za opsegot.\n"); 
+    printf("Od koj broj?\n"); scanf("%d", &odb); 
+    printf("Do koj broj?\n"); scanf("%d", &dob); 
+    for (i = odb; i <= dob; i++) { 
+        pom = i; 
+        prev = 0; 
+        while (pom > 0) { 
+            cifra = pom % 10; 
+            prev = prev*10 + cifra; 
+            pom /= 10; 
+        } 
+        if (prev == i) printf("%d\t", i); 
+    } 
+    return 0; 
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задачa 6}
+\scriptsize{Да се напише програма која од непознат број на цели броеви кои се внесуваат 
+од тастатура ќе го определи бројот со максимална вредност. 
+Програмата завршува ако наместо број се внесе знак што не е цифра.}
+\pause
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h> 
+int main() { 
+    int broj, max; 
+    if (scanf("%d", &max)){ 
+        while(scanf("%d", &broj)){ 
+            if(max < broj){ 
+                max = broj; 
+            } 
+        } 
+        printf("Maksimalniot broj e %d", max); 
+    } else { 
+        printf("Treba da vnesete najmalku eden cel broj"); 
+    } 
+    return 0; 
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задачa 7}
+Да се напише програма која од непознат број на цели броеви кои се внесуваат од 
+тастатура ќе го определи бројот со максимална вредност. 
+Притоа броевите поголеми од 100 не се земаат предвид т.е. се игнорираат. 
+Програмата завршува ако наместо број се внесе знак што не е цифра.
+\end{frame}
+
+\begin{frame}[fragile]{Решение на задача 7}
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h> 
+int main() { 
+    int broj, max; 
+   if (scanf("%d", &max)) { 
+        while(scanf("%d", &broj)) { 
+            if (broj > 100) continue; 
+            if(max < broj){ 
+                max = broj; 
+            } 
+        } 
+        printf("Maksimalniot broj e %d", max); 
+    } else { 
+        printf("Treba da vnesete najmalku eden cel broj"); 
+    } 
+    return 0; 
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Задачa 8}
+Да се напише програма која од непознат број на цели броеви кои се внесуваат од тастатура 
+ќе ги определи двата броја со најголеми вредности. Програмата завршува ако наместо 
+број се внесе знак што не е цифра. 
+\begin{exampleblock}{Пример}
+Ако се внесат броевите \texttt{2 4 7 4 2 1 8 6 9 7 10 3} програмата ќе отпечати 
+\texttt{10} и \texttt{9}.
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Решение на задача 8}
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h> 
+int main() { 
+    int broj, max1, max2, pom; 
+    if (scanf("%d%d", &max1, &max2) == 2) { 
+        if (max2>max1){ 
+            pom = max1; 
+            max1 = max2; 
+            max2 = pom; 
+        } 
+        while(scanf("%d", &broj)) { 
+            if(broj > max1){ 
+                max2 = max1; 
+                max1 = broj; 
+            } else if (broj>max2) { 
+                max2 = broj; 
+            } 
+        } 
+        printf("Brojot so najgolema vrednost e %d\n", max1); 
+        printf("Brojot so vtora najgolema vrednost e %d\n", max2); 
+    } else { 
+        printf("Treba da vnesete najmalku dva celi broja"); 
+    } 
+    return 0; 
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Задачa 9}
+Да се напише програма која од N цели броеви внесени од тастатура ќе ја определи 
+разликата од сумите на броевите на парни и непарни позиции 
+(според редоследот на внесување). Ако оваа разлика е помала од 10 на екран се печати 
+"Dvete sumi se slicni" а во спротивно на екран се печати "Dvete sumi mnogu se
+razlikuvaat".
+\begin{exampleblock}{Пример}
+За броевите внесени од тастатура:\\
+\texttt{{\color{red}2} 4 {\color{red}3} 4 {\color{red}2} 1 {\color{red}1} 6
+{\color{red} 1} 7}\\
+\texttt{{\color{red} suma\_neparni\_pozicii = 9}}\\
+\texttt{suma\_parni\_pozicii = 22}\\
+На екран ќе се испечати: \texttt{Dvete sumi mnogu se razlikuvaat}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Решение на задача 9}
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h> 
+//#include <math.h> 
+int main() { 
+    int razlika, i, n = 0, broj = 0; 
+    int suma_neparni_pozicii = 0, suma_parni_pozicii = 0; 
+    scanf("%d", &n); 
+    for (i = 1; i <= n; i++){ 
+        scanf("%d", &broj); 
+        if (i % 2){ 
+            suma_neparni_pozicii += broj; 
+        } else { 
+            suma_parni_pozicii += broj; 
+        } 
+    } 
+    razlika = suma_parni_pozicii - suma_neparni_pozicii; 
+    //printf("razlikata e %d", razlika); 
+    //if(abs(razlika) < 10){ 
+    if(razlika < 10 && razlika > -10){ 
+        printf("Dvete sumi se slicni"); 
+    } else { 
+        printf("Dvete sumi mnogu se ralikuvaat"); 
+    } 
+    return 0; 
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Задачa 10}
+Да се напише програма која од непознат број на цели броеви кои се внесуваат од тастатура 
+ќе ги определи позициите (редните броеви на внесување) на двата последователни броеви кои 
+ја имаат најголемата сума. Програмата завршува ако едно по друго (последователно) 
+се внесат два негативни цели броја.
+\end{frame}
+
+\begin{frame}[fragile]{Решение на задача 10}
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h> 
+int main() { 
+    int pol_pozicija, pozicija, max_suma, suma, prethoden, sleden; 
+    scanf("%d%d", &prethoden, &sleden); 
+    pol_pozicija = pozicija = 2; 
+    max_suma = suma = prethoden + sleden; 
+    while(1){ 
+        if (prethoden < 0 && sleden < 0){ 
+            break; 
+        } 
+        suma = prethoden + sleden; 
+        if (suma > max_suma){ 
+            max_suma = suma; 
+            pol_pozicija = pozicija; 
+        } 
+        prethoden = sleden; 
+        scanf("%d", &sleden); 
+        pozicija++; 
+    }
+    if(pozicija > 2) 
+        printf("broevite se naogaat na pozicija %d i %d a nivanata suma e %d",
+    pol_pozicija - 1, pol_pozicija, max_suma); 
+    return 0; 
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\section{наредба \texttt{switch}}
+\begin{frame}{Задачa 1}
+Да се напише програма што ќе овозможи претворање на двоцифрените броеви во
+зборови на следниот начин:\\
+За двоцифрениот број 89 на екран ќе се испечати
+"osum devet".
+\end{frame}
+
+\begin{frame}[t,fragile,shrink=35]{Решение на задача 1}
+\begin{columns}
+\column{.5\textwidth}
+\begin{exampleblock}{Решение прв дел}
+\begin{lstlisting}
+#include <stdio.h>
+int main() {
+    int broj, mala, golema;
+    printf("Vnesete dvocifren broj:");
+    scanf("%d", &broj);
+    mala = broj % 10;
+    golema = broj/10;
+    switch (golema) {
+        case 0:
+            printf("nula ");
+            break;
+        case 1:
+            printf("eden ");
+            break;
+        case 2:
+            printf("dva ");
+            break;
+        case 3:
+            printf("tri ");
+            break;
+        case 4:
+            printf("cetiri ");
+            break;
+        case 5:
+            printf("pet ");
+            break;
+        case 6:
+            printf("sest ");
+            break;
+        case 7:
+            printf("sedum ");
+            break;
+        case 8:
+            printf("osum ");
+            break;
+        case 9:
+            printf("devet ");
+            break;
+        default:
+            break;
+    }
+\end{lstlisting}
+\end{exampleblock}
+\column{.5\textwidth}
+\begin{exampleblock}{Решение втор дел}
+\begin{lstlisting}
+    switch (mala) {
+        case 0:
+            printf("nula\n");
+            break;
+        case 1:
+            printf("eden\n");
+            break;
+        case 2:
+            printf("dva\n");
+            break;
+        case 3:
+            printf("tri\n");
+            break;
+        case 4:
+            printf("cetiri\n");
+            break;
+        case 5:
+            printf("pet\n");
+            break;
+        case 6:
+            printf("sest\n");
+            break;
+        case 7:
+            printf("sedum\n");
+            break;
+        case 8:
+            printf("osum\n");
+            break;
+        case 9:
+            printf("devet\n");
+            break;
+        default:
+            break;
+    }
+    printf("%d %d\n", golema, mala);
+    return (0);
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Задачa 2}
+Да се напише програма која ќе претставува едноставен калкулатор. Во програмата
+се вчитуваат два броја и оператор во формат:\\
+\texttt{broj1 operator broj2}\\
+По извршената операција во зависност од операторот, се печати резултатот во
+формат:\\
+\texttt{broj1 operator broj2 = rezultat}
+\end{frame}
+
+\begin{frame}[fragile,shrink=10]{Решение на задача 2}
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+int main() {
+    char op;
+    float br1, br2, rez = 0;
+    printf("Vnesete dva broja i operator vo format:\n");
+    printf("broj1 operator broj2\n");
+    scanf("%f %c %f",&br1, &op, &br2);
+    switch (op) {
+        case '+':
+            rez = br1 + br2;
+            break;
+        case '-':
+            rez = br1 - br2;
+            break;
+        case '*':
+            rez = br1 * br2;
+            break;
+        case '/':
+            if (br2 == 0) {
+                printf("Greshka: Delenje so 0\n");
+                printf(" operacijata ke se ignorira\n");
+            }
+            else {
+                rez = br1 / br2;
+            }
+            break;
+        default:
+            printf("Nepoznat operator %c\n", op);
+        break;
+    }
+    if(rez) printf("Rezultatot od operacijata: %.2f %c %.2f = %f", br1, op, br2,
+    rez); return (0);
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+

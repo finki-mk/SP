@@ -1,0 +1,356 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{Дефинирање на функции}{Потсетување од предавања}
+\begin{block}{Дефиниција на функции}
+\begin{lstlisting}
+return_type function_name(arguments_list) {
+/* function body */
+}
+\end{lstlisting}
+\end{block}
+\begin{itemize}
+    \item return\_type - типот на вредноста која што ја враќа функцијата
+    \item function\_name - името на функцијата
+    \item arguments\_list - листата со формални аргументи ги содржи аргументите
+    заедно со нивните типови разделени со запирка телото на функцијата ги содржи истите елементи како и самата \texttt{main()} функција    
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Повикување на функции}{Потсетување од предавања}
+\begin{block}{Повикување на функции}
+\begin{lstlisting}
+function_name(arguments_list);
+\end{lstlisting}
+\end{block}
+\begin{itemize}
+    \item function\_name – името на веќе дефинираната  функција
+    \item arguments\_list - листата на аргументи е со вистински аргументи кои
+    што ако се повеќе се одделуваат со запирка
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Функции од математичката библиотека}{\texttt{math.h}}
+\begin{itemize}
+    \item Во C постои стандардна математичка библиотека \texttt{math.h} која што содржи многу готови математички функции
+    \item Може да се употребуваат доколку претходно се уклучи математичката
+    библиотека \texttt{\#include<math.h>}
+    \item Сите функции од стандардната библиотека \texttt{math.h} примаат аргументи од
+    типот \texttt{double} и враќаат вредност од истиот тип
+\end{itemize}
+\begin{block}{Вклучување на математичката библиотека}
+\begin{lstlisting}
+#include <math.h>
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{Најчесто користени математички функции}{\texttt{math.h}}
+\begin{tabular}{l | l}
+\texttt{sqrt(x)} &  квадратен корен од х\\
+\hline
+\texttt{exp(x)} & експоненцијална функција  ех\\
+\hline
+\texttt{log(x)} & природен логаритам од х (со основа е)\\
+\hline
+\texttt{log10(x)} & логаритам од х со основа 10 \\
+\hline
+\texttt{fabs(x)} & апсолутна вредност од х\\
+\hline
+\texttt{ceil(x)} & заокружува х на најмалиот цел број не помал од х\\
+\hline
+\texttt{floor(x)} & заокружува х на најголемиот цел број не поголем од х\\
+\hline
+\texttt{pow(x, y)}  & х на степен у\\
+\hline
+\texttt{fmod(x, y)}  & остаток од х/у како реален број\\
+\hline
+\texttt{sin(x)} & синус од х (во радијани) \\
+\hline
+\texttt{cos(x)} & косинус од х (во радијани)\\
+\hline
+\texttt{tan(x)} & тангенс од х (во радијани)
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Задача 1}
+Да се напише програма која што ќе ги отпечати сите четирицифрени природни броеви
+кои се деливи со збирот на двата броја составени од првите две цифри и од
+последните две цифри на четирицифрениот број. На крајот да отпечати колку вакви
+броеви се пронајдени.
+\begin{exampleblock}{Пример}
+\texttt{3417 е делив со 34 + 17}\\
+\texttt{5265 е делив со 52 + 65}\\
+\texttt{6578 е делив со 65 + 78}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 1}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+int zbir_po_2cifri(n) {
+    return (n % 100) + (n / 100);
+}
+int main() {
+    int i, br = 0;
+    for(i = 1000; i <= 9999; i++) {
+        if (i % zbir_po_2cifri(i) == 0) {
+            printf("Brojot %d go zadovoluva uslovot\n",i);
+                br++;
+        }
+    }
+    printf("Pronajdeni se %d broevi koi go zadovoluvaat uslovot\n",br);
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Задачa 2}
+Да се напише програма која за даден природен број ја пресметува разликата помеѓу најблискиот поголем од него прост број и самиот тој број.
+\begin{exampleblock}{Пример}
+Ако се внесе \texttt{573}, програмата треба да испечати\\
+\texttt{577 – 573 = 4}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 2}{Решение} 
+\begin{lstlisting}
+#include <stdio.h>
+int prost(int n);
+int prv_pogolem_prost(int n);
+int main() {
+    int broj;
+    printf("Vnesi broj\n");
+    scanf("%d", &broj);
+    int prost = prv_pogolem_prost(broj);
+    printf("%d - %d = %d\n", prost, broj, prost - broj);
+    return 0;
+}
+int prost(int n) {
+    int k;
+    k = 2;
+    while (k * k <= n) {
+        if (n % k == 0)
+            return 0;
+        k++;
+    }
+    return 1;
+}
+int prv_pogolem_prost(int n) {
+    do
+        n++;
+    while (!(prost(n)));
+    return n;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Задачa 3}
+Да се напише програма што ќе ги отпечати сите прости броеви помали од 10000 чиј
+што збир на цифри е исто така прост број. На крајот да се отпечати колку вакви
+броеви се пронајдени.
+\begin{exampleblock}{Пример}
+\texttt{23 -> 2+3=5}\\
+\texttt{179 -> 1+7+9=17}\\
+\texttt{9613 -> 9+6+1+3=19}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение} 
+\begin{columns}
+    \column{.5\textwidth}
+    \begin{lstlisting}
+#include <stdio.h>
+int e_prost(int n) {
+    int i;
+    if (n < 4)
+        return 1;
+    else if ((n % 2) == 0)
+        return 0;
+    else {
+        i = 3;
+        while (i * i <= n) {
+            if (n % i == 0)
+                return 0;
+            i += 2;
+        }
+    }
+    return 1;
+}
+int zbir_cifri(int n) {
+    int zbir = 0;
+    while (n > 0) {
+        zbir += (n % 10);
+        n /= 10;
+    }
+    return zbir;
+}
+\end{lstlisting}
+    \column{.5\textwidth}
+\begin{lstlisting}
+    int main() {
+    int br = 0, i;
+    for (i = 2; i <= 9999; i++) {
+        if (e_prost(i) && e_prost(zbir_cifri(i))) {
+            printf("Brojot %d go zadovoluva uslovot\n", i);
+            br++;
+        }
+    }
+    printf("Pronajdeni se %d broevi koi go zadovoluvaat uslovot\n", br);
+    return 0;
+}
+\end{lstlisting}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Задачa 4}
+Да се напише програма што ќе ги отпечати сите парови прости броеви до 1000 што
+се разликуваат меѓу себе за 2. На крај да се отпечати и нивниот број.
+\begin{exampleblock}{Пример}
+\texttt{11 и 13}\\
+\texttt{101 и 103}\\
+\texttt{617 и 619}\\
+\texttt{881 и 883}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 4}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+int eprost(int n);
+int main () {
+    int br=0,i;
+    for (i=1; i<=(1000-2); i++) {
+        if (eprost(i) && eprost(i+2)) {
+            printf("Prostire broevi %d I %d se razlikuvaat za 2\n", i, (i+2));
+            br++;
+        }
+    }
+    printf("Pronajdeni se vkupno %d parovi prosti broevi koi go zadovoluvaat uslovot\n",br);
+    return 0;
+}
+int eprost(int n) {
+    int i;
+    if (n < 4) return 1;
+    else
+    if ((n%2)==0) return 0;
+    else {
+        i=3;
+        while (i*i<=n){
+            if (n%i==0) return 0;
+            i+=2;
+        }
+    }
+    return 1;
+} 
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Задачa 5}
+Да се пресмета збирот:\\
+\texttt{1!+(1+2)!+(1+2+3)!+\ldots+(1+2+...+n)!}
+\\Помош:\\
+\begin{itemize}
+    \item Користете функција за пресметување на збирот на првите k природни
+  броеви
+    \item Користете функција за пресметување факториел на еден природен број k
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 5}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+int factoriel(int k) {
+    int i, fact_num = 1;
+    for (i = 1; i <= k; i++)
+        fact_num *= i;
+    return fact_num;
+}
+int suma(int k) {
+    int i, zbir = 0;
+    for (i = 1; i <= k; i++)
+        zbir += i;
+    return zbir;
+}
+int main() {
+    int i, n, rezultat = 0;
+    printf("Vnesete eden pozitiven cel broj \n");
+    if (scanf("%d", &n) && n > 0) {
+        for (i = 1; i < n; i++) {
+            rezultat += factoriel(suma(i));
+            printf("%d! + ", suma(i));
+        }
+        rezultat += factoriel(suma(n));
+        printf("%d! = %d", suma(n), rezultat);
+    } else
+        printf("Vnesena e pogresna vrednost \n");
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Задачa 6}
+Да се напише функција што прима два параметра $x$ и $n$ и враќа:
+\[
+   f(x, n) = \left\{ 
+  \begin{array}{l l}
+    x + \frac{x^n}{n} + \frac{x^{n+2}}{n + 2} &,x\geq0\\[10px]
+    - \frac{x^{n - 1}}{n - 1} + \frac{x^{n+1}}{n + 1} &,x<0
+  \end{array} \right.
+\]
+Потоа да се состави програма што ќе ја табелира оваа функција за прочитано n во
+интервал $x\in[-4, 4]$, со чекор $0.1$.
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 6}{Решение}
+\begin{columns}
+    \column{.5\textwidth}
+    \begin{lstlisting}
+#include <stdio.h>
+double f(float i, int j) {
+    double vrednost;
+    if (i > 0)
+        vrednost = i + stepen(i, j) / j - stepen(i, j + 2) / (j + 2);
+    else
+        vrednost = -stepen(i, j - 1) / (j - 1) + stepen(i, j + 1) / (j + 1);
+    return vrednost;
+}
+float stepen(float i, int j) {
+    int k;
+    double vrednost;
+    if (i == 0)
+        vrednost = 0.0;
+    else {
+        vrednost = 1.0;
+        for (k = 1; k <= j; ++k)
+            vrednost *= i;
+    }
+    return vrednost;
+}
+\end{lstlisting}
+    \column{.5\textwidth}
+\begin{lstlisting}
+int main() {
+    int n;
+    float x;
+    printf("Vnesi broj:\n");
+    scanf("%d", &n);
+    if ((n >= -2) && (n <= 1))
+        printf("Neodredeno.\n");
+    else {
+        x = -4.0;
+        for (x = -4; x <= 4; x += 0.1) {
+            printf("x=%3.1f, f(x)=%10.4f\n", x, f(x, n));
+        }
+    }
+    return 0;
+}
+\end{lstlisting}
+\end{columns}
+\end{frame}
+

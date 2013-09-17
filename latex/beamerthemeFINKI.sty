@@ -1,0 +1,105 @@
+\usetheme{Rochester}
+
+\RequirePackage{pgf}
+
+\pgfdeclareimage[width=1.0\paperwidth]{finki-header}{header}
+
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamercovered{transparent}
+
+\beamer@headheight=0.15\paperwidth
+
+\definecolor{finkiblue}{HTML}{0094DA}
+\definecolor{finkipurple}{HTML}{322783}
+\definecolor{oxygenorange}{HTML}{F7800A}
+\definecolor{finkidarkgray}{HTML}{333333}
+\definecolor{finkigray}{HTML}{686868}
+\definecolor{finkilightgray}{HTML}{EEEEEE}
+\definecolor{oxygenblue}{HTML}{236EAF}
+\setbeamercolor*{Title bar}{fg=white}
+\setbeamercolor*{Location bar}{fg=finkipurple,bg=finkilightgray}
+\setbeamercolor*{frametitle}{parent=Title bar}
+\setbeamercolor*{block title}{bg=finkipurple,fg=white}
+\setbeamercolor*{block body}{bg=finkilightgray,fg=finkidarkgray}
+\setbeamercolor*{block body example}{bg=finkilightgray,fg=black}
+\setbeamercolor*{block title example}{bg=oxygenorange,fg=white}
+\setbeamercolor*{normal text}{bg=white,fg=finkidarkgray}
+\setbeamercolor*{section in head/foot}{bg=finkiblue,fg=white}
+\setbeamercolor*{itemize item}{fg=finkidarkgray}
+\usecolortheme[named=finkiblue]{structure}
+
+\setbeamerfont{section in head/foot}{size=\tiny,series=\normalfont}
+\setbeamerfont{frametitle}{size=\Large}
+
+\setbeamertemplate{title page}
+{
+  \vbox{}  
+  \begin{centering}
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+  \end{centering}
+  \vfill
+}
+
+
+%\setbeamertemplate{headline}
+\setbeamertemplate{frametitle}
+{
+  \vskip-0.25\beamer@headheight
+  \vskip-\baselineskip
+  \vskip-0.4cm
+  \hskip1.2cm\usebeamerfont*{frametitle}\insertframetitle
+  \vskip-0.10em
+  \hskip1.2cm\usebeamerfont*{framesubtitle}\insertframesubtitle
+}
+
+\setbeamertemplate{headline}
+{
+  \pgfuseimage{finki-header}
+  \vskip -1.95cm
+  \linethickness{0pt}
+
+  \framelatex{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.3\beamer@headheight]{Title bar}
+    \usebeamerfont{section in head/foot}%
+		\insertsectionnavigationhorizontal{.9\textwidth}{\hskip0pt plus1filll}{}%
+  \end{beamercolorbox}}
+
+  \framelatex{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.7\beamer@headheight]{Title bar}
+  \end{beamercolorbox}}
+}
+
+\setbeamertemplate{footline}
+{
+  \linethickness{0.25pt}
+  \framelatex{
+  \begin{beamercolorbox}[leftskip=.3cm,wd=\paperwidth,ht=0.2\beamer@headheight,sep=0.1cm]{Location bar}
+    \usebeamerfont{section in head/foot}%
+    \insertshortauthor~|~\insertshorttitle
+    \hfill
+    \insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}}
+}
+
+\setbeamertemplate{navigation symbols}{} 
+
+

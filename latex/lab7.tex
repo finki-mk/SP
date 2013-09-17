@@ -1,0 +1,60 @@
+\documentclass[12pt,a4paper]{exam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+
+\lstset{language=C,captionpos=b,
+tabsize=4,frame=lines,
+basicstyle=\ttfamily,
+keywordstyle=\color{blue},
+commentstyle=\color{green},
+stringstyle=\color{red},
+breaklines=true,showstringspaces=false}
+
+\begin{document}
+\pagestyle{headandfoot}
+\header{\textbf{ФИНКИ\\Концепти за развој на
+софтвер}}{}{\large{\textbf{Лабораториска вежба 7}}}
+\headrule
+\cfoot{Страна \thepage}
+\begin{center}
+\Large{\textbf{Покажувачи}}
+\end{center}
+\begin{questions}
+
+\question
+Во дадена низа од n природни броеви (n и низата се читаат од тастатура) соседните заемно
+прости броеви (немаат заеднички делители) да си ги заменат позициите. На ист елемент од
+низата може најмногу еднаш да му се изврши замена. Да се испечати изменетата низа.
+Замената да се реализира во посебна функција.\\
+\emph{Забелешка}: Задачата да се реши со помош на покажувачи.
+
+\question
+Да се напише функција за ротирање на елементите на дадена низа за m места (ако m е
+позитивен низата се ротира во десно, а ако е негативен низата се ротира во
+лево).\\ \emph{Забелешка}: Задачата да се реши со помош на покажувачи
+\\\emph{На пример}:\\
+\texttt{1 5 8 12 23 90 (m = 3)}\\
+\texttt{12 23 90 1 5 8}
+
+\question
+Да се напише функција за сортирање на низа од цели броеви. Потоа да се напише
+функција за спојување на две низи од цели броеви сортирани во растечки редослед.
+Оваа функција треба во нова низа да ги смести веќе сортираните две низи во
+нова низа која ќе биде исто така сортирана. Во оваа функција не смее да се
+повикува функијата за сортирање.
+\\\emph{Забелешка}: Задачата да се реши со помош на покажувачи. 
+\\\emph{На пример}:\\ Од низите: \texttt{1 3 5 7 8} и \texttt{2 4 6} ќе се добие
+низата \texttt{1 2 3 4 5 6 7 8}
+\begin{lstlisting}
+void sort(int *a, int n); // funkcija za sortiranje
+// funkcija za spojuvanje na dvete sortirani
+// nizi a i b vo nova niza c
+void merge(int *a, int *b, int *c); 
+\end{lstlisting}
+\end{questions}
+\end{document}

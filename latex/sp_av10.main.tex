@@ -1,0 +1,529 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Потсетување од предавања}{Отворање датотеки за
+читање/запишување}
+
+\begin{itemize}
+  \item Обработка на датотеки се состои од запишување, вчитување или менување содржина
+од на датотека од некој стандарден медиум како диск.
+  \item Обработката на датотеките во програмскиот јазик C се прави со помош на
+  структурата \texttt{FILE} дефинирана во \texttt{stdio.h}
+  \item За да се започне со обработка на датотеката прво мора да се отвори со
+  помош на функцијата \texttt{fopen} која како резултат враќа покажувач кон
+  структура (\texttt{FILE*})
+\end{itemize}
+\begin{exampleblock}{Функција за отворање датотека}
+\begin{lstlisting}
+FILE *fopen(const char *filename, const char *mode);
+\end{lstlisting}
+\begin{scriptsize}
+\texttt{filename} - целосна патека заедно со името на датотеката која сакаме да
+ја отвориме\\
+\texttt{mode} - начин на отворање на датотеката
+\end{scriptsize}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Потсетување од предавања}{Начини на отворање на датотеки}
+\begin{tabular}{| c | p{.8\textwidth} |}
+\hline
+\textbf{Начин} & \textbf{Значење}\\
+\hline
+\texttt{r}  &  Отвора постоечка датотека само за читање\\
+\hline
+\texttt{w} & Отвора датотека за запишување (датотеката не мора да постои)\\
+\hline
+ \texttt{a} & Отвора датотека за додавање содржина (датотеката не мора да
+ постои)\\
+ \hline
+ \texttt{r+} & Отвора датотека за читање и запишување од почетокот на датотеката\\
+ \hline
+ \texttt{w+} & Отвора датотека за читање и запишување (ја пребришува
+ содржината на датотеката)\\
+ \hline
+ \texttt{a+} & Отвора датотека за читање и запишување (додава на крајот од
+ датотеката ако постои)\\
+ \hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}[fragile]{Потсетување од предавања}{Отворање датотеки за
+читање/запишување}
+
+\begin{exampleblock}{Пример отворање на датотека}
+\begin{lstlisting}
+FILE *fp = fopen("C:\\test.txt", "r");
+\end{lstlisting}
+\begin{scriptsize}
+За да се отвори датотеката во бинарен мод се додава \texttt{b} крајот на
+аргументот за начинот на отворање пр. (\texttt{``rb''})
+\end{scriptsize}
+\end{exampleblock}
+По завршување со работа со датотеката таа треба да се затвори со помош на
+функцијата \texttt{fclose}
+\begin{exampleblock}{Пример затворање на датотека}
+\begin{lstlisting}
+fclose(fp);
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Потсетување од предавања}{Читање и запишување од/во
+датотека}
+Функции за читање од датотека
+\begin{lstlisting}
+int fscanf(FILE* fp, ``kontrolna niza'', arguments_list)
+int fgetc(FILE* fp)
+\end{lstlisting}
+
+Функции за запишување во датотека
+\begin{lstlisting}
+int fprtinf(FILE* fp, ``kontrolna niza'', arguments_list)
+int fputc(int c, FILE* fp)
+\end{lstlisting}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Задачa 1}{Решение 1/2}
+Да се напише програма која за дадена текстуална датотека ќе го одреди односот на
+самогласките и согласките. Името на датотеката се проследува како аргумент на
+командна линија.
+\begin{lstlisting}
+#include <stdio.h>
+
+int bukva(char c) {
+    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
+}
+
+int samoglaska(char c) {
+    c = tolower(c);
+    switch (c) {
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+        return 1;
+    default:
+        return 0;
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 1}{Решение 2/2}
+\begin{lstlisting}
+int main(int argc, char *argv[]) {
+    char c;
+    int broj_soglaski = 0, broj_samoglaski = 0;
+    FILE *dat;
+    // Potrebni se barem 2 argumenti na komandna linija za da raboti programata
+    if(argc < 2) {
+        printf("Nacin na upotreba: %s \"pateka do datotekata\"\n", argv[0]);
+        return -1;
+    }
+    // Otvoranje na datotekata
+    if ((dat = fopen(argv[1], "r")) == NULL) {
+        printf("Datotekata %s ne se otvora.\n", argv[1]);
+        return -1;
+    }
+    // Citanje znak po znak do krajot na datotekata
+    while ((c = fgetc(dat)) != EOF) {
+        if (bukva(c)) {
+            if (samoglaska(c))
+                broj_samoglaski++;
+            else
+                broj_soglaski++;
+        }
+    }
+    fclose(dat);
+    printf("Odnosot samoglaski/soglaski: %d/%d = %5.2f\n", broj_samoglaski, broj_soglaski,
+            (float) broj_samoglaski / broj_soglaski);
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Задачa 2}
+Да се напише програма која секој ред од дадена текстуална датотека ќе го копира
+во излезна датотека така што пред секој ред ќе додаде уште еден ред во кој ќе
+стои бројот на зборови што ги содржи прочитаниот ред од влезната датотека. Името
+на влезната и излезната датотека се задаваат како аргументи на командна линија,
+а ако не се зададени да се испечати начин на употреба на програмата. Зборовите
+се составени од алфанумерички знаци и се одделени со произволен број белини и
+специјални знаци. Во секој ред може да има најмногу 80 знаци.
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 2}{Решение 1/2} 
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 81
+
+int main(int argc, char* argv[]) {
+    char red[MAX], *c;
+    int vozbor = 0, broj_zborovi = 0;
+    FILE *vlezna, *izlezna;
+    if (argc < 3) {
+        printf("Upotreba: %s [ime_na_vlezna_datoteka] [ime_na_vlezna_datoteka]\n",
+                argv[0]);
+        return -1;
+    }
+    if ((vlezna = fopen(argv[1], "r")) == NULL) {
+        printf("Datotekata %s ne se otvora.\n", argv[1]);
+        return -1;
+    }
+    if ((izlezna = fopen(argv[2], "w")) == NULL) {
+        printf("Datotekata %s ne se otvora\n", argv[2]);
+        return -1;
+    }
+    ...
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Задачa 2}{Решение 2/2} 
+\begin{lstlisting}
+    ...
+    while ((fgets(red, MAX, vlezna)) != NULL) {
+        c = red;
+        vozbor = 0;
+        broj_zborovi = 0;
+        while (*c != '\0') {
+            if (isalnum(*c)) {
+                if (!vozbor)
+                    vozbor = 1;
+            } else if (vozbor) {
+                vozbor = 0;
+                broj_zborovi++;
+            }
+            c++;
+        }
+        if (vozbor)
+            broj_zborovi++;
+        fprintf(izlezna, "%d %s", broj_zborovi, red);
+    }
+    fclose(vlezna);
+    fclose(izlezna);
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Задачa 3}
+Да се напише програма која ќе ги прочита елементите од една матрица сместени во
+текстуалната датотека ``matrica1.txt''. Во првиот ред од датотеката се запишани
+бројот на редици и колони на матрицата. Секој елемент од матрицата е реален број
+запишан во посебен ред во датотеката. Потоа матрицата треба да се транспонира и
+да се запише во нова датотека ``matrica2.txt'' на истиот начин.
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 3}{Решение 1/2} 
+\begin{lstlisting}
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+int main() {
+    int i, j, m, n;
+    float a[MAX][MAX], b[MAX][MAX];
+    FILE *vlezna, *izlezna;
+    if ((vlezna = fopen("matrica1.txt", "r")) == NULL) {
+        printf("Datotekata matrica1.txt ne se otvora!\n");
+        exit(1);
+    }
+    if (!feof(vlezna))
+        fscanf(vlezna, "%d %d", &m, &n);
+
+    if ((m > MAX) || (n > MAX)) {
+        printf("Mnogu golema matrica!");
+        return (-1);
+    }
+    for (i = 0; i < m && !feof(vlezna); i++)
+        for (j = 0; j < n && !feof(vlezna); j++)
+            fscanf(vlezna, "%f", &a[i][j]);
+    fclose(vlezna);
+    ...
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Задачa 3}{Решение 2/2} 
+\begin{lstlisting}
+    ...
+    if (i != m || j != n) {
+        printf("Nema dovolno podatoci vo datotekata!");
+        return (-1);
+    }
+    for (i = 0; i < m; i++)
+        for (j = 0; j < n; j++)
+            b[j][i] = a[i][j];
+    if ((izlezna = fopen("matrica2.txt", "w")) == NULL) {
+        printf("Datotekata matrica2.txt ne se otvora!\n");
+        exit(1);
+    }
+    fprintf(izlezna, "%d %d\n", n, m); /* obratno */
+
+    for (i = 0; i < n; i++)
+        for (j = 0; j < m; j++)
+            fprintf(izlezna, "%7.2f\n", b[i][j]);
+    fclose(izlezna);
+    return (0);
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Задачa 4}
+Дадена е текстуална датотека ``KRSPrimer.txt''. Да се напише програма која ќе го
+отпечати бројот на редови во кои има по најмногу десет зборови, како и вкупниот
+број на зборови во датотеката. Зборовите се составени само од букви. Во секој
+ред има најмногу 80 знаци.
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 4}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int zbor = 0, red = 0, vozbor = 0, vkupno = 0;
+    FILE *dat; char c; 
+    if ((dat = fopen("KRSPrimer.txt", "r")) == NULL) {
+        printf("Datotekata KRSPrimer.txt ne se otvora");
+        exit(-1);
+    }
+    while ((c = fgetc(dat)) != EOF) {
+        if (isalnum(c)) {
+            if (!vozbor) {
+                vozbor = 1;
+            }
+        } else if (vozbor) {
+            vozbor = 0;
+            zbor++;
+            vkupno++;
+        }
+        if (c == '\n') {
+            if (zbor > 10) {
+                red++;
+            }
+            zbor = 0;
+        }
+    }
+    printf("Vkupno %d reda imaat povekje od 10 zbora\n", red);
+    printf("Vo datotekata ima vkupno %d zbora.\n", vkupno);
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Задачa 5}
+Да се напише програма која за дадена текстуална датотека ќе ги испечати
+сите зборови во кои се јавуваат повеќе од две исти букви (буквата се јавува три или
+повеќе пати). Да не се прави разлика меѓу големи и мали букви. На крајот треба
+да се испечати бројот на зборови што го задоволуваат условот. Зборовите се
+составени само од букви, а меѓусебно се одделени со најмалку еден специјален
+знак, цифра или белина. Максималната должина на зборовите е 20 знаци. Името на
+датотеката се задава од командна линија. 
+\begin{exampleblock}{Пример зборови}
+банана, текстот, Обратното, бинарната, дефинирани, Копакабана
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 5}{Решение 1/3}
+\begin{lstlisting}
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#define WORDLEN 21
+#define LINELEN 81
+int ima_poveke_od2isti(char *w) {
+    char *c;
+    int isti;
+    while (*w) {
+        c = w + 1;
+        isti = 1;
+        while (*c) {
+            if (tolower(*w) == tolower(*c))
+                isti++;
+            c++;
+        }
+        if (isti > 2)
+            return 1;
+        w++;
+    }
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 5}{Решение 2/3}
+\begin{lstlisting}
+int main(int argc, char *argv[]) {
+    char zbor[WORDLEN], c;
+    FILE *f;
+    int iw = 0, i = 0, brzb = 0;
+    if (argc > 2) {
+        printf("Upotreba: %s ime_na_datoteka\n", argv[0]);
+        exit(-1);
+    }
+    if (argc == 1)
+        f = stdin;
+    else if ((f = fopen(argv[1], "r")) == NULL) {
+        printf("Datotekata %s ne se otvora.\n", argv[1]);
+        return -1;
+    }
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 5}{Решение 3/3}
+\begin{lstlisting}
+    while ((c = fgetc(f)) != EOF) {
+        if (isalpha(c)) {
+            if (!iw)
+                iw = 1;
+            zbor[i++] = c;
+        } else if (iw) {
+            zbor[i] = 0;
+            if (ima_poveke_od2isti(zbor)) {
+                puts(zbor);
+                brzb++;
+            }
+            zbor[i = iw = 0] = 0;
+        }
+    }
+    if (iw) {
+        zbor[i] = 0;
+        if (ima_poveke_od2isti(zbor)) {
+            puts(zbor);
+            brzb++;
+        }
+    }
+
+    printf("\nVkupno %d zborovi.\n", brzb);
+    fclose(f);
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Задачa 6}
+Да се напише програма која ќе го испечати бројот на појавувања на даден збор
+составен само од цифри во текстуална датотека. Името на датотеката и бараниот
+збор се задаваат како аргументи од командна линија. Програмата проверува дали на
+командна линија се зададени сите потребни аргументи, а ако не се, тогаш печати
+порака ``Nevalidni argumenti na komandna linija''. Се смета дека зборовите се
+составени само од цифри и меѓусебно се разделени со произволен број на белини,
+специјални знаци и букви. Во текстуалната датотека нема зборови подолги од 20
+знаци.    
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 6}{Решение 1/2}
+\begin{lstlisting}
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+int main(int argc, char** argv) {
+    char c;
+    int vozbor = 0, i, ok, brPojavuvanja = 0;
+    FILE *dat;
+    if (argc != 3) {
+        printf("Nevalidni argumenti na komandna linija\n");
+        exit(-1);
+    } else {
+        if ((dat = fopen(argv[1], "r")) == NULL) {
+            printf("Datotekata %s ne se otvora!\n", argv[1]);
+            exit(-1);
+        }
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 6}{Решение 2/2}
+\begin{lstlisting}
+        while ((c = fgetc(dat)) != EOF) {
+            if (isdigit(c)) {
+                if (!vozbor) {
+                    vozbor = 1;
+                    i = 0;
+                    ok = 1;
+                }
+                if (argv[2][i] != c)
+                    ok = 0;
+                i++;
+            } else if (vozbor) {
+                vozbor = 0;
+                if (ok)
+                    brPojavuvanja++;
+            }
+        }
+        if (vozbor && (ok))
+            brPojavuvanja++;
+        printf("Zborot %s se pojavuva %d pati vo datotekata\n", argv[2],
+                brPojavuvanja);
+    }
+    return 0;
+}
+
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Задачa 7}
+Да се напише програма која за дадена текстуална датотека чие што име се внесува
+како аргумент на командна линија ќе го испечати просечниот број на  букви во
+збор. Зборовите се составени од алфанумерички знаци и се одделени со најмалку
+едно празно место, белина и/или знаци за интерпункција. Пресметувањето на бројот
+на букви и зборови во датотеката да се направи во посебна функција:\\[.5cm]
+
+\texttt{\scriptsize{void brBukviIZborovi(FILE* f, int* brzborovi, int*
+brbukvi);}}
+
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 7}{Решение 1/2}
+\begin{lstlisting}
+#include <stdio.h>
+void brBukviIZborovi(FILE* f, int* brzborovi, int* brbukvi) {
+    char c;
+    int vozbor = 0;
+    *brzborovi = 0, *brbukvi = 0;
+    while ((c = fgetc(f)) != EOF) {
+        if (isalnum(c)) {
+            (*brbukvi)++;
+            if (!vozbor)
+                vozbor = 1;
+        } else if (vozbor) {
+            vozbor = 0;
+            (*brzborovi)++;
+        }
+    }
+    if (vozbor)
+        (*brzborovi)++;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 7}{Решение 2/2}
+\begin{lstlisting}
+int main(int argc, char **argv) {
+    FILE *dat;
+    int brzborovi, brbukvi;
+    if(argc >= 2) {
+        if ((dat = fopen(argv[1], "r")) == NULL) {
+            fprintf(stderr, "Greska pri otvoranje na datotekata");
+            return (-1);
+        }
+        brBukviIZborovi(dat, &brzborovi, &brbukvi);
+        printf("Prosecniot broj na bukvi po zbor e %5.2f.\n", (float) brbukvi
+                / brzborovi);
+        fclose(dat);
+    } else {
+        printf("Nacin na upotreba: %s [pateka do datotekata]\n", argv[0]);
+        return -1;
+    }
+    return (0);
+}
+\end{lstlisting}
+\end{frame}
+

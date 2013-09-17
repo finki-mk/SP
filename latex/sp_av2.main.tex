@@ -1,0 +1,181 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Потсетување од предавања}
+\begin{itemize}
+	\item Оператори
+	\begin{itemize}
+		\item Аритметички
+		\item Релациски
+		\item Логички
+	\end{itemize}
+	\item Печатење на стандарден излез
+	\texttt{printf()}
+	\item Читање од стандарден влез
+	\texttt{scanf()}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Читање од стандарден влез во C}{Функцијата
+\texttt{scanf}}
+	\begin{verbatim}
+	int scanf(Контролна_низа_од_знаци, arg1, arg2, ..., argn)	
+	\end{verbatim}	
+	\begin{itemize}
+	\item Контролната низа од знаци е всушност низа од знаци којa ја содржи потребната информација за форматирање	
+	\item arg1, arg2, ..., argn се аргументите кои ги претставуваат индивидуалните податоци
+	\end{itemize}	 
+\end{frame}
+
+\begin{frame}[fragile]{Употреба на \texttt{scanf}}
+
+	\begin{exampleblock}{Пример 1}
+	\begin{lstlisting}
+	#include <stdio.h>
+	int main() {
+	    char del;
+	    int delbroj;
+	    float cena;
+	    scanf("%c%d%f", &del, &delbroj, &cena);
+	    return 0;
+	}
+	\end{lstlisting}
+	\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 1}
+Да се напише програма за пресметување и печатење на плоштината и периметарот на круг. 
+Радиусот на кругот се чита од тастатура како децимален број.
+\begin{exampleblock}{Решение}
+\lstinputlisting{src/av2/p1.c}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задача 2}
+Да се напише програма која од стандарден влез ќе прочита два цели броја и ќе ја
+испечати нивната сума, разлика, производ и остатокот при делењето.
+	\begin{exampleblock}{Решение}
+		\lstinputlisting{src/av2/p2.c}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}
+Да се напише програма која чита големa буквa од стандарден влез и ја печати
+истaтa како малa буквa.\\ Помош: Секој знак се претставува со ASCII број.\\
+Пр. \texttt{'А' = 65, 'а' = 97}
+	\begin{exampleblock}{Решение}
+		\lstinputlisting{src/av2/p3.c}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 4}
+\begin{scriptsize}
+Да се напише програма која чита знак од стандарден влез и во зависнот од тоа
+дали е мала или голема буква печати 1 или 0, соодветно.\\ Помош: Користете
+логички и релациони оператори за тестирање на ASCII вредноста на знакот.\\ 
+\textbf{Бонус:} Направете проверка дали знакот е број	
+\end{scriptsize}
+\begin{exampleblock}{Решение}
+	\lstinputlisting{src/av2/p4.c}		
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 5}
+\begin{scriptsize}
+Да се напише програма која ќе чита два цели броеви (x, y) од стандарден влез и
+на стандарден излез ќе го испечати резултатот (z) од следниот израз\\ \texttt{z
+= x++ + ---y + (x<y)}\\ Каква вредност ќе има z за x=1, y=2?
+\end{scriptsize}
+	\begin{exampleblock}{Решение}
+		\lstinputlisting{src/av2/p5.c}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 6}
+Нека е дадено: \texttt{r = (x < y || y < z++)}\\
+	Каква вредност ќе има r за x=1, y=2, z=3?\\
+	Каква вредност ќе има z?
+	\begin{exampleblock}{Решение}
+	\texttt{r = 1\\z = 3}
+	\end{exampleblock}
+Нека е дадено: \texttt{r = (x > y \&\& y < z++)}\\
+	Каква вредност ќе има r за x=1, y=2, z=3?\\
+	Каква вредност ќе има z?
+	\begin{exampleblock}{Решение}
+	\texttt{r = 0\\z = 3}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 7}
+Нека е дадено:
+\begin{lstlisting}
+	int x, y;
+	y = scanf("%d", &x);
+\end{lstlisting}
+Каква вредност ќе има y за x=5?
+	\begin{exampleblock}{Решение}
+	\texttt{y = 1}
+	\end{exampleblock}
+Нека е дадено:
+\begin{lstlisting}
+	int x, y, z;
+	z = scanf("%d%d", &x, &y);
+\end{lstlisting}
+	Каква вредност ќе има z за x=5, y=6?
+	\begin{exampleblock}{Решение}
+	\texttt{z = 2}
+	\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задача 8}
+Да се напише програма каде од стандарден влез ќе се прочита цена на производ, а
+потоа ќе ја испечати неговата цена со пресметан ДДВ.\\ Помош: ДДВ е 18\% од почетната цена
+	\begin{exampleblock}{Решение}
+		\lstinputlisting{src/av2/p8.c}
+	\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задача 9}
+Да се напише програма каде од стандарден влез се чита цена на производ, број на
+рати на кои се исплаќа и камата (каматата е број изразен во проценти од 0 до 100). 
+Програмата треба да го испечати износот на ратата и вкупната сума што ќе се исплати за производот.\\
+Помош: Пресметајте ја целата сума, па потоа ратата.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 9}{Решение}
+	\lstinputlisting{src/av2/p9.c}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задача 10}
+Да се напише програма каде од стандарден влез се чита еден трицифрен цел број.
+Програмата ќе ја испечати најзначајната и најмалку значајната цифра од бројот\\ 
+Пример: Ако се внесе следниот бројот 795, програмата ќе испечати:\\
+\texttt{	Najznacajna cifra e 7, a najmalku znacajna e 5.}\\
+Помош: Искористете целобројно делење и остаток од делење.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 10}{Решение}
+\lstinputlisting{src/av2/p10.c}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задача 11}
+Да се напише програма каде од стандарден влез се вчитува датумот на раѓање во
+формат (\texttt{ddmmgggg}). Програмата стандарден излез треба да го испечати
+денот и месецот на раѓање.\\ Пример: Ако се внесе следниот број
+\texttt{18091992}, програмата ќе испечати: \texttt{18.09}\\ Помош: Искористете целобројно делење и остаток од делење.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 11}{Решение}
+	\begin{exampleblock}{Решение}
+	\lstinputlisting{src/av2/p11.c}	
+	\end{exampleblock}
+	Бонус: Задачата може да се реши и со употреба на \texttt{scanf("\%2d\%2d", \&den, \&mesec)}
+\end{frame}

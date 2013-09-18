@@ -620,28 +620,14 @@ int printf(kontrolna_niza, lista_na_argumenti)
 	Да се напише програма која ќе ја пресметува вредноста на математичкиот израз:
 	$ x = \frac{3}{2} + (5 - \frac{46 * 5}{12})$
 	\begin{exampleblock}{Решение}
-		\begin{lstlisting}
-		#include <stdio.h>
-		int main() {
-		   float x = 3.0 / 2 + (5 - 46 * 5 / 12.0);
-		   printf("x = %.2f\n", x);
-		   return 0;
-		}
-		\end{lstlisting}
+    \lstinputlisting{src/av1/p1.c}
 	\end{exampleblock}
 \end{frame}
 
 \begin{frame}[fragile]{Задача 2}
 Да се напише програма која за зададена вредност на $ x $ (при декларација на променливата) ќе го пресмета и отпечати на екран $ x^2 $.
 	\begin{exampleblock}{Решение}
-		\begin{lstlisting}
-		#include <stdio.h>
-		int main() {
-		   int x = 7;
-		   printf("Brojot %d na kvadrat e: %d\n", x, x * x);
-		   return 0;
-		}
-		\end{lstlisting}
+	\lstinputlisting{src/av1/p2.c}
 	\end{exampleblock}
 \end{frame}
 
@@ -649,52 +635,21 @@ int printf(kontrolna_niza, lista_na_argumenti)
 Да се напише програма која за дадени страни на еден триаголник ќе ги отпечати на екран периметарот 
 и квадратот од плоштината (нека се работи со \texttt{a=5, b=7.5, c=10.2}).
 	\begin{exampleblock}{Решение}
-		\begin{lstlisting}
-		#include <stdio.h>
-		int main() {
-		   float a = 5;
-		   float b = 7.5;
-		   float c = 10.2;
-		   float L = a + b + c;
-		   float s = L / 2;
-		   float P = s * (s - a) * (s - b) * (s - c);
-		   printf("Perimetarot e: %.2f\n", L);
-		   printf("Plostinata na kvadrat e: %.2f\n", P);
-		   return 0;
-		}
-		\end{lstlisting}
+	\lstinputlisting{src/av1/p3.c}
 	\end{exampleblock}
 \end{frame}
 
 \begin{frame}[fragile]{Задача 4}
 Да се напише програма за пресметување на аритметичката средина на броевите 3, 5 и 12.
 	\begin{exampleblock}{Решение}
-		\begin{lstlisting}
-		#include <stdio.h>
-		int main() {
-		   int a = 3, b = 5, c = 12;
-		   float as = a + b + c / 3.0;
-		   printf("Aritmetickata sredina e: %.2f\n", as);
-		   return 0;
-		}
-		\end{lstlisting}
+	\lstinputlisting{src/av1/p4.c}
 	\end{exampleblock}
 \end{frame}
 
 \begin{frame}[fragile]{Задача 5}
 Да се напише програма која ќе ги отпечати на екран остатоците при делењето на бројот 19 со 2, 3, 5 и 8.
 	\begin{exampleblock}{Решение}
-		\begin{lstlisting}
-		#include <stdio.h>
-		int main() {
-		   int a = 19;
-		   printf("Ostatok pri delenje na %d so 2: %d\n", a, a % 2);
-		   printf("Ostatok pri delenje na %d so 3: %d\n", a, a % 3);
-		   printf("Ostatok pri delenje na %d so 5: %d\n", a, a % 5);
-		   printf("Ostatok pri delenje na %d so 8: %d\n", a, a % 8);
-		   return 0;
-		}
-		\end{lstlisting}
+	\lstinputlisting{src/av1/p5.c}
 	\end{exampleblock}
 \end{frame}
 

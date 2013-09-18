@@ -646,14 +646,7 @@ should be printed.
     Write a program that will compute the value of the mathematical expression:
     $ x = \frac{3}{2} + (5 - \frac{46 * 5}{12})$
     \begin{exampleblock}{Solution}
-        \begin{lstlisting}
-        #include <stdio.h>
-        int main() {
-           float x = 3.0 / 2 + (5 - 46 * 5 / 12.0);
-           printf("x = %.2f\n", x);
-           return 0;
-        }
-        \end{lstlisting}
+    \lstinputlisting{src/av1/p1.c}
     \end{exampleblock}
 \end{frame}
 
@@ -661,14 +654,7 @@ should be printed.
 Write a program that for a given value of $ x $ (with the declaration
 assignment) will compute and print on standard output $ x^2 $.
     \begin{exampleblock}{Solution}
-        \begin{lstlisting}
-        #include <stdio.h>
-        int main() {
-           int x = 7;
-           printf("Number %d squared is: %d\n", x, x * x);
-           return 0;
-        }
-        \end{lstlisting}
+    \lstinputlisting{src/av1/p2.c}
     \end{exampleblock}
 \end{frame}
 
@@ -677,35 +663,14 @@ Write a program that for a given sides of one triangle, it will print the
 perimeter and area of the square (values are \texttt{a=5, b=7.5,
 c=10.2}).
     \begin{exampleblock}{Solution}
-        \begin{lstlisting}
-        #include <stdio.h>
-        int main() {
-           float a = 5;
-           float b = 7.5;
-           float c = 10.2;
-           float L = a + b + c;
-           float s = L / 2;
-           float P = s * (s - a) * (s - b) * (s - c);
-           printf("Perimeter is: %.2f\n", L);
-           printf("Area is: %.2f\n", P);
-           return 0;
-        }
-        \end{lstlisting}
+    \lstinputlisting{src/av1/p3.c}        
     \end{exampleblock}
 \end{frame}
 
 \begin{frame}[fragile]{Problem 4}
 Write a program for computing the arithmetic mean of the numbers 3, 5 and 12.
     \begin{exampleblock}{Solution}
-        \begin{lstlisting}
-        #include <stdio.h>
-        int main() {
-           int a = 3, b = 5, c = 12;
-           float am = a + b + c / 3.0;
-           printf("Arithmetic mean is: %.2f\n", as);
-           return 0;
-        }
-        \end{lstlisting}
+    \lstinputlisting{src/av1/p4.c}
     \end{exampleblock}
 \end{frame}
 
@@ -713,22 +678,11 @@ Write a program for computing the arithmetic mean of the numbers 3, 5 and 12.
 Write a program that will print the remainder from the division of number 19
 with 2, 3, 5 and 8.
     \begin{exampleblock}{Solution}
-        \begin{lstlisting}
-        #include <stdio.h>
-        int main() {
-           int a = 19;
-           printf("Remainder from division of %d with 2: %d\n", a, a %
-           % 2);
-           printf("Remainder from division of %d with 3: %d\n", a, a % 3);
-           printf("Remainder from division of %d with 5: %d\n", a, a % 5);
-           printf("Remainder from division of %d with 8: %d\n", a, a % 8);
-           return 0;
-        }
-        \end{lstlisting}
+    \lstinputlisting{src/av1/p5.c}        
     \end{exampleblock}
 \end{frame}
 
-\section{Integrated development environments (IDE)}
+\section{Development environments (IDE)}
 
 \begin{frame}{Integrated development environments elements}
 Integrated development environment is mix of multiple programs, that are
@@ -742,145 +696,144 @@ combined in order to simplify the development process
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Текст уредувач (text editor)}
+\begin{frame}{Text editor}
 \begin{itemize}
-  \item Програма која овозможува внесување и уредување на текстот на изворната
-  програма
-  \item Овозможува зачувување на програми и вчитување на веќе напишани програми
-  за нивно повторно уредување 
-  \item Означување на клучните зборови и команди во изворната програма (syntax
-  highlighting)
+  \item Program for inserting and editing the text of the source code
+  \item Enables saving and loading already written source code files
+  for editing
+  \item Syntax highlighting
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Преведувач (compiler)}
+\begin{frame}{Compiler}
 \begin{itemize}
-  \item Ја преобразува (преведува) изворната програма од јазикот за програмирање
-  во кој е напишана во јазик разбирлив за компјутерот
-  \item Се разликуваат два вида преведувачи: \textbf{интерпретери} и \textbf{компајлери} 
-  \item Интерпретер е преведувач кој ја \emph{обработува одделно секоја команда}, ја
-  проверува за грешки и ја извршува, по што поминува на следната команда  итн.
-  \item Компајлер е преведувач кој ја \emph{обработува целата програма}, ја проверува
-  за грешки и ја преведува, по што се добива извршната програма.
+  \item Transforms (translates) the source code from the programming language
+  (high level) to machine language
+  \item Two types of code translators:
+  \textbf{interpreters} and \textbf{compilers}
+  \item Interpreter is a translator of source code which \emph{translates each
+  command separately}, checks for errors and executes, and goes to the next
+  command.
+  \item Compiler is a translator which is \emph{processing the whole
+  program}, checks for errors, and creates the executable program.
   \begin{itemize}
-  \item Така добиената извршна програма може да се извршува
+  \item The resulted executable can be executed
   \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Дебагер (debugger)}
+\begin{frame}{Debugger}
 \begin{itemize}
-  \item Компајлерите и интерпретерите ги откриваат грешките (синтаксички) во
-  програмата поради не правилно користење на јазикот за програмирање
-  \item Друг вид на грешки се логичките грешки
+  \item Compilers and interpreters are detecting the (syntax) errors of the
+  source code as a result from incorrect usage of the programming language
+  \item Other type of errors are logical errors
   \begin{itemize}
-  \item Програмата не го прави тоа за кое што е наменета 
-  \item Се откриваат многу тешко
+  \item The program doesn't execute as intended
+  \item Very difficult to discover
   \end{itemize}
-  \item Дебагер е програма која помага при барање на логичките грешки
+  \item Debugger is a program that helps discovering logical errors
   \begin{itemize}
-  \item Овозможува следење на извршувањето на програмата чекор по чекор
-  \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Интеграција на библиотеки со функции}
-\begin{itemize}
-  \item Интегрирање и користење на претходно создадени и проверени модули (потпрограми), уште наречени и функции
-  \item Ваквиот начин на организација на програмите има голем број на предности
-  \item Повторно искористување на готови функционалности
-  \item Пример библиотеки
-  \begin{itemize}
-    \item За управување со стандардниот влез и излез
-    \item За стандардни математички операции 
+  \item Enables execution step by step
   \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Поврзувач (linker)}
+\begin{frame}{Integration with external libraries}
 \begin{itemize}
-  \item Понекогаш програмата е премногу голема за да се напише во една датотека
+  \item Integration and usage of already created and correct modules,
+  also called functions
+  \item This type of organization has many advantages
+  \item Reuse of standard functions
+  \item Example libraries
   \begin{itemize}
-    \item различните делови може да се пишуваат од различни програмери.
-    \item некои делови од дадена програма можат да бидат искористени и во друга програма 
-    \item Одделно компајлираните делови е неопходно да бидат обединети во една
-    цела извршна програма со помош на \textbf{поврзувачот}
-    \item Друга улога на поврзувачот е да ги „сврзе“ со програмата потребните
-     библиотеки со стандардните функции
+    \item Standard input/output
+    \item Mathematical operations 
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Linker}
+\begin{itemize}
+  \item Sometimes the program is to large to be written in one file
+  \begin{itemize}
+    \item different parts can be written by different programmers
+    \item some parts from one program can be used in some other program
+    \item Separately compiled parts must be united in on full executable with
+    the help of the \textbf{linker}
+    \item Another role is to ``link'' standard functions with the executable
   \end{itemize}
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Околини за развој}{(ntegrated Development Environment - IDE}
+\begin{frame}{Integrated Development Environment - IDE}
 \begin{itemize}
-  \item Сите овие елементи на околината за развој се обединуваат (интегрираат)
-  во т.н. интегрирани околини за развој
-  \item Пример за IDE е околината која ќе се користи на овој курс, Code::Blocks
+  \item All these elements of the development environment are integrated in IDE
+  \item Code::Blocks is an example of IDE that can be used in this course
 \end{itemize}
 \begin{center}
 \includegraphics[scale=0.5]{images/cb_logo}
 \end{center}
 \end{frame}
 
-\section{Code::Blocks - инсталација}
-\begin{frame}{Code::Blocks - инсталација}
+\section{Code::Blocks - installation}
+\begin{frame}{Code::Blocks - installation}
 \begin{itemize}
-  \item Како да го најдеме и инсталираме Code::Blocks
-  \item Code::Blocks е \textbf{слободен софтвер} и може да се најде
-  на\linebreak
+  \item How to find and install Code::Blocks
+  \item Code::Blocks is \textbf{free software} and can be find \linebreak
   \href{http://www.codeblocks.org/downloads}{http://www.codeblocks.org/downloads}
-  \item Во централниот дел на страната има три линка: \textbf{Download the binary release}, Download the source code и Retrieve source code from SVN
-  \item За наједноставна инсталација се препорачува да се избере првиот линк -
-  \textbf{Download the binary release},
+  \item In the central part of the page, there are three links:
+  \textbf{Download the binary release}, Download the source code и Retrieve source code from SVN
+  \item The first link is recommended for most simple installation
+  - \textbf{Download the binary release},
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Code::Blocks – инсталација (2)}
+\begin{frame}{Code::Blocks – installation (2)}
 \begin{itemize}
-  \item За почетниците се препорачува да ја симнат верзијата што во нејзе
-  вклучува \textbf{MinGW} setup
+  \item For begginers is recommended the version that includes \textbf{MinGW} setup
     \begin{itemize}
-  \item моментално тоа е линкот \textbf{codeblocks-10.05mingw-setup.exe} кој е наменет за
-  корисниците на сите \textbf{Windows} оперативни системи
-  \item Со клик на изворот Sourceforge.net се отвора нова страницата која по
-  истекот на 5 секунди сама ќе ви понуди опција да ја зачувате датотеката на од вас избрана локација
-  \item По зачувувањето на датотеката следете ги инструкциите за инсталирање
+  \item at the moment that is the link \textbf{codeblocks-10.05mingw-setup.exe}
+  which supports all \textbf{Windows} operating systems
+  \item By clicking the source Sourceforge.net opens up a new page, and after 5
+  seconds the page will show you option to save the file in some location
+  \item After saving the file follow the installation instructions
     \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Code::Blocks – главен прозорец}
+\begin{frame}{Code::Blocks – main window}
 \begin{center}
 \includegraphics[scale=0.26]{images/cb_main}
 \end{center}
 \end{frame}
 
-\begin{frame}{Елементи на главниот прозорец}
+\begin{frame}{Elements of the main window}
 \begin{itemize}
-  \item Лента со менија
+  \item Menu strip
     \begin{itemize}
-      \item лентата со менија се наоѓа во најгорниот дел на прозорецот, веднаш под неговиот насловот 
-      \item Во неа се наоѓаат менијата File, Edit, View, Search, Project, Build,
-      Debug, wxSmith, Tools, Plugins, Settings, Help
+      \item Menu strip is in to top left corner of the window, right
+      bellow the title
+      \item There can be found menues File, Edit,
+      View, Search, Project, Build, Debug, wxSmith, Tools, Plugins, Settings, Help
     \end{itemize}
-    \item Лента со алатки
+    \item Toolstrip
     \begin{itemize}
-      \item лентите со алатки (копчиња за стартување на најчесто користените
-      команди на околината) се наоѓаат непосредно под лентата со паѓачки менија
+      \item Toolstrip (buttons for starting most often used commands) are just
+      bellow the menu strip
     \end{itemize}
-    \item Работна површина
+    \item Workspace
     \begin{itemize}
-      \item Потпрозорец за уредувачот на текст
-      \item Прозорец за соопштенија.
-      \item Прозорец за организација на работата на програмата
+      \item Text editor
+      \item Info window for logs \& others
+      \item Window for management
     \end{itemize}   
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Програмирање во C со Code::Blocks}{Креирање проект}
+\begin{frame}{Programming in C with Code::Blocks}{Creating project}
 \begin{enumerate}
-  \item Стартувајте CodeBlocks
+  \item Start CodeBlocks
   \item File -> New -> Project -> Empty Project -> Go 
 \end{enumerate}
 \begin{center}
@@ -888,26 +841,25 @@ combined in order to simplify the development process
 \end{center}
 \end{frame}
 
-\begin{frame}{Програмирање во C со Code::Blocks}{Креирање проект}
+\begin{frame}{Programming in C with Code::Blocks}{Creating project}
 \begin{enumerate}
 \setcounter{enumi}{2}
-  \item Одберете  GNU GCC Compiler
-  \item Изберете ги следните 2 опции ако сакате да креирате “debug” и “release”
-  configuration
+  \item Choose  GNU GCC Compiler
+  \item Select the next 2 options if you want to create ``debug'' and ``release'' configuration
 \end{enumerate}
 \begin{center}
 \includegraphics[scale=0.3]{images/cb_compiler}
 \end{center}
 \end{frame}
 
-\begin{frame}{Додавање на изворна датотека}
+\begin{frame}{Adding source file}
 \begin{enumerate}
 \setcounter{enumi}{4}
-  \item Додадете изворна датотека во проектот: File -> New -> File -> C/C++
-  Source
-  \item Одберете C како програмски јазик 
-  \item Внесете го името на датотеката со полната патека и не заборавајте да го
-  вклучите  "Add file to active project"
+  \item Add source file in the project:
+  File -> New -> File -> C/C++ Source
+  \item Choose C as programming language 
+  \item Enter the file name with the full path, and don't forget to check ``Add
+  file to active project''
 \end{enumerate}
 \begin{center}
 \includegraphics[scale=0.25]{images/cb_source}
@@ -915,12 +867,12 @@ combined in order to simplify the development process
 \end{center}
 \end{frame}
 
-\begin{frame}{Програмирање}
+\begin{frame}{Programming}
 \begin{itemize}
-  \item За секој проект може да се постават следните опции "Project  Build Options..
-Compiler Flags"
-  \item За изградба на проектот (build) притиснете Ctrl + F9 
-  \item За извршување на проектот притиснете Ctrl + F10
+  \item For each project following options can be checked ``Project Build
+  Options.. Compiler Flags''
+  \item To build the project press Ctrl + F9
+  \item To execute the project press Ctrl + F10
 \end{itemize}
 \begin{center}
 \includegraphics[scale=0.25]{images/cb_run}
@@ -928,54 +880,53 @@ Compiler Flags"
 \end{center}
 \end{frame}
 
-\begin{frame}{Задачи за дома}
+\begin{frame}{Homework}
 \begin{itemize}
-  \item Во продолжение се наведени неколку задачи кои би требало да се обидете
-  да ги изработите дома
-  \item Со нивна изработка ќе бидете подготвени за успешна работа на
-  претстојните лабораториски вежби
+  \item In the next section are given some example problems that you should
+  try to complete at home
+  \item so you can be ready for next excersises
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Задача 1}
-Обидете се да креирате нов проект со една .с датотека и во неа внесете го
-текстот на следнава програма:
+\begin{frame}[fragile]{Problem 1}
+Try to create new project with one \texttt{.с} file with the following source
+code:
 \begin{lstlisting}
 #include <stdio.h>
 
 int main() {
-    printf("Zdravo, kako si?\n");
+    printf("Hello, how are doing?\n");
     return 0;
 }
 \end{lstlisting}
 
 \end{frame}
 
-\begin{frame}{Задача 1}
+\begin{frame}{Problem 1}
 \begin{itemize}
-  \item Извршете ја програмата
+  \item Execute the program
 \begin{itemize}
-  \item Што добивате како резултат?
+  \item What result do you get?
 \end{itemize}
-  \item Доколку сте направиле грешка при пишувањето на текстот поправете и
-  извршете уште еднаш. 
-  \item Направете намерно некоја грешка во текстот. Извршете повторно!
+  \item If you made some errors during writing the code, try to find,
+  correct them and execute again.
+  \item Make some errors, intentionally. Execute again!
 \begin{itemize}
-  \item Што се случува сега?
+  \item What's happening now?
 \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Задача 2}
+\begin{frame}[fragile]{Problem 2}
 \definecolor{light-gray}{gray}{0.90}
-Во текстот на програмата додадете го означениот ред:
+In the text of te program add the following line:
 \begin{lstlisting}
 #include <stdio.h>
 int main() {
-    printf("Zdravo, kako si?\n");
-    printf("Neshto ne ti se pravi muabet?\n");
+    printf("Hello, how are you doing?\n");
+    printf("So, you are not much of a talker...\n"); 
     return 0;
 }
 \end{lstlisting}
-Кој е резултатот од извршувањето сега?
+What is the result now?
 \end{frame}

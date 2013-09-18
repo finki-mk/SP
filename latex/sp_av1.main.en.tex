@@ -1,0 +1,981 @@
+
+\section{Introduction to Programming}
+
+\begin{frame}{Programming (1)}
+\begin{itemize}
+\item Executable programs are containing only \textbf{zeros and ones}, because
+that is the only language that computer understands
+\item Programmers write the programs in human readable
+languages, called \textbf{programming languages}
+\item Program written in programming language is called a \textbf{source code}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Programming (2)}
+\begin{itemize}
+  \item Usually for writing source code programmers use \textbf{development
+  environments}
+  \item The code is written in text editor
+  \item Then the code is (\textbf{compiled})
+  \item At the end we have \textbf{executable} i.e. program written in machine
+  language (the language of the computer)
+\end{itemize}
+\end{frame}
+
+% Define block styles
+\tikzstyle{block} = [rectangle, draw, fill=blue!20,
+text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+
+\begin{frame}[fragile,shrink=20]{Compiling and executing process }
+
+\begin{center}
+Phase 1 - compiling the source code
+\begin{tikzpicture}[node distance = 3cm, auto]
+    % Place nodes
+    \node [block] (compiler) {Compiler};
+    \node [block, below of=compiler, node distance=2cm] (source) {Source code}; 
+    \node [block, right of=compiler] (computer) {Computer};
+    \node [block, right of=computer] (executable) {Executable (in memory)};
+    % Draw edges
+    \path [line] (compiler) -> node {} (computer);
+    \path [line] (source) -| node {} (computer);
+    \path [line] (computer) -> node {} (executable);
+\end{tikzpicture}
+\end{center}
+\begin{center}
+Phase 2 - execution
+\begin{tikzpicture}[node distance = 3cm, auto]
+    % Place nodes
+    \node [block] (program) {Executable (in memory)};
+    \node [block, below of=program] (data) {Input data};
+    \node [block, right of=program] (computer) {Computer};
+    \node [block, text width=3cm, right of=computer] (executable) {Execution
+    result};
+    % Draw edges
+    \path [line] (program) -> node {} (computer);
+    \path [line] (data) -| node {} (computer);
+    \path [line] (computer) -> node {} (executable);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Introduction to C programming language}
+\begin{itemize}
+\item Developed in Bell laboratories in period from 1969 to 1973 by Dennis
+Ritchie
+\item One of the most used general purpose programming languages of all time
+\item Has big influence in origins and development of many other programming
+languages
+    \begin{itemize}
+    \item C++
+    \item Objective C
+    \item PHP
+    \item Java
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{C Syntax}
+
+  \begin{block}{Allowed characters in C:}
+  \begin{verbatim}
+    a-z, A-Z, 0-9 и ~!@#$%^&*()-+={}[]:;'"<>?/._  
+  \end{verbatim}
+  \end{block}
+
+    \begin{alertblock}{Attention!}
+    Compiler is case sensitive (makes difference between uppercase and lowercase)!
+    \end{alertblock}
+
+    All characters in C are forming words that can be:
+    \begin{enumerate}
+    \item Keywords
+    \item Numerical and symbolic constants
+    \item Identifiers
+    \item Strings (char arrays)
+    \item Operators
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}{C Syntax}
+
+    \begin{block}{Set of keywords (32)}
+
+    \begin{tabular}{c c c c}
+        \texttt{auto} & \texttt{double} & \texttt{int} & \texttt{struct} \\
+        \texttt{break} & \texttt{else} & \texttt{long} & \texttt{switch} \\
+        \texttt{case} & \texttt{enum} & \texttt{register} & \texttt{typedef} \\
+        \texttt{char} & \texttt{extern} & \texttt{return} & \texttt{union} \\
+        \texttt{const} & \texttt{float} & \texttt{short} & \texttt{unsigned} \\
+        \texttt{continue} & \texttt{for} & \texttt{signed} & \texttt{void} \\
+        \texttt{default} & \texttt{goto} & \texttt{sizeof} & \texttt{volatile} \\
+        \texttt{go} & \texttt{if} & \texttt{static} & \texttt{while}
+    \end{tabular}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Simple C program structure}
+
+    All the source code written in C is organized in \textbf{functions}
+    \linebreak
+    
+    \begin{columns}[t]
+        \column{.5\textwidth}
+            \begin{block}{Program in C}
+                \begin{lstlisting}
+                int main() {
+                    variable_declaration;
+                    expressions;                    
+                }
+                \end{lstlisting}
+            \end{block}
+        \column{.5\textwidth}
+            \begin{block}{Program in Pascal}
+                \begin{lstlisting}
+                Program program_name;
+                var variable_declaration;
+                begin
+                    expressions;;
+                end.
+                \end{lstlisting}
+            \end{block}
+    \end{columns}
+
+\end{frame}
+
+\begin{frame}[shrink=10]{C Functions}
+    \hfill
+    \begin{block}{\texttt{main}}
+         C main function
+    \end{block}
+    
+    \begin{block}{\texttt{()}}
+         In parentheses we put the input arguments
+    \end{block}
+    
+    \begin{block}{\texttt{int}}
+         Data type of the result it's before the function name
+    \end{block}
+    
+    \begin{block}{\texttt{\{\}}}
+         The function body starts with \{, and ends with \}
+    \end{block}
+
+    \begin{block}{\texttt{;}}
+    All declarations and expressions are separated with \texttt{;}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[fragile]{Comments usage}
+    \begin{itemize}
+        \item Comments are used for extra explanation or documenting the source code
+        \item C supports two types of comments
+        \begin{enumerate}
+            \item one line comments
+            \item multiple line comments
+        \end{enumerate} 
+        
+    \end{itemize}
+        
+    \begin{columns}[t]
+        \column{.5\textwidth}
+            \begin{block}{1. One line comments}
+                \begin{verbatim}
+                // one line comment ;)
+                \end{verbatim}
+            \end{block}
+        \column{.5\textwidth}
+            \begin{block}{2. Multiple line comment}
+                \begin{verbatim}
+                /* Comment
+                   in multiple lines */
+                \end{verbatim}
+            \end{block}
+    \end{columns}       
+
+\end{frame}
+
+\begin{frame}[fragile]{Examples}
+    \begin{exampleblock}{Example 1}
+        \begin{lstlisting}
+            #include <stdio.h>
+            // main function
+            int main() {
+                /* function for print on standard output (screen) */
+                printf("Welcome to FINKI!\n");
+                return 0;
+            }
+        \end{lstlisting}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{C program structure (extended)}
+    \begin{columns}
+        \column{.2\textwidth}
+        \textbf{INCLUDE} section
+        \column{.8\textwidth} contains \texttt{\#include} expressions for
+        including external libraries, for using externally declared functions
+    \end{columns}
+    \hfill
+    \linebreak
+    \begin{columns}
+        \column{.2\textwidth}
+        \textbf{DEFINE} section
+        \column{.8\textwidth} contains \texttt{\#define} expressions for constants and
+        data type declaration
+    \end{columns}   
+    \hfill
+    \linebreak
+    \begin{columns}
+        \column{.2\textwidth}
+        ...
+        \column{.8\textwidth} defining global variables and functions
+    \end{columns}
+    \hfill
+    \linebreak
+    \begin{columns}
+        \column{.2\textwidth}
+        \texttt{int main()}
+        \column{.8\textwidth} main function
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Preprocessor}
+\begin{itemize}
+    \item In C compiling is done by:
+    \begin{itemize}
+        \item preprocessor
+        \item compiler
+    \end{itemize}
+    \item The preprocessor is used with directives
+    \begin{itemize}
+        \item Each directive starts with \texttt{\#}
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Header files}
+\begin{itemize}
+    \item One usage of preprocessor directive is including the ``header files''
+    \begin{itemize}
+        \item Used for declaration of functions and variables in some predefined
+        library
+        \item In order to use the external functions and variables users include the
+        ``header file''
+    \end{itemize}
+    \item The inclusion is done with the preprocessor directive 
+    \texttt{\#include}
+    \begin{itemize}
+        \item Statement \texttt{\#include} causes inclusion a copy of the given file
+        in the place where the statement is written
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{include} variations}
+\begin{itemize}
+    \item There are two types of this directive:
+    \begin{itemize}
+        \item file that is included can be written in double quotes (""),
+        \item or in angle brackets (<>)
+    \end{itemize}
+    \begin{exampleblock}{Example}
+        \begin{verbatim}
+        #include <filename.h>
+        #include "filename.h"
+        \end{verbatim}
+    \end{exampleblock}
+    \item The difference is in the location in which the preprocessor
+    searches the file that should be included
+    \begin{itemize}
+        \item In angle brackets (files from the standard library are used)
+        \item With double quotes (the preprocessor first tries to find
+        the file in the same directory with the C file that should be
+        compiled)
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Variables}
+\begin{itemize}
+\item Variables are symbolic names for places in memory where the
+computer keeps values
+\item Before usage all variables must be \emph{declared}
+\item With each new assignment of value, the old value is discarded
+\end{itemize}
+
+Types of variable declaration:
+\linebreak
+\begin{columns}
+        \column{.32\textwidth} \fbox{Variable type}
+        \column{.32\textwidth} \fbox{Variable name}
+        \column{.05\textwidth} \fbox{ = }
+        \column{.26\textwidth} \fbox{Initial value}
+        \column{.05\textwidth} \fbox{ ; }
+\end{columns}   
+
+\end{frame}
+
+\begin{frame}{Variable types}
+\Large{Variable types in C}
+\linebreak
+\linebreak
+\begin{tabular}{c|c|c}
+\textbf{Numbers} & \textbf{Letters} & \textbf{Decimal}\\
+\hline
+\texttt{int} & \texttt{char} & \texttt{float} \\
+\hline
+\texttt{short} & & \texttt{double} \\
+\hline
+\texttt{long} & &
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Defining variable names}
+\begin{itemize}
+\item In naming variables allowed are:
+\begin{itemize}
+\item lowercase letters from a to z;
+\item uppercase letters from A to Z;
+\item digits from 0 to 9 (can't start with digit);
+\item underscore \_ which is recognized as a letter (not recommended to start
+with \_);
+\end{itemize}
+\end{itemize}
+\begin{alertblock}{Be carefull!}
+\begin{itemize}
+\item mostly names length is up to 32 characters
+\item С is case sensitive!
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]{Examples}
+    \begin{exampleblock}{Example 2}
+        \begin{lstlisting}
+            #include <stdio.h>
+
+            int main() {
+                int a, b, c;
+                a = 5;
+                b = 10;
+                c = a + b;
+                return 0;
+            }
+        \end{lstlisting}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Constants}
+\begin{itemize}
+\item Constants are used for values that are unchanged during the program
+execution
+\item Each constant is from some data type
+\item C has several constant types:
+\begin{itemize}
+\item decimal: \texttt{1, -23, 15}
+\item octal: \texttt{015, 035, 0205}
+\item hexadecimal: \texttt{0x25, 0xA4C}
+\item real: \texttt{3.5F, -2.845F, 1.34e-9}
+\item literals: \texttt{'a', '\_', 'e'}
+\item strings: \texttt{" ", "Koncepti za razvoj na softver"}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Determining constant type}
+\begin{itemize}
+\item Determining the type of varialbes is simple (can be seen from the
+declaration)
+\item Constants aren't declared, so their type is determined by the
+way they are written:
+\begin{itemize}
+\item Numbers that contain "." or "е" are
+{\color{blue}\texttt{double}}:
+\texttt{3.5, 1е-7, -1.29е15}
+\item Instead of using \texttt{double}, to use {\color{blue}{\texttt{float}}}
+constants "F" is added at the end: \texttt{3.5F, 1e-7F}
+\item For {\color{blue}\texttt{long double}} constants "L" is added:
+\texttt{1.29е15L, 1e-7L}
+\item Numbers without ".", "е" or "F" are {\color{blue}\texttt{int}}:
+\texttt{1000, -35}
+\item For {\color{blue}\texttt{long int}} constants "L" is added:
+\texttt{9000000L}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Named constants (1)}
+\Large{Named constants are created by using the keyworkd \texttt{const}}
+\begin{exampleblock}{Example 3}
+        \begin{lstlisting}
+            #include <stdio.h>
+
+            int main() {
+                const long double pi = 3.141592653590L;
+                const int days_in_week = 7;
+                const sunday = 0; /* by default int */
+                days_of_week = 1; /* error */
+            }
+        \end{lstlisting}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Named constants (2)}
+Named constants can be created with the preprocessor, and usually
+uppercase letters are used
+    \begin{exampleblock}{Example 3}
+        \begin{lstlisting}
+            #include <stdio.h>
+            #define PI 3.141592653590L
+            #define DAYS_IN_WEEK 7
+            #define SUNDAY 7        
+            int main() {
+                long double pi = PI;
+                int day = SUNDAY;
+            }
+        \end{lstlisting}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Operators}
+\begin{itemize}
+\item Operators are used in builing expressions, and operations are
+evaluated from left to right by applying the operator priority rules
+\item There are three types of operators
+\begin{itemize}
+\item Arithmetic operators
+\item Relational operators
+\item Logical operators
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Arithmetic operators}
+Usen on numbers (integers or reals)
+\linebreak
+\begin{center}
+\begin{tabular}{c|c}
+\textbf{Operator} & \textbf{Operation}\\
+\hline
+\texttt{+} & Addition \\
+\texttt{-} & Substruction \\
+\texttt{*} & Multiplication \\
+\texttt{/} & Division \\
+\texttt{\%} & Division by modulo
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Relational operators}
+Applyed on any comparable data types, and the result is 0 (false) or 1 (true).
+\begin{center}
+\begin{tabular}{c|c}
+\textbf{Operator} & \textbf{Meaning}\\
+\hline
+\texttt{<} & Less than \\
+\texttt{<=} & Less than or equal \\
+\texttt{>} & Greater than \\
+\texttt{>=} & Greater than or equal \\
+\texttt{==} & equal \\
+\texttt{!=} & not equal
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Logical operators}
+Used mostly in combination with relational operators in forming complicated
+logical expressions, which again results in 0 or 1
+\linebreak
+\begin{center}
+\begin{tabular}{c|c}
+\textbf{Operator} & \textbf{Operation}\\
+\hline
+\texttt{\&\&} & Logical AND \\
+\texttt{||} & Logical OR \\
+\texttt{!} & Negation
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Additional operators}
+\begin{itemize}
+\item Assignment operator =
+\item Increment and decrement operators
+\begin{verbatim}
+++, --
+\end{verbatim}
+\item Unary usage of operators + and –
+  \begin{verbatim}
+    X = + Y;
+    X = - Y;
+  \end{verbatim}
+\item Double operators
+\begin{itemize}
+\item Combination of assignment operator and other operator
+\begin{verbatim}
+(+=, -=, *=, /=, %=)
+\end{verbatim}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Assignment operator =}
+\begin{itemize}
+\item All expressions have values, even those containing =
+\item Value of such expression is the value of the expression of the
+right side
+\item Because of that, this assignment is possible:
+\end{itemize}
+\begin{verbatim}
+    x = (y = 10) * (z = 5);
+    x = y = z = 20;
+\end{verbatim}
+\end{frame} 
+
+\begin{frame}[fragile,shrink=5]{Double operators}
+\begin{block}{Operator +=}
+\begin{verbatim}
+a += 5; // a = a + 5;
+a += b * c; // a = a + b * c;
+\end{verbatim}
+\end{block}
+\begin{block}{Operator -=}
+\begin{verbatim}
+a -= 3; // a = a – 3;
+\end{verbatim}
+\end{block}
+\begin{block}{Operator *=}
+\begin{verbatim}
+a *= 3; // a = a * 3;
+\end{verbatim}
+\end{block}
+\begin{block}{Operator /=}
+\begin{verbatim}
+a /= 3; // a = a / 3;
+\end{verbatim}
+\end{block}
+\begin{block}{Operator \%=}
+\begin{verbatim}
+a %= 3; // a = a % 3;
+\end{verbatim}
+\end{block}
+\end{frame} 
+
+\begin{frame}[fragile]{Using variables and operators}
+    \begin{exampleblock}{Example 4}
+        \begin{lstlisting}
+            #include <stdio.h>  
+            int main() {
+                int a;
+                float p;
+                p = 1.0 / 2.0; /* p = 0.5 */
+                a = 5 / 2;     /* a = 2   */
+                p = 1 / 2 + 1 / 8; /* p = 0; */
+                p = 3.5 / 2.8; /* p = 1.25 */
+                a = p; /* a = 1 */
+                a = a + 1; /* a = 2; */
+                return 0;       
+            }
+        \end{lstlisting}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Printing to the standard output}
+\begin{itemize}
+\item In C doesn't exist printing command
+\item Already defined function from the input/output library \texttt{stdio.h} is
+used (\textbf{st}andar\textbf{d} \textbf{i}nput/\textbf{o}utput)
+\large{\texttt{\#include <stdio.h>}}
+\item The function used is:
+\end{itemize}
+\begin{verbatim}
+int printf(control_array, list_of_arguments)
+\end{verbatim}
+\begin{itemize}
+\item The control array contains any string, formating and printing arguments
+with leading \% or special characters with leading \textbackslash.
+\item Characters for formating are determined from the data type that
+should be printed.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Formatting characters}
+\begin{scriptsize}
+\begin{tabular}{|c|l|}
+\hline \textbf{Character} & \textbf{Explanation} \\ 
+\hline \texttt{\%d} & integers \\ 
+\hline \texttt{\%i} & integers \\ 
+\hline \texttt{\%c} & single character \\ 
+\hline \texttt{\%s} & char arrays \\ 
+\hline \texttt{\%e} & real number in technical foramat (е) \\
+\hline \texttt{\%E} & real number in technical foramat (Е) \\ 
+\hline \texttt{\%d} & real number in decimal foramat \\ 
+\hline \texttt{\%f} & real number in shorter from the foramats \%е и \%f \\ 
+\hline \texttt{\%g} & real number in shorter from the foramats \%Е и \%f \\  
+\hline \texttt{\%u} & unsigned integer \\ 
+\hline \texttt{\%o} & unsigned integer in octal \\ 
+\hline \texttt{\%x} & unsigned hexadecimal integer \\
+\hline \texttt{\%X} & unsigned hexadecimal integer \\ 
+\hline \texttt{\%p} & pointer \\ 
+\hline \texttt{\%n} & number of printed characters \\
+\hline \texttt{\%\%} & printing the character \% \\ 
+\hline 
+\end{tabular} 
+\end{scriptsize}
+\end{frame}
+
+\begin{frame}[fragile]{Function \texttt{printf} usage}
+    \begin{exampleblock}{Example 5}
+        \begin{lstlisting}
+        #include <stdio.h>
+        int main() {
+           printf(" length is %d letters.\n", printf("Makedonija"));
+           return 0;
+        }
+        \end{lstlisting}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 1}
+    Write a program that will compute the value of the mathematical expression:
+    $ x = \frac{3}{2} + (5 - \frac{46 * 5}{12})$
+    \begin{exampleblock}{Solution}
+        \begin{lstlisting}
+        #include <stdio.h>
+        int main() {
+           float x = 3.0 / 2 + (5 - 46 * 5 / 12.0);
+           printf("x = %.2f\n", x);
+           return 0;
+        }
+        \end{lstlisting}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 2}
+Write a program that for a given value of $ x $ (with the declaration
+assignment) will compute and print on standard output $ x^2 $.
+    \begin{exampleblock}{Solution}
+        \begin{lstlisting}
+        #include <stdio.h>
+        int main() {
+           int x = 7;
+           printf("Number %d squared is: %d\n", x, x * x);
+           return 0;
+        }
+        \end{lstlisting}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 3}
+Write a program that for a given sides of one triangle, it will print the
+perimeter and area of the square (values are \texttt{a=5, b=7.5,
+c=10.2}).
+    \begin{exampleblock}{Solution}
+        \begin{lstlisting}
+        #include <stdio.h>
+        int main() {
+           float a = 5;
+           float b = 7.5;
+           float c = 10.2;
+           float L = a + b + c;
+           float s = L / 2;
+           float P = s * (s - a) * (s - b) * (s - c);
+           printf("Perimeter is: %.2f\n", L);
+           printf("Area is: %.2f\n", P);
+           return 0;
+        }
+        \end{lstlisting}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 4}
+Write a program for computing the arithmetic mean of the numbers 3, 5 and 12.
+    \begin{exampleblock}{Solution}
+        \begin{lstlisting}
+        #include <stdio.h>
+        int main() {
+           int a = 3, b = 5, c = 12;
+           float am = a + b + c / 3.0;
+           printf("Arithmetic mean is: %.2f\n", as);
+           return 0;
+        }
+        \end{lstlisting}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 5}
+Write a program that will print the remainder from the division of number 19
+with 2, 3, 5 and 8.
+    \begin{exampleblock}{Solution}
+        \begin{lstlisting}
+        #include <stdio.h>
+        int main() {
+           int a = 19;
+           printf("Remainder from division of %d with 2: %d\n", a, a %
+           % 2);
+           printf("Remainder from division of %d with 3: %d\n", a, a % 3);
+           printf("Remainder from division of %d with 5: %d\n", a, a % 5);
+           printf("Remainder from division of %d with 8: %d\n", a, a % 8);
+           return 0;
+        }
+        \end{lstlisting}
+    \end{exampleblock}
+\end{frame}
+
+\section{Integrated development environments (IDE)}
+
+\begin{frame}{Integrated development environments elements}
+Integrated development environment is mix of multiple programs, that are
+combined in order to simplify the development process
+\begin{itemize}
+  \item text editor
+  \item compiler
+  \item debugger
+  \item external library integration
+  \item linker
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Текст уредувач (text editor)}
+\begin{itemize}
+  \item Програма која овозможува внесување и уредување на текстот на изворната
+  програма
+  \item Овозможува зачувување на програми и вчитување на веќе напишани програми
+  за нивно повторно уредување 
+  \item Означување на клучните зборови и команди во изворната програма (syntax
+  highlighting)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Преведувач (compiler)}
+\begin{itemize}
+  \item Ја преобразува (преведува) изворната програма од јазикот за програмирање
+  во кој е напишана во јазик разбирлив за компјутерот
+  \item Се разликуваат два вида преведувачи: \textbf{интерпретери} и \textbf{компајлери} 
+  \item Интерпретер е преведувач кој ја \emph{обработува одделно секоја команда}, ја
+  проверува за грешки и ја извршува, по што поминува на следната команда  итн.
+  \item Компајлер е преведувач кој ја \emph{обработува целата програма}, ја проверува
+  за грешки и ја преведува, по што се добива извршната програма.
+  \begin{itemize}
+  \item Така добиената извршна програма може да се извршува
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Дебагер (debugger)}
+\begin{itemize}
+  \item Компајлерите и интерпретерите ги откриваат грешките (синтаксички) во
+  програмата поради не правилно користење на јазикот за програмирање
+  \item Друг вид на грешки се логичките грешки
+  \begin{itemize}
+  \item Програмата не го прави тоа за кое што е наменета 
+  \item Се откриваат многу тешко
+  \end{itemize}
+  \item Дебагер е програма која помага при барање на логичките грешки
+  \begin{itemize}
+  \item Овозможува следење на извршувањето на програмата чекор по чекор
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Интеграција на библиотеки со функции}
+\begin{itemize}
+  \item Интегрирање и користење на претходно создадени и проверени модули (потпрограми), уште наречени и функции
+  \item Ваквиот начин на организација на програмите има голем број на предности
+  \item Повторно искористување на готови функционалности
+  \item Пример библиотеки
+  \begin{itemize}
+    \item За управување со стандардниот влез и излез
+    \item За стандардни математички операции 
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Поврзувач (linker)}
+\begin{itemize}
+  \item Понекогаш програмата е премногу голема за да се напише во една датотека
+  \begin{itemize}
+    \item различните делови може да се пишуваат од различни програмери.
+    \item некои делови од дадена програма можат да бидат искористени и во друга програма 
+    \item Одделно компајлираните делови е неопходно да бидат обединети во една
+    цела извршна програма со помош на \textbf{поврзувачот}
+    \item Друга улога на поврзувачот е да ги „сврзе“ со програмата потребните
+     библиотеки со стандардните функции
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Околини за развој}{(ntegrated Development Environment - IDE}
+\begin{itemize}
+  \item Сите овие елементи на околината за развој се обединуваат (интегрираат)
+  во т.н. интегрирани околини за развој
+  \item Пример за IDE е околината која ќе се користи на овој курс, Code::Blocks
+\end{itemize}
+\begin{center}
+\includegraphics[scale=0.5]{images/cb_logo}
+\end{center}
+\end{frame}
+
+\section{Code::Blocks - инсталација}
+\begin{frame}{Code::Blocks - инсталација}
+\begin{itemize}
+  \item Како да го најдеме и инсталираме Code::Blocks
+  \item Code::Blocks е \textbf{слободен софтвер} и може да се најде
+  на\linebreak
+  \href{http://www.codeblocks.org/downloads}{http://www.codeblocks.org/downloads}
+  \item Во централниот дел на страната има три линка: \textbf{Download the binary release}, Download the source code и Retrieve source code from SVN
+  \item За наједноставна инсталација се препорачува да се избере првиот линк -
+  \textbf{Download the binary release},
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Code::Blocks – инсталација (2)}
+\begin{itemize}
+  \item За почетниците се препорачува да ја симнат верзијата што во нејзе
+  вклучува \textbf{MinGW} setup
+    \begin{itemize}
+  \item моментално тоа е линкот \textbf{codeblocks-10.05mingw-setup.exe} кој е наменет за
+  корисниците на сите \textbf{Windows} оперативни системи
+  \item Со клик на изворот Sourceforge.net се отвора нова страницата која по
+  истекот на 5 секунди сама ќе ви понуди опција да ја зачувате датотеката на од вас избрана локација
+  \item По зачувувањето на датотеката следете ги инструкциите за инсталирање
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Code::Blocks – главен прозорец}
+\begin{center}
+\includegraphics[scale=0.26]{images/cb_main}
+\end{center}
+\end{frame}
+
+\begin{frame}{Елементи на главниот прозорец}
+\begin{itemize}
+  \item Лента со менија
+    \begin{itemize}
+      \item лентата со менија се наоѓа во најгорниот дел на прозорецот, веднаш под неговиот насловот 
+      \item Во неа се наоѓаат менијата File, Edit, View, Search, Project, Build,
+      Debug, wxSmith, Tools, Plugins, Settings, Help
+    \end{itemize}
+    \item Лента со алатки
+    \begin{itemize}
+      \item лентите со алатки (копчиња за стартување на најчесто користените
+      команди на околината) се наоѓаат непосредно под лентата со паѓачки менија
+    \end{itemize}
+    \item Работна површина
+    \begin{itemize}
+      \item Потпрозорец за уредувачот на текст
+      \item Прозорец за соопштенија.
+      \item Прозорец за организација на работата на програмата
+    \end{itemize}   
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Програмирање во C со Code::Blocks}{Креирање проект}
+\begin{enumerate}
+  \item Стартувајте CodeBlocks
+  \item File -> New -> Project -> Empty Project -> Go 
+\end{enumerate}
+\begin{center}
+\includegraphics[scale=0.3]{images/cb_new}
+\end{center}
+\end{frame}
+
+\begin{frame}{Програмирање во C со Code::Blocks}{Креирање проект}
+\begin{enumerate}
+\setcounter{enumi}{2}
+  \item Одберете  GNU GCC Compiler
+  \item Изберете ги следните 2 опции ако сакате да креирате “debug” и “release”
+  configuration
+\end{enumerate}
+\begin{center}
+\includegraphics[scale=0.3]{images/cb_compiler}
+\end{center}
+\end{frame}
+
+\begin{frame}{Додавање на изворна датотека}
+\begin{enumerate}
+\setcounter{enumi}{4}
+  \item Додадете изворна датотека во проектот: File -> New -> File -> C/C++
+  Source
+  \item Одберете C како програмски јазик 
+  \item Внесете го името на датотеката со полната патека и не заборавајте да го
+  вклучите  "Add file to active project"
+\end{enumerate}
+\begin{center}
+\includegraphics[scale=0.25]{images/cb_source}
+\includegraphics[scale=0.4]{images/cb_include}
+\end{center}
+\end{frame}
+
+\begin{frame}{Програмирање}
+\begin{itemize}
+  \item За секој проект може да се постават следните опции "Project  Build Options..
+Compiler Flags"
+  \item За изградба на проектот (build) притиснете Ctrl + F9 
+  \item За извршување на проектот притиснете Ctrl + F10
+\end{itemize}
+\begin{center}
+\includegraphics[scale=0.25]{images/cb_run}
+\includegraphics[scale=0.1]{images/cb_flags}
+\end{center}
+\end{frame}
+
+\begin{frame}{Задачи за дома}
+\begin{itemize}
+  \item Во продолжение се наведени неколку задачи кои би требало да се обидете
+  да ги изработите дома
+  \item Со нивна изработка ќе бидете подготвени за успешна работа на
+  претстојните лабораториски вежби
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 1}
+Обидете се да креирате нов проект со една .с датотека и во неа внесете го
+текстот на следнава програма:
+\begin{lstlisting}
+#include <stdio.h>
+
+int main() {
+    printf("Zdravo, kako si?\n");
+    return 0;
+}
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}{Задача 1}
+\begin{itemize}
+  \item Извршете ја програмата
+\begin{itemize}
+  \item Што добивате како резултат?
+\end{itemize}
+  \item Доколку сте направиле грешка при пишувањето на текстот поправете и
+  извршете уште еднаш. 
+  \item Направете намерно некоја грешка во текстот. Извршете повторно!
+\begin{itemize}
+  \item Што се случува сега?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}
+\definecolor{light-gray}{gray}{0.90}
+Во текстот на програмата додадете го означениот ред:
+\begin{lstlisting}
+#include <stdio.h>
+int main() {
+    printf("Zdravo, kako si?\n");
+    printf("Neshto ne ti se pravi muabet?\n");
+    return 0;
+}
+\end{lstlisting}
+Кој е резултатот од извршувањето сега?
+\end{frame}

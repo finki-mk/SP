@@ -4,11 +4,11 @@ int main() {
     printf("Vnesete dva broja i operator vo format\n");
     printf(" broj1 operator broj2\n");
     scanf("%f %c %f", &br1, &op, &br2);
-    if(op == '*') rezultat = br1 * br2;
-    else if(op == '+') rezultat = br1 + br2;
-    else if(op == '-') rezultat = br1 - br2;
-    else if(op == '/') {
-        if(br2) rezultat = br1 / br2;
+    if (op == '*') rezultat = br1 * br2;
+    else if (op == '+') rezultat = br1 + br2;
+    else if (op == '-') rezultat = br1 - br2;
+    else if (op == '/') {
+        if (br2) rezultat = br1 / br2;
         else {
             printf("Ne se deli so 0!\n");
             return 0;

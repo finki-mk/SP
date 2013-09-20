@@ -1,0 +1,182 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Reminding From Lecture}
+\begin{itemize}
+	\item Operators
+	\begin{itemize}
+		\item Arithmetic
+		\item Relational
+		\item Logical
+	\end{itemize}
+	\item Printing to standard output
+	\texttt{printf()}
+	\item Reading from standard input
+	\texttt{scanf()}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Reading from standard input in C}{Function
+\texttt{scanf}}
+	\begin{verbatim}
+	int scanf(control_char_array, arg1, arg2, ..., argn)	
+	\end{verbatim}	
+	\begin{itemize}
+	\item The control char array actualy contains nessesry information
+	for formatting
+	\item arg1, arg2, ..., argn are arguments for individual data type
+	\end{itemize}	 
+\end{frame}
+
+\begin{frame}[fragile]{Using \texttt{scanf}}
+
+	\begin{exampleblock}{Example 1}
+	\begin{lstlisting}
+	#include <stdio.h>
+	int main() {
+	    char c;
+	    int number;
+	    float price;
+	    scanf("%c%d%f", &c, &number, &price);
+	    return 0;
+	}
+	\end{lstlisting}
+	\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}[fragile]{Problem 1}
+Write a program for computing and printing the circle area and perimeter. The
+circle radius is read as decimal number.
+\begin{exampleblock}{Solution}
+\lstinputlisting{src/av2/p1.c}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Problem 2}
+Write a program that reads from standard input two integers and prints their
+sum, difference, product and division remainder.
+	\begin{exampleblock}{Solution}
+		\lstinputlisting{src/av2/p2.c}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 3}
+Write a program that reads uppercase letter from standard input and prints out
+in lowercase.\\ Help: Each character is represented with its ASCII code.\\
+Ex. \texttt{'А' = 65, 'а' = 97}
+	\begin{exampleblock}{Solution}
+		\lstinputlisting{src/av2/p3.c}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 4}
+\begin{scriptsize}
+Write a program that reads a character from standard input, and prints 1 if it's
+lowercase or 0 if it's uppercase.\\ Help: Use logical and relational
+operators to toest ASCII code of the character.\\
+\textbf{Extra:} Check if the character is digit.
+\end{scriptsize}
+\begin{exampleblock}{Solution}
+	\lstinputlisting{src/av2/p4.c}		
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 5}
+\begin{scriptsize}
+Write a program that reads to integers (x, y) from standard input and prints on
+the standard output the result (z) of the following expression\\ \texttt{z
+= x++ + ---y + (x<y)}\\ What is the value of z for x=1, y=2?
+\end{scriptsize}
+	\begin{exampleblock}{Solution}
+		\lstinputlisting{src/av2/p5.c}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 6}
+Let \texttt{r = (x < y || y < z++)}\\
+	What is the value of r for x=1, y=2, z=3?\\
+	What is the value of z?
+	\begin{exampleblock}{Solution}
+	\texttt{r = 1\\z = 3}
+	\end{exampleblock}
+Let: \texttt{r = (x > y \&\& y < z++)}\\
+	What is the value of r for x=1, y=2, z=3?\\
+	What is the value of z?
+	\begin{exampleblock}{Solution}
+	\texttt{r = 0\\z = 3}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 7}
+Let:
+\begin{lstlisting}
+	int x, y;
+	y = scanf("%d", &x);
+\end{lstlisting}
+What is the value of y for x=5?
+	\begin{exampleblock}{Solution}
+	\texttt{y = 1}
+	\end{exampleblock}
+Let:
+\begin{lstlisting}
+	int x, y, z;
+	z = scanf("%d%d", &x, &y);
+\end{lstlisting}
+	What is the value of z for x=5, y=6?
+	\begin{exampleblock}{Solution}
+	\texttt{z = 2}
+	\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Problem 8}
+Да се напише програма каде од стандарден влез ќе се прочита цена на производ, а
+потоа ќе ја испечати неговата цена со пресметан ДДВ.\\ Помош: ДДВ е 18\% од почетната цена
+	\begin{exampleblock}{Solution}
+		\lstinputlisting{src/av2/p8.c}
+	\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Problem 9}
+Да се напише програма каде од стандарден влез се чита цена на производ, број на
+рати на кои се исплаќа и камата (каматата е број изразен во проценти од 0 до 100). 
+Програмата треба да го испечати износот на ратата и вкупната сума што ќе се исплати за производот.\\
+Помош: Пресметајте ја целата сума, па потоа ратата.
+\end{frame}
+
+\begin{frame}[fragile]{Problem 9}{Solution}
+	\lstinputlisting{src/av2/p9.c}
+\end{frame}
+
+
+\begin{frame}[fragile]{Problem 10}
+Да се напише програма каде од стандарден влез се чита еден трицифрен цел број.
+Програмата ќе ја испечати најзначајната и најмалку значајната цифра од бројот\\ 
+Пример: Ако се внесе следниот бројот 795, програмата ќе испечати:\\
+\texttt{	Najznacajna cifra e 7, a najmalku znacajna e 5.}\\
+Помош: Искористете целобројно делење и остаток од делење.
+\end{frame}
+
+\begin{frame}[fragile]{Problem 10}{Solution}
+\lstinputlisting{src/av2/p10.c}
+\end{frame}
+
+
+\begin{frame}[fragile]{Problem 11}
+Да се напише програма каде од стандарден влез се вчитува датумот на раѓање во
+формат (\texttt{ddmmgggg}). Програмата стандарден излез треба да го испечати
+денот и месецот на раѓање.\\ Пример: Ако се внесе следниот број
+\texttt{18091992}, програмата ќе испечати: \texttt{18.09}\\ Помош: Искористете целобројно делење и остаток од делење.
+\end{frame}
+
+\begin{frame}[fragile]{Problem 11}{Solution}
+	\begin{exampleblock}{Solution}
+	\lstinputlisting{src/av2/p11.c}	
+	\end{exampleblock}
+	Бонус: Problemта може да се реши и со употреба на \texttt{scanf("\%2d\%2d", \&den, \&mesec)}
+\end{frame}

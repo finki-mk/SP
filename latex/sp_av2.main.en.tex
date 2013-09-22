@@ -134,8 +134,9 @@ Let:
 
 
 \begin{frame}[fragile]{Problem 8}
-Да се напише програма каде од стандарден влез ќе се прочита цена на производ, а
-потоа ќе ја испечати неговата цена со пресметан ДДВ.\\ Помош: ДДВ е 18\% од почетната цена
+Write a program that reads from SI product price and then will print the
+price with calculated sales tax.\\ Help: Sales tax is 18\% of the starting
+price.
 	\begin{exampleblock}{Solution}
 		\lstinputlisting{src/av2/p8.c}
 	\end{exampleblock}
@@ -143,10 +144,10 @@ Let:
 
 
 \begin{frame}[fragile]{Problem 9}
-Да се напише програма каде од стандарден влез се чита цена на производ, број на
-рати на кои се исплаќа и камата (каматата е број изразен во проценти од 0 до 100). 
-Програмата треба да го испечати износот на ратата и вкупната сума што ќе се исплати за производот.\\
-Помош: Пресметајте ја целата сума, па потоа ратата.
+Write a program that reads from SI product price, payments number and interest
+rate (interest rate is percentage number from 0 to 100). The program should
+print the payments value and the total sum for the product.\\
+Help: First calculate the total sum, then the payment.
 \end{frame}
 
 \begin{frame}[fragile]{Problem 9}{Solution}
@@ -155,11 +156,11 @@ Let:
 
 
 \begin{frame}[fragile]{Problem 10}
-Да се напише програма каде од стандарден влез се чита еден трицифрен цел број.
-Програмата ќе ја испечати најзначајната и најмалку значајната цифра од бројот\\ 
-Пример: Ако се внесе следниот бројот 795, програмата ќе испечати:\\
-\texttt{	Najznacajna cifra e 7, a najmalku znacajna e 5.}\\
-Помош: Искористете целобројно делење и остаток од делење.
+Write a program that reads from SI one tri digit number. The program should
+print the most and least significant digit.\\ 
+Example: For the number 795, the output should be:\\
+\texttt{	Most significant digit is 7, and least significant is 5.}\\
+Help: Use division and modulo operation.
 \end{frame}
 
 \begin{frame}[fragile]{Problem 10}{Solution}
@@ -168,15 +169,16 @@ Let:
 
 
 \begin{frame}[fragile]{Problem 11}
-Да се напише програма каде од стандарден влез се вчитува датумот на раѓање во
-формат (\texttt{ddmmgggg}). Програмата стандарден излез треба да го испечати
-денот и месецот на раѓање.\\ Пример: Ако се внесе следниот број
-\texttt{18091992}, програмата ќе испечати: \texttt{18.09}\\ Помош: Искористете целобројно делење и остаток од делење.
+Write a program that reads from SI the birth date in format (\texttt{ddmmgggg}).
+The program should print the day and month of birth.\\
+Example: For the following number \texttt{18091992}, the program should print:
+\texttt{18.09}\\ Help: Use division and module operators.
 \end{frame}
 
 \begin{frame}[fragile]{Problem 11}{Solution}
 	\begin{exampleblock}{Solution}
 	\lstinputlisting{src/av2/p11.c}	
 	\end{exampleblock}
-	Бонус: Problemта може да се реши и со употреба на \texttt{scanf("\%2d\%2d", \&den, \&mesec)}
+	Extra: The problem can be solved by using
+	\texttt{scanf("\%2d\%2d", \&den, \&mesec)}
 \end{frame}

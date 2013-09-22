@@ -1,0 +1,217 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{Потсетување од предавања}
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+    
+\begin{center}
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+	\node [decision] (decide) {Услов};
+    \node [block, left of=decide, below of=decide] (true) {Наредби за точен услов};
+    \node [block, right of=decide, below of=decide] (false) {Наредби за неточен услов};
+    % Draw edges
+    \path [line] (decide) -| node [near start] {true} (true);
+    \path [line] (decide) -| node [near start] {false} (false);
+\end{tikzpicture}
+\begin{lstlisting}
+if(uslov) {
+    naredbi_za_vistinit_uslov;
+} else {
+    naredbi_za_nevistinit_uslov;
+}
+\end{lstlisting}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Употреба на \texttt{if}}
+	\begin{exampleblock}{Пример 1}
+	\begin{lstlisting}
+	#include <stdio.h> 
+	int main() { 
+	    int i;
+	    printf("Vnesete cel broj\n");
+	    scanf("%d", &i);
+	    if(i > 0) 
+	        printf("Vnesen e pozitiven broj\n");
+	    if(i < 0)
+	        printf("Vnesen e negativen broj\n"); 
+	    if(i == 0)
+	        printf("Vnesena e nula\n"); 
+	    return 0; 
+	}
+	\end{lstlisting}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Со употреба на \texttt{if-else}}
+
+	\begin{exampleblock}{Пример 2}
+	\begin{lstlisting}
+	#include <stdio.h>
+	int main() {
+	    int i;
+	    printf("Vnesete cel broj\n");
+	    scanf("%d", &i); 
+	    if(i > 0)
+	        printf("Vnesen e pozitiven broj\n");
+	    else if(i < 0)
+	        printf("Vnesen e negativen broj\n"); 
+	    else
+	        printf("Vnesena e nula\n"); 
+	    return 0; 
+	}
+	\end{lstlisting}
+	\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}[fragile]{Едноставни примери}
+Што ќе отпечати?
+\begin{exampleblock}{Пример 3}
+	\begin{lstlisting}
+#include <stdio.h>
+int main() {
+    int m = 5, n = 10;
+    if(m > n)
+        ++m;
+    ++n;
+    printf("m = %d, n = %d\n", m, n);
+    return 0;
+} 
+\end{lstlisting}
+\end{exampleblock}
+\pause
+\vfill
+\texttt{m = 5, n = 11}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задача 1}
+Да се напише програма со која ќе се отпечати максимумот од два броја чии вредности се читаат од тастатура.
+\pause 
+	\begin{exampleblock}{Решение}
+	\lstinputlisting{src/av3/p1.c}
+	\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}
+Да се напише програма која проверува дали дадена година која се вчитува од тастатура е престапна или не и на екран печати соодветна порака.\\
+Пример: \texttt{1976, 2000, 2004, 2008, 2012...}
+\pause
+	\begin{exampleblock}{Решение}
+	\lstinputlisting{src/av3/p2.c}
+	\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задача 3}
+\begin{scriptsize}
+Од тастатура се внесуваат координати на една точка. Да се напише програма со која ќе се испечати на кој квадрант или оска припаѓа внесената точка. Ако станува збор за точка која лежи на координатниот почеток, да се испечати соодветна порака.
+\end{scriptsize}
+\pause
+	\begin{exampleblock}{Решение 1 дел}
+	\lstinputlisting[lastline=11]{src/av3/p3.c}
+	\end{exampleblock}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Задача 3}{Решение}
+	\begin{exampleblock}{Решение 2 дел}
+	\lstinputlisting[firstline=12]{src/av3/p3.c}
+	\end{exampleblock}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Задача 4}
+Да се напише програма која за внесен број на поени од испит ќе генерира соодветна оценка според следната табела:
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline \textbf{Поени} & \textbf{Оценка} \\ 
+\hline 0 - 50 & 5 \\ 
+\hline 51 - 60 & 6 \\ 
+\hline 61 - 70 & 7 \\ 
+\hline 71 - 80 & 8 \\ 
+\hline 81 - 90 & 9 \\ 
+\hline 91 - 100 & 10 \\ 
+\hline
+\end{tabular} 
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 4}{Решение}
+    \begin{exampleblock}{Решение}
+    \lstinputlisting[lastline=11]{src/av3/p4.c}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 5}
+Да се промени претходната програма, така што покрај оценките ќе се испечатат и знаците + и – во зависност од вредноста на последната цифра на поените:
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline \textbf{последна цифра} & \textbf{печати} \\ 
+\hline 1 - 3 & - \\ 
+\hline 4 - 7 & <prazno mesto> \\ 
+\hline 8 - 0 & + \\ 
+\hline 
+\end{tabular} 
+\end{center}
+Пример: \texttt{81 = 9-, 94 = 10, 68 = 7+}.\\ 
+За оценката 5 не треба да се додава + или –, а за оценката 10 не треба да се додава знакот +.
+\end{frame}
+
+
+\begin{frame}[fragile]{Задача 5}{Решение}
+	\begin{exampleblock}{Решение}
+	\lstinputlisting[firstline=13]{src/av3/p5.c}
+	\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задача 6}
+Да се напише програма која ќе претставува едноставен калкулатор. Во програмата
+се вчитуваат два броја и оператор во \texttt{формат}:
+\begin{center}
+\texttt{broj1 operator broj2}
+\end{center}
+По извршената операција во зависност од операторот, се печати резултатот во формат:
+\begin{center}
+\texttt{broj1 operator broj2 = rezultat}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 6}{Решение}
+	\begin{exampleblock}{Решение}
+	\lstinputlisting{src/av3/p6.c}
+	\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задача 7}
+Од тастатура се внесуваат три броја кои не мора да се сортирани. Внесените
+броеви претставуваат должини на страните на правоаголен триаголник. Да се напише
+програма која што ќе проверува дали може да се конструира триаголник од дадените
+должини, при што ако може, треба да се провери дали истиот е правоаголен и да се
+пресмета неговата плоштина. Во спротивно, треба да се испечатат соодветни
+пораки.
+\end{frame}
+
+
+\begin{frame}[fragile]{Задача 7}{Решение}
+	\begin{exampleblock}{Решение}
+	\lstinputlisting{src/av3/p7.c}
+	\end{exampleblock}
+\end{frame}
+

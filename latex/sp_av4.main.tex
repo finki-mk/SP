@@ -5,69 +5,32 @@
 
 \section{циклуси}
 \begin{frame}[fragile]{Задачa 1а}
-Да се напише програма за пресметување на сумата на сите парни двоцифрени броеви. Добиената сума се печати на екран.
+Да се напише програма за пресметување на сумата на сите парни двоцифрени броеви.
+Добиената сума се печати на екран.
 \pause
 \begin{exampleblock}{Решение}
-	\begin{lstlisting}
-#include <stdio.h> 
-int main () { 
-    int i = 10, suma = 0; 
-    while (i <= 98) { 
-        suma = suma + i; 
-        i+=2; 
-    } 
-    printf("Sumata na site parni dvocifreni broevi e %d\n", suma); 
-    return 0; 
-}
-\end{lstlisting}
+\lstinputlisting{src/av4/p1a.c}
 \end{exampleblock}
 \end{frame}
 
 
 \begin{frame}[fragile]{Задачa 1б}
 \begin{scriptsize}
-Да се напише програма за пресметување на сумата на сите непарни двоцифрени броеви. Програмата ја печати сумата на екран во следниот формат:	\texttt{11 + 13 + 15 + 17 + ... + 97 + 99 = 2475}\\
+Да се напише програма за пресметување на сумата на сите непарни двоцифрени
+броеви. Програмата ја печати сумата на екран во следниот формат: \texttt{11 + 13
++ 15 + 17 + ... + 97 + 99 = 2475}\\
 \textbf{Забелешка: Програмата да се направи без користење на наредбата if}
 \end{scriptsize}
 \pause
 \begin{columns}
 \column{.5\textwidth}
 \begin{exampleblock}{Решение - Верзија 1}
-\begin{lstlisting}
-#include <stdio.h>
-int main () { 
-    int i = 11, suma = 0; 
-    printf("%d", i); 
-    suma = i; 
-    i=i+2; 
-    while (i <= 99){ 
-        printf(" + %d", i); 
-        suma = suma + i; 
-        i+=2; 
-    } 
-    printf(" = %d\n", suma); 
-    return 0; 
-}
-\end{lstlisting}
+\lstinputlisting{src/av4/p1b1.c}
 \end{exampleblock}
 \pause
 \column{.5\textwidth}
 \begin{exampleblock}{Решение - Верзија 2}
-\begin{lstlisting}
-#include <stdio.h> 
-int main () { 
-    int i = 11, suma = 0; 
-    while (i <= 97) { 
-        printf("%d + ", i); 
-        suma = suma + i; 
-        i+=2; 
-    } 
-    printf(" %d", i); 
-    suma = suma + i; 
-    printf(" = %d\n", suma); 
-    return 0; 
-} 
-\end{lstlisting}
+\lstinputlisting{src/av4/p1b2.c}
 \end{exampleblock}
 \end{columns}
 \end{frame}
@@ -79,44 +42,12 @@ int main () {
 \begin{columns}
 \column{.5\textwidth}
 \begin{exampleblock}{Решение - со употреба на \texttt{while}}
-\begin{lstlisting}
-#include <stdio.h> 
-int main () { 
-    int brojac = 0, n; 
-    float x, y = 1; 
-    printf("vnesi ja osnovata: "); 
-    scanf("%f", &x); 
-    printf("vnesi go eksponentot: "); 
-    scanf("%d", &n);    
-    while (brojac < n) { 
-        y *= x; 
-        brojac++; 
-    } 
-    printf("%f^%d = %f\n", x, n, y); 
-    return 0; 
-}
-\end{lstlisting}
+\lstinputlisting{src/av4/p2a.c}
 \end{exampleblock}
 \pause
 \column{.5\textwidth}
 \begin{exampleblock}{Решение - со употреба на \texttt{do...while}}
-\begin{lstlisting}
-#include <stdio.h> 
-int main () { 
-    int brojac = 0, n; 
-    float x, y = 1; 
-    printf("vnesi ja osnovata: "); 
-    scanf("%f", &x); 
-    printf("vnesi go eksponentot: "); 
-    scanf("%d", &n); 
-    do { 
-        y *= x; 
-        brojac++; 
-    } while (brojac < n); 
-    printf("%f^%d = %f\n", x, n, y); 
-    return 0; 
- }
-\end{lstlisting}
+\lstinputlisting{src/av4/p2b.c}
 \end{exampleblock}
 \end{columns}
 \end{frame}
@@ -126,117 +57,36 @@ int main () {
 n>=1$ и реален број $x$.
 \pause
 \begin{exampleblock}{Решение со употреба на \texttt{for}}
-\begin{lstlisting}
-#include <stdio.h> 
-int main () { 
-    int brojac = 0, n; 
-    float x, y = 1; 
-    printf("vnesi ja osnovata: "); 
-    scanf("%f", &x); 
-    printf("vnesi go eksponentot: "); 
-    scanf("%d", &n); 
-    for(brojac = 1, y = x; brojac < n; brojac++) {
-    //for(; brojac < n; brojac++) {
-    	y *= x;
-    } 
-    printf("%f^%d = %f\n", x, n, y); 
-    return 0; 
- }
-\end{lstlisting}
+\lstinputlisting{src/av4/p2c.c}
 \end{exampleblock}
 \end{frame}
 
 
 \begin{frame}[fragile]{Задачa 3}
-Да се напише програма која од n броеви (внесени од тастатура) ќе го определи бројот на броеви што се деливи со 3, при делењето со 3 имаат остаток 1, односно 2.\\
+Да се напише програма која од n броеви (внесени од тастатура) ќе го определи
+бројот на броеви што се деливи со 3, при делењето со 3 имаат остаток 1, односно
+2.\\
 \textbf{Забелeшка: Задачата да се реши со while, do…while и for}
 \end{frame}
 
 
 \begin{frame}[fragile]{Решение на задачa 3}{\texttt{while}}
 \begin{exampleblock}{Решение на задачата со употреба на \texttt{while}}
-\begin{lstlisting}
-#include <stdio.h> 
-int main () { 
-    int n = 1, i = 0, broj, del, os1, os2; 
-    del = os1 = os2 = 0; 
-    printf("Kolku broevi treba da se proveruvaat za delivost so 3?\n"); 
-    scanf("%d", &n); 
-    while (i < n) { 
-        printf("Vnesete broj za proverka: "); 
-        scanf("%d", &broj); 
-        if (broj % 3 == 0) 
-            del++; 
-        else if (broj % 3 == 1) 
-            os1++;
-        else os2++; 
-        i++; 
-    }
-    printf("%d broj(a) se delivi so 3.\n", del); 
-    printf("%d broj(a) imaat ostatok 1, pri delenje so 3.\n", os1); 
-    printf("%d broj(a) imaat ostatok 2, pri delenje so 3.\n", os2); 
-    return 0; 
-} 
-\end{lstlisting}
+\lstinputlisting{src/av4/p3a.c}
 \end{exampleblock}
 \end{frame}
 
 
 \begin{frame}[fragile]{Решение на задачa 3}{\texttt{do while}}
 \begin{exampleblock}{Решение на задачата со употреба на \texttt{do\ldots while}}
-\begin{lstlisting}
-#include <stdio.h>
-int main () { 
-    int n = 1, i = 0, broj, del, os1, os2; 
-    del = os1 = os2 = 0;
-    printf("Kolku broevi treba da se proveruvaat za delivost so 3?\n"); 
-    scanf("%d", &n); 
-    do { 
-        printf("Vnesete broj za proverka: "); 
-        scanf("%d", &broj); 
-        if (broj % 3 == 0) 
-            del++; 
-        else if (broj % 3 == 1) 
-            os1++; 
-        else 
-            os2++; 
-        i++; 
-    } while (i < n); 
-    printf("%d broj(a) se delivi so 3.\n", del); 
-    printf("%d broj(a) imaat ostatok 1, pri delenje so 3.\n", os1); 
-    printf("%d broj(a) imaat ostatok 2, pri delenje so 3.\n", os2); 
-    return 0; 
-}
-\end{lstlisting}
+\lstinputlisting{src/av4/p3b.c}
 \end{exampleblock}
 \end{frame}
 
 
 \begin{frame}[fragile]{Решение на задачa 3}{\texttt{for}}
 \begin{exampleblock}{Решение на задачата со употреба на \texttt{for}}
-\begin{lstlisting}
-#include <stdio.h> 
-int main () { 
-    int n = 1, i = 0, broj, del, os1, os2; 
-    del = os1 = os2 = 0; 
-    printf("Kolku broevi treba da se proveruvaat za delivost so 3?\n"); 
-    scanf("%d", &n); 
-    for (i = 0; i < n;i++) { 
-        printf("Vnesete broj za proverka: "); 
-        scanf("%d", &broj); 
-        if (broj % 3 == 0) 
-            del++; 
-        else if ( broj % 3 == 1) 
-            os1++; 
-        else 
-            os2++; 
-    }
-    printf("%d broj(a) se delivi so 3.\n", del); 
-    printf("%d broj(a) imaat ostatok 1, pri delenje so 3.\n", os1); 
-    printf("%d broj(a) imaat ostatok 2, pri delenje so 3.\n", os2); 
-    return 0; 
-}
-\end{lstlisting}
+\lstinputlisting{src/av4/p3c.c}
 \end{exampleblock}
 \end{frame}
 
@@ -250,26 +100,7 @@ int main () {
 
 \begin{frame}[fragile]{Решение на задачa 4}
 \begin{exampleblock}{Решение}
-	\begin{lstlisting}
-#include <stdio.h> 
-int main() { 
-    int i, n, suma, prva_cifra, cifra; 
-    i = 1000; 
-    while (i<=9999) { 
-        prva_cifra = i/1000; 
-        n = i % 1000; 
-        suma = 0; 
-        while (n > 0) { 
-            cifra = n % 10; 
-            suma += cifra; 
-            n /= 10; 
-        } 
-        if (suma == prva_cifra) printf("%d\t", i); 
-        i++; 
-    } 
-    return 0; 
-}
-	\end{lstlisting}
+\lstinputlisting{src/av4/p4.c}
 \end{exampleblock}
 \end{frame}
 
@@ -283,26 +114,7 @@ int main() {
 
 \begin{frame}[fragile]{Решение 5}
 \begin{exampleblock}{Решение}
-\begin{lstlisting}
-#include <stdio.h> 
-int main () { 
-    int i, odb, dob, pom, prev, cifra; 
-    printf("Vnesete vrednost za opsegot.\n"); 
-    printf("Od koj broj?\n"); scanf("%d", &odb); 
-    printf("Do koj broj?\n"); scanf("%d", &dob); 
-    for (i = odb; i <= dob; i++) { 
-        pom = i; 
-        prev = 0; 
-        while (pom > 0) { 
-            cifra = pom % 10; 
-            prev = prev*10 + cifra; 
-            pom /= 10; 
-        } 
-        if (prev == i) printf("%d\t", i); 
-    } 
-    return 0; 
-}
-\end{lstlisting}
+\lstinputlisting{src/av4/p5.c}
 \end{exampleblock}
 \end{frame}
 
@@ -313,23 +125,7 @@ int main () {
 Програмата завршува ако наместо број се внесе знак што не е цифра.}
 \pause
 \begin{exampleblock}{Решение}
-\begin{lstlisting}
-#include <stdio.h> 
-int main() { 
-    int broj, max; 
-    if (scanf("%d", &max)){ 
-        while(scanf("%d", &broj)){ 
-            if(max < broj){ 
-                max = broj; 
-            } 
-        } 
-        printf("Maksimalniot broj e %d", max); 
-    } else { 
-        printf("Treba da vnesete najmalku eden cel broj"); 
-    } 
-    return 0; 
-}
-\end{lstlisting}
+\lstinputlisting{src/av4/p6.c}
 \end{exampleblock}
 \end{frame}
 
@@ -343,24 +139,7 @@ int main() {
 
 \begin{frame}[fragile]{Решение на задача 7}
 \begin{exampleblock}{Решение}
-\begin{lstlisting}
-#include <stdio.h> 
-int main() { 
-    int broj, max; 
-   if (scanf("%d", &max)) { 
-        while(scanf("%d", &broj)) { 
-            if (broj > 100) continue; 
-            if(max < broj){ 
-                max = broj; 
-            } 
-        } 
-        printf("Maksimalniot broj e %d", max); 
-    } else { 
-        printf("Treba da vnesete najmalku eden cel broj"); 
-    } 
-    return 0; 
-}
-\end{lstlisting}
+\lstinputlisting{src/av4/p7.c}
 \end{exampleblock}
 \end{frame}
 
@@ -376,32 +155,7 @@ int main() {
 
 \begin{frame}[fragile]{Решение на задача 8}
 \begin{exampleblock}{Решение}
-\begin{lstlisting}
-#include <stdio.h> 
-int main() { 
-    int broj, max1, max2, pom; 
-    if (scanf("%d%d", &max1, &max2) == 2) { 
-        if (max2>max1){ 
-            pom = max1; 
-            max1 = max2; 
-            max2 = pom; 
-        } 
-        while(scanf("%d", &broj)) { 
-            if(broj > max1){ 
-                max2 = max1; 
-                max1 = broj; 
-            } else if (broj>max2) { 
-                max2 = broj; 
-            } 
-        } 
-        printf("Brojot so najgolema vrednost e %d\n", max1); 
-        printf("Brojot so vtora najgolema vrednost e %d\n", max2); 
-    } else { 
-        printf("Treba da vnesete najmalku dva celi broja"); 
-    } 
-    return 0; 
-}
-\end{lstlisting}
+\lstinputlisting{src/av4/p8.c}
 \end{exampleblock}
 \end{frame}
 
@@ -423,32 +177,7 @@ razlikuvaat".
 
 \begin{frame}[fragile]{Решение на задача 9}
 \begin{exampleblock}{Решение}
-\begin{lstlisting}
-#include <stdio.h> 
-//#include <math.h> 
-int main() { 
-    int razlika, i, n = 0, broj = 0; 
-    int suma_neparni_pozicii = 0, suma_parni_pozicii = 0; 
-    scanf("%d", &n); 
-    for (i = 1; i <= n; i++){ 
-        scanf("%d", &broj); 
-        if (i % 2){ 
-            suma_neparni_pozicii += broj; 
-        } else { 
-            suma_parni_pozicii += broj; 
-        } 
-    } 
-    razlika = suma_parni_pozicii - suma_neparni_pozicii; 
-    //printf("razlikata e %d", razlika); 
-    //if(abs(razlika) < 10){ 
-    if(razlika < 10 && razlika > -10){ 
-        printf("Dvete sumi se slicni"); 
-    } else { 
-        printf("Dvete sumi mnogu se ralikuvaat"); 
-    } 
-    return 0; 
-}
-\end{lstlisting}
+\lstinputlisting{src/av4/p9.c}
 \end{exampleblock}
 \end{frame}
 
@@ -461,32 +190,7 @@ int main() {
 
 \begin{frame}[fragile]{Решение на задача 10}
 \begin{exampleblock}{Решение}
-\begin{lstlisting}
-#include <stdio.h> 
-int main() { 
-    int pol_pozicija, pozicija, max_suma, suma, prethoden, sleden; 
-    scanf("%d%d", &prethoden, &sleden); 
-    pol_pozicija = pozicija = 2; 
-    max_suma = suma = prethoden + sleden; 
-    while(1){ 
-        if (prethoden < 0 && sleden < 0){ 
-            break; 
-        } 
-        suma = prethoden + sleden; 
-        if (suma > max_suma){ 
-            max_suma = suma; 
-            pol_pozicija = pozicija; 
-        } 
-        prethoden = sleden; 
-        scanf("%d", &sleden); 
-        pozicija++; 
-    }
-    if(pozicija > 2) 
-        printf("broevite se naogaat na pozicija %d i %d a nivanata suma e %d",
-    pol_pozicija - 1, pol_pozicija, max_suma); 
-    return 0; 
-}
-\end{lstlisting}
+\lstinputlisting{src/av4/p10.c}
 \end{exampleblock}
 \end{frame}
 

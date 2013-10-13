@@ -1,0 +1,228 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Loops}
+\begin{frame}[fragile]{Problem 1а}
+Write a program that computes the sum of all even twodigit numbers. Print the
+result on standard output.
+\pause
+\begin{exampleblock}{Solution}
+\lstinputlisting{src/av4/p1a.c}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Problem 1б}
+\begin{scriptsize}
+Write a program that computes the sum of all odd twodigit numbers. Print the
+result on standard output in the following format:	
+\texttt{11 + 13 + 15 + 17 + ... + 97 + 99 = 2475}\\
+\textbf{Note: The program should be written without the usage of if}
+\end{scriptsize}
+\pause
+\begin{columns}
+\column{.5\textwidth}
+\begin{exampleblock}{Solution - Version 1}
+\lstinputlisting{src/av4/p1b1.c}
+\end{exampleblock}
+\pause
+\column{.5\textwidth}
+\begin{exampleblock}{Solution - Version 2}
+\lstinputlisting{src/av4/p1b2.c}
+\end{exampleblock}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 2}{Solution with usage of \texttt{while} and
+\texttt{do\ldots while}} 
+Write a program that computes $y = x^n$ for given natural number $n, n>=1$ and
+real number $x$.
+\pause
+\begin{columns}
+\column{.5\textwidth}
+\begin{exampleblock}{Solution - with usage of \texttt{while}}
+\lstinputlisting{src/av4/p2a.c}
+\end{exampleblock}
+\pause
+\column{.5\textwidth}
+\begin{exampleblock}{Solution - со употреба на \texttt{do...while}}
+\lstinputlisting{src/av4/p2b.c}
+\end{exampleblock}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 2}{Solution со употреба на \texttt{for}}
+Write a program that computes $y = x^n$ for given natural number $n, n>=1$ and
+real number $x$.
+\pause
+\begin{exampleblock}{Solution со употреба на \texttt{for}}
+\lstinputlisting{src/av4/p2c.c}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Problem 3}
+Write a program that for n numbers read from SI will count the numbers divisible
+by 3, have residue 1, and have residue 2.\\
+\textbf{Note: Solve by using while, do \ldots while and for}
+\end{frame}
+
+
+\begin{frame}[fragile]{Solution 3}{\texttt{while}}
+\begin{exampleblock}{Solution by using \texttt{while}}
+\lstinputlisting{src/av4/p3a.c}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Solution 3}{\texttt{do while}}
+\begin{exampleblock}{Solution by using \texttt{do\ldots while}}
+\lstinputlisting{src/av4/p3b.c}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Solution 3}{\texttt{for}}
+\begin{exampleblock}{Solution by using \texttt{for}}
+\lstinputlisting{src/av4/p3c.c}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 4}
+Write a program that will print all 4-digit numbers in which the sum of the
+three least significant digits is equal to the most significant digit.
+\begin{exampleblock}{Exmple}
+	\texttt{4031 (4=0+3+1), 5131 (5=1+3+1)}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Solution 4}
+\begin{exampleblock}{Solution}
+\lstinputlisting{src/av4/p4.c}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 5}
+Write a program that will print all numbers in given range which are read the
+same from left to right and oposite.
+\begin{exampleblock}{Example}
+\texttt{12345    54321}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Solution 5}
+\begin{exampleblock}{Solution}
+\lstinputlisting{src/av4/p5.c}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Problem 6}
+\scriptsize{
+Write a program that for unknown count of integers read from SI will find the
+number with maximum value. The program stops when the reading of integer fails.}
+\pause
+\begin{exampleblock}{Solution}
+\lstinputlisting{src/av4/p6.c}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Problem 7}
+Write a program that for unknown count of integers read from SI will find the
+number with maximum value. Numbers larger than 100 should be ignored. The
+program stops when the reading of integer fails.
+\end{frame}
+
+\begin{frame}[fragile]{Solution 7}
+\begin{exampleblock}{Solution}
+\lstinputlisting{src/av4/p7.c}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Problem 8}
+Write a program that for unknown count of integers read from SI will find the
+two with maximum values. 
+\begin{exampleblock}{Example}
+For numbers \texttt{2 4 7 4 2 1 8 6 9 7 10 3} the program should print
+\texttt{10} and \texttt{9}.
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Solution 8}
+\begin{exampleblock}{Solution}
+\lstinputlisting{src/av4/p8.c}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Problem 9}
+Write a program that for N integers read from SI will the difference of the sums
+of numbers on odd and even positions (by the order of reading). If this
+difference is less than 10 print the message ``The two sums are close'' else
+print ``The two sums are far''.
+\begin{exampleblock}{Example}
+For the numbers:\\
+\texttt{{\color{red}2} 4 {\color{red}3} 4 {\color{red}2} 1 {\color{red}1} 6
+{\color{red} 1} 7}\\
+\texttt{{\color{red} suma\_odd\_positions = 9}}\\
+\texttt{suma\_even\_positions = 22}\\
+Will print: \texttt{The two sums are far}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Solution 9}
+\begin{exampleblock}{Solution}
+\lstinputlisting{src/av4/p9.c}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Problem 10}
+Write a program that for unknown count of integers read from SI will find the
+positions of the successive numbers with maximum sum. The program stops when two
+successive read numbers are negative.
+\end{frame}
+
+\begin{frame}[fragile]{Solution 10}
+\begin{exampleblock}{Solution}
+\lstinputlisting{src/av4/p10.c}
+\end{exampleblock}
+\end{frame}
+
+\section{The \texttt{switch} expession}
+\begin{frame}{Problem 1}
+Write a program that will enable transforming of twodigit numbers in the
+following way:\\
+For the twodigit number 89 should print ``eighty-nine''.
+\end{frame}
+
+\begin{frame}[t,fragile,shrink=35]{Solution 1}
+\begin{columns}
+\column{.5\textwidth}
+\begin{exampleblock}{Solution first part}
+\lstinputlisting[lastline=40]{src/av4/p11.c}
+\end{exampleblock}
+\column{.5\textwidth}
+\begin{exampleblock}{Solution seccond part}
+\lstinputlisting[firstline=41]{src/av4/p11.c}
+\end{exampleblock}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Problem 2}
+Write a program for simple calculator. The program should read two numbers and
+operator in the following format:\\
+\texttt{num1 operator num2}\\
+After the operation depending on the sign, the result is printed in the
+following format:\\
+\texttt{num1 operator num2 = result}
+\end{frame}
+
+\begin{frame}[fragile,shrink=10]{Solution 2}
+\begin{exampleblock}{Solution}
+\lstinputlisting{src/av4/p12.c}
+\end{exampleblock}
+\end{frame}
+

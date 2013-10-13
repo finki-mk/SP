@@ -1,22 +1,22 @@
 #include <stdio.h>
 int main() {
-    char op; float br1, br2, rezultat;
-    printf("Vnesete dva broja i operator vo format\n");
-    printf(" broj1 operator broj2\n");
-    scanf("%f %c %f", &br1, &op, &br2);
-    if (op == '*') rezultat = br1 * br2;
-    else if (op == '+') rezultat = br1 + br2;
-    else if (op == '-') rezultat = br1 - br2;
+    char op; float num1, num2, result;
+    printf("Enter two numbers and operator in format\n");
+    printf(" num1 operator num2\n");
+    scanf("%f %c %f", &num1, &op, &num2);
+    if (op == '*') result = num1 * num2;
+    else if (op == '+') result = num1 + num2;
+    else if (op == '-') result = num1 - num2;
     else if (op == '/') {
-        if (br2) rezultat = br1 / br2;
+        if (num2) result = num1 / num2;
         else {
-            printf("Ne se deli so 0!\n");
+            printf("Division by 0!\n");
             return 0;
         }
     } else {
-        printf("Nevaliden operator!\n");
+        printf("Invalid operator!\n");
         return 0;
     }
-    printf("%f %c %f = %f\n", br1, op, br2, rezultat);
+    printf("%f %c %f = %f\n", num1, op, num2, result);
     return 0;
 }

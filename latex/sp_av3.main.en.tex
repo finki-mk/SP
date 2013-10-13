@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{frame}[fragile]{Потсетување од предавања}
+\begin{frame}[fragile]{Remainding From Lecutres}
 % Define block styles
 \tikzstyle{decision} = [diamond, draw, fill=blue!20, 
     text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
@@ -16,58 +16,59 @@
 \begin{center}
 \begin{tikzpicture}[node distance = 2cm, auto]
     % Place nodes
-	\node [decision] (decide) {Услов};
-    \node [block, left of=decide, below of=decide] (true) {Наредби за точен услов};
-    \node [block, right of=decide, below of=decide] (false) {Наредби за неточен услов};
+	\node [decision] (decide) {Condition};
+    \node [block, left of=decide, below of=decide] (true) {Expressions
+    for true condition}; \node [block, right of=decide,
+    below of=decide] (false) {Expressions for false condition};
     % Draw edges
     \path [line] (decide) -| node [near start] {true} (true);
     \path [line] (decide) -| node [near start] {false} (false);
 \end{tikzpicture}
 \begin{lstlisting}
-if(uslov) {
-    naredbi_za_vistinit_uslov;
+if(condition) {
+    expressions_for_true_condtion;
 } else {
-    naredbi_za_nevistinit_uslov;
+    expressions_for_false_condition;
 }
 \end{lstlisting}
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile]{Употреба на \texttt{if}}
-	\begin{exampleblock}{Пример 1}
+\begin{frame}[fragile]{\texttt{if} usage}
+	\begin{exampleblock}{Example 1}
 	\begin{lstlisting}
 	#include <stdio.h> 
 	int main() { 
 	    int i;
-	    printf("Vnesete cel broj\n");
+	    printf("Enter an integer\n");
 	    scanf("%d", &i);
 	    if(i > 0) 
-	        printf("Vnesen e pozitiven broj\n");
+	        printf("The number is positive\n");
 	    if(i < 0)
-	        printf("Vnesen e negativen broj\n"); 
+	        printf("The number is negative\n"); 
 	    if(i == 0)
-	        printf("Vnesena e nula\n"); 
+	        printf("The number is zero\n"); 
 	    return 0; 
 	}
 	\end{lstlisting}
 	\end{exampleblock}
 \end{frame}
 
-\begin{frame}[fragile]{Со употреба на \texttt{if-else}}
+\begin{frame}[fragile]{By using \texttt{if-else}}
 
-	\begin{exampleblock}{Пример 2}
+	\begin{exampleblock}{Example 2}
 	\begin{lstlisting}
 	#include <stdio.h>
 	int main() {
 	    int i;
-	    printf("Vnesete cel broj\n");
+	    printf("Enter an integer\n");
 	    scanf("%d", &i); 
 	    if(i > 0)
-	        printf("Vnesen e pozitiven broj\n");
+	        printf("The number is positive\n");
 	    else if(i < 0)
-	        printf("Vnesen e negativen broj\n"); 
+	        printf("The number is negative\n"); 
 	    else
-	        printf("Vnesena e nula\n"); 
+	        printf("The number is zero\n"); 
 	    return 0; 
 	}
 	\end{lstlisting}
@@ -75,9 +76,9 @@ if(uslov) {
 
 \end{frame}
 
-\begin{frame}[fragile]{Едноставни примери}
-Што ќе отпечати?
-\begin{exampleblock}{Пример 3}
+\begin{frame}[fragile]{Simple examples}
+What will be the output?
+\begin{exampleblock}{Example 3}
 	\begin{lstlisting}
 #include <stdio.h>
 int main() {
@@ -96,50 +97,55 @@ int main() {
 \end{frame}
 
 
-\begin{frame}[fragile]{Задача 1}
-Да се напише програма со која ќе се отпечати максимумот од два броја чии вредности се читаат од тастатура.
+\begin{frame}[fragile]{Problem 1}
+Write a program that prints out the maximum from two numbers read from
+standard input.
 \pause 
-	\begin{exampleblock}{Решение}
+	\begin{exampleblock}{Solution}
 	\lstinputlisting{src/av3/p1.c}
 	\end{exampleblock}
 
 \end{frame}
 
-\begin{frame}[fragile]{Задача 2}
-Да се напише програма која проверува дали дадена година која се вчитува од тастатура е престапна или не и на екран печати соодветна порака.\\
-Пример: \texttt{1976, 2000, 2004, 2008, 2012...}
+\begin{frame}[fragile]{Problem 2}
+Write a program that checks if given year read from SI is leap or not and prints
+out a appropriate message.\\
+Example: \texttt{1976, 2000, 2004, 2008, 2012...}
 \pause
-	\begin{exampleblock}{Решение}
+	\begin{exampleblock}{Solution}
 	\lstinputlisting{src/av3/p2.c}
 	\end{exampleblock}
 \end{frame}
 
 
-\begin{frame}[fragile]{Задача 3}
+\begin{frame}[fragile]{Problem 3}
 \begin{scriptsize}
-Од тастатура се внесуваат координати на една точка. Да се напише програма со која ќе се испечати на кој квадрант или оска припаѓа внесената точка. Ако станува збор за точка која лежи на координатниот почеток, да се испечати соодветна порака.
+The coordinates of a point are read from SI. Write a program that will print out
+the quadrant or the axis where the point belongs. If the point lays on the
+origin, print out a appropriate message.
 \end{scriptsize}
 \pause
-	\begin{exampleblock}{Решение 1 дел}
+	\begin{exampleblock}{Solution part 1}
 	\lstinputlisting[lastline=11]{src/av3/p3.c}
 	\end{exampleblock}
 \end{frame}
 
 
 
-\begin{frame}[fragile]{Задача 3}{Решение}
-	\begin{exampleblock}{Решение 2 дел}
+\begin{frame}[fragile]{Problem 3}{Solution}
+	\begin{exampleblock}{Solution part 2}
 	\lstinputlisting[firstline=12]{src/av3/p3.c}
 	\end{exampleblock}
 \end{frame}
 
 
 
-\begin{frame}[fragile]{Задача 4}
-Да се напише програма која за внесен број на поени од испит ќе генерира соодветна оценка според следната табела:
+\begin{frame}[fragile]{Problem 4}
+Write a program that will generate and print the grade according to the
+following table:
 \begin{center}
 \begin{tabular}{|c|c|}
-\hline \textbf{Поени} & \textbf{Оценка} \\ 
+\hline \textbf{Points} & \textbf{Grade} \\ 
 \hline 0 - 50 & 5 \\ 
 \hline 51 - 60 & 6 \\ 
 \hline 61 - 70 & 7 \\ 
@@ -151,66 +157,67 @@ int main() {
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile]{Задача 4}{Решение}
-    \begin{exampleblock}{Решение}
+\begin{frame}[fragile]{Problem 4}{Solution}
+    \begin{exampleblock}{Solution}
     \lstinputlisting[lastline=11]{src/av3/p4.c}
 	\end{exampleblock}
 \end{frame}
 
-\begin{frame}[fragile]{Задача 5}
-Да се промени претходната програма, така што покрај оценките ќе се испечатат и знаците + и – во зависност од вредноста на последната цифра на поените:
+\begin{frame}[fragile]{Problem 5}
+Change the previous program, so the sign of the number should be printed (+/-)
+depending on the last digit of the points number:
 \begin{center}
 \begin{tabular}{|c|c|}
-\hline \textbf{последна цифра} & \textbf{печати} \\ 
+\hline \textbf{last digit} & \textbf{print} \\ 
 \hline 1 - 3 & - \\ 
-\hline 4 - 7 & <prazno mesto> \\ 
+\hline 4 - 7 & <empty space> \\ 
 \hline 8 - 0 & + \\ 
 \hline 
 \end{tabular} 
 \end{center}
-Пример: \texttt{81 = 9-, 94 = 10, 68 = 7+}.\\ 
-За оценката 5 не треба да се додава + или –, а за оценката 10 не треба да се додава знакот +.
+Example: \texttt{81 = 9-, 94 = 10, 68 = 7+}.\\ 
+For grade 5 doesn't add + or –, and for grade 10 should not add +.
 \end{frame}
 
 
-\begin{frame}[fragile]{Задача 5}{Решение}
-	\begin{exampleblock}{Решение}
+\begin{frame}[fragile]{Problem 5}{Solution}
+	\begin{exampleblock}{Solution}
 	\lstinputlisting[firstline=13]{src/av3/p5.c}
 	\end{exampleblock}
 \end{frame}
 
 
-\begin{frame}[fragile]{Задача 6}
-Да се напише програма која ќе претставува едноставен калкулатор. Во програмата
-се вчитуваат два броја и оператор во \texttt{формат}:
+\begin{frame}[fragile]{Problem 6}
+Write a program for simple calculator. The program reads two numbers and
+operator in \texttt{format}:
 \begin{center}
-\texttt{broj1 operator broj2}
+\texttt{num1 operator num2}
 \end{center}
-По извршената операција во зависност од операторот, се печати резултатот во формат:
+After the operation, depending on the operator, the result shoud be printed in
+format:
 \begin{center}
-\texttt{broj1 operator broj2 = rezultat}
+\texttt{num1 operator num2 = result}
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile]{Задача 6}{Решение}
-	\begin{exampleblock}{Решение}
+\begin{frame}[fragile]{Problem 6}{Solution}
+	\begin{exampleblock}{Solution}
 	\lstinputlisting{src/av3/p6.c}
 	\end{exampleblock}
 \end{frame}
 
 
-\begin{frame}[fragile]{Задача 7}
-Од тастатура се внесуваат три броја кои не мора да се сортирани. Внесените
-броеви претставуваат должини на страните на правоаголен триаголник. Да се напише
-програма која што ќе проверува дали може да се конструира триаголник од дадените
-должини, при што ако може, треба да се провери дали истиот е правоаголен и да се
-пресмета неговата плоштина. Во спротивно, треба да се испечатат соодветни
-пораки.
+\begin{frame}[fragile]{Problem 7}
+Read from standard input three numbers in arbitrary order. The numbers 
+are lenghts of triangle sides. Write a program that will check if triangle can
+be constructed from given lengths, if so, than should check if the triangle is
+right triangle and compute its area. On contrary, apropriate messages should be
+printed.
 \end{frame}
 
 
-\begin{frame}[fragile]{Задача 7}{Решение}
-	\begin{exampleblock}{Решение}
+\begin{frame}[fragile]{Problem 7}{Solution}
+	\begin{exampleblock}{Solution}
 	\lstinputlisting{src/av3/p7.c}
 	\end{exampleblock}
 \end{frame}

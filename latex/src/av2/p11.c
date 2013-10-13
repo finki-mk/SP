@@ -1,11 +1,11 @@
 #include <stdio.h>
 int main() {
-	int datum;
-	int den, mesec;
-	printf("Vnesete datum na raganje: ");
-	scanf("%d", &datum);
-	den = datum / 1000000;
-	mesec = (datum / 10000) % 100;
-	printf("Vasata data na raganje e %02d.%02d\n", den, mesec);
+	int date;
+	int day, month;
+	printf("Enter date of birth: ");
+	scanf("%d", &date);
+	day = date / 1000000;
+	month = (date / 10000) % 100;
+	printf("Your date of birth is %02d.%02d\n", day, month);
 	return 0;
 }

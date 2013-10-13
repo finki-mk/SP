@@ -2,11 +2,11 @@
 
 int main() {
 	int a, b;
-	printf("Vnesete gi vrednostite na a i b: \n"); 
+	printf("Enter a and b: \n"); 
 	scanf("%d %d", &a, &b);
 	if (a > b) 
-		printf("Vrednosta na maksimumot e %d.\n", a); 
+		printf("Maximum: %d\n", a); 
 	else 
-		printf("Vrednosta na maksimumot e %d.\n", b); 
+		printf("Maximum: %d\n", b); 
 	return 0; 
 }

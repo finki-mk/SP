@@ -1,28 +1,28 @@
 #include <stdio.h>
 int main () {
     float x, y;
-    printf ("Vnesete kootdinati \n");
+    printf ("Enter coordinates \n");
     scanf ("%f %f", &x, &y);
     if (x > 0) {
         if (y > 0)
-            printf("I Kvadrant.\n");
+            printf("I Quadrant.\n");
         else if (y < 0)
-            printf("IV kvadrant.\n");
-        else printf("Poz. x oska.\n");
+            printf("IV Quadrant.\n");
+        else printf("Pos. X axis.\n");
     } else if (x < 0) {
         if (y > 0)
-            printf("II kvadrant.\n");
+            printf("II Quadrant.\n");
         else if (y < 0)
-            printf("III kvadrant.\n");
+            printf("III Quadrant.\n");
         else
-            printf("Neg. x oska.\n");
+            printf("Neg. x axis.\n");
     } else {
         if (y > 0)
-            printf("Poz. y oska.\n");
+            printf("Pos. y axis.\n");
         else if (y < 0)
-            printf("Neg. y oska.\n");
+            printf("Neg. y axis.\n");
         else
-            printf("Koord. pocetok\n");
+            printf("Origin\n");
     }
     return 0;
 }

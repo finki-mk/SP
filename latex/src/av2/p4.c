@@ -2,7 +2,7 @@
 int main() {
 	char ch;
 	int rez;
-	printf("Vnesete znak: ");
+	printf("Enter char: ");
 	scanf("%c", &ch);
 	rez = (ch >= 'a') && (ch <= 'z');
 	printf("%d\n", rez);

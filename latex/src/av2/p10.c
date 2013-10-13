@@ -1,8 +1,8 @@
 #include <stdio.h>
 int main() {
-	int broj;
-	scanf("%d", &broj);
-	printf("Najznachajna cifra e %d, a najmalku znachajna e %d.\n", broj / 100,
-			broj % 10);
+	int number;
+	scanf("%d", &number);
+	printf("Most significant digit is %d, and least significant digit is %d.\n", number / 100,
+			number % 10);
 	return 0;
 }

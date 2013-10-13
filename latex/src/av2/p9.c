@@ -1,16 +1,16 @@
 #include <stdio.h>
 int main() {
-	float cena, kamata, rata, vkupno;
-	int brRati;
-	printf("Vnesete ja cenata na proizvodot: ");
-	scanf("%f", &cena);
-	printf("Vnesete go brojot na rati: ");
-	scanf("%d", &brRati);
-	printf("Vnesete ja kamata: ");
-	scanf("%f", &kamata);
-	vkupno = cena * (1 + kamata / 100);
-	rata = vkupno / brRati;
-	printf("Edna rata ke iznesuva: %.3f\n", rata);
-	printf("Vkupnata isplatena suma ke bide %.3f\n", vkupno);
+	float price, interest, payment, total;
+	int paymentsNumber;
+	printf("Enter the prorduct price: ");
+	scanf("%f", &price);
+	printf("Enter the payments number: ");
+	scanf("%d", &paymentsNumber);
+	printf("Enter the interest: ");
+	scanf("%f", &interest);
+	total = price * (1 + interest / 100);
+	payment = total / paymentsNumber;
+	printf("The payment is: %.3f\n", payment);
+	printf("Total payment is %.3f\n", total);
 	return 0;
 }

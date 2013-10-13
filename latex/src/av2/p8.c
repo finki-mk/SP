@@ -1,8 +1,8 @@
 #include <stdio.h>
 int main() {
-	float cena;
-	printf("Vnesete ja cenata na proizvodot: ");
-	scanf("%f", &cena);
-	printf("Vkupnata cena e %.2f\n", cena * 1.18);
+	float price;
+	printf("Enter the price: ");
+	scanf("%f", &price);
+	printf("The total price e %.2f\n", price * 1.18);
 	return 0;
 }

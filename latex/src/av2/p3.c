@@ -1,8 +1,8 @@
 #include <stdio.h>
 int main() {
 	char c;
-	printf("Vnesete golema bukva: ");
+	printf("Enter uppercase letter: ");
 	scanf("%c", &c);
-	printf("%c malo se pishuva %c\n", c, c + ('a' - 'A'));
+	printf("%c lowercase is %c\n", c, c + ('a' - 'A'));
 	return 0;
 }

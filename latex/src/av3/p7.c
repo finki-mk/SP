@@ -1,10 +1,10 @@
 #include <stdio.h>
 int main() {
     int a, b, c, tmp;
-    printf("Vnesi gi dolzinite na stranite: \n");
+    printf("Enter the triangle sides: \n");
     scanf("%d %d %d", &a, &b, &c);
     if ((a + b <= c) || (a + c <= b) || (b + c <= a))
-        printf("Ne moze da se konstruira triagolnik so tie strani.\n");
+        printf("Triangle can not be constructed.\n");
     else {
         if (a >= b) {
             tmp = a; a = b; b = tmp;
@@ -16,10 +16,10 @@ int main() {
             tmp = b; b = c; c = tmp;
         }
         if (c * c == a * a + b * b) {
-            printf("Triagolnikot e pravoagolen.\n");
-            printf("Plostinata e %7.3f.\n", a * b / 2.0);
+            printf("Triangle is right triangle.\n");
+            printf("Area is %7.3f.\n", a * b / 2.0);
         } else {
-            printf("Triagolnikot e ne pravoagolen.\n");
+            printf("Triangle is not right triangle.\n");
         }
     }
     return 0;

@@ -1,11 +1,11 @@
 #include <stdio.h>
 int main() {
-    int godina;
-    printf ("Vnesete ja godinata: \n");
-    scanf ("%d", &godina);
-    if ((godina % 4 == 0 && godina % 100 != 0) || godina % 400 == 0)
-        printf("%d godina e prestapna.\n", godina);
+    int year;
+    printf ("Enter the year: \n");
+    scanf ("%d", &year);
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+        printf("%d year is leap.\n", year);
     else
-        printf("%d godina ne e prestapna.\n", godina);
+        printf("%d year is not leap.\n", year);
     return 0;
 }

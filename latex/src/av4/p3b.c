@@ -4,7 +4,7 @@ int main () {
     div = r1 = r2 = 0; 
     // how many numbers will be read from SI
     scanf("%d", &n); 
-    while (i < n) { 
+    do { 
         scanf("%d", &number); 
         if (number % 3 == 0) 
             div++; 
@@ -12,7 +12,7 @@ int main () {
             r1++;
         else r2++; 
         i++; 
-    }
+    } while (i < n);
     printf("%d\n", div); 
     printf("%d\n", r1); 
     printf("%d\n", r2); 

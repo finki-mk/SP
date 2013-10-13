@@ -3,7 +3,7 @@
 int main() {
 	float r;
 	float P = 0, L = 0;
-	printf("Vnesete go radiusot na krugot: ");
+	printf("Enter the radius of the circle: ");
 	scanf("%f", &r);
 	L = 2 * r * PI;
 	P = r * r * PI;

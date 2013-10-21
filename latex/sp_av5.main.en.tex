@@ -2,115 +2,111 @@
 %%%%%%%%%% Content starts here %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Вектори (еднодимензионални полиња)}
+\section{Vectors (onedimensional arrays)}
 
-\begin{frame}[fragile]{Задача 1}
-Да се напише програма која за две низи кои се внесуваат од тастатура ќе провери
-дали се еднакви или не. На екран да се испачати резултатот од споредбата.\\
-Максимална големина на низите е 100.
+\begin{frame}[fragile]{Problem 1}
+Write a program that for two arrays read from SI will check if they are equal.
+Print out the result from the comparison. \\
+The maximum size of arrays is 100.
 \pause
-\begin{exampleblock}{Решение 1 дел}
+\begin{exampleblock}{Solution 1 part}
 \lstinputlisting[lastline=11]{src/av5/p1.c}
 \end{exampleblock}
 \end{frame}
 
-\begin{frame}[fragile]{Задача 1}{Решение 2 дел}
-\begin{exampleblock}{Решение 2 дел}
+\begin{frame}[fragile]{Problem 1}{Solution 2 part}
+\begin{exampleblock}{Solution 2 part}
 \lstinputlisting[firstline=12]{src/av5/p1.c}
 \end{exampleblock}
 \end{frame}
 
 
-\begin{frame}{Задача 2}
-Да се напише програма која за низа, чии што елементи се внесуваат од стандарден влез, ќе го пресмета збирот на парните елементи, 
-збирот на непарните елементи, како и односот помеѓу бројот на парни и непарни елементи. Резултатот да се испечати на екран.
-\begin{exampleblock}{Пример}
-За низата:\\
+\begin{frame}{Problem 2}
+Write a program that for an array read from SI, will compute the sum of even
+elements, the sum of odd elements and will compute the ratio even/odd.
+\begin{exampleblock}{Example}
+For array:\\
 \texttt{3 {\color{red}2} 7 {\color{red}6} {\color{red}2} 5 1}\\
-На екран ќе се испечати: \\
-\texttt{suma\_parni = 8}\\
-\texttt{suma\_neparni = 16}\\
-\texttt{odnos = 0.75}
+Will print: \\
+\texttt{sum\_even = 8}\\
+\texttt{suma\_odd = 16}\\
+\texttt{ratio = 0.75}
 \end{exampleblock}
 \end{frame}
 
-\begin{frame}[fragile]{Задача 2}{Решение} 
-\begin{exampleblock}{Решение}
+\begin{frame}[fragile]{Problem 2}{Solution} 
+\begin{exampleblock}{Solution}
 \lstinputlisting{src/av5/p2.c}
 \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Задача 3}
-Да се напише програма која ќе го пресмета скаларниот производ на два вектори со по n координати. 
-Бројот на координати n, како и координатите на векторите се внесуваат од
-стандарден влез. Резултатот да се испечати на екран.
+\begin{frame}{Problem 3}
+Write a program that will compute the scalar product of two vectors with n
+coordinates. The number of coordinates n and the coordinates are read from SI.
+Print the result.
 \end{frame}
 
-\begin{frame}[fragile]{Задача 3}{Решение} 
-\begin{exampleblock}{Решение}
+\begin{frame}[fragile]{Problem 3}{Solution} 
+\begin{exampleblock}{Solution}
 \lstinputlisting{src/av5/p3.c}
 \end{exampleblock}
 \end{frame}
 
 \begin{frame}{Задачa 4}
-Да се напише програма која ќе провери дали дадена низа од n елементи која се
-внесува од тастатура е строго растечка, строго опаѓачка или ниту строго растечка
-ниту строго опаѓачка. Резултатот да се испечати на екран.
+Write a progra that will check if a given array with n elements read from SI is
+increasing, decreasing or nothing. Print the result.
 \end{frame}
 
-\begin{frame}[fragile,shrink=10]{Задача 4}{Решение} 
-\begin{exampleblock}{Решение}
+\begin{frame}[fragile,shrink=10]{Problem 4}{Solution} 
+\begin{exampleblock}{Solution}
 \lstinputlisting{src/av5/p4.c}
 \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Задача 5}
-Да се напише програма која што ќе ги избрише дупликатите од една низа. На крај,
-да се испечати на екран новодобиената низа. Елементите од низата се внесуваат од стандарден влез.
+\begin{frame}{Problem 5}
+Write a program that will remove duplicate from an array. After the operation
+print the array.
 \end{frame}
 
-\begin{frame}[fragile]{Задача 5}{Решение} 
-\begin{exampleblock}{Решение}
+\begin{frame}[fragile]{Problem 5}{Solution} 
+\begin{exampleblock}{Solution}
 \lstinputlisting{src/av5/p5.c}
 \end{exampleblock}
 \end{frame}
 
-\section{Матрици (дводимензионални полиња)}
+\section{Matrices (twodimensional arrays)}
 
-\begin{frame}{Задача 6}
-Да се напише програма која ќе испечати на екран дали дадена матрица е симетрична во однос на главната дијагонала. 
-Димензиите и елементите на матрицата се внесуваат од стандарден влез.
+\begin{frame}{Problem 6}
+Write a program that will print on screen if a given matrix is symetric based on
+the main diagonal. Dimensions and the matrix are read from SI.
 \end{frame}
 
-\begin{frame}[fragile]{Задача 6}{Решение} 
-\begin{exampleblock}{Решение}
+\begin{frame}[fragile]{Problem 6}{Solution} 
+\begin{exampleblock}{Solution}
 \lstinputlisting{src/av5/p6.c}
 \end{exampleblock}
 \end{frame}
 
 
-\begin{frame}{Задача 7}
-Да се напише програма коjа за матрица внесена од тастатура ќе ги замени
-елементите од главната диjагонала со разликата од максималниот и минималниот
-елемент во матрицата. Резултантната матрица да се испечати на екран.
+\begin{frame}{Problem 7}
+Write a program that for a given matrix read from SI will replace the elements
+from the main diagonal with the difference between the maximum and minimum
+element from the matrix. Print the result matrix.
 \end{frame}
 
-\begin{frame}[fragile]{Задача 7}{Решение} 
-\begin{exampleblock}{Решение}
+\begin{frame}[fragile]{Problem 7}{Solution} 
+\begin{exampleblock}{Solution}
 \lstinputlisting{src/av5/p7.c}
 \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Задача 8}
-Да се пресмета разликата на збирот на елементите во
-непарните колони и збирот на елементите во парните редици.
-Резултатот да се испечати на екран. Податоците за матрицата
-се внесуваат од тастатура. Матрицата не мора да биде
-квадратна.
+\begin{frame}{Problem 8}
+On matrix read from SI compute the difference of sum of elements of odd
+columns and sum of elements of even rows. Print the result.
 \end{frame}
 
-\begin{frame}[fragile]{Задача 8}{Решение} 
-\begin{exampleblock}{Решение}
+\begin{frame}[fragile]{Problem 8}{Solution} 
+\begin{exampleblock}{Solution}
 \lstinputlisting{src/av5/p8.c}
 \end{exampleblock}
 \end{frame}

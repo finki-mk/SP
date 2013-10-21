@@ -1,5 +1,5 @@
 #TeXlipse project settings
-#Sun Oct 13 15:46:11 CEST 2013
+#Mon Oct 21 23:46:07 CEST 2013
 markTmpDer=true
 builderNum=2
 outputDir=out/
@@ -7,8 +7,8 @@ makeIndSty=
 bibrefDir=
 outputFormat=pdf
 tempDir=tmp
-mainTexFile=sp_av4.tex
-outputFile=sp_av4.pdf
+mainTexFile=sp_av5.en.tex
+outputFile=sp_av5.en.pdf
 langSpell=
 markDer=true
 srcDir=

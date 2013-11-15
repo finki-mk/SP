@@ -7,13 +7,13 @@ void maxRastecka(int x[], int n, int *pos, int *len) {
     currLen = 1;
     *pos = 0;
     *len = 1;
-    for(i = 0; i < n - 1; i++) {
+    for (i = 0; i < n - 1; i++) {
         start = i;
         currLen = 1;
         while ((x[i] < x[i + 1])) {
             currLen++;
             i++;
-            if(i >= n) break;
+            if (i >= n) break;
         }
         if (currLen > *len) {
             *len = currLen;
@@ -21,18 +21,18 @@ void maxRastecka(int x[], int n, int *pos, int *len) {
         }
     }
 }
+
 int main() {
-	int a[MAX];
-	int i, n, pos, len;
+    int a[MAX];
+    int i, n, pos, len;
 
-	printf("Dolzina na nizata: ");
-	scanf("%d", &n);
-	for (i = 0; i < n; i++)
-		scanf("%d", &a[i]);
+    printf("Dolzina na nizata: ");
+    scanf("%d", &n);
+    for (i = 0; i < n; i++)
+        scanf("%d", &a[i]);
 
-	maxRastecka(a, n, &pos, &len);
+    maxRastecka(a, n, &pos, &len);
 
-	printf("Pocetok: %d, dolzina: %d\n", pos, len);
-	return 0;
+    printf("Pocetok: %d, dolzina: %d\n", pos, len);
+    return 0;
 }
-

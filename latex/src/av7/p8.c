@@ -20,4 +20,3 @@ int minElement(int niza[], int n) {
         return pom;
     }
 }
-

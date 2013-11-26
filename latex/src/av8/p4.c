@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void bubbleSort(int *a, int n) {
+void bubble_sort(int *a, int n) {
     int i, j;
     for (i = 0; i < n; i++) {
         for (j = 0; j < n - i - 1; j++) {
@@ -10,24 +10,24 @@ void bubbleSort(int *a, int n) {
     }
 }
 
-void selectionSort(int niza[], int n, int m) {
+void selection_sort(int a[], int n, int m) {
     if (n - m == 1)
         return;
     else {
-        int najmal = niza[m];
-        int indeksNajmal = m;
+        int smallest = a[m];
+        int smallest_index = m;
         int i;
         for (i = m; i < n; ++i)
-            if (niza[i] < najmal) {
-                najmal = niza[i];
-                indeksNajmal = i;
+            if (a[i] < smallest) {
+                smallest = a[i];
+                smallest_index = i;
             }
-        swap(&niza[m], &niza[indeksNajmal]);
-        selectionSort(niza, n, m + 1);
+        swap(&a[m], &a[smallest_index]);
+        selection_sort(a, n, m + 1);
     }
 }
 
-void insertionSort(int a[], int n) {
+void insertion_sort(int a[], int n) {
     int i, j;
     for (i = 1; i < n; i++) {
         int temp = a[i];
@@ -56,12 +56,11 @@ void print(int *a, int n) {
 }
 int main() {
     int a[MAX], n;
-    printf("Vnesi dolzina na nizata: ");
     scanf("%d", &n);
     insert(a, n);
-    bubbleSort(a, n);
-    //selectionSort(a, n, 0);
-    //insertionSort(a, n);
+    bubble_sort(a, n);
+    //selection_sort(a, n, 0);
+    //insertion_sort(a, n);
     print(a, n);
     return 0;
 }

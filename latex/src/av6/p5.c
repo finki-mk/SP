@@ -1,27 +1,26 @@
 #include <stdio.h>
-int factoriel(int k) {
+int factorial(int k) {
     int i, fact_num = 1;
     for (i = 1; i <= k; i++)
         fact_num *= i;
     return fact_num;
 }
-int suma(int k) {
+int sum(int k) {
     int i, zbir = 0;
     for (i = 1; i <= k; i++)
         zbir += i;
     return zbir;
 }
 int main() {
-    int i, n, rezultat = 0;
-    printf("Vnesete eden pozitiven cel broj \n");
+    int i, n, result = 0;
     if (scanf("%d", &n) && n > 0) {
         for (i = 1; i < n; i++) {
-            rezultat += factoriel(suma(i));
-            printf("%d! + ", suma(i));
+            result += factorial(sum(i));
+            printf("%d! + ", sum(i));
         }
-        rezultat += factoriel(suma(n));
-        printf("%d! = %d", suma(n), rezultat);
+        result += factorial(sum(n));
+        printf("%d! = %d", sum(n), result);
     } else
-        printf("Vnesena e pogresna vrednost \n");
+        printf("Wrong input value\n");
     return 0;
 }

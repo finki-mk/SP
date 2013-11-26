@@ -1,0 +1,37 @@
+\documentclass{beamer}
+\usetheme{FINKI}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,bulgarian]{babel}
+\usepackage{verbatim}
+\usepackage{listings}
+\renewcommand\mathfamilydefault{\rmdefault}
+%\renewcommand*\ttdefault{lcmtt}
+
+\pdfinfo
+{
+  /Title       (KRS)
+  /Creator     (TeX)
+  /Author      (Tomche Delev)
+}
+
+
+\title[L10]{Lession 10}
+\subtitle{Files}
+\author{Structured Programming}
+\date{}
+\pgfdeclareimage[width=0.6\paperwidth]{finki_logo}{finki_name_en}
+\titlegraphic{\pgfuseimage{finki_logo}}
+
+\input{code_style_tiny.tex}
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+\input{sections_en.tex}
+\input{sp_av10.main.en.tex}
+\input{end_frame_en.tex}
+\end{document}

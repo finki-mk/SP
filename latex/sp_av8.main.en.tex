@@ -1,0 +1,149 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile,shrink=10]{Pointers}{Remainders from lectures}
+  \begin{block}{What is a pointer?}
+    \textbf{Pointer} is \alert{data type} that stores (points to) some memory
+    location. This memory location is stored by its address (some number).
+  \end{block}
+  \begin{block}{How to declare pointer?}
+  
+    \texttt{pointer\_type *name;}\\
+    Example:\\
+    \texttt{float *p;}\\
+    \alert{This pointer doesn't point to anything!}
+  \end{block}
+  \begin{block}{Why do we use pointers?}
+    \begin{itemize}
+      \item For fast and efficient looping of complex data structures as arrays
+      and trees, \ldots
+      \item For efficient passing of complex arguments in functions. Passing
+      array, struct or similar.
+      \item For passing arguments whose values we want to stay affected after
+      the function call.
+    \end{itemize}
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}{Problem 1}
+Write a function that fro an array of N integers will find the start and length
+of the largest increaing subarray.
+\begin{exampleblock}{Example}
+For array\\
+\texttt{2 3 {\color{red}1 4 7 12} 7 9 1}\\
+will return \texttt{2 4}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 1}{Solution}
+\begin{columns}
+\column{.5\textwidth}
+\lstinputlisting[lastline=23]{src/av8/p1.c}
+\column{.5\textwidth}
+\lstinputlisting[firstline=25]{src/av8/p1.c}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Problem 2}
+Write a function that for the input array $a_0, b_1, \ldots, b_{n-1}$ will
+transform in to the output array $b_0, b_1,
+\ldots, b_{n-1}$ on the following way
+\[
+\begin{array}{l}
+b_0 = a_0 + a_{n-1}\\
+b_1 = a_1 + a_{n-2}\\
+\vdots\\
+b_n = a_{n-1} + a_{0}
+\end{array}
+\]
+\begin{exampleblock}{Example} 
+Input array\\
+\texttt{1 2 3 5 7}\\
+should be transformed in\\
+\texttt{8 7 6 7 8}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 2}{Solution} 
+\lstinputlisting{src/av8/p2.c}
+\end{frame}
+
+\begin{frame}{Problem 3}
+Write the following functions for searching an array:
+\begin{itemize}
+  \item Linear search
+  \item Binary search
+\end{itemize}  
+Then write a program that fill an array with numbers from 1 to 1000000,
+and than generates random number in this range and finds its index by calling
+the two functions for searching.\\
+\textbf{Homework:} For the functions count and compare the number of needed
+itterations to find the number.
+\end{frame}
+
+
+\begin{frame}[fragile]{Problem 3}{Solution}
+\lstinputlisting[firstline=6,lastline=23]{src/av8/p3.c}
+\textbf{Homework:} Write a recursive function for binary search.
+\end{frame}
+
+\begin{frame}[fragile]{Problem 3}{Solution}
+\lstinputlisting[firstline=26]{src/av8/p3.c}
+\end{frame}
+
+
+\begin{frame}{Problem 4}
+Write functions for sorting array by using the following methods for sorting:
+\begin{itemize}
+  \item Bubble sort
+  \item Selection sort
+  \item Insertion sort
+\end{itemize}
+Write functions fro reading and printing elements of an array, and write main
+program to test the sort functions.
+\end{frame}
+
+\begin{frame}[fragile]{Bubble sort}{Problem 4}
+\begin{scriptsize}
+The method starts with comparing the first element with its neighbour until we
+reach the last element. In each comparison, if the previous has larger value,
+then they swap their values. That way the largest element is moved to the last
+position in the array. This method is repeated from 1-st to the last but one
+element in the array, so this position will float the element that is largest
+but smaller than the last element in the array. At the and we compare only the
+1-st and 2-nd element of the array.
+\end{scriptsize}
+\lstinputlisting[firstline=3, lastline=11]{src/av8/p4.c}
+\end{frame}
+
+\begin{frame}[fragile]{Selection sort}{Problem 4}
+\begin{scriptsize}
+We find the smallest element of the array and we swap the value of this element
+with the first element. After that, the first element is ignored (since its
+smallest) and recursivly the method is repeated to rest of the array (second
+elment, until the end). The recursion stops when there is only one element left.
+That is the final step, and the sorting is done.
+\end{scriptsize}
+\lstinputlisting[firstline=13, lastline=28]{src/av8/p4.c}
+\end{frame}
+
+\begin{frame}[fragile]{Insertion sort}{Problem 4}
+\begin{scriptsize}
+With this method we sort by inserting each element in apropriate position, hence
+the name of the sort. After the first itteration, the second element a[1] is
+compared to the first element a[0]. After the second itteration the third
+element is compared with first and the seccond. In general, in each itteration
+the element is compared with all elements in front of it. If the comparison
+shows that the element should be inserted at some position, then we make space
+by shifting all elements one place in right. This procedure is repeated for
+each element in the array.
+\end{scriptsize}
+\lstinputlisting[firstline=30, lastline=41]{src/av8/p4.c}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 4}{Solution}
+\lstinputlisting[firstline=43]{src/av8/p4.c}
+\end{frame}

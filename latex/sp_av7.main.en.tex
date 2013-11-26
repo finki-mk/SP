@@ -1,0 +1,179 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{Recursive functions}{Remainders from lectures}
+\begin{itemize}
+    \item Functions in C can call other functions
+    \begin{itemize}
+        \item This calling can go in some limited depth
+    \end{itemize}    
+    \item A function can call itself
+    \item That way of calling function is called \textbf{recursion}    
+\end{itemize}
+\begin{exampleblock}{Example of recursive function}
+\begin{lstlisting}
+int faktorial(int n) {
+    if(n == 0) return 1;
+    else return n * faktorial(n - 1);
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Problem 1}
+Compute the sum:\\
+\texttt{1!+(1+2)!+(1+2+3)!+\ldots+(1+2+...+n)!}
+\\This time:\\
+\begin{itemize}
+    \item User \textbf{recursive} function to compute count of the first
+    k numbers
+    \item Use \textbf{recursive} function to compute factorial of a number k
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 1}{Solution}
+\lstinputlisting[lastline=14]{src/av7/p1.c}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 1}{Solution}
+\lstinputlisting[firstline=15]{src/av7/p1.c}
+\end{frame}
+
+
+\begin{frame}{Problem 2}
+Write a program that for a given natural number will compute the difference
+between that number and the following prime number. The program should use
+\textbf{recursive} function to check if number is prime.
+\begin{exampleblock}{Example}
+For the number \texttt{573}, the program should print\\
+\texttt{577 – 573 = 4}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 2}{Solution} 
+\lstinputlisting{src/av7/p2.c}
+\end{frame}
+
+\begin{frame}{Problem 3}
+Write a function that will return the value of n-th member of the sequence
+defined with:
+\[
+   \begin{array}{l}
+   x_1 = 1\\
+   x_2 = 2\\ 
+   \vdots\\
+   x_n = \frac{n - 1}{n}x_{n - 1} + \frac{1}{n}x_{n - 2}
+   \end{array}
+\]
+\end{frame}
+
+
+\begin{frame}[fragile]{Problem 3}{Solution}
+\lstinputlisting{src/av7/p3.c}
+\end{frame}
+
+
+\begin{frame}[fragile]{Problem 4}
+Write a recursive function that will compute the sum of the digits of a nubmer.
+\begin{exampleblock}{Example}
+\begin{verbatim}
+sumDigits(126) -> 9
+sumDigits(49) -> 13
+sumDigits(12) -> 3
+\end{verbatim}
+\end{exampleblock}
+\pause
+\lstinputlisting{src/av7/p4.c}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 5}
+Given a non-negative int n, compute recursively (no loops) the count of the
+occurrences of 8 as a digit, except that an 8 with another 8 immediately to its
+left counts double, so 8818 yields 4.
+\begin{exampleblock}{Example}
+\begin{verbatim}
+count8(8) -> 1
+count8(818) -> 2
+count8(8818) -> 4
+\end{verbatim}
+\end{exampleblock}
+\pause
+\lstinputlisting{src/av7/p4.c}
+\end{frame}
+
+
+\begin{frame}{Problem 6}
+Write a program that for given array of integers (read from SI) will print the
+greatest common divisor (GCD) of its elements. GCD should be computed using
+recursive function.
+\begin{exampleblock}{Example}
+\texttt{48 36 120 72 84}\\
+Should print:\\
+\texttt{GCD is 12}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile,shrink=5]{Euclidean algorithm}{Problem 6}
+\begin{itemize}
+  \item GCD for two numbers can be computed using the Euclidean algorithm
+  \item To compute GCD of numbers m and n, we compute the remainder of
+  division of m with n
+  \begin{itemize}
+  \item If remainder is not 0, we compute the remainder of division of n with (m
+  \% n)
+  \item This step is repeated until the remainder is zero.
+  \item If the remainder is 0, GCD of the two numbers is the last non zero
+  demainder.
+  \end{itemize}
+\end{itemize}
+\begin{exampleblock}{Example}
+\begin{verbatim}
+GCD(20, 12)
+20 % 12 = 8
+12 % 8 = 4
+8 % 4 = 0
+GCD(20, 12) = 4
+\end{verbatim}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 6}{Solution}
+\lstinputlisting{src/av7/p6.c}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 7}{Try to solve at home}
+Write a program that for given array of natural numbers (read from SI) will find
+and print the least common denominator (LCD) of its elements. The program should
+use recursive function for computing LCD of two numbers.
+\begin{exampleblock}{Example}
+\begin{verbatim}
+For array:
+18 12 24 36 6
+The program should print:
+LCD is 72
+\end{verbatim}
+\end{exampleblock}
+\end{frame}
+   
+
+\begin{frame}[fragile]{Problem 8}
+Write a program that fro given array of integers (read from SI) will print the
+smallest element. The program should use recursive function for finding the
+samllest element of an array.
+\begin{exampleblock}{Example}
+\begin{verbatim}
+For array:
+5 8 3 12 9 6
+The result should be:
+3
+\end{verbatim}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 8}{Solution}
+\lstinputlisting{src/av7/p8.c}
+\end{frame}
+

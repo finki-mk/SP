@@ -1,0 +1,182 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{Defining functions}{Remainders from lectures}
+\begin{block}{Defining functions}
+\begin{lstlisting}
+return_type function_name(arguments_list) {
+/* function body */
+}
+\end{lstlisting}
+\end{block}
+\begin{itemize}
+    \item return\_type - type of the return value from the function
+    \item function\_name - name of the function
+    \item arguments\_list - the list of formal arguments contains all the
+    arguments with thier coresponding types separated with coma, the body of the
+    function contains the same elements as the \texttt{main()} function
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Function calls}{Remainders from lectures}
+\begin{block}{Function calls}
+\begin{lstlisting}
+function_name(arguments_list);
+\end{lstlisting}
+\end{block}
+\begin{itemize}
+    \item function\_name – the name of the function
+    \item arguments\_list - the list of arguments is filled with values as the
+    arguments, also separated with coma
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Functions from the math library}{\texttt{math.h}}
+\begin{itemize}
+    \item C has standard math library \texttt{math.h} which contains many
+    standard mathematical functions
+    \item Before usage we should only include the library
+    with \texttt{\#include<math.h>}
+    \item All the functions from the standard library \texttt{math.h} work with
+    arguments of type \texttt{double} and return values of the same type
+\end{itemize}
+\begin{block}{Including the math library}
+\begin{lstlisting}
+#include <math.h>
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}{Most commonly used math functions}{\texttt{math.h}}
+\begin{tabular}{l | l}
+\texttt{sqrt(x)} &  square root of $\sqrt{x}$\\
+\hline
+\texttt{exp(x)} & exponential function  $e^x$\\
+\hline
+\texttt{log(x)} & natural logarithm of $log(x)$ (with basis е)\\
+\hline
+\texttt{log10(x)} & logarithm of $x$ with basis 10 $log_{10}(x)$ \\
+\hline
+\texttt{fabs(x)} & absolute value of $|x|$\\
+\hline
+\texttt{ceil(x)} & round $\lceil{x}\rceil$ to the smallest whole number not
+smaller than x\\
+\hline
+\texttt{floor(x)} & round $\lfloor{x}\rfloor$ to the largest whole number not
+larger than x\\
+\hline
+\texttt{pow(x, y)}  & $x^y$\\
+\hline
+\texttt{fmod(x, y)}  & remainder x/y as a real number\\
+\hline
+\texttt{sin(x)} & $sin(x)$ (in radians) \\
+\hline
+\texttt{cos(x)} & $cos(x)$ (in radians)\\
+\hline
+\texttt{tan(x)} & $tan(x)$ (in radians)
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{Problem 1}
+Write a program that will print all fourdigit numbers divisible by the number
+constructed from the sum of the first two digits and last two digits of the
+number.
+\begin{exampleblock}{Example}
+\texttt{3417 is divisible with 34 + 17}\\
+\texttt{5265 is divisible with 52 + 65}\\
+\texttt{6578 is divisible with 65 + 78}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 1}{Solution}
+\lstinputlisting{src/av6/p1.c}
+\end{frame}
+
+
+\begin{frame}{Problem 2}
+Write a program that for a given natural number will compute the difference
+between that number and the following prime number.
+\begin{exampleblock}{Example}
+For the number \texttt{573}, the program should print\\
+\texttt{577 – 573 = 4}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 2}{Solution} 
+\lstinputlisting{src/av6/p2.c}
+\end{frame}
+
+\begin{frame}{Problem 3}
+Write a program that will print all primes smaller than 10000 whose sum of
+digits is also a prime. At the end print the count of that kind of numbers.
+\begin{exampleblock}{Example}
+\texttt{23 -> 2+3=5}\\
+\texttt{179 -> 1+7+9=17}\\
+\texttt{9613 -> 9+6+1+3=19}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 3}{Solution} 
+\begin{columns}
+    \column{.5\textwidth}
+    \lstinputlisting[lastline=25]{src/av6/p3.c}
+    \column{.5\textwidth}
+    \lstinputlisting[firstline=26]{src/av6/p3.c}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Problem 4}
+Write a program that will print all pairs of primes up to 1000 that
+differentiate between themselves for 2. At the end print the count.
+\begin{exampleblock}{Example}
+\texttt{11 and 13}\\
+\texttt{101 and 103}\\
+\texttt{617 and 619}\\
+\texttt{881 and 883}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 4}{Solution}
+   \lstinputlisting{src/av6/p4.c}
+\end{frame}
+
+\begin{frame}{Problem 5}
+Compute the sum:\\
+\texttt{1!+(1+2)!+(1+2+3)!+\ldots+(1+2+...+n)!}
+\\Help:\\
+\begin{itemize}
+    \item Use function for computing the sum of the first k natural numbers
+    \item Use a function for computing factorial of k
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 5}{Solution}
+   \lstinputlisting{src/av6/p5.c}
+\end{frame}
+
+\begin{frame}{Problem 6}
+Write a function that will compute following expression for $x$ and $n$:
+\[
+   f(x, n) = \left\{ 
+  \begin{array}{l l}
+    x + \frac{x^n}{n} + \frac{x^{n+2}}{n + 2} &,x\geq0\\[10px]
+    - \frac{x^{n - 1}}{n - 1} + \frac{x^{n+1}}{n + 1} &,x<0
+  \end{array} \right.
+\]
+Than write a program that will table this function for read n in interval
+$x\in[-4, 4]$, with step $0.1$.
+\end{frame}
+
+\begin{frame}[fragile]{Problem 6}{Solution}
+\begin{columns}
+    \column{.5\textwidth}
+          \lstinputlisting[lastline=21]{src/av6/p6.c}
+    \column{.5\textwidth}
+        \lstinputlisting[firstline=22]{src/av6/p6.c}
+\end{columns}
+\end{frame}
+

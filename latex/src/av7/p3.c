@@ -8,7 +8,6 @@ float xnn(float x1, float x2, int n) {
 }
 int main() {
     int n;
-    printf("Vnesi n:\n");
     scanf("%d", &n);
     printf("xnn(1, 2, %d) = %.2f\n", n, xnn(1, 2, n));
     return 0;

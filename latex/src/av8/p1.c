@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define MAX 100
 
-void maxRastecka(int x[], int n, int *pos, int *len) {
+void max_increasing(int x[], int n, int *pos, int *len) {
     int i, start, currLen;
     start = 0;
     currLen = 1;
@@ -26,13 +26,12 @@ int main() {
     int a[MAX];
     int i, n, pos, len;
 
-    printf("Dolzina na nizata: ");
     scanf("%d", &n);
     for (i = 0; i < n; i++)
         scanf("%d", &a[i]);
 
-    maxRastecka(a, n, &pos, &len);
+    max_increasing(a, n, &pos, &len);
 
-    printf("Pocetok: %d, dolzina: %d\n", pos, len);
+    printf("Start: %d, Length: %d\n", pos, len);
     return 0;
 }

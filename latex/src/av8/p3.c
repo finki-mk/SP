@@ -3,14 +3,14 @@
 #include <time.h>
 #define MAX 1000000
 
-int linearSearch(int *a, int n, int key) {
+int linear_search(int *a, int n, int key) {
     int i;
     for (i = 0; i < n; i++) {
         if (*(a + i) == key) return i;
     }
     return -1;
 }
-int binarySearch(int *a, int n, int key) {
+int binary_search(int *a, int n, int key) {
     int start = 0;
     int end = n - 1;
     while (start <= end) {
@@ -31,10 +31,10 @@ int main() {
     }
     srand(time(NULL));
     int key = rand() % MAX + 1;
-    printf("Element shto se bara: %d\n", key);
-    int found = linearSearch(a, MAX, key);
-    printf("Najden so linearno preberavanje na pozicija: %d\n", found);
-    found = binarySearch(a, MAX, key);
-    printf("Najden so binarno preberavanje na pozicija: %d\n", found);
+    printf("Element for search: %d\n", key);
+    int found = linear_search(a, MAX, key);
+    printf("Found with linear search at position: %d\n", found);
+    found = binary_search(a, MAX, key);
+    printf("Found with binary search at position: %d\n", found);
     return 0;
 }

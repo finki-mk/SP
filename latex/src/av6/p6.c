@@ -1,35 +1,34 @@
 #include <stdio.h>
 double f(float i, int j) {
-    double vrednost;
+    double value;
     if (i > 0)
-        vrednost = i + stepen(i, j) / j - stepen(i, j + 2) / (j + 2);
+        value = i + power(i, j) / j - power(i, j + 2) / (j + 2);
     else
-        vrednost = -stepen(i, j - 1) / (j - 1) + stepen(i, j + 1) / (j + 1);
-    return vrednost;
+        value = -power(i, j - 1) / (j - 1) + power(i, j + 1) / (j + 1);
+    return value;
 }
-float stepen(float i, int j) {
+float power(float i, int j) {
     int k;
-    double vrednost;
+    double value;
     if (i == 0)
-        vrednost = 0.0;
+        value = 0.0;
     else {
-        vrednost = 1.0;
+        value = 1.0;
         for (k = 1; k <= j; ++k)
-            vrednost *= i;
+            value *= i;
     }
-    return vrednost;
+    return value;
 }
 int main() {
     int n;
     float x;
-    printf("Vnesi broj:\n");
     scanf("%d", &n);
     if ((n >= -2) && (n <= 1))
-        printf("Neodredeno.\n");
+        printf("Undefined.\n");
     else {
         x = -4.0;
         for (x = -4; x <= 4; x += 0.1) {
-            printf("x=%3.1f, f(x)=%10.4f\n", x, f(x, n));
+            printf("x = %3.1f, f(x) = %10.4f\n", x, f(x, n));
         }
     }
     return 0;

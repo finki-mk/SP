@@ -1,15 +1,15 @@
 #include <stdio.h>
-int zbir_po_2cifri(n) {
+int sum_of_digits(n) {
     return (n % 100) + (n / 100);
 }
 int main() {
     int i, br = 0;
     for (i = 1000; i <= 9999; i++) {
-        if (i % zbir_po_2cifri(i) == 0) {
-            printf("Brojot %d go zadovoluva uslovot\n", i);
+        if (i % sum_of_digits(i) == 0) {
+            printf("%d\n", i);
             br++;
         }
     }
-    printf("Pronajdeni se %d broevi koi go zadovoluvaat uslovot\n", br);
+    printf("Count: %d\n", br);
     return 0;
 }

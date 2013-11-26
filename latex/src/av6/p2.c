@@ -1,15 +1,14 @@
 #include <stdio.h>
-int prost(int n);
-int prv_pogolem_prost(int n);
+int is_prime(int n);
+int nearest_larger_prime(int n);
 int main() {
-    int broj;
-    printf("Vnesi broj\n");
-    scanf("%d", &broj);
-    int prost = prv_pogolem_prost(broj);
-    printf("%d - %d = %d\n", prost, broj, prost - broj);
+    int number;
+    scanf("%d", &number);
+    int is_prime = nearest_larger_prime(number);
+    printf("%d - %d = %d\n", is_prime, number, is_prime - number);
     return 0;
 }
-int prost(int n) {
+int is_prime(int n) {
     int k;
     k = 2;
     while (k * k <= n) {
@@ -19,9 +18,9 @@ int prost(int n) {
     }
     return 1;
 }
-int prv_pogolem_prost(int n) {
+int nearest_larger_prime(int n) {
     do
         n++;
-    while (!(prost(n)));
+    while (!(is_prime(n)));
     return n;
 }

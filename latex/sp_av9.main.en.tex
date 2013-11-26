@@ -1,0 +1,191 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{String functions}{\texttt{<string.h>}}
+String mutable functions
+\begin{itemize}
+  \item \texttt{strcpy} - copy one string to another
+  \item \texttt{strncpy} - copy n bytes from one string to another, from
+  \texttt{src} are copied or \texttt{nulls} are paded
+  \item \texttt{strcat} - concatenates string at the end of another
+  \item \texttt{strncat} - concatenates n bytes from one to another
+\end{itemize}
+Memory changing functions
+\begin{itemize}
+  \item \texttt{memset} - filles array with some byte
+\end{itemize}
+Functions for conversion string to numbers
+\begin{itemize}
+  \item \texttt{atof} - converts string to decimal number
+  \item \texttt{atoi} - converts string to integer number
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[shrink=10]{String functions}{\texttt{<string.h>}}
+String checking functions
+\begin{itemize}
+  \item \texttt{strlen} - return the length of the string
+  \item \texttt{strcmp} - compares two strings
+  \item \texttt{strncmp} - compares n bytes from two strings
+  \item \texttt{strchr} - finds the first occurance of given character in some
+  string
+  \item \texttt{strrchr} - finds the last occurance of given character
+  \item \texttt{strspn} - finds the first occurance of given character in some
+  string not in a given set of chars
+  \item \texttt{strcspn} - finds the last occurance of given character not in a
+  set of chars
+  \item \texttt{strpbrk} - finds the first occurance of given character in some
+  string in a given set of chars
+  \item \texttt{strstr} - finds the first occurance of string in other string
+  \item \texttt{strtok} - finds in string the next token
+\end{itemize} 
+\end{frame}
+
+\begin{frame}[shrink=10]{Functions for characters}{\texttt{<ctype.h>}}
+\begin{itemize}
+  \item \texttt{isalnum} - checks if the character is alphanumeric (letter or
+  number)
+  \item \texttt{isalpha} - checks if the character is letter
+  \item \texttt{iscntrl} - checks if the character is control
+  \item \texttt{isdigit} - checks if the character is digit
+  \item \texttt{isxdigit} - checks if the character is hex digit
+  \item \texttt{isprint} - checks if the character is printable
+  \item \texttt{ispunct} - checks if the character is interpunction
+  \item \texttt{isspace} - checks if the character is space (blank)
+  \item \texttt{islower} - checks if the character is lowercase
+  \item \texttt{isupper} - checks if the character is uppercase
+  \item \texttt{tolower} - converts to lowercase
+  \item \texttt{toupper}  - converts to uppercase
+  \item \texttt{isgraph} - checks if the character has local graphic
+  representation
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Problem 1}
+Write a function that will find how many times a given character occures in
+given string.
+\begin{exampleblock}{Example}
+For the string\\
+\texttt{``hello FINKI''}\\
+character \texttt{'l'} occures 2 times
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 1}{Solution}
+\lstinputlisting{src/av9/p1.c}
+\end{frame}
+
+\begin{frame}{Problem 2}
+Write a function that will return the length of a string. Also write a recursive
+solution.
+\begin{exampleblock}{Example} 
+For string: \texttt{``zdravo!''}\\
+The result should be: 7
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 2}{Solution} 
+\lstinputlisting{src/av9/p2.c}
+\end{frame}
+
+\begin{frame}{Problem 3}
+Write a program that will print substring from given string, determined with the
+position and the length as parameters read from SI. The substring starts from
+the character on the position counted from left to right.
+\begin{exampleblock}{Example}
+Input:\\
+\texttt{``banana''}, position = 3, length = 4\
+Result: \texttt{nana}
+\end{exampleblock}    
+\end{frame}
+
+\begin{frame}[fragile]{Problem 3}{Solution}
+\lstinputlisting{src/av9/p3.c}
+\end{frame}
+
+\begin{frame}{Problem 4}
+Write a function that will check if one string is substring of some other
+string.
+\begin{exampleblock}{Example}
+\texttt{``face''} is substring of \texttt{``Please faceAbook''}
+\end{exampleblock}  
+\end{frame}
+
+\begin{frame}[fragile]{Problem 4}{Solution}
+\lstinputlisting{src/av9/p4.c}
+\end{frame}
+
+\begin{frame}{Problem 5}
+Write a function that will check if given string is palindrome. Palindrome is a
+string that is read same from left to right and from right to left.
+\begin{exampleblock}{Example palindrome words}
+dovod\\
+ana\\
+kalabalak
+\end{exampleblock}
+\begin{scriptsize}
+\emph{Homework:} Write a function that will check if given sentance is
+palindrome. Ignore the empty spaces, interpunction characters and the case of
+letters.
+\end{scriptsize}
+\begin{exampleblock}{Example sentance palindromes}
+\begin{scriptsize}
+Јadenje i pienje daj\\
+A man, a plan, a canal, Panama\\
+Never odd or even\\
+Rise to vote sir
+\end{scriptsize}
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}[fragile]{Problem 5}{Solution}
+\lstinputlisting{src/av9/p5.c}
+\end{frame}
+
+\begin{frame}{Problem 6}
+Write a function that for a given string will if it's complex enough to become a
+password. Every password must have at least one letter, one digit and one
+special character.
+\begin{exampleblock}{Example}
+\texttt{zdr@v0!} is valid password.\\
+\texttt{zdravo} is not valid password.
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 6}{Solution}
+\lstinputlisting{src/av9/p6.c}
+\end{frame}
+
+\begin{frame}{Problem 7}
+Write a function that for will change the case of the letters and will remove
+all digits and special characters.
+
+\begin{exampleblock}{Example}
+For the string: \texttt{``0v@ePr1m3R''} \\
+The result should be: \texttt{``VEpRMr''} 
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 7}{Solution}
+\lstinputlisting{src/av9/p7.c}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 8}
+Write a function that will trim a string (remove blanks at front and end of
+string).
+\begin{exampleblock}{Example}
+For the string: \begin{verbatim}``   make trim   ''\end{verbatim} \\
+The result should be: \texttt{``make trim''} 
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 8}{Solution}
+\lstinputlisting{src/av9/p8.c}
+\end{frame}

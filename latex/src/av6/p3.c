@@ -1,5 +1,5 @@
 #include <stdio.h>
-int e_prost(int n) {
+int is_prime(int n) {
     int i;
     if (n < 4)
         return 1;
@@ -15,22 +15,22 @@ int e_prost(int n) {
     }
     return 1;
 }
-int zbir_cifri(int n) {
-    int zbir = 0;
+int sum_digits(int n) {
+    int sum = 0;
     while (n > 0) {
-        zbir += (n % 10);
+        sum += (n % 10);
         n /= 10;
     }
-    return zbir;
+    return sum;
 }
 int main() {
     int br = 0, i;
     for (i = 2; i <= 9999; i++) {
-        if (e_prost(i) && e_prost(zbir_cifri(i))) {
-            printf("Brojot %d go zadovoluva uslovot\n", i);
+        if (is_prime(i) && is_prime(sum_digits(i))) {
+            printf("%d\n", i);
             br++;
         }
     }
-    printf("Pronajdeni se %d broevi koi go zadovoluvaat uslovot\n", br);
+    printf("Count: %d\n", br);
     return 0;
 }

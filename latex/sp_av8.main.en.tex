@@ -29,8 +29,8 @@
 \end{frame}
 
 \begin{frame}{Problem 1}
-Write a function that fro an array of N integers will find the start and length
-of the largest increaing subarray.
+Write a function that for an array of N integers will find the start and length
+of the largest increasing subarray.
 \begin{exampleblock}{Example}
 For array\\
 \texttt{2 3 {\color{red}1 4 7 12} 7 9 1}\\
@@ -48,7 +48,7 @@ will return \texttt{2 4}
 \end{frame}
 
 \begin{frame}{Problem 2}
-Write a function that for the input array $a_0, b_1, \ldots, b_{n-1}$ will
+Write a function that for the input array $a_0, a_1, \ldots, a_{n-1}$ will
 transform in to the output array $b_0, b_1,
 \ldots, b_{n-1}$ on the following way
 \[
@@ -81,7 +81,7 @@ Then write a program that fill an array with numbers from 1 to 1000000,
 and than generates random number in this range and finds its index by calling
 the two functions for searching.\\
 \textbf{Homework:} For the functions count and compare the number of needed
-itterations to find the number.
+iterations to find the number.
 \end{frame}
 
 
@@ -123,8 +123,9 @@ but smaller than the last element in the array. At the and we compare only the
 \begin{scriptsize}
 We find the smallest element of the array and we swap the value of this element
 with the first element. After that, the first element is ignored (since its
-smallest) and recursivly the method is repeated to rest of the array (second
-elment, until the end). The recursion stops when there is only one element left.
+smallest) and recursively the method is repeated to rest of the array (second
+element, until the end). The recursion stops when there is only one element
+left.
 That is the final step, and the sorting is done.
 \end{scriptsize}
 \lstinputlisting[firstline=13, lastline=28]{src/av8/p4.c}
@@ -132,10 +133,10 @@ That is the final step, and the sorting is done.
 
 \begin{frame}[fragile]{Insertion sort}{Problem 4}
 \begin{scriptsize}
-With this method we sort by inserting each element in apropriate position, hence
-the name of the sort. After the first itteration, the second element a[1] is
-compared to the first element a[0]. After the second itteration the third
-element is compared with first and the seccond. In general, in each itteration
+With this method we sort by inserting each element in appropriate position,
+hence the name of the sort. After the first iteration, the second element a[1] is
+compared to the first element a[0]. After the second iteration the third
+element is compared with first and the second. In general, in each iteration
 the element is compared with all elements in front of it. If the comparison
 shows that the element should be inserted at some position, then we make space
 by shifting all elements one place in right. This procedure is repeated for

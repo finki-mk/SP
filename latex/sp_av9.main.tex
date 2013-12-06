@@ -79,29 +79,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{Задача 1}{Решение}
-\begin{lstlisting}
-#include <stdio.h>
-#define MAX 100
-int broiZnak(char *str, char znak) {
-    int vkupno = 0;
-    while (*str != '\0') {
-        vkupno += (*str == znak);
-        str++;
-    }
-    return vkupno;
-}
-int main() {
-    char s[MAX], znak;
-    printf("Vnesete string:");
-    gets(s);
-    printf("Vnesete znak koj treba da se bara vo vneseniot sting: \n");
-    znak = getchar();
-    printf(
-            "Vo vneseniot string \"%s\", znakot \"%c\" se pojavuva vkupno %d pati.\n",
-            s, znak, broiZnak(s, znak));
-    return 0;
-}
-\end{lstlisting}
+\lstinputlisting{src/av9/p1.c}
 \end{frame}
 
 \begin{frame}{Задачa 2}
@@ -114,32 +92,7 @@ int main() {
 \end{frame}
 
 \begin{frame}[fragile]{Задачa 2}{Решение} 
-\begin{lstlisting}
-#include <stdio.h>
-#define MAX 100
-
-int dolzina(char *s) {
-    int i, len = 0;
-    for (i = 0; s[i] != '\0'; i++)
-        len++;
-    return len;
-}
-
-int length(char *s) {
-    if (*s == '\0')
-        return 0;
-    return 1 + length(s + 1);
-}
-
-int main() {
-    char s[MAX];
-    printf("Vnesete ja tekstualna niza:\n");
-    gets(s);
-    printf("Dolzina: %d i %d\n", dolzina(s), length(s));
-    return 0;
-}
-
-\end{lstlisting}
+\lstinputlisting{src/av9/p2.c}
 \end{frame}
 
 \begin{frame}{Задачa 3}
@@ -156,29 +109,7 @@ int main() {
 
 
 \begin{frame}[fragile]{Задачa 3}{Решение}
-\begin{lstlisting}
-#include <stdio.h>
-#include <string.h>
-#define MAX 100
-
-int main() {
-    char s[MAX], dest[MAX];
-    int poz, dolz;
-    printf("Vnesete string: ");
-    gets(s);
-    printf("Vnesete pozicija i broj na znaci za podnizata: \n");
-    scanf("%d %d", &poz, &dolz);
-    if (poz <= strlen(s)) {
-        strncpy(dest, s + poz - 1, dolz);
-        dest[dolz] = '\0';
-        printf("Novo dobienata tekstualna niza e: ");
-        puts(dest);
-    } else
-        printf("Vnesena e nevalidna pozicija za podnizata, vnesenata niza ima samo %d znaci.\n",
-                strlen(s));
-    return 0;
-}
-\end{lstlisting}
+\lstinputlisting{src/av9/p3.c}
 \end{frame}
 
 \begin{frame}{Задачa 4}
@@ -190,34 +121,7 @@ int main() {
 \end{frame}
 
 \begin{frame}[fragile]{Задачa 4}{Решение}
-\begin{lstlisting}
-#include <stdio.h>
-#include <string.h>
-#define MAX 100
-int podniza(char *s1, char *s2) {
-    int i;
-    int d1 = strlen(s1);
-    int d2 = strlen(s2);
-    if (d1 > d2)
-        return 0;
-    for (i = 0; i < d2 - d1; i++)
-        if (strncmp(s1, s2 + i, d1) == 0)
-            return 1;
-    return 0;
-}
-int main() {
-    char s1[MAX], s2[MAX];
-    printf("Vnesete ja prvata tekstualna niza:\n");
-    gets(s1);
-    printf("Vnesete ja vtorata tekstualna niza:\n");
-    gets(s2);
-    if (podniza(s1, s2))
-        printf("%s e podniza na %s\n", s1, s2);
-    else
-        printf("%s ne e podniza na %s\n", s1, s2);
-    return 0;
-}
-\end{lstlisting}
+\lstinputlisting{src/av9/p4.c}
 \end{frame}
 
 \begin{frame}{Задачa 5}
@@ -246,37 +150,7 @@ Rise to vote sir
 \end{frame}
 
 \begin{frame}[fragile]{Задачa 5}{Решение}
-\begin{lstlisting}
-#include <stdio.h>
-#include <string.h>
-#define MAX 100
-int palindrom(char *str) {
-    int i, len = strlen(str);
-    for (i = 0; i < len / 2; i++)
-        if (*(str + i) != *(str + len - 1 - i))
-            return 0;;
-    return 1;
-}
-// REKURZIVNO
-int pal(char *str, int start, int end) {
-    if(start >= end) return 1;
-    if(str[start] == str[end])
-        return pal(str, start + 1, end - 1);
-    return 0;
-}
-
-int main() {
-    char s[MAX];
-    printf("Vnesete string: ");
-    gets(s);
-    printf("Vneseniot string %s ", s);
-    if (pal(s, 0, strlen(s) - 1))
-        printf("e palindrom.");
-    else
-        printf("ne e palindrom.");
-    return 0;
-}
-\end{lstlisting}
+\lstinputlisting{src/av9/p5.c}
 \end{frame}
 
 \begin{frame}{Задачa 6}
@@ -290,37 +164,7 @@ int main() {
 \end{frame}
 
 \begin{frame}[fragile]{Задачa 6}{Решение}
-\begin{lstlisting}
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#define MAX 100
-
-int eLozinka(char *str) {
-    int bukvi = 0, brojki = 0, spec = 0;
-    for(; *str; str++) {
-        if (isalpha(*str))
-            bukvi++;
-        else if (isdigit(*str))
-            brojki++;
-        else
-            spec++;
-    }
-    return (bukvi > 0 && brojki > 0 && spec > 0);
-}
-
-int main() {
-    char s[MAX];
-    printf("Vnesete string: ");
-    gets(s);
-    printf("Vneseniot string %s ", s);
-    if (eLozinka(s))
-        printf("moze da bide lozinka.");
-    else
-        printf("ne moze da bide lozinka.");
-    return 0;
-}
-\end{lstlisting}
+\lstinputlisting{src/av9/p6.c}
 \end{frame}
 
 \begin{frame}{Задачa 7}
@@ -335,36 +179,7 @@ int main() {
 \end{frame}
 
 \begin{frame}[fragile]{Задачa 7}{Решение}
-\begin{lstlisting}
-#include <stdio.h>
-#include <string.h>
-#define MAX 100
-
-void filter(char *str) {
-    int i = 0, j = 0;
-    while (str[i] != '\0') {
-        if (isalpha(str[i])) {
-            if (islower(str[i]))
-                str[j] = toupper(str[i]);
-            else if (isupper(str[i]))
-                str[j] = tolower(str[i]);
-            else
-                str[j] = str[i];
-            j++;
-        }
-        i++;
-    }
-    str[j] = '\0';
-}
-int main() {
-    char s[MAX];
-    printf("Vnesete string: ");
-    gets(s);
-    filter(s);
-    printf("Novo dobieniot string e: [%s]\n", s);
-    return 0;
-}
-\end{lstlisting}
+\lstinputlisting{src/av9/p7.c}
 \end{frame}
 
 \begin{frame}[fragile]{Задачa 8}
@@ -377,31 +192,5 @@ int main() {
 \end{frame}
 
 \begin{frame}[fragile]{Задачa 8}{Решение}
-\begin{lstlisting}
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#define MAX 100
-
-void trim(char *s) {
-    char *d = s;
-    while (isspace(*s++))
-        ;
-    s--;
-    while (*d++ = *s++)
-        ;
-    d--;
-    while (isspace(*--d))
-        *d = 0;
-}
-int main() {
-    char s[MAX];
-    printf("Vnesete string: ");
-    gets(s);
-    printf("[%s] -> ", s);
-    trim(s);
-    printf("[%s]", s);
-    return 0;
-}
-\end{lstlisting}
+\lstinputlisting{src/av9/p8.c}
 \end{frame}

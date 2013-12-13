@@ -3,8 +3,6 @@
 
 void max_increasing(int x[], int n, int *pos, int *len) {
     int i, start, currLen;
-    start = 0;
-    currLen = 1;
     *pos = 0;
     *len = 1;
     for (i = 0; i < n - 1; i++) {
@@ -13,7 +11,7 @@ void max_increasing(int x[], int n, int *pos, int *len) {
         while ((x[i] < x[i + 1])) {
             currLen++;
             i++;
-            if (i >= n) break;
+            if (i == n - 1) break;
         }
         if (currLen > *len) {
             *len = currLen;

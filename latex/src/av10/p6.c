@@ -3,7 +3,7 @@
 #include <ctype.h>
 int main(int argc, char **argv) {
     char c;
-    int vozbor = 0, i, ok, brPojavuvanja = 0;
+    int brPojavuvanja = 0;
     FILE *dat;
     if (argc != 3) {
         printf("Nevalidni argumenti na komandna linija\n");
@@ -14,27 +14,26 @@ int main(int argc, char **argv) {
             exit(-1);
         }
     }
-
+    char *zbor = argv[2];
+    int i = 0, count = 0;
     while ((c = fgetc(dat)) != EOF) {
         if (isdigit(c)) {
-            if (!vozbor) {
-                vozbor = 1;
-                i = 0;
-                ok = 1;
+            if (c != zbor[i++]) {
+                if (count == strlen(zbor)) {
+                    brPojavuvanja++;
+                }
+                count = 0;
+            } else {
+                count++;
             }
-            if (argv[2][i] != c)
-                ok = 0;
-            i++;
-        } else if (vozbor) {
-            vozbor = 0;
-            if (ok)
+        } else {
+            if(count == strlen(zbor)) {
                 brPojavuvanja++;
+            }
+            count = 0;
         }
     }
-    if (vozbor && (ok))
-        brPojavuvanja++;
-    printf("Zborot %s se pojavuva %d pati vo datotekata\n", argv[2],
+    printf("Zborot %s se pojavuva %d pati vo datotekata\n", zbor,
            brPojavuvanja);
-}
-return 0;
+    return 0;
 }

@@ -1,21 +1,24 @@
-#include <stdio.h>
-#define MAX 100
-int main() {
-    int a[MAX][MAX], n, i, j;
-    scanf("%d", &n);
+# include <stdio.h>
+# define MAX 100
+int main () {
+    int a[MAX][MAX], n, i, j, zname = 0;
+    printf ("Vnesi dimenzii na matricata: \n");
+    scanf ("%d", &n);
+    printf ("Vnesi gi elementite na matricata: \n");
     for (i = 0; i < n; ++i)
         for (j = 0; j < n; ++j)
-            scanf("%d", &a[i][j]);
+            scanf ("%d", &a[i][j]);
     for (i = 0; i < n - 1; ++i) {
         for (j = i + 1; j < n; ++j)
-            if (a[i][j] != a[j][i])
+            if (a[i][j] != a[j][i]) {
+                zname = 1;
                 break;
-        if (i != j) break;
+            }
+        if (zname) break;
     }
-    if (i == j)
-        printf("Matrix is symetric on the main diagonal\n");
+    if (!zname)
+        printf ("Matricata e simetricna vo odnos na glavnata dijagonala \n");
     else
-        printf("Matrix is not symetric on the main diagonal\n");
+        printf ("Matricata ne e simetricna vo odnos na glavnata dijagonala \n");
     return 0;
 }
-

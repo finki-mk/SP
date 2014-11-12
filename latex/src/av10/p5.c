@@ -21,9 +21,9 @@ int ima_poveke_od2isti(char *w) {
     return 0;
 }
 int main(int argc, char *argv[]) {
-    char zbor[WORDLEN], c;
+    char zbor[WORDLEN];
     FILE *f;
-    int iw = 0, i = 0, brzb = 0;
+    int brzb = 0;
     if (argc > 2) {
         printf("Upotreba: %s ime_na_datoteka\n", argv[0]);
         exit(-1);
@@ -34,28 +34,12 @@ int main(int argc, char *argv[]) {
         printf("Datotekata %s ne se otvora.\n", argv[1]);
         return -1;
     }
-    while ((c = fgetc(f)) != EOF) {
-        if (isalpha(c)) {
-            if (!iw)
-                iw = 1;
-            zbor[i++] = c;
-        } else if (iw) {
-            zbor[i] = 0;
-            if (ima_poveke_od2isti(zbor)) {
-                puts(zbor);
-                brzb++;
-            }
-            zbor[i = iw = 0] = 0;
-        }
-    }
-    if (iw) {
-        zbor[i] = 0;
+    while (fgets(zbor, WORDLEN, f)) != NULL) {
         if (ima_poveke_od2isti(zbor)) {
             puts(zbor);
             brzb++;
         }
     }
-
     printf("\nVkupno %d zborovi.\n", brzb);
     fclose(f);
     return 0;

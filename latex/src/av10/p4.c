@@ -1,30 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
+int e_samoglaska(char c) {
+    return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+}
 int main() {
-    int zbor = 0, red = 0, vozbor = 0, vkupno = 0;
-    FILE *dat; char c; 
+    int red = 0, vkupno = 0;
+    FILE *dat; char c;
     if ((dat = fopen("KRSPrimer.txt", "r")) == NULL) {
         printf("Datotekata KRSPrimer.txt ne se otvora");
         exit(-1);
     }
+    int samoglaski = 0;
     while ((c = fgetc(dat)) != EOF) {
-        if (isalnum(c)) {
-            if (!vozbor) {
-                vozbor = 1;
-            }
-        } else if (vozbor) {
-            vozbor = 0;
-            zbor++;
-            vkupno++;
+        if(e_samoglaska(c)) {
+            ++samoglaski;
+            ++vkupno;
         }
         if (c == '\n') {
-            if (zbor > 10) {
+            if (samoglaski > 10) {
                 red++;
             }
-            zbor = 0;
+            samoglaski = 0;
         }
     }
-    printf("Vkupno %d reda imaat povekje od 10 zbora\n", red);
-    printf("Vo datotekata ima vkupno %d zbora.\n", vkupno);
+    printf("Vkupno %d reda imaat povekje od 10 samoglaski\n", red);
+    printf("Vo datotekata ima vkupno %d samoglaski.\n", vkupno);
     return 0;
 }

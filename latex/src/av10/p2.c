@@ -3,7 +3,6 @@
 
 int main(int argc, char *argv[]) {
     char line[MAX], *c;
-    int in_word = 0, words_count = 0;
     FILE *input, *output;
     if (argc < 3) {
         printf("Usage: %s [input_filename] [output_filename]\n",
@@ -20,22 +19,8 @@ int main(int argc, char *argv[]) {
     }
 
     while ((fgets(line, MAX, input)) != NULL) {
-        c = line;
-        in_word = 0;
-        words_count = 0;
-        while (*c != '\0') {
-            if (isalnum(*c)) {
-                if (!in_word)
-                    in_word = 1;
-            } else if (in_word) {
-                in_word = 0;
-                words_count++;
-            }
-            c++;
-        }
-        if (in_word)
-            words_count++;
-        fprintf(output, "%d %s", words_count, line);
+        int count = strlen(line);
+        fprintf(output, "%d %s", count, line);
     }
     fclose(input);
     fclose(output);

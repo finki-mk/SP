@@ -20,17 +20,11 @@ int ima_poveke_od2isti(char *w) {
     }
     return 0;
 }
-int main(int argc, char *argv[]) {
+int main() {
     char zbor[WORDLEN];
     FILE *f;
     int brzb = 0;
-    if (argc > 2) {
-        printf("Upotreba: %s ime_na_datoteka\n", argv[0]);
-        exit(-1);
-    }
-    if (argc == 1)
-        f = stdin;
-    else if ((f = fopen(argv[1], "r")) == NULL) {
+    if ((f = fopen("zborovi.txt", "r")) == NULL) {
         printf("Datotekata %s ne se otvora.\n", argv[1]);
         return -1;
     }

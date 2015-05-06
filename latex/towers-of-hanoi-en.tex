@@ -1,0 +1,241 @@
+%Towers of Hanoi illustrated and computed by TeX. The problem is solved in
+%TeX and for every move the situation is drawn. The idea and visualization were
+%by Martin Hofmann, Berteun Damman programmed the actual recursion.
+%
+% Authors: Martin Hofmann and Berteun Damman
+
+\documentclass{beamer}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{verbatim}
+
+\begin{comment}
+:Title: Towers of Hanoi
+:Tags: Beamer; Foreach; Macros; Mathematics; Computer Science;
+:Author: Martin Hofmann, Berteun Damman
+:Page: 9
+
+Towers of Hanoi illustrated and computed by TeX. The problem is solved in
+TeX and for every move the situation is drawn. The idea and visualization were
+by Martin Hofmann, Berteun Damman programmed the actual recursion.
+\end{comment}
+
+\usepackage{scalefnt}
+
+\usetheme{FINKI}
+
+\usepackage{tikz}
+\usetikzlibrary{shadows,patterns,shapes}
+
+% The logic for Hanoi, we record the discs at every pole
+% as a comma separated list ending with a '.'; i.e. the
+% starting list for 4 discs would be 1,2,3,4,.
+\newcount\ndiscs
+\def\initpoles#1{
+    \def\disclist{}
+    \foreach \n in {1,...,#1} {
+        \xdef\disclist{\disclist\n,}
+    }
+    \expandafter\xdef\csname pole 1\endcsname{\disclist.}
+    \expandafter\gdef\csname pole 2\endcsname{.}
+    \expandafter\gdef\csname pole 3\endcsname{.}
+}
+
+% Delimited macro; #1 is everything up to the first ',' and
+% #2 everything after it.
+\def\head#1,#2.{#1}
+\def\tail#1,#2.{#2}
+
+% This macro updates the disc lists, its arguments are the name
+% names of the macro's corresponding to the poles, for example
+% 'pole 1' and 'pole 3'.
+\def\movedisc#1#2{
+    \edef\lista{\csname #1\endcsname}
+    \edef\listb{\csname #2\endcsname}
+    \expandafter\xdef\csname #2\endcsname{\expandafter\head\lista,\listb}
+    \expandafter\xdef\csname #1\endcsname{\expandafter\tail\lista.}
+}
+
+% Updates the lists and then draws a new frame.
+\def\move#1#2{
+    \movedisc{pole #1}{pole #2}
+    \gdef\fmsg{\node[anchor=north] at (3.8,-.5) {Disk is moved from pole #1
+    to pole #2.};}
+    \drawpoles
+}
+
+% This macro boils down to a well-known recursive solution, as given
+% here for example: http://en.wikipedia.org/wiki/Towers_of_Hanoi#Recursive_solution
+%
+% #1 Pole to move from
+% #2 Pole to move to
+% #3 Pole to use as scratch
+% #4 Number of disks
+\def\rhanoi#1#2#3#4{
+    \ifnum#4>1
+        {\advance#4 by -1 \rhanoi#1#3#2#4}
+        \move{#1}{#3}
+        {\advance#4 by -1 \rhanoi#2#1#3#4}
+    \else
+        \move{#1}{#3}
+    \fi
+}
+
+% Below is the TikZ code to draw the towers:
+\tikzset{
+    disc/.style={shade, shading=radial, rounded rectangle,minimum height=.5cm,
+        inner color=#1!20, outer color=#1!60!gray},
+    disc 1/.style={disc=yellow, minimum width=15mm},
+    disc 2/.style={disc=orange, minimum width=20mm},
+    disc 3/.style={disc=red, minimum width=25mm},
+    disc 4/.style={disc=green, minimum width=30mm},
+    disc 5/.style={disc=blue, minimum width=35mm},
+    disc 6/.style={disc=purple, minimum width=40mm},
+}
+
+% Define some colors, I don't like plain green and brown.
+\definecolor{darkgreen}{rgb}{0.2,0.55,0}
+\definecolor{darkbrown}{rgb}{0.375,0.25,0.125}
+
+\newcommand{\pole}{
+  \fill[darkbrown] (-1.6cm, 0) rectangle (1.6cm,0.25cm)
+    (-1.25mm,2.5mm) rectangle (1.25mm,4.25cm);
+}
+
+% Because the list starts with the topmost disc, we
+% use two recursive macro's to invert the drawing process.
+\newcount\curlevel
+
+% This macro checks whether the list is empty, if not,
+% it calls \rdrawdiscs which removes one element and
+% calls this one again.
+\def\drawdiscs#1.{
+    % If #1 is empty, this expands to \if.. which is true, otherwise
+    % we're safe to assume there's at least one element.
+    \expandafter\if#1..\else
+        \rdrawdiscs#1.
+        \advance\curlevel by 1\relax
+    \fi
+}
+
+\def\rdrawdiscs#1,#2.{
+    \drawdiscs#2.
+    {\edef\n{\the\curlevel}
+        % Draw the actual disk.
+        \node[disc #1,yshift={\n*5mm}] {#1};
+    }
+}
+
+\def\discs#1{
+    \curlevel=1
+    \expandafter\drawdiscs#1
+}
+
+% Draws the whole situation based on the lists.
+\def\drawpoles{
+    \begin{frame}{\ftitle}
+    \begin{tikzpicture}
+        \foreach \n/\x in {1/0cm,2/3.8cm,3/7.6cm} {
+            \begin{scope}[xshift=\x]
+                \pole
+                \expandafter\discs\csname pole \n\endcsname
+            \end{scope}
+        }
+        % Macro that either contains something like OK or
+        % the last move.
+        \fmsg
+        % We use this to prevent the picture from jumping between
+        % frames.
+        \useasboundingbox (-1.6cm,-1.2cm) rectangle (9.2cm,4.25cm);
+    \end{tikzpicture}
+    \end{frame}
+}
+
+% Main macro, inits the lists for the current number, sets a title
+% for the frame and starts the recursion.
+\def\hanoi#1{
+    \ndiscs=#1
+    \initpoles{#1}
+    \ifnum\ndiscs=1
+        \xdef\ftitle{Hanoi towers -- \the\ndiscs\ pole}
+    \else
+        \xdef\ftitle{Hanoi towers -- \the\ndiscs\ poles}
+    \fi
+    \gdef\fmsg{}
+    % Starting frame.
+    \drawpoles
+    % Recursion draws a new frame for every step.
+    \rhanoi{1}{2}{3}{\ndiscs}
+    % Final frame.
+    \gdef\fmsg{\node[] at (3.8,2.5) {\Huge\scalefont{2}\color{darkgreen}OK};}
+    \drawpoles
+}
+
+\author[AV8-Towers of Hanoi]{Structured programming}
+\title[SP]{Lesson 7}
+\subtitle{Recursion - problem of Hanoi towers}
+\date{}
+
+\begin{document}
+    \frame[t,plain]{\titlepage}
+    
+    \begin{frame}{Problem of Hanoi towers}
+    \begin{scriptsize}
+    Легендата вели: Во големиот храм Brahma во Benares, под сводот кој го покрива
+центарот на светот постои месингана чинија во која има три вертикално
+поставени дијамантски прачки. На едната од нив има 64 диска од чисто злато со
+различен пречник секој со отвор во средината поставени на дијамантска прачка
+во вид на кула, со најголемиот диск на дното и најмалиот на врвот.
+Свештениците ги пренесуваат дисковите еден по еден помеѓу дијамантските
+прачки, според безусловниот закон на Brahma: Никогаш не смее да се постави
+поголем врз помал диск. (Секогаш се зема дискот од врвот и се преместува на
+некоја од останатите две прачки.) На почетокот на светот сите 64 диска ја
+формираат кулата на Брама на една од прачките. Кога и последниот диск ќе биде
+пренесен, формирајќи ја повторно кулата на Брама но сега на друга прачка, ќе
+дојде крајот на светот и сé ќе се претвори во прав. Модерната верзија на
+проблемот на Ханојските кули ја поставил Edouard Lucas, француски
+математичар околу 1883 година.    
+    \end{scriptsize}
+    \end{frame}
+    
+    \hanoi{1}
+    \hanoi{2}
+    \hanoi{3}
+    \hanoi{4}
+
+    % For 5 discs we don't show everything (although it could be done).
+    \ndiscs=5
+    \initpoles{5}
+    \def\ftitle{Hanoi towers -- \the\ndiscs\ poles}
+    \def\fmsg{\node[cloud, draw, fill=gray!20, aspect=2] at (3.8,2.5) {\Huge\scalefont{2}?};}
+    \drawpoles
+    
+\lstset{language=C,captionpos=b,
+tabsize=4,frame=lines,
+basicstyle=\tiny\ttfamily,
+keywordstyle=\color{blue},
+commentstyle=\color{lightgray},
+stringstyle=\color{violet},
+breaklines=true,showstringspaces=false}
+    
+\begin{frame}[fragile]{Solution}
+\begin{lstlisting}
+#include <stdio.h>
+void hanoi(char from, char to, char other, int n) {
+    if(n > 0) {
+        hanoi(from, other, to, n - 1);
+        printf("%c -> %c\n", from, to);
+        hanoi(other, to, from, n - 1);
+    }
+}
+int main() {
+    int n;
+    printf("Enter number:\n");
+    scanf("%d", &n);
+    hanoi('A', 'C', 'B', n);
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+\end{document}

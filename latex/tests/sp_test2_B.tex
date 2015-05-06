@@ -1,0 +1,134 @@
+\documentclass[11pt]{examdesign}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{pifont}
+\usepackage{verbatim}
+\usepackage[ddmmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
+\SectionFont{\large\sffamily}
+\usepackage[margin=1.5cm]{geometry}
+%\Fullpages
+\ContinuousNumbering
+%\ShortKey
+\DefineAnswerWrapper{}{}
+\NumberOfVersions{1}
+\IncludeFromFile{sp_test1_code.tex}
+
+\def\namedata{Name: \hrulefill \\[5pt]
+ID: \hrulefill}
+
+\begin{examtop}
+{\parbox{.5\textwidth}{\textbf{\classdata} \\
+\examtype, 14.11.2013, Group: \fbox{\textsf{B}}\\ \emph{Each question
+has exactly \textbf{one correct} answer.}}
+\hfill
+\parbox{.45\textwidth}{\normalsize \namedata}}
+\end{examtop}
+
+\def\aftersectsep{0pt}
+\def\beforesectsep{0pt}
+\def\beforeinstsep{0pt}
+\def\afterinstsep{0pt}
+
+
+\class{\Large{Structured Programming}}
+\examname{Test 1}
+\begin{document}
+%\SectionPrefix{Дел \arabic{sectionindex}. \space}
+
+\begin{multiplechoice}[title={},suppressprefix=yes,rearrange=yes]
+
+\begin{question}
+Which of the following expressions \textbf{is valid} in C?
+    \choice{\texttt{for(x = 1)}}
+    \choice{\texttt{for(x > 0; x--)}}
+    \choice[!]{\texttt{while(10 * 10)}}
+    \choice{neither}
+\end{question}
+
+\begin{question}
+What is the valid code in C that checks the following condition 5 < x <
+50?
+    \choice{\texttt{while((50 >= x) \&\& (x > 5))}}
+    \choice[!]{\texttt{if((50 >= x) \&\& (x > 5))}}
+    \choice{\texttt{if((50 > x) \&\& (x > 5))}}
+    \choice{\texttt{if(5 < x <= 50)}}
+\end{question}
+
+\begin{question}
+What will be the output after execution of the following code segment?
+  \InsertChunk{c0}
+  \choice{\texttt{0 1 2 3}}
+  \choice{\texttt{2 1 0}}
+  \choice[!]{\texttt{0 1 2}}
+  \choice{the code is invalid}
+\end{question}
+
+\begin{question}
+What will be the output after the execution of the following code segment?
+    \InsertChunk{c4B}
+    \choice{YES}
+    \choice[!]{NO}
+    \choice{cannot predict, will depend on value of variable x}
+    \choice{the code will produce a syntax error}
+\end{question}
+  
+\begin{question}
+What will be the output after execution of the following code segment?
+    \InsertChunk{c1B}
+    \choice{\texttt{b = 2.25}}
+    \choice[!]{\texttt{b = 001}}  
+    \choice{\texttt{b = 1}}               
+    \choice{\texttt{b = 1.00}}
+\end{question}
+
+\begin{question}
+What will be the value of \texttt{i} after the execution of the following code segment?
+    \InsertChunk{c2B}
+    \choice{\texttt{0}}
+    \choice[!]{\texttt{11}}
+    \choice{\texttt{9}}
+    \choice{\texttt{10}}
+\end{question}
+\begin{question}
+Which of the following expressions is used to declare of two-dimensional
+array (matrix) of integers with dimension 50x50 (50 rows and 50 columns)?
+  \choice{\texttt{int matrix[50 x 500];}}
+  \choice{\texttt{int matrix[2500];}}
+  \choice{\texttt{int matrix[50, 50];}}
+  \choice[!]{\texttt{int matrix[50][50];}}
+\end{question}
+  
+  
+\begin{question}
+What will be the output after the execution of the following code segment?
+    \InsertChunk{c5B}
+    \choice[!]{\texttt{123}}
+    \choice{\texttt{1}}
+    \choice{\texttt{2}}
+    \choice{\texttt{3}}
+\end{question}
+  
+\begin{question}
+What is the result from the execution of the following code segment?
+    \InsertChunk{c3}
+    \choice[!]{0.0}
+    \choice{2.0}
+    \choice{2.5}
+    \choice{3.0}
+\end{question}
+  
+\begin{question}
+Which of the following expressions will declare an array \texttt{a} of 5
+integers?
+    \choice[!]{\texttt{int a[] = \{1, 2, 3, 4, 5\};}}
+    \choice{\texttt{int array[];}}
+    \choice{\texttt{a int[5];}}
+    \choice{\texttt{array int[5];}}
+\end{question}
+  
+\end{multiplechoice}
+
+\end{document}

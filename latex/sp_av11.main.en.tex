@@ -1,0 +1,51 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Problem 1}
+\begin{scriptsize}
+Given array $A = { a_i }$, where $0 <= i < n$, from integers (size end the elements) read from SI.
+Write a program that will form new array $B = { b_i }$, where $0 <= i < \frac{n}{2}$ if n is even, or 
+$0 <= i < \frac{n}{2} + 1$ if $n$ is odd, so $b_0 = $ sum of digits of odd positions of number $a_0 = $ sum of digits on even positions of number $a_n-1$. Print the array $b$ on SO.
+The least significant digit is on position 1. 
+
+\textbf{The sum of digits on even or odd positions should be computed
+in a separate recursive functions (or one function).}
+\end{scriptsize}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 1}{Solution}
+\lstinputlisting{src/av11/p111.c}
+\end{frame}
+
+\begin{frame}{Problem 2}
+Given a square matrix (the size and the elements are read from SI).
+Write a program that will print ond SO "YES" if the sum of elements that are at 
+the same time over the main and under the supportive diagonal and under the main and over the
+supportive is larger than the sum of
+the elements at the same time under the main and under the supportive diagonal and over the main and over
+the supportive. In the oposite case print "NO".
+\end{frame}
+
+\begin{frame}[fragile]{Problem 2}{Solution 1/2}
+\lstinputlisting[lastline=22]{src/av11/p112.c}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 2}{Solution 2/2}
+\lstinputlisting[firstline=23]{src/av11/p112.c}
+\end{frame}
+
+\begin{frame}{Problem 3}
+Given a text file with name "text.txt". Write a program that will print 
+how many rows have less then average words per row. In the file the words are composed only of alphanumerical characters and
+the max size of a row is 80. Print the result on the SO.
+\end{frame}
+
+\begin{frame}[fragile]{Problem 3}{Solution 1/2}
+\lstinputlisting[lastline=16]{src/av11/p113.c}
+\end{frame}
+
+\begin{frame}[fragile]{Problem 3}{Solution 2/2}
+\lstinputlisting[firstline=17]{src/av11/p113.c}
+\end{frame}
+

@@ -1,21 +1,21 @@
 #include <stdio.h>
 #define MAX 81
 
-int main(int argc, char *argv[]) {
+int main() {
     char line[MAX], *c;
     FILE *input, *output;
     if ((input = fopen("input.txt", "r")) == NULL) {
-        printf("File %s could not be open.\n", argv[1]);
+        printf("File input.txt could not be open.\n");
         return -1;
     }
     if ((output = fopen("output.txt", "w")) == NULL) {
-        printf("File %s could not be open\n", argv[2]);
+        printf("File output.txt could not be open\n");
         return -1;
     }
 
     while ((fgets(line, MAX, input)) != NULL) {
         int count = strlen(line);
-        fprintf(output, "%d %s", count, line);
+        fprintf(output, "%d \n%s", count, line);
     }
     fclose(input);
     fclose(output);

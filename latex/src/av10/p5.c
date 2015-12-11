@@ -25,7 +25,7 @@ int main() {
     FILE *f;
     int brzb = 0;
     if ((f = fopen("zborovi.txt", "r")) == NULL) {
-        printf("Datotekata %s ne se otvora.\n", argv[1]);
+        printf("Datotekata zborovi.txt ne se otvora.\n");
         return -1;
     }
     while (fgets(zbor, WORDLEN, f)) != NULL) {

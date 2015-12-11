@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int is_letter(char c) {
     return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
@@ -24,7 +25,7 @@ int main() {
     FILE *dat;
     // Opening file
     if ((dat = fopen("text.txt", "r")) == NULL) {
-        printf("The file %s cannot be open.\n", argv[1]);
+        printf("The file text.txt cannot be open.\n");
         return -1;
     }
     // Reading char by char until the EndOfFile (EOF)

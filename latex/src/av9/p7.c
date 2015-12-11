@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 #define MAX 100
 
 void filter(char *str) {
@@ -8,10 +9,8 @@ void filter(char *str) {
         if (isalpha(str[i])) {
             if (islower(str[i]))
                 str[j] = toupper(str[i]);
-            else if (isupper(str[i]))
-                str[j] = tolower(str[i]);
             else
-                str[j] = str[i];
+                str[j] = tolower(str[i]);
             j++;
         }
         i++;

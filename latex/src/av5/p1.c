@@ -8,7 +8,7 @@ int main() {
     printf("Second array size:  ");
     scanf("%d", &n2);
     if (n1 != n2)
-        printf("Arrays are equal\n");
+        printf("Arrays are not equal\n");
     else {
         printf("Elements of the first array: \n");
         for (i = 0; i < n1; ++i) {

@@ -5,7 +5,7 @@ int is_is_palindrome(char *str) {
     int i, len = strlen(str);
     for (i = 0; i < len / 2; i++)
         if (*(str + i) != *(str + len - 1 - i))
-            return 0;;
+            return 0;
     return 1;
 }
 // RECURSIVE

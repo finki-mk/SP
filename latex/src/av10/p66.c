@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 int main() {
     char c;
     int brPojavuvanja = 0;
     FILE *dat;
 
     if ((dat = fopen("dat.txt", "r")) == NULL) {
-        printf("Datotekata %s ne se otvora!\n", argv[1]);
+        printf("Datotekata dat.txt ne se otvora!\n");
         exit(-1);
     }
 

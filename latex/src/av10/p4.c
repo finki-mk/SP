@@ -17,7 +17,7 @@ int main() {
             ++vkupno;
         }
         if (c == '\n') {
-            if (samoglaski > 10) {
+            if (samoglaski <= 10) {
                 red++;
             }
             samoglaski = 0;

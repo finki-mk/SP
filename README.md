@@ -1,11 +1,18 @@
-# Structured Programming
+# Структурно програмирање
 
-Materials for the course Structured programming at FCSE in Skopje. Included in the repository:
+Изворни кодови на задачите од аудиториските вежби поделени по часови по предметот Структурно програмирање од Факултетот за информатички науки и компјутерско инженерство (ФИНКИ) од Скопје.
 
-1. Presentations slides in latex (beamer) source
-2. Source code for all the problems
+### Автори 
 
-### Authors
+М-р. Бобан Јоксимоски
 
-Msc. Tomche Delev
-...
+М-р. Томче Делев
+
+М-р. Христина Михајлоска
+
+М-р. Емил Станков
+
+М-р. Александар Тенев
+
+М-р. Катарина Тројачанец
+

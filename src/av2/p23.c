@@ -9,5 +9,5 @@ int main() {
     float P = s * (s - a) * (s - b) * (s - c);
     printf("Perimetarot e: %.2f\n", L);
     printf("Kvadratot na ploshtinata e: %.2f\n", P);
-	return 0;
+    return 0;
 }

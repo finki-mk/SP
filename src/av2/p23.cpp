@@ -10,5 +10,5 @@ int main() {
     float P = s * (s - a) * (s - b) * (s - c);
     cout << "Perimetarot e: " << L << endl;
     cout << "Kvadratot na ploshtinata e: " << P << endl;
-	  return 0;
+    return 0;
 }

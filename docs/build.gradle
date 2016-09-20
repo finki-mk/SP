@@ -16,9 +16,10 @@ asciidoctor {
     backends = ['html5', 'pdf']
 
     sourceDir = file('src')
-    outputDir = file('build')
+    outputDir = file('.')
 
     def files = [
+            'index.adoc',
             'av1.adoc',
             'av2.adoc'
     ]
@@ -27,8 +28,8 @@ asciidoctor {
         include files
     }
 
-    attributes  \
-             'source-highlighter': 'coderay',
+    attributes     \
+                'source-highlighter': 'coderay',
             'encoding': 'utf-8',
             'imagesdir': './images',
             'toc': 'left',

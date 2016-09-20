@@ -1,0 +1,11 @@
+# Структурно програмирање
+Аудиториски вежби
+v1.0, 20 Септември, 2016
+include::parts/attributes.adoc[]
+
+:pdf_source: ../pdf
+
+== Содржина
+
+. link:av1.html[Аудиториска вежба 1] link:{pdf_source}/av1.pdf[PDF]
+. link:av2.html[Аудиториска вежба 2] link:{pdf_source}/av2.pdf[PDF]

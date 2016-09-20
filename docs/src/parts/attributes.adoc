@@ -2,3 +2,4 @@
 :toc-title: Содржина
 :figure-caption: Слика
 :numbered:
+:sources_zip: ../sources

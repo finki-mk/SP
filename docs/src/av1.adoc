@@ -149,3 +149,5 @@ include::{source_dir}/ex12.c[]
 Кој е резултатот од извршувањето сега?
 
 include::parts/footer.adoc[]
+
+link:{sources_zip}/av1_src.zip[Source code ZIP]

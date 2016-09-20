@@ -1,0 +1,133 @@
+\documentclass[11pt]{examdesign}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{pifont}
+\usepackage{verbatim}
+\usepackage[ddmmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
+\SectionFont{\large\sffamily}
+\usepackage[margin=1.5cm]{geometry}
+%\Fullpages
+\ContinuousNumbering
+%\ShortKey
+\DefineAnswerWrapper{}{}
+\NumberOfVersions{1}
+\NoRearrange
+\IncludeFromFile{sp_test2_code.tex}
+
+\def\namedata{Име и презиме: \hrulefill \\[5pt]
+Индекс: \hrulefill}
+
+\begin{examtop}
+{\parbox{.5\textwidth}{\textbf{\classdata} \\
+\examtype, 14.12.2015, Група: \fbox{\textsf{Б}}\\ \emph{Секое проашање има само \textbf{еден точен} одговор.}}
+\hfill
+\parbox{.45\textwidth}{\normalsize \namedata}}
+\end{examtop}
+
+\def\aftersectsep{0pt}
+\def\beforesectsep{0pt}
+\def\beforeinstsep{0pt}
+\def\afterinstsep{0pt}
+
+
+\class{\Large{Структурно програмирање}}
+\examname{Тест 2}
+\begin{document}
+%\SectionPrefix{Дел \arabic{sectionindex}. \space}
+
+
+\begin{multiplechoice}[title={},suppressprefix=yes]
+
+\begin{question}
+Која од следните функции се користи за запишување знак во датотека во C?
+    \choice[!]{\texttt{int fputc(int character, FILE *f);}}
+    \choice{\texttt{void writef(file f)}}
+    \choice{\texttt{void fileput(int c, F* file);}}
+    \choice{\texttt{int putchar(int character);}}
+\end{question}
+
+\begin{question}
+Што ќе биде излезот од извршувањето на следниот програмски сегмент?
+\InsertChunk{c6B}
+    \choice{\texttt{49 25 9 1 1 9 25 49}}
+    \choice{49 25 9 1}
+    \choice[!]{1 9 25 49}
+    \choice{не може да се одреди}
+\end{question}
+
+\begin{question}
+Која од следните декларации \textbf{НЕ} е валиден функциски прототип?
+    \choice[!]{\texttt{double number;}}
+    \choice{\texttt{int number(char, char);}}
+    \choice{\texttt{void number();}}
+    \choice{\texttt{float number();}}
+\end{question}
+
+\begin{question}
+
+Што ќе биде излезот од извршувањето на следниот програмски сегмент?
+\InsertChunk{c1B}
+    \choice{ништо, грешка при компајлирање}
+    \choice{\texttt{sloboda}}
+    \choice{\texttt{vloboda}}
+    \choice[!]{\texttt{boda}}
+\end{question}
+
+\begin{question}
+Што ќе биде излезот од извршувањето на следниот програмски сегмент?
+  \InsertChunk{c2B}
+  \choice[!]{\texttt{5}}
+  \choice{\texttt{1}}
+  \choice{\texttt{3}}
+  \choice{не може да се одреди}
+\end{question}
+
+\begin{question}
+На кој начин се пристапува до последниот елемент во низата дефинирана со: 
+\texttt{int broevi[] = \{ 5, 4, 3, 2, 1 \};}
+    \choice{\texttt{*(broevi + 4 * sizeof(int))}}               
+    \choice[!]{\texttt{*(broevi + 4)}}
+    \choice{\texttt{broevi[5]}}  
+    \choice{\texttt{broevi + 5}}
+\end{question}
+
+\begin{question}
+Која ќе биде вредноста на \texttt{a} по извршувањето на следниот програмски сегмент?
+    \InsertChunk{c3B}
+    \choice[!]{\texttt{5}}
+    \choice{\texttt{3}}
+    \choice{\texttt{6}}
+    \choice{недифинирана}
+\end{question}
+
+\begin{question}
+Со која од следниве наредби се декларира дводимензионално поле (матрица) од цели броеви со димензија 7x7 (7 редици и 7 колони)?
+\choice{\texttt{int a[7 x 7];}}
+\choice{\texttt{int a[7, 7];}}
+\choice{\texttt{int a[49];}}
+\choice[!]{\texttt{int a[7][7];}}
+\end{question}
+  
+\begin{question}
+Даден е следниот програмски сегмент, кој е правилниот начин на повикување на функцијата дефинифрана со прототип \texttt{void find(char *а, int *b)}?
+\InsertChunk{c11B}
+    \choice[!]{\texttt{find(x, \&c);}}
+    \choice{\texttt{find(\&x, \&c);}}
+    \choice{\texttt{find(x, c);}}
+    \choice{\texttt{find(\&x, c);}}
+\end{question}
+  
+\begin{question}
+Кој е правилниот израз во C за отварање на датотека \texttt{"zborovi.dat"} само за читање?
+    \choice{\texttt{fopen("zborovi.txt","rb");}}
+    \choice{\texttt{fopen("zborovi.dat","w");}}
+    \choice[!]{\texttt{fopen("zborovi.dat", "r");}}
+    \choice{\texttt{fopen("zborovi.dat", "read");}}
+\end{question}
+
+\end{multiplechoice}
+
+\end{document}

@@ -1,0 +1,135 @@
+\documentclass[11pt]{examdesign}
+%\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{pifont}
+\usepackage{verbatim}
+\usepackage[ddmmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
+\SectionFont{\large\sffamily}
+\usepackage[margin=1.5cm]{geometry}
+%\Fullpages
+\ContinuousNumbering
+%\ShortKey
+\DefineAnswerWrapper{}{}
+\NumberOfVersions{1}
+\IncludeFromFile{sp_test2_code.tex}
+
+\def\namedata{Name: \hrulefill \\[5pt]
+ID: \hrulefill}
+
+\begin{examtop}
+{\parbox{.5\textwidth}{\textbf{\classdata} \\
+\examtype, 14.12.2015, Group: \fbox{\textsf{A}}\\ \emph{Each question
+has exactly \textbf{one correct} answer.}}
+\hfill
+\parbox{.45\textwidth}{\normalsize \namedata}}
+\end{examtop}
+
+\def\aftersectsep{0pt}
+\def\beforesectsep{0pt}
+\def\beforeinstsep{0pt}
+\def\afterinstsep{0pt}
+
+
+\class{\Large{Structured Programming}}
+\examname{Test 2}
+\begin{document}
+%\SectionPrefix{Дел \arabic{sectionindex}. \space}
+
+
+\begin{multiplechoice}[title={},suppressprefix=yes,rearrange=no]
+
+\begin{question}
+Which of the following is the correct declaration of twodimensional vector (matrix) of max 30 integers?
+    \choice{\texttt{int pole[3*10];}}
+    \choice{\texttt{int pole[30];}}
+    \choice{\texttt{int pole[6,5];}}
+    \choice[!]{\texttt{int pole[5][6];}}
+\end{question}
+
+\begin{question}
+Given the function prototype: \texttt{float ab(float, float, int);} for some recursive function named `ab', which
+of the following answers is a VALID call of the function?
+    \choice{\texttt{float x = ab(3.0f, 5.2f); }}
+    \choice{\texttt{float x = ab(float 5, float 3, int 8); }}
+    \choice[!]{\texttt{float x = ab(3, 5, 7); }}
+    \choice{\texttt{float x = float ab(5, 6, 7); }}
+\end{question}
+
+\begin{question}
+Which of the following declaration is \textbf{not} a valid function prototype:
+    \choice{\texttt{int func(char,char);}}
+    \choice[!]{\texttt{double funcion;}}
+    \choice{\texttt{void func();}}
+    \choice{\texttt{float funcion();}}
+\end{question}
+
+\begin{question}
+What will be the output after execution of the following code segment?
+\InsertChunk{c1A}
+    \choice{nothing, it's compilation error}
+    \choice[!]{\texttt{ime}}
+    \choice{\texttt{prezime}}
+    \choice{\texttt{trezime}}
+\end{question}
+
+\begin{question}
+What will be the output after execution of the following code segment?
+  \InsertChunk{c2A}
+  \choice{\texttt{1}}
+  \choice{\texttt{3}}
+  \choice[!]{\texttt{5}}
+  \choice{can not be determined}
+\end{question}
+
+\begin{question}
+Which is the correct expression for accessing the last element of the array
+defined as: \texttt{int elements[] = \{ 5, 4, 3, 2, 1 \};}
+    \choice{\texttt{*(elements + 4 * sizeof(int))}}               
+    \choice{\texttt{elements + 5}}
+    \choice[!]{\texttt{*(elements + 4)}}
+    \choice{\texttt{elements[5]}}  
+\end{question}
+
+\begin{question}
+What will be the value of \texttt{a} after the execution of the following code segment?
+    \InsertChunk{c3A}
+    \choice[!]{\texttt{5}}
+    \choice{\texttt{4}}
+    \choice{\texttt{3}}
+    \choice{undefined}
+\end{question}
+  
+\begin{question}
+What will be the value of \texttt{len} after the execution of the following code
+segment?
+    \InsertChunk{c4A}
+    \choice[!]{\texttt{5}}
+    \choice{\texttt{3}}
+    \choice{\texttt{4}}
+    \choice{undetermined}
+\end{question}
+
+\begin{question}
+What will be the output after execution of the following code segment?
+\InsertChunk{c6A}
+    \choice[!]{\texttt{49 25 9 1 1 9 25 49}}
+    \choice{\texttt{49 25 9 1}}
+    \choice{\texttt{1 9 25 49}}
+    \choice{could not be determined}
+\end{question}
+
+\begin{question}
+What will be the output after execution of the following code segment?
+\InsertChunk{c10}
+    \choice{\texttt{1}}
+    \choice[!]{\texttt{7}}
+    \choice{\texttt{8}}
+    \choice{could not be determined}
+\end{question}
+
+\end{multiplechoice}
+
+\end{document}

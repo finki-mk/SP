@@ -1,0 +1,132 @@
+\documentclass[11pt]{examdesign}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{pifont}
+\usepackage{verbatim}
+\usepackage[ddmmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
+\SectionFont{\large\sffamily}
+\usepackage[margin=1.5cm]{geometry}
+%\Fullpages
+\ContinuousNumbering
+%\ShortKey
+\DefineAnswerWrapper{}{}
+\NumberOfVersions{1}
+\IncludeFromFile{sp_test1_en_2015_code.tex}
+
+\def\namedata{Name: \hrulefill \\[5pt]
+ID: \hrulefill}
+
+\begin{examtop}
+{\parbox{.5\textwidth}{\textbf{\classdata} \\
+\examtype, 29.10.2015, Group: \fbox{\textsf{A}}\\ \emph{Each question
+has exactly \textbf{one correct} answer.}}
+\hfill
+\parbox{.45\textwidth}{\normalsize \namedata}}
+\end{examtop}
+
+\def\aftersectsep{0pt}
+\def\beforesectsep{0pt}
+\def\beforeinstsep{0pt}
+\def\afterinstsep{0pt}
+
+
+\class{\Large{Structured Programming}}
+\examname{Test 1}
+\begin{document}
+%\SectionPrefix{Дел \arabic{sectionindex}. \space}
+
+
+\begin{multiplechoice}[title={},suppressprefix=yes,rearrange=no]
+\begin{question}
+What will be the value of x after the execution of the following code segment?
+\InsertChunk{c1}
+    \choice{\texttt{0}}
+    \choice{\texttt{1}}
+    \choice[!]{\texttt{2}}
+    \choice{\texttt{3}}
+\end{question}
+
+\begin{question}
+Which of the following expressions \textbf{outputs 0.75} on the standard output if the variables are declared as \texttt{int a = 3, b = 4}?
+    \choice{\texttt{printf("a/b=\%d", a/b)}}
+    \choice{\texttt{printf("a/b=\%.2f", a/b)}}
+    \choice[!]{\texttt{printf("a/b=\%0.2f", (float)a/b)}}
+    \choice{\texttt{printf("a/b=\%0.2f", (float)(a/b)}}
+\end{question}
+
+\begin{question}
+What will be the output after execution of the following code segment?
+  \InsertChunk{c2}
+  \choice[!]{\texttt{-1012}}
+  \choice{\texttt{-10123}}
+  \choice{\texttt{-1}}
+  \choice{\texttt{-1011}}
+\end{question}
+
+\begin{question}
+What will be the output after execution of the following code segment?
+    \InsertChunk{c1}
+    \choice{\texttt{y = 1}}               
+    \choice{\texttt{y = 2.25}}
+    \choice{\texttt{y = 1.00}}
+    \choice[!]{\texttt{y = 001}}  
+\end{question}
+
+\begin{question}
+What will be the value of x after the execution of the following code segment?
+    \InsertChunk{c2}
+    \choice{\texttt{0}}
+    \choice{\texttt{1}}
+    \choice[!]{\texttt{-1}}
+    \choice{\texttt{9}}
+\end{question}
+  
+\begin{question}
+Which of the following expressions will declare an array of 5 integers?
+    \choice{\texttt{pole int[5];}}
+    \choice{\texttt{int pole[];}}
+    \choice[!]{\texttt{int pole[] = \{1, 2, 3, 4, 5\};}}
+    \choice{\texttt{array int[5];}}
+\end{question}
+  
+\begin{question}
+What will be the output after the execution of the following code segment?
+    \InsertChunk{c5}
+    \choice{\texttt{123}}
+    \choice{\texttt{1}}
+    \choice{\texttt{23}}
+    \choice[!]{\texttt{2}}
+\end{question}
+  
+\begin{question}
+What is the result from the execution of the following code segment?
+    \InsertChunk{c3}
+    \choice{2.5}
+    \choice[!]{0.0}
+    \choice{2.0}
+    \choice{3.0}
+\end{question}
+
+\begin{question}
+What will be the output after the execution of the following code segment?
+    \InsertChunk{c4}
+    \choice[!]{YES}
+    \choice{NO}
+    \choice{cannot predict, will depend on value of variable x}
+    \choice{the code will produce a syntax error}
+  \end{question}
+
+\begin{question}
+Which from the following expressions does not result in 3.5 if the variables are declared as \texttt{int a=7, b=2;}
+  \choice{\texttt{a/(float)b}}
+  \choice{\texttt{a*1./b}}
+  \choice{\texttt{float(a)/b}}
+  \choice[!]{\texttt{(float)(a/b)}}
+\end{question}
+
+\end{multiplechoice}
+
+\end{document}

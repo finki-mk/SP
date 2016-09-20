@@ -7,6 +7,14 @@ printf("%s", t);
 \end{verbatim}
 \end{chunk}
 
+\begin{chunk}{c1B}
+\begin{verbatim}
+char *t = "sloboda";
+t += 3;
+printf("%s", t);
+\end{verbatim}
+\end{chunk}
+
 \begin{chunk}{c2A}
 \begin{verbatim}
 int a = 3, *b, *c;
@@ -14,6 +22,15 @@ b = &a; c = b; *c = 5;
 printf("%d\n", *b);
 \end{verbatim}
 \end{chunk}
+
+\begin{chunk}{c2B}
+\begin{verbatim}
+int x = 3, *y, *z;
+y = &x; z = y; *z = 5;
+printf("%d\n", *y);
+\end{verbatim}
+\end{chunk}
+
 
 \begin{chunk}{c3A}
 \begin{verbatim}
@@ -23,10 +40,17 @@ while(begin++ <= end--) a += (*begin == *end);
 \end{verbatim}
 \end{chunk}
 
+\begin{chunk}{c3B}
+\begin{verbatim}
+int a = 0; char *word = "kalabalak";
+char *begin = word, *end = word + strlen(word) – 1;
+while(begin++ <= end--) a += (*begin == *end);
+\end{verbatim}
+\end{chunk}
+
 \begin{chunk}{c4A}
 \begin{verbatim}
-char a[] = { ’3’, ’2’, ’1’, 0 , ’\n’, ’\0’};
-int len = strlen(a);
+char a[] = { ’3’, ’2’, ’1’, 0 , ’\n’, ’\0’}; int len = strlen(a);
 \end{verbatim}
 \end{chunk}
 
@@ -40,9 +64,16 @@ a.out words.txt tofind
 \begin{chunk}{c6A}
 \begin{verbatim}
 int f (int a) {   
-    printf("%d\t", a * a);
-    if (a > 1) f(a - 2);
-    printf("%d\t", a * a);    
+    printf("%d\t", a * a); if (a > 1) f(a - 2);   printf("%d\t", a * a);    
+}
+int main() { f(7); return 0; }
+\end{verbatim}
+\end{chunk}
+
+\begin{chunk}{c6B}
+\begin{verbatim}
+int f (int x) {   
+    if (x > 1) f(x - 2);  printf("%d\t", x * x);    
 }
 int main() { f(7); return 0; }
 \end{verbatim}
@@ -52,5 +83,34 @@ int main() { f(7); return 0; }
 \begin{verbatim}
 int a[10] = {0,1,2,3}, b[10] = {1,2,3}, c[10] = {1,2};
 printf("%d\n",*(a + b[a[c[1]]]));
+\end{verbatim}
+\end{chunk}
+
+\begin{chunk}{c10}
+\begin{verbatim}
+void main() {   
+    int niza[7] = {1, 2, 3, 4, 5, 6, 7}, i = 0, n=7;
+    *(niza+i) *= *(niza + n - 1 - i); printf("%d\n", *(niza));
+}
+\end{verbatim}
+\end{chunk}
+
+\begin{chunk}{c11}
+\begin{verbatim}
+int main() {
+    int x[] = {1, 2, 3};
+    char c = 'a';
+    // povik na funkcijata
+}
+\end{verbatim}
+\end{chunk}
+
+\begin{chunk}{c11B}
+\begin{verbatim}
+int main() {
+    char x[] = {'a', 'b', 'c'};
+    int c = 10;
+    // povik na funkcijata
+}
 \end{verbatim}
 \end{chunk}

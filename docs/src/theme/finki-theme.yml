@@ -1,0 +1,71 @@
+font:
+  catalog:
+    SourceCodePro:
+      normal: SourceCodePro-Regular.ttf
+      italic: SourceCodePro-Regular.ttf
+      bold: SourceCodePro-Bold.ttf
+      bold_italic: SourceCodePro-Bold.ttf
+    OpenSans:
+      normal: OpenSans-Regular.ttf
+      italic: OpenSans-Italic.ttf
+      bold: OpenSans-Bold.ttf
+      bold_italic: OpenSans-BoldItalic.ttf
+    NotoSerif:
+      normal: NotoSerif-Regular.ttf
+      italic: NotoSerif-Italic.ttf
+      bold: NotoSerif-Bold.ttf
+      bold_italic: NotoSerif-BoldItalic.ttf
+  fallbacks:
+    - NotoSerif
+title_page:
+  align: left
+  logo:
+    image: image:images/finki_name.png[]
+    top: 5%
+page:
+  layout: portrait
+  margin: [0.75in, 1in, 0.75in, 1in]
+  size: A4
+base:
+  font_color: #333333
+  font_family: NotoSerif
+  font_size: 11
+  line_height_length: 17
+  line_height: $base_line_height_length / $base_font_size
+vertical_rhythm: $base_line_height_length
+heading:
+  font_color: #286090
+  font_size: 17
+  font_style: bold
+  line_height: 1.2
+  margin_bottom: $vertical_rhythm
+link:
+  font_color: #0B0080
+outline_list:
+  indent: $base_font_size * 1.5
+header:
+  height: 0.75in
+  line_height: 1
+  recto_content:
+    center: '{document-title}'
+  verso_content:
+    center: '{document-title}'
+footer:
+  height: 0.75in
+  line_height: 1
+  recto_content:
+    right: '{section-title} | *{page-number}*'
+  verso_content:
+    left: '*{page-number}* | {section-title}'
+image:
+  align: center
+caption:
+  align: center
+  font_color: #0D4060
+  font_size: 10
+code:
+  font_size: 8
+  font_family: SourceCodePro
+literal:
+  font_family: SourceCodePro
+

@@ -1,0 +1,144 @@
+\documentclass[11pt]{examdesign}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{pifont}
+\usepackage{verbatim}
+\usepackage[ddmmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
+\SectionFont{\large\sffamily}
+\usepackage[margin=1.5cm]{geometry}
+%\Fullpages
+\ContinuousNumbering
+%\ShortKey
+\DefineAnswerWrapper{}{}
+\NumberOfVersions{1}
+\NoRearrange
+\IncludeFromFile{sp_test2_code.tex}
+
+\def\namedata{Име и презиме: \hrulefill \\[5pt]
+Индекс: \hrulefill}
+
+\begin{examtop}
+{\parbox{.5\textwidth}{\textbf{\classdata} \\
+\examtype, 14.12.2015, Група: \fbox{\textsf{A}}\\ \emph{Секое проашање има само \textbf{еден точен} одговор.}}
+\hfill
+\parbox{.45\textwidth}{\normalsize \namedata}}
+\end{examtop}
+
+\def\aftersectsep{0pt}
+\def\beforesectsep{0pt}
+\def\beforeinstsep{0pt}
+\def\afterinstsep{0pt}
+
+
+\class{\Large{Структурно програмирање}}
+\examname{Тест 2}
+\begin{document}
+%\SectionPrefix{Дел \arabic{sectionindex}. \space}
+
+
+\begin{multiplechoice}[title={},suppressprefix=yes]
+
+\begin{question}
+Со која од следниве наредби се декларира дводимензионално поле (матрица) од цели броеви со димензија 10x10 (10 редици и 10 колони)?
+\choice{\texttt{int matrica[10 x 10];}}
+\choice[!]{\texttt{int matrica[10][10];}}
+\choice{\texttt{int matrica[10,10];}}
+\choice{\texttt{int matrica[100];}}
+\end{question}
+
+\begin{question}
+Која од следните декларации \textbf{НЕ} е валиден функциски прототип?
+    \choice{\texttt{int func(char,char);}}
+    \choice[!]{\texttt{double function;}}
+    \choice{\texttt{void func();}}
+    \choice{\texttt{float function();}}
+\end{question}
+
+\begin{question}
+
+Што ќе биде излезот од извршувањето на следниот програмски сегмент?
+\InsertChunk{c1A}
+    \choice{ништо, грешка при компајлирање}
+    \choice[!]{\texttt{ime}}
+    \choice{\texttt{prezime}}
+    \choice{\texttt{trezime}}
+\end{question}
+
+\begin{question}
+Што ќе биде излезот од извршувањето на следниот програмски сегмент?
+  \InsertChunk{c2A}
+  \choice{\texttt{1}}
+  \choice{\texttt{3}}
+  \choice[!]{\texttt{5}}
+  \choice{не може да се одреди}
+\end{question}
+
+\begin{question}
+На кој начин се пристапува до последниот елемент во низата дефинирана со: 
+\texttt{int elements[] = \{ 5, 4, 3, 2, 1 \};}
+    \choice{\texttt{*(elements + 4 * sizeof(int))}}               
+    \choice{\texttt{elements + 5}}
+    \choice[!]{\texttt{*(elements + 4)}}
+    \choice{\texttt{elements[5]}}  
+\end{question}
+
+\begin{question}
+Која ќе биде вредноста на \texttt{a} по извршувањето на следниот програмски сегмент?
+    \InsertChunk{c3A}
+    \choice[!]{\texttt{5}}
+    \choice{\texttt{6}}
+    \choice{\texttt{3}}
+    \choice{недифинирана}
+\end{question}
+  
+% \begin{question}
+% Која ќе биде вредноста на \texttt{len} по извршувањето на следниот програмски сегмент?
+%     \InsertChunk{c4A}
+%     \choice{\texttt{5}}
+%     \choice[!]{\texttt{3}}
+%     \choice{\texttt{4}}
+%     \choice{неодредена}
+% \end{question}
+
+\begin{question}
+Даден е следниот програмски сегмент, кој е правилниот начин на повикување на функцијата дефинифрана со прототип \texttt{void copy(int *а, char *b)}?
+\InsertChunk{c11}
+    \choice{\texttt{copy(\&x, \&c);}}
+    \choice{\texttt{copy(x, c);}}
+    \choice[!]{\texttt{copy(x, \&c);}}
+    \choice{\texttt{copy(\&x, c);}}
+\end{question}
+  
+\begin{question}
+Кој е правилниот израз во C за отварање на датотека \texttt{"in.dat"} само за читање?
+    \choice{\texttt{fopen("in.txt","rb");}}
+    \choice{\texttt{fopen("in.dat","w");}}
+    \choice{\texttt{fopen("in.dat", "read");}}
+    \choice[!]{\texttt{fopen("in.dat", "r");}}
+\end{question}
+
+\begin{question}
+Која од следните функции се користи за запишување знак во датотека во C?
+    \choice{\texttt{void writef(file f)}}
+    \choice[!]{\texttt{int fputc(int character, FILE *f);}}
+    \choice{\texttt{void fileput(int c, F* file);}}
+    \choice{\texttt{int putchar(int character);}}
+\end{question}
+
+\begin{question}
+
+Што ќе биде излезот од извршувањето на следниот програмски сегмент?
+\InsertChunk{c6A}
+    \choice[!]{\texttt{49 25 9 1 1 9 25 49}}
+    \choice{49 25 9 1}
+    \choice{1 9 25 49}
+    \choice{не може да се одреди}
+\end{question}
+  
+
+\end{multiplechoice}
+
+\end{document}

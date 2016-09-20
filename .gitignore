@@ -30,3 +30,6 @@
 *.vrb
 *.xdy
 *.tdo
+*.fls
+/.idea/
+/docs/.gradle/

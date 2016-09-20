@@ -1,0 +1,4 @@
+:version-label: Верзија
+:toc-title: Содржина
+:figure-caption: Слика
+:numbered:

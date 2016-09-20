@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<meta name="author" content="Аудиториски вежби 2">
+<meta name="author" content="Аудиториски вежби 1">
 <title>Структурно програмирање</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -514,551 +514,114 @@ table.CodeRay td.code>pre{padding:0}
 <div id="header">
 <h1>Структурно програмирање</h1>
 <div class="details">
-<span id="author" class="author">Аудиториски вежби 2</span><br>
+<span id="author" class="author">Аудиториски вежби 1</span><br>
 <span id="revnumber">Верзија 1.0,</span>
 <span id="revdate">20 Септември, 2016</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Содржина</div>
 <ul class="sectlevel1">
-<li><a href="#Структура-на-програма">1. Структура на програма</a></li>
-<li><a href="#Функции-во-c">2. Функции во C</a></li>
-<li><a href="#Употреба-на-коментари">3. Употреба на коментари</a>
+<li><a href="#Околини-за-развој">1. Околини за развој</a>
 <ul class="sectlevel2">
-<li><a href="#Основна-програма-во-c">3.1. Основна програма во C</a></li>
-<li><a href="#Основна-програма-во-c-2">3.2. Основна програма во C++</a></li>
-<li><a href="#Програма-за-собирање-два-броја">3.3. Програма за собирање два броја</a></li>
+<li><a href="#Околини-за-развој-integrated-development-environment-ide">1.1. Околини за развој (Integrated Development Environment - IDE)</a></li>
+<li><a href="#code-code-blocks-code-инсталација">1.2. <code>Code::Blocks</code> - инсталација</a></li>
+<li><a href="#code-blocks-главен-прозорец">1.3. Code::Blocks – главен прозорец</a></li>
+<li><a href="#Елементи-на-главниот-прозорец">1.4. Елементи на главниот прозорец</a></li>
 </ul>
 </li>
-<li><a href="#Именувани-константи">4. Именувани константи</a></li>
-<li><a href="#Аритметички-оператори">5. Аритметички оператори</a></li>
-<li><a href="#Ознаки-за-форамтот-на-печатењето">6. Ознаки за форамтот на печатењето</a>
+<li><a href="#Програмирање-во-c-со-code-blocks">2. Програмирање во C со Code::Blocks</a>
 <ul class="sectlevel2">
-<li><a href="#Пример-на-користење-на-функцијата-code-printf-code">6.1. Пример на користење на функцијата <code>printf</code></a></li>
+<li><a href="#Креирање-проект">2.1. Креирање проект</a></li>
+<li><a href="#Додавање-на-изворна-датотека">2.2. Додавање на изворна датотека</a></li>
+<li><a href="#Програмирање">2.3. Програмирање</a></li>
 </ul>
 </li>
-<li><a href="#Задачи">7. Задачи</a>
+<li><a href="#Задачи-за-дома">3. Задачи за дома</a>
 <ul class="sectlevel2">
-<li><a href="#Задача-1">7.1. Задача 1</a></li>
-<li><a href="#Задача-2">7.2. Задача 2</a></li>
-<li><a href="#Задача-3">7.3. Задача 3</a></li>
-<li><a href="#Задача-4">7.4. Задача 4</a></li>
-<li><a href="#Задача-5">7.5. Задача 5</a></li>
-<li><a href="#Задача-6">7.6. Задача 6</a></li>
-<li><a href="#Задача-7">7.7. Задача 7</a></li>
-<li><a href="#Задача-8">7.8. Задача 8</a></li>
+<li><a href="#Задача-1">3.1. Задача 1</a></li>
+<li><a href="#Задача-2">3.2. Задача 2</a></li>
 </ul>
 </li>
-<li><a href="#Изворен-код-од-примери-и-задачи">8. Изворен код од примери и задачи</a></li>
+<li><a href="#Изворен-код-од-примери-и-задачи">4. Изворен код од примери и задачи</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="Структура-на-програма">1. Структура на програма</h2>
+<h2 id="Околини-за-развој">1. Околини за развој</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Потсетување: изворниот код на програмскиот јазик
-<strong>C</strong> е организиран во функции</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="predefined-type">int</span> main() {
-  deklaracija na promenlivi;
-  programski_naredbi;
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="Функции-во-c">2. Функции во C</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><code>main</code></p>
-</li>
-<li>
-<p>Функциите може да примаат влезни аргументи во делот ()</p>
-</li>
-<li>
-<p>Типот на резултатот кој го враќа функцијата стои пред
-името на функцијата (<code>int</code> – функцијата враќа цел број)</p>
-</li>
-<li>
-<p>Телото на функцијата започнува со <code>{</code>, а завршува со <code>}</code></p>
-</li>
-<li>
-<p>Сите наредби се одделуваат меѓусебно со <code>;</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="Употреба-на-коментари">3. Употреба на коментари</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>За дополнително до објаснување или документирање на изворниот код се
-користат коментари. Постојат два вида коментари:</p>
+<p>За пишување програми, често се користат <strong>околини за развој</strong>. Процесот
+ на пишување на програма е следен:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>коментари во еден ред</p>
+<p>изворниот код се внесува преку тасттура</p>
+</li>
+<li>
+<p>потоа се врши преведување на програмата</p>
+<div class="ulist">
+<ul>
+<li>
+<p>со тоа се создава <strong>извршна програма</strong> т.е. програма напишана во јазикот на компјутерот</p>
 </li>
 </ul>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre>// komentar vo eden red</pre>
+</li>
+</ul>
 </div>
+<div class="paragraph">
+<p>Околината за развој е составена од повеќе програми, кои го олеснуваат
+целокупниот развој на една програма:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>коментари во повеќе редови</p>
+<p>текст уредувач (text editor)</p>
+</li>
+<li>
+<p>преведувач (компајлер - compiler)</p>
+</li>
+<li>
+<p>дебагер (debugger)</p>
+</li>
+<li>
+<p>интеграција на библиотеки со функции</p>
+</li>
+<li>
+<p>поврзувач (linker)</p>
 </li>
 </ul>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre>/*
-komentar vo
-povekje redovi
-*/</pre>
+<div class="sect2">
+<h3 id="Околини-за-развој-integrated-development-environment-ide">1.1. Околини за развој (Integrated Development Environment - IDE)</h3>
+<div class="paragraph">
+<p>Сите овие елементи на околината за развој се обединуваат (интегрираат) во т.н.
+интегрирани околини за развој. Пример за IDE е околината која ќе се користи на
+овој курс, <strong><code>Code::Blocks</code></strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Основна-програма-во-c">3.1. Основна програма во C</h3>
-<div class="listingblock">
-<div class="title">Пример 1</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="comment">// glavna funkcija</span>
-<span class="predefined-type">int</span> main() {
-    <span class="comment">/*
-    pechatenje poraka na ekran
-    */</span>
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Dobredojdovte na FINKI!</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
+<h3 id="code-code-blocks-code-инсталација">1.2. <code>Code::Blocks</code> - инсталација</h3>
+<div class="paragraph">
+<p>Како да го најдеме и инсталираме <code>Code::Blocks</code>. Алатката за програмирање
+Code::Blocks е слободен софтвер и може да се најде на
+<a href="http://www.codeblocks.org/downloads" class="bare">http://www.codeblocks.org/downloads</a>.
+Во централниот дел на страната има три линка:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>#include</code> - директива за вклучување на надворешни библиотеки</p>
+<p>Download the binary release</p>
 </li>
 <li>
-<p><code>stdio.h</code> - библиотека за работа со стандардни влезно/излезни текови
-(тастатура, екран)</p>
+<p>Download the source code</p>
 </li>
 <li>
-<p><code>printf</code> - функција за печатње на стандарден излез</p>
+<p>Retrieve source code from SVN</p>
 </li>
 </ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Основна-програма-во-c-2">3.2. Основна програма во C++</h3>
-<div class="listingblock">
-<div class="title">Пример 1</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="cpp"><span class="preprocessor">#include</span> <span class="include">&lt;iostream&gt;</span>
-<span class="directive">using</span> <span class="keyword">namespace</span> std;
-
-<span class="comment">// glavna funkcija</span>
-<span class="predefined-type">int</span> main() {
-    <span class="comment">/*
-    pechatenje poraka na ekran
-    */</span>
-    cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Dobredojdovte na FINKI!</span><span class="delimiter">&quot;</span></span> &lt;&lt; endl;
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>#include</code> - директива за вклучување на надворешни библиотеки</p>
-</li>
-<li>
-<p><code>stdio.h</code> - библиотека за работа со стандардни влезно/излезни текови
-(тастатура, екран)</p>
-</li>
-<li>
-<p><code>printf</code> - функција за печатње на стандарден излез</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Програма-за-собирање-два-броја">3.3. Програма за собирање два броја</h3>
-<div class="listingblock">
-<div class="title">Решение</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> a = <span class="integer">5</span>;
-    <span class="predefined-type">int</span> b = <span class="integer">10</span>;
-    <span class="predefined-type">int</span> c = a + b;
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="Именувани-константи">4. Именувани константи</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Именуваните константи се креираат со користење на клучниот збор <code>const</code></p>
-</div>
-<div class="listingblock">
-<div class="title">Пример</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="directive">const</span> <span class="predefined-type">long</span> <span class="predefined-type">double</span> PI = <span class="float">3</span><span class="float">.141592653590</span>L;
-    <span class="directive">const</span> <span class="predefined-type">int</span> DENOVI_VO_NEDELA = <span class="integer">7</span>;
-    <span class="directive">const</span> NEDELA = <span class="integer">0</span>; <span class="comment">// po default int</span>
-    DENOVI_VO_NEDELA = <span class="integer">7</span>; <span class="comment">// greshka</span>
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Именуваните константи може да се креираат и со користење на
-претпроцесорот и за нив по правило се користат големи букви</p>
-</div>
-<div class="paragraph">
-<p>Користење на <code>#define</code></p>
-</div>
-<div class="paragraph">
-<p><code>#define tekst_za_baranje tekst_za_zamena</code></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="Аритметички-оператори">5. Аритметички оператори</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Се применуваат на броеви (цели или децимални)</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Оператор</th>
-<th class="tableblock halign-left valign-top">Операција</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Собирање</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Одземање</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Множење</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Делење</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">%</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Делење по модул (остаток при делењето)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="Ознаки-за-форамтот-на-печатењето">6. Ознаки за форамтот на печатењето</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Ознака</th>
-<th class="tableblock halign-left valign-top">Објаснување</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><code>%d</code></strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">за цели броеви</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%i</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">за цели броеви</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%c</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">за знаци</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>%s</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">за низа од знаци (стринг)</p></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="Пример-на-користење-на-функцијата-code-printf-code">6.1. Пример на користење на функцијата <code>printf</code></h3>
-<div class="paragraph">
-<p>Да се отпечати на екран во следниов редослед:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>Prva recenica.
-Vtora recenica.
-Treta recenica.</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Пример 3</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Prva rechenica.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vtora rechenica.</span><span class="char">\n</span><span class="content">Treta rechenica.</span><span class="delimiter">&quot;</span></span>);
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Пример 3 (C++)</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;iostream&gt;</span>
-using namespace std;
-
-<span class="predefined-type">int</span> main() {
-    cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Prva rechenica.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>;
-    cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Vtora rechenica.</span><span class="char">\n</span><span class="content">Treta rechenica.</span><span class="delimiter">&quot;</span></span>;
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="Задачи">7. Задачи</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="Задача-1">7.1. Задача 1</h3>
-<div class="paragraph">
-<p>Да се напише програма која ќе ја пресметува вредноста на математичкиот
-израз: <code>x = 3/2 + (5 – 46*5/12)</code></p>
-</div>
-<div class="listingblock">
-<div class="title">Решение 1</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">float</span> x = <span class="float">3</span><span class="float">.0</span> / <span class="integer">2</span> + (<span class="integer">5</span> - <span class="integer">46</span> * <span class="float">5</span><span class="float">.0</span> / <span class="integer">12</span>);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">x = %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, x);
-        <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-2">7.2. Задача 2</h3>
-<div class="paragraph">
-<p>Да се напише програма која за зададена вредност на х
-(при декларација на променливата) ќе го пресмета и отпечати на екран х<sup>2</sup>.</p>
-</div>
-<div class="listingblock">
-<div class="title">Решение 2</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> x = <span class="integer">7</span>;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Brojot %d na kvadrat e %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, x, x * x);
-        <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Решение 2 (C++)</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="cpp"><span class="preprocessor">#include</span> <span class="include">&lt;iostream&gt;</span>
-<span class="directive">using</span> <span class="keyword">namespace</span> std;
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> x = <span class="integer">7</span>;
-    cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Brojot </span><span class="delimiter">&quot;</span></span> &lt;&lt; x &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content"> na kvadrat e </span><span class="delimiter">&quot;</span></span> &lt;&lt; x * x &lt;&lt; endl;
-          <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-3">7.3. Задача 3</h3>
-<div class="paragraph">
-<p>Да се напише програма која за дадени страни на еден разностран триаголник
-ќе ги отпечати на екран периметарот и квадратот од
-плоштината (нека се работи со <code>a = 5</code>, <code>b = 7.5</code>, <code>c = 10.2</code>).</p>
-</div>
-<div class="listingblock">
-<div class="title">Решение 3</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">float</span> a = <span class="float">5</span><span class="float">.0</span>;
-    <span class="predefined-type">float</span> b = <span class="float">7</span><span class="float">.5</span>;
-    <span class="predefined-type">float</span> c = <span class="integer">1</span><span class="float">0</span><span class="float">.2</span>;
-    <span class="predefined-type">float</span> L = a + b + c;
-    <span class="predefined-type">float</span> s = L / <span class="integer">2</span>;
-    <span class="predefined-type">float</span> P = s * (s - a) * (s - b) * (s - c);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Perimetarot e: %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, L);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Kvadratot na ploshtinata e: %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, P);
-        <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Решение 3 (C++)</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="cpp"><span class="preprocessor">#include</span> <span class="include">&lt;iostream&gt;</span>
-<span class="directive">using</span> <span class="keyword">namespace</span> std;
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">float</span> a = <span class="float">5</span><span class="float">.0</span>;
-    <span class="predefined-type">float</span> b = <span class="float">7</span><span class="float">.5</span>;
-    <span class="predefined-type">float</span> c = <span class="integer">1</span><span class="float">0</span><span class="float">.2</span>;
-    <span class="predefined-type">float</span> L = a + b + c;
-    <span class="predefined-type">float</span> s = L / <span class="integer">2</span>;
-    <span class="predefined-type">float</span> P = s * (s - a) * (s - b) * (s - c);
-    cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Perimetarot e: </span><span class="delimiter">&quot;</span></span> &lt;&lt; L &lt;&lt; endl;
-    cout &lt;&lt; <span class="string"><span class="delimiter">&quot;</span><span class="content">Kvadratot na ploshtinata e: </span><span class="delimiter">&quot;</span></span> &lt;&lt; P &lt;&lt; endl;
-          <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-4">7.4. Задача 4</h3>
-<div class="paragraph">
-<p>Да се напише програма за пресметување на аритметичката
-средина на броевите 3, 5 и 12.</p>
-</div>
-<div class="listingblock">
-<div class="title">Решение 4</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> a = <span class="integer">3</span>;
-    <span class="predefined-type">int</span> b = <span class="integer">5</span>;
-    <span class="predefined-type">int</span> c = <span class="integer">12</span>;
-    <span class="predefined-type">float</span> as = (a + b + c) / <span class="float">3</span><span class="float">.0</span>;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Aritmetichkata sredina e %2.f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, as);
-        <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-5">7.5. Задача 5</h3>
-<div class="paragraph">
-<p>Да се напише програма која ќе ги отпечати на екран
-остатоците при делењето на бројот 19 со 2, 3, 5 и 8.</p>
-</div>
-<div class="listingblock">
-<div class="title">Решение 5</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> a = <span class="integer">19</span>;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Ostatokot pri delenje so 2 e: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, a % <span class="integer">2</span>);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Ostatokot pri delenje so 3 e: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, a % <span class="integer">3</span>);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Ostatokot pri delenje so 5 e: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, a % <span class="integer">5</span>);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Ostatokot pri delenje so 8 e: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, a % <span class="integer">8</span>);
-        <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-6">7.6. Задача 6</h3>
-<div class="paragraph">
-<p>Да се напише програма за пресметување и печатење на плоштината и
-периметарот на круг. Радиусот на кругот се чита од стандарден влез
-(тастатура) како децимален број.</p>
-</div>
-<div class="listingblock">
-<div class="title">Решение 6</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-<span class="preprocessor">#define</span> PI <span class="float">3</span><span class="float">.14</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">float</span> radius;
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%f</span><span class="delimiter">&quot;</span></span>, &amp;radius);
-
-    <span class="predefined-type">float</span> perimetar = <span class="integer">2</span> * radius * PI ;
-    <span class="predefined-type">float</span> plostina = radius * radius * PI;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">L = %f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, perimetar);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">P = %f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, plostina);
-        <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-7">7.7. Задача 7</h3>
-<div class="paragraph">
-<p>Да се напише програма која од СВ ќе прочита два цели
-броеви и ќе ја испечати на компјутерскиот екран нивната сума,
-разлика, производ и остатокот при делењето.</p>
-</div>
-<div class="listingblock">
-<div class="title">Решение 7</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> x, y;
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d %d</span><span class="delimiter">&quot;</span></span>, &amp;x, &amp;y);
-
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d + %d = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, x, y, x + y);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d - %d = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, x, y, x - y);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d * %d = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, x, y, x * y);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d %% %d = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, x, y, x % y);
-        <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-8">7.8. Задача 8</h3>
-<div class="paragraph">
-<p>Да се напише програма која чита големa буквa од стандарден влез и ја печати
-истaтa како малa буквa.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1067,37 +630,254 @@ using namespace std;
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Секој знак се претставува со ASCII број.
+За наједноставна инсталација се препорачува да се следи на првиот линк
+- <strong>Download the binary release</strong>, по кликањето на овој линк ви се отвара
+нова страна каде имате понудено да го симнете Code::Blocks
+за вашиот оперативен систем
 </td>
 </tr>
 </table>
 </div>
-<div class="listingblock">
-<div class="title">пример</div>
+</div>
+<div class="sect2">
+<h3 id="code-blocks-главен-прозорец">1.3. Code::Blocks – главен прозорец</h3>
+<div class="imageblock">
 <div class="content">
-<pre>A = 65, a = 97</pre>
+<img src="./images/cb_main.png" alt="cb main">
 </div>
+<div class="title">Слика 1. Главен прозорец</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Елементи-на-главниот-прозорец">1.4. Елементи на главниот прозорец</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Лента со менија</p>
+<div class="ulist">
+<ul>
+<li>
+<p>лентата со менија се наоѓа во најгорниот дел на прозорецот, веднаш под неговиот насловот</p>
+</li>
+<li>
+<p>Во неа се наоѓаат менијата <code>File</code>, <code>Edit</code>, <code>View</code>, <code>Search</code>, <code>Project</code>,
+<code>Build</code>, <code>Debug</code>, <code>wxSmith</code>, <code>Tools</code>, <code>Plugins</code>, <code>Settings</code>, <code>Help</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Лента со алатки</p>
+<div class="ulist">
+<ul>
+<li>
+<p>лентите со алатки (копчиња за стартување на најчесто користените
+команди на околината) се наоѓаат непосредно под лентата со паѓачки менија</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Работна површина</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Потпрозорец за уредувачот на текст</p>
+</li>
+<li>
+<p>Прозорец за соопштенија.</p>
+</li>
+<li>
+<p>Прозорец за организација на работата на програмата</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Програмирање-во-c-со-code-blocks">2. Програмирање во C со Code::Blocks</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="Креирање-проект">2.1. Креирање проект</h3>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cb_new.png" alt="cb new">
+</div>
+<div class="title">Слика 2. Нов проект</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Стартувајте CodeBlocks</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>File &#8594; New &#8594; Project &#8594; Empty Project &#8594; Go</code></p>
+</li>
+<li>
+<p>Одберете <code>GNU GCC Compiler</code></p>
+</li>
+<li>
+<p>Изберете ги следните 2 опции ако сакате да креирате
+<code>debug</code> и <code>release</code> configuration</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cb_compiler.png" alt="cb compiler">
+</div>
+<div class="title">Слика 3. Избор на компајлер</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Додавање-на-изворна-датотека">2.2. Додавање на изворна датотека</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Додадете изворна датотека во проектот:
+<code>File &#8594; New &#8594; File &#8594; C/C++ Source</code></p>
+</li>
+<li>
+<p>Одберете C како програмски јазик</p>
+</li>
+<li>
+<p>Внесете го името на датотеката со полната патека и не заборавајте да го
+вклучите  "Add file to active project"</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cb_source.png" alt="cb source">
+</div>
+<div class="title">Слика 4. Додавање на изворна датотека</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cb_include.png" alt="cb include">
+</div>
+<div class="title">Слика 5. Избор на конфиуграции</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Програмирање">2.3. Програмирање</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>За секој проект може да се постават следните опции</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Project  Build Options..</code></p>
+</li>
+<li>
+<p><code>Compiler Flags</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>За изградба на проектот (build) притиснете <code>Ctrl + F9</code></p>
+</li>
+<li>
+<p>За извршување на проектот притиснете <code>Ctrl + F10</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cb_run.png" alt="cb run">
+</div>
+<div class="title">Слика 6. Извршување на програмата</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cb_flags.png" alt="cb flags">
+</div>
+<div class="title">Слика 7. Опции за изградба</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Задачи-за-дома">3. Задачи за дома</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Во продолжение се наведени неколку задачи кои би требало да се обидете
+да ги изработите дома. Со нивна изработка ќе бидете подготвени за успешна работа на
+претстојните лабораториски вежби.</p>
+</div>
+<div class="sect2">
+<h3 id="Задача-1">3.1. Задача 1</h3>
+<div class="paragraph">
+<p>Обидете се да креирате нов проект со една <code>.с</code> датотека и во неа внесете го
+текстот на следнава програма:</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение 8</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
 <span class="predefined-type">int</span> main() {
-        <span class="predefined-type">char</span> c;
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesete golema bukva: </span><span class="delimiter">&quot;</span></span>);
-        scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%c</span><span class="delimiter">&quot;</span></span>, &amp;c);
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%c malo se pishuva: '%c'</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, c, c + (<span class="char">'a'</span> - <span class="char">'A'</span>));
-        <span class="keyword">return</span> <span class="integer">0</span>;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Zdravo, kako si?</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Извршете ја програмата</p>
+</li>
+<li>
+<p>Што добивате како резултат?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Доколку сте направиле грешка при пишувањето на текстот поправете и
+извршете уште еднаш. Направете намерно некоја грешка во текстот.</p>
+</div>
+<div class="paragraph">
+<p>Извршете повторно!</p>
+</div>
+<div class="paragraph">
+<p>Што се случува сега?</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Задача-2">3.2. Задача 2</h3>
+<div class="paragraph">
+<p>Во текстот на програмата додадете го означениот ред:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> main() {
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Zdravo, kako si?</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="comment">// dodadi go ovoj red</span>
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Neshto ne ti se pravi muabet?</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Кој е резултатот од извршувањето сега?</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Изворен-код-од-примери-и-задачи">8. Изворен код од примери и задачи</h2>
+<h2 id="Изворен-код-од-примери-и-задачи">4. Изворен код од примери и задачи</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://github.com/finki-mk/SP/" class="bare">https://github.com/finki-mk/SP/</a></p>
@@ -1108,7 +888,7 @@ using namespace std;
 <div id="footer">
 <div id="footer-text">
 Верзија 1.0<br>
-Last updated 2016-09-20 15:28:53 +02:00
+Last updated 2016-09-20 15:28:34 +02:00
 </div>
 </div>
 </body>

@@ -1,68 +1,25 @@
 buildscript {
     dependencies {
-        classpath 'org.ysb33r.gradle:vfs-gradle-plugin:1.0-beta8'
-        classpath 'commons-httpclient:commons-httpclient:3.1'
         classpath("org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.11")
     }
 }
 
 plugins {
     id 'org.asciidoctor.convert' version '1.5.3'
-    id 'com.github.jruby-gradle.base' version '1.2.1'
-}
-
-apply plugin: 'com.github.jruby-gradle.base'
-apply plugin: 'org.ysb33r.vfs'
-apply plugin: 'java'
-apply plugin: 'org.asciidoctor.convert'
-
-repositories {
-    jcenter()
-}
-
-asciidoctorj {
-    version = '1.5.4'
 }
 
 group 'sp-docs'
 version '1.0-SNAPSHOT'
 
-ext {
-    deckjsVersion = 'master'
-    asciidoctorBackendVersion = 'master'
-    downloadDir = new File(buildDir, 'download')
-    templateDir = new File(downloadDir, 'templates')
-    deckjsDir = new File(downloadDir, 'deck.js')
-}
-
-dependencies {
-    gems 'rubygems:haml:4.0.6'
-}
-
-task download << {
-    mkdir downloadDir
-    vfs {
-        cp "zip:https://github.com/asciidoctor/asciidoctor-deck.js/archive/${asciidoctorBackendVersion}.zip!asciidoctor-deck.js-${asciidoctorBackendVersion}/templates",
-                templateDir, recursive: true, overwrite: true
-        cp "zip:https://github.com/imakewebthings/deck.js/archive/${deckjsVersion}.zip!deck.js-${deckjsVersion}",
-                deckjsDir, recursive: true, overwrite: true
-    }
-}
-
-download {
-    description "Download extra deckjs resources"
-    outputs.dir templateDir
-    outputs.dir deckjsDir
-}
-
 
 asciidoctor {
+    backends = ['html5', 'pdf']
+
     sourceDir = file('src')
     outputDir = file('build')
 
-    dependsOn jrubyPrepare
-
     def files = [
+            'av1.adoc',
             'av2.adoc'
     ]
 
@@ -70,33 +27,15 @@ asciidoctor {
         include files
     }
 
-    resources {
-        from(sourceDir) {
-            include 'images/**'
-        }
-        from(downloadDir) {
-            include 'deck.js/**'
-        }
-    }
-
-    backends = ['html5', 'pdf']
-
-    attributes                                   \
-                                          'build-gradle': file('build.gradle'),
-            'sourcedir': '../src',
-            'source-highlighter': 'coderay',
+    attributes  \
+             'source-highlighter': 'coderay',
             'encoding': 'utf-8',
             'imagesdir': './images',
             'toc': 'left',
             'icons': 'font',
             'idprefix': '',
             'idseparator': '-',
-            'deckjs_theme': 'swiss',
             'pdf-stylesdir': 'theme',
             'pdf-style': 'finki',
             'pdf-fontsdir': 'fonts'
-
-    //options template_dirs: [new File(templateDir, 'haml').absolutePath]
-
-    dependsOn download
 }

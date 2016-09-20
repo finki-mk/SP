@@ -1,6 +1,7 @@
 # Структурно програмирање
 Аудиториски вежби 2
-v1.0, 20 Септември, 2016
+{docdate}
+
 include::parts/attributes.adoc[]
 
 :source_dir: ../../src/av2

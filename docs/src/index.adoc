@@ -4,8 +4,10 @@ v1.0, 20 Септември, 2016
 include::parts/attributes.adoc[]
 
 :pdf_source: ../pdf
+:source_code: ../sources
 
-== Содржина
+== link:av1.html[Аудиториска вежба 1] 
+link:{pdf_source}/av1.pdf[PDF] link:{source_code}/av1_src.zip[Source code ZIP]
 
-. link:av1.html[Аудиториска вежба 1] link:{pdf_source}/av1.pdf[PDF]
-. link:av2.html[Аудиториска вежба 2] link:{pdf_source}/av2.pdf[PDF]
+== link:av2.html[Аудиториска вежба 2] 
+link:{pdf_source}/av2.pdf[PDF] link:{source_code}/av2_src.zip[Source code ZIP]

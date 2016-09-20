@@ -11,7 +11,6 @@ plugins {
 group 'sp-docs'
 version '1.0-SNAPSHOT'
 
-
 asciidoctor {
     backends = ['html5', 'pdf']
 
@@ -28,8 +27,8 @@ asciidoctor {
         include files
     }
 
-    attributes     \
-                'source-highlighter': 'coderay',
+    attributes      \
+                 'source-highlighter': 'coderay',
             'encoding': 'utf-8',
             'imagesdir': './images',
             'toc': 'left',
@@ -39,4 +38,16 @@ asciidoctor {
             'pdf-stylesdir': 'theme',
             'pdf-style': 'finki',
             'pdf-fontsdir': 'fonts'
+}
+
+task srcZip
+
+(1..2).each { id ->
+    task "srcZip${id}"(type: Zip) {
+        from( '../src/av' + id)
+        excludes = ['*.out']
+        archiveName = "av${id}_src.zip"
+        destinationDir = file('./sources')
+    }
+    srcZip.dependsOn "srcZip${id}"
 }

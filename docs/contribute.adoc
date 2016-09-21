@@ -1,0 +1,37 @@
+= How to contribute
+
+== System requirements
+
+* Java JRE
+
+== Setup
+
+Clone the repository
+
+----
+https://github.com/finki-mk/SP
+----
+
+== Building the PDF and HTML5 output
+ 
+----
+cd docs
+./gradlew asciidoctor
+----
+
+In Windows close any output PDF or HTML files and execute:
+
+----
+cd docs
+./gradlew asciidoctor --project-cache-dir=../.gradle
+----
+
+== Creating a pull request
+
+----
+git checkout -b {branch_name}
+git commit -am {message}
+git push origin {branch_name}
+----
+
+Open the https://github.com/finki-mk/SP and click Pull Request.

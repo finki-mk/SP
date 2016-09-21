@@ -27,8 +27,8 @@ asciidoctor {
         include files
     }
 
-    attributes      \
-                 'source-highlighter': 'coderay',
+    attributes       \
+            'source-highlighter': 'coderay',
             'encoding': 'utf-8',
             'imagesdir': './images',
             'toc': 'left',
@@ -44,7 +44,7 @@ task srcZip
 
 (1..2).each { id ->
     task "srcZip${id}"(type: Zip) {
-        from( '../src/av' + id)
+        from('../src/av' + id)
         excludes = ['*.out']
         archiveName = "av${id}_src.zip"
         destinationDir = file('./sources')

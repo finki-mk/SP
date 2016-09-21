@@ -1,0 +1,6 @@
+
+<<<
+
+== Source code of the examples and problems
+
+https://github.com/finki-mk/SP/

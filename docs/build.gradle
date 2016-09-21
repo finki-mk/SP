@@ -17,11 +17,7 @@ asciidoctor {
     sourceDir = file('src')
     outputDir = file('.')
 
-    def files = [
-            'index.adoc',
-            'av1.adoc',
-            'av2.adoc'
-    ]
+    def files = '*.adoc'
 
     sources {
         include files
@@ -41,13 +37,26 @@ asciidoctor {
 }
 
 task srcZip
+task srcZipEn
 
 (1..2).each { id ->
     task "srcZip${id}"(type: Zip) {
         from('../src/av' + id)
-        excludes = ['*.out']
+        excludes = ['*.out', '*_en.c']
         archiveName = "av${id}_src.zip"
         destinationDir = file('./sources')
     }
     srcZip.dependsOn "srcZip${id}"
+}
+
+
+(1..2).each { id ->
+    task "srcZipEn${id}"(type: Zip) {
+        from('../src/av' + id)
+        excludes = ['*.out']
+        includes = ['*_en.c']
+        archiveName = "av${id}_src_en.zip"
+        destinationDir = file('./sources')
+    }
+    srcZipEn.dependsOn "srcZipEn${id}"
 }

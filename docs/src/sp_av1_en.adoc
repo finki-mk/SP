@@ -1,0 +1,216 @@
+# Structured programming
+Exercises 1
+v1.0, 20 September, 2016
+include::parts/attributes_en.adoc[]
+
+:source_dir: ../../src/av1
+
+== Development environments (IDE)
+
+For writing programs, it is common to use *development environments*. 
+The process of writing a program is the following:
+ 
+ * the *source code* is entered using the keyboard
+ * then follows the *compiling* of the source code
+ **  the output is an *executable* i.e. a program written in the 
+  language of the computer
+
+Integrated development environment is mix of multiple programs, that are
+combined in order to simplify the development process:
+
+* text editor
+* compiler
+* debugger
+* external library integration
+* linker
+
+=== Text editor
+
+* Program for inserting and editing the text of the source code
+* Enables saving and loading already written source code files for editing
+* Syntax highlighting
+* Example of good text editors for writing source code are:
+** https://www.sublimetext.com/[Sublime Text]
+** http://www.flos-freeware.ch/notepad2.html[Notepad2] 
+** https://notepad-plus-plus.org/[Notepad++]
+ 
+WARNING: Do not use Windows Notepad
+
+=== Compiler
+
+* Transforms (translates) the source code from the programming language 
+(high level) to machine language
+* Two types of code translators:
+** Interpreters
+** Compilers
+
+*Interpreter* is a translator of source code which _translates each
+command separately_, checks for errors and executes, and goes to the next 
+command.
+
+*Compiler* is a translator which is _processing the whole
+program_, checks for errors, and creates the executable program.
+
+The resulted executable can be executed
+
+=== Debugger
+
+* Compilers and interpreters are detecting the (syntax) errors of the
+  source code as a result from incorrect usage of the programming language
+* Other type of errors are logical errors
+  ** The program doesn't execute as intended
+  ** Very difficult to discover
+* Debugger is a program that helps discovering logical errors
+  ** Enables execution step by step
+
+
+=== Integration with external libraries
+
+* Integration and usage of already created and correct modules,
+ also called functions
+* This type of organization has many advantages
+  ** Reuse of standard functions
+* Example libraries
+  ** Standard input/output
+  ** Mathematical operations 
+
+=== Linker
+
+* Sometimes the program is to large to be written in one file
+* different parts can be written by different programmers
+* some parts from one program can be used in some other program
+* Separately compiled parts must be united in on full executable with 
+the help of the *linker*
+  ** Another role is to _link_ standard functions with the executable
+
+
+=== Integrated Development Environment - IDE
+
+All these elements of the development environment are integrated in IDE.
+Code::Blocks is an example of IDE that can be used in this course.
+
+=== `Code::Blocks` - инсталација
+
+How to find and install `Code::Blocks`? 
+
+`Code::Blocks` is *free software* and can be find
+ 
+http://www.codeblocks.org/downloads
+
+
+In the central part of the page, there are three links:
+
+* Download the binary release, 
+* Download the source code and 
+* Retrieve source code from SVN
+
+TIP: The first link is recommended for most simple installation 
+*Download the binary release*. Windows users should download
+the version `codeblocks-16.01mingw-setup.exe`.
+
+=== Code::Blocks – main window
+
+.Main window
+image::cb_main.png[]
+
+=== Elements of the main window
+
+* Menu strip
+** Menu strip is in to top left corner of the window, right
+bellow the title 
+** There can be found menus `File`, `Edit`, `View`, `Search`, `Project`, 
+`Build`, `Debug`, `wxSmith`, `Tools`, `Plugins`, `Settings`, `Help`
+* Toolstrip
+** Toolstrip (buttons for starting most often used commands) are just
+bellow the menu strip
+* Workspace
+** Text editor
+** Info window for logs & others
+** Window for management
+
+== Programming in C with Code::Blocks 
+
+=== Creating project
+
+
+.New project
+image::cb_new.png[]
+
+* Start Code::Blocks
+** `File -> New -> Project -> Empty Project -> Go` 
+** Choose `GNU GCC Compiler`
+** Select the next 2 options if you want to create 
+`debug` and `release` configuration
+
+.Choose compiler
+image::cb_compiler.png[]
+
+=== Adding source file
+  
+* Add source file in the project: 
+`File -> New -> File -> C/C++ Source`
+* Choose C as programming language 
+* Enter the file name with the full path, and don't forget to check 
+`Add file to active project`
+
+.Adding source file
+image::cb_source.png[]
+
+
+.Choosing configuration
+image::cb_include.png[]
+
+=== Programming
+
+* For each project following options can be checked `Project Build
+    Options.. Compiler Flags` 
+** `Project  Build Options..`
+** `Compiler Flags`
+* To build the project press `Ctrl + F9` 
+* To execute the project press `Ctrl + F10`
+
+.Executing the program
+image::cb_run.png[]
+
+.Build options
+image::cb_flags.png[]
+
+== Homework
+
+In the next section are given some example problems that you should
+try to complete at home, so you can be ready for the next exercises.
+
+=== Problem 1
+
+Try to create new project with one `.с` file with the following source
+code:
+
+[source,c]
+----
+include::{source_dir}/ex11.c[]
+----
+
+* Execute the program
+* What result do you get?
+
+If you made some errors during writing the code, try to find,
+correct them and execute again.
+
+Make some errors, intentionally. Execute again!
+
+What's happening now?
+
+=== Problem 2
+
+In the source code add the marked part:
+
+[source,c]
+----
+include::{source_dir}/ex12.c[]
+----
+
+What is the result of the execution now?
+
+include::parts/footer_en.adoc[]
+
+link:{sources_zip}/av1_src_en.zip[Source code ZIP]

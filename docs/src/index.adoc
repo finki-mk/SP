@@ -7,7 +7,7 @@ include::parts/attributes.adoc[]
 :source_code: ../sources
 
 == link:av1.html[Аудиториска вежба 1] 
-link:{pdf_source}/av1.pdf[PDF] link:{source_code}/av1_src.zip[Source code ZIP]
+link:{pdf_source}/sp_av1.pdf[PDF] link:{source_code}/av1_src.zip[Source code ZIP]
 
 == link:av2.html[Аудиториска вежба 2] 
-link:{pdf_source}/av2.pdf[PDF] link:{source_code}/av2_src.zip[Source code ZIP]
+link:{pdf_source}/sp_av2.pdf[PDF] link:{source_code}/av2_src.zip[Source code ZIP]

@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<meta name="author" content="Аудиториски вежби">
-<title>Структурно програмирање</title>
+<meta name="author" content="Exercises 1">
+<title>Structured programming</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -512,42 +512,572 @@ table.CodeRay td.code>pre{padding:0}
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Структурно програмирање</h1>
+<h1>Structured programming</h1>
 <div class="details">
-<span id="author" class="author">Аудиториски вежби</span><br>
-<span id="revnumber">Верзија 1.0,</span>
-<span id="revdate">20 Септември, 2016</span>
+<span id="author" class="author">Exercises 1</span><br>
+<span id="revnumber">version 1.0,</span>
+<span id="revdate">20 September, 2016</span>
 </div>
 <div id="toc" class="toc2">
-<div id="toctitle">Содржина</div>
+<div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#a-href-av1-html-Аудиториска-вежба-1-a">1. <a href="av1.html">Аудиториска вежба 1</a></a></li>
-<li><a href="#a-href-av2-html-Аудиториска-вежба-2-a">2. <a href="av2.html">Аудиториска вежба 2</a></a></li>
+<li><a href="#development-environments-ide">1. Development environments (IDE)</a>
+<ul class="sectlevel2">
+<li><a href="#text-editor">1.1. Text editor</a></li>
+<li><a href="#compiler">1.2. Compiler</a></li>
+<li><a href="#debugger">1.3. Debugger</a></li>
+<li><a href="#integration-with-external-libraries">1.4. Integration with external libraries</a></li>
+<li><a href="#linker">1.5. Linker</a></li>
+<li><a href="#integrated-development-environment-ide">1.6. Integrated Development Environment - IDE</a></li>
+<li><a href="#code-code-blocks-code-инсталација">1.7. <code>Code::Blocks</code> - инсталација</a></li>
+<li><a href="#code-blocks-main-window">1.8. Code::Blocks – main window</a></li>
+<li><a href="#elements-of-the-main-window">1.9. Elements of the main window</a></li>
+</ul>
+</li>
+<li><a href="#programming-in-c-with-code-blocks">2. Programming in C with Code::Blocks</a>
+<ul class="sectlevel2">
+<li><a href="#creating-project">2.1. Creating project</a></li>
+<li><a href="#adding-source-file">2.2. Adding source file</a></li>
+<li><a href="#programming">2.3. Programming</a></li>
+</ul>
+</li>
+<li><a href="#homework">3. Homework</a>
+<ul class="sectlevel2">
+<li><a href="#problem-1">3.1. Problem 1</a></li>
+<li><a href="#problem-2">3.2. Problem 2</a></li>
+</ul>
+</li>
+<li><a href="#source-code-of-the-examples-and-problems">4. Source code of the examples and problems</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="a-href-av1-html-Аудиториска-вежба-1-a">1. <a href="av1.html">Аудиториска вежба 1</a></h2>
+<h2 id="development-environments-ide">1. Development environments (IDE)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="../pdf/sp_av1.pdf">PDF</a> <a href="../sources/av1_src.zip">Source code ZIP</a></p>
+<p>For writing programs, it is common to use <strong>development environments</strong>.
+The process of writing a program is the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the <strong>source code</strong> is entered using the keyboard</p>
+</li>
+<li>
+<p>then follows the <strong>compiling</strong> of the source code</p>
+<div class="ulist">
+<ul>
+<li>
+<p>the output is an <strong>executable</strong> i.e. a program written in the
+language of the computer</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Integrated development environment is mix of multiple programs, that are
+combined in order to simplify the development process:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>text editor</p>
+</li>
+<li>
+<p>compiler</p>
+</li>
+<li>
+<p>debugger</p>
+</li>
+<li>
+<p>external library integration</p>
+</li>
+<li>
+<p>linker</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="text-editor">1.1. Text editor</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Program for inserting and editing the text of the source code</p>
+</li>
+<li>
+<p>Enables saving and loading already written source code files for editing</p>
+</li>
+<li>
+<p>Syntax highlighting</p>
+</li>
+<li>
+<p>Example of good text editors for writing source code are:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.sublimetext.com/">Sublime Text</a></p>
+</li>
+<li>
+<p><a href="http://www.flos-freeware.ch/notepad2.html">Notepad2</a></p>
+</li>
+<li>
+<p><a href="https://notepad-plus-plus.org/">Notepad++</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Do not use Windows Notepad
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="compiler">1.2. Compiler</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Transforms (translates) the source code from the programming language
+(high level) to machine language</p>
+</li>
+<li>
+<p>Two types of code translators:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Interpreters</p>
+</li>
+<li>
+<p>Compilers</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Interpreter</strong> is a translator of source code which <em>translates each
+command separately</em>, checks for errors and executes, and goes to the next
+command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Compiler</strong> is a translator which is <em>processing the whole
+program</em>, checks for errors, and creates the executable program.</p>
+</div>
+<div class="paragraph">
+<p>The resulted executable can be executed</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="debugger">1.3. Debugger</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Compilers and interpreters are detecting the (syntax) errors of the
+source code as a result from incorrect usage of the programming language</p>
+</li>
+<li>
+<p>Other type of errors are logical errors</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The program doesn&#8217;t execute as intended</p>
+</li>
+<li>
+<p>Very difficult to discover</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Debugger is a program that helps discovering logical errors</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Enables execution step by step</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="integration-with-external-libraries">1.4. Integration with external libraries</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Integration and usage of already created and correct modules,
+also called functions</p>
+</li>
+<li>
+<p>This type of organization has many advantages</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reuse of standard functions</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Example libraries</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Standard input/output</p>
+</li>
+<li>
+<p>Mathematical operations</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="linker">1.5. Linker</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Sometimes the program is to large to be written in one file</p>
+</li>
+<li>
+<p>different parts can be written by different programmers</p>
+</li>
+<li>
+<p>some parts from one program can be used in some other program</p>
+</li>
+<li>
+<p>Separately compiled parts must be united in on full executable with
+the help of the <strong>linker</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Another role is to <em>link</em> standard functions with the executable</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="integrated-development-environment-ide">1.6. Integrated Development Environment - IDE</h3>
+<div class="paragraph">
+<p>All these elements of the development environment are integrated in IDE.
+Code::Blocks is an example of IDE that can be used in this course.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="code-code-blocks-code-инсталација">1.7. <code>Code::Blocks</code> - инсталација</h3>
+<div class="paragraph">
+<p>How to find and install <code>Code::Blocks</code>?</p>
+</div>
+<div class="paragraph">
+<p><code>Code::Blocks</code> is <strong>free software</strong> and can be find</p>
+</div>
+<div class="paragraph">
+<p><a href="http://www.codeblocks.org/downloads" class="bare">http://www.codeblocks.org/downloads</a></p>
+</div>
+<div class="paragraph">
+<p>In the central part of the page, there are three links:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Download the binary release,</p>
+</li>
+<li>
+<p>Download the source code and</p>
+</li>
+<li>
+<p>Retrieve source code from SVN</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The first link is recommended for most simple installation
+<strong>Download the binary release</strong>. Windows users should download
+the version <code>codeblocks-16.01mingw-setup.exe</code>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="code-blocks-main-window">1.8. Code::Blocks – main window</h3>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cb_main.png" alt="cb main">
+</div>
+<div class="title">Figure 1. Main window</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="elements-of-the-main-window">1.9. Elements of the main window</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Menu strip</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Menu strip is in to top left corner of the window, right
+bellow the title</p>
+</li>
+<li>
+<p>There can be found menus <code>File</code>, <code>Edit</code>, <code>View</code>, <code>Search</code>, <code>Project</code>,
+<code>Build</code>, <code>Debug</code>, <code>wxSmith</code>, <code>Tools</code>, <code>Plugins</code>, <code>Settings</code>, <code>Help</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Toolstrip</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Toolstrip (buttons for starting most often used commands) are just
+bellow the menu strip</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Workspace</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Text editor</p>
+</li>
+<li>
+<p>Info window for logs &amp; others</p>
+</li>
+<li>
+<p>Window for management</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="a-href-av2-html-Аудиториска-вежба-2-a">2. <a href="av2.html">Аудиториска вежба 2</a></h2>
+<h2 id="programming-in-c-with-code-blocks">2. Programming in C with Code::Blocks</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="creating-project">2.1. Creating project</h3>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cb_new.png" alt="cb new">
+</div>
+<div class="title">Figure 2. New project</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Start Code::Blocks</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>File &#8594; New &#8594; Project &#8594; Empty Project &#8594; Go</code></p>
+</li>
+<li>
+<p>Choose <code>GNU GCC Compiler</code></p>
+</li>
+<li>
+<p>Select the next 2 options if you want to create
+<code>debug</code> and <code>release</code> configuration</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cb_compiler.png" alt="cb compiler">
+</div>
+<div class="title">Figure 3. Choose compiler</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-source-file">2.2. Adding source file</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Add source file in the project:
+<code>File &#8594; New &#8594; File &#8594; C/C++ Source</code></p>
+</li>
+<li>
+<p>Choose C as programming language</p>
+</li>
+<li>
+<p>Enter the file name with the full path, and don&#8217;t forget to check
+<code>Add file to active project</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cb_source.png" alt="cb source">
+</div>
+<div class="title">Figure 4. Adding source file</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cb_include.png" alt="cb include">
+</div>
+<div class="title">Figure 5. Choosing configuration</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="programming">2.3. Programming</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>For each project following options can be checked <code>Project Build
+Options.. Compiler Flags</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Project  Build Options..</code></p>
+</li>
+<li>
+<p><code>Compiler Flags</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>To build the project press <code>Ctrl + F9</code></p>
+</li>
+<li>
+<p>To execute the project press <code>Ctrl + F10</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cb_run.png" alt="cb run">
+</div>
+<div class="title">Figure 6. Executing the program</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/cb_flags.png" alt="cb flags">
+</div>
+<div class="title">Figure 7. Build options</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="homework">3. Homework</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="../pdf/sp_av2.pdf">PDF</a> <a href="../sources/av2_src.zip">Source code ZIP</a></p>
+<p>In the next section are given some example problems that you should
+try to complete at home, so you can be ready for the next exercises.</p>
+</div>
+<div class="sect2">
+<h3 id="problem-1">3.1. Problem 1</h3>
+<div class="paragraph">
+<p>Try to create new project with one <code>.с</code> file with the following source
+code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> main() {
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Zdravo, kako si?</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Execute the program</p>
+</li>
+<li>
+<p>What result do you get?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you made some errors during writing the code, try to find,
+correct them and execute again.</p>
+</div>
+<div class="paragraph">
+<p>Make some errors, intentionally. Execute again!</p>
+</div>
+<div class="paragraph">
+<p>What&#8217;s happening now?</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="problem-2">3.2. Problem 2</h3>
+<div class="paragraph">
+<p>In the source code add the marked part:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> main() {
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Zdravo, kako si?</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="comment">// dodadi go ovoj red</span>
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Neshto ne ti se pravi muabet?</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>What is the result of the execution now?</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="source-code-of-the-examples-and-problems">4. Source code of the examples and problems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://github.com/finki-mk/SP/" class="bare">https://github.com/finki-mk/SP/</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://finki-mk.github.io/SP/sources/av1_src_en.zip">Source code ZIP</a></p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Верзија 1.0<br>
-Last updated 2016-09-21 20:18:46 +02:00
+Version 1.0<br>
+Last updated 2016-09-21 20:25:27 +02:00
 </div>
 </div>
 </body>

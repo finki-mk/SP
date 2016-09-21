@@ -33,3 +33,4 @@
 *.fls
 /.idea/
 /docs/.gradle/
+/.gradle/

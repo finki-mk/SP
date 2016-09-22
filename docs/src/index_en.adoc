@@ -10,4 +10,4 @@ include::parts/attributes_en.adoc[]
 link:{pdf_source}/sp_av1_en.pdf[PDF] link:{source_code}/av1_src_en.zip[Source code ZIP]
 
 == link:av2.html[Exercise 2] 
-link:{pdf_source}/sp_av2.pdf[PDF] link:{source_code}/av2_src_en.zip[Source code ZIP]
+link:{pdf_source}/sp_av2_en.pdf[PDF] link:{source_code}/av2_src_en.zip[Source code ZIP]

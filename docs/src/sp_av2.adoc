@@ -74,7 +74,7 @@ include::{source_dir}/ex21.cpp[]
 
 === Програма за собирање два броја
 
-.Решение 
+.Пример 2 
 [source,c]
 ----
 include::{source_dir}/ex22.c[]
@@ -84,8 +84,7 @@ include::{source_dir}/ex22.c[]
 
 Именуваните константи се креираат со користење на клучниот збор `const`
 
-.Пример
-[source,c]
+.Пример 3
 [source,c]
 ----
 include::{source_dir}/ex23.c[]
@@ -98,11 +97,17 @@ include::{source_dir}/ex23.c[]
 
 `#define tekst_za_baranje tekst_za_zamena`
 
+.Пример 4
+[source,c]
+----
+include::{source_dir}/ex24.c[]
+----
+
 == Аритметички оператори
 
 Се применуваат на броеви (цели или децимални)
 
-[options="header"]
+[options="header",cols="^,3"]
 |===
 | Оператор | Операција
 | +        | Собирање
@@ -114,13 +119,14 @@ include::{source_dir}/ex23.c[]
 
 == Ознаки за форамтот на печатењето
 
-[options="header"]
+[options="header",cols="^,3"]
 |===
 | Ознака | Објаснување
-| *`%d`*      | за цели броеви
-| `%i`        | за цели броеви
-| `%c`        | за знаци
-| `%s`        | за низа од знаци (стринг)
+| *`%d`*      | за цели броеви (`int`)
+| `%i`        | за цели броеви (`int`)
+| `%f`        | за децимални броеви (`float`, `double`)
+| `%c`        | за знаци (`char`)
+| `%s`        | за низа од знаци (стринг, `char[]`, `char*`)
 |===
 
 === Пример на користење на функцијата `printf`
@@ -132,13 +138,13 @@ Vtora recenica.
 Treta recenica.
 ----
 
-.Пример 3
+.Пример 5
 [source,c]
 ----
 include::{source_dir}/ex25.c[]
 ----
 
-.Пример 3 (C++)
+.Пример 5 (C++)
 [source,c]
 ----
 include::{source_dir}/ex25.cpp[]

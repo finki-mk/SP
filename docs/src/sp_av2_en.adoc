@@ -1,0 +1,233 @@
+# Structured programming
+Exercises 2
+v1.0, 22 September, 2016
+include::parts/attributes.adoc[]
+
+:source_dir: ../../src/av2
+
+== Simple C program structure
+
+All the source code written in C is organized in *functions*
+
+[.Program in C]
+[source,c]
+----
+int main() {
+  variable_declarations;
+  expressions;
+}
+----
+
+== C Functions
+
+- `main` - C *main* function
+- In parentheses `()` we put the input arguments 
+- The return type of the functions is before the name
+(`int` – the function returns integer)
+- The function body starts with `{`, and ends with `}`
+- All declarations and expressions are separated with `;`
+
+== Comments usage
+
+Comments are used for extra explanation or documenting the source code.
+C supports two types of comments:
+
+- one line comments that start with double slash `//`
+----
+// comment in one line
+----
+
+- multiple line comments that can span across multiple lines and start with
+`/\*` and end with `*/`
+----
+/*
+Longer comment 
+in multiple
+lines
+*/
+----
+
+=== Example (Hello world)
+
+.Example 1
+[source,cpp]
+----
+include::{source_dir}/ex21_en.c[]
+----
+
+- `#include` - directive for including external libraries
+- `stdio.h` - library for accessing standard input/output streams (keyboard/screen)
+- `printf` - function for printing on the standard output (screen)
+
+=== 
+
+.Example 2 
+[source,c]
+----
+include::{source_dir}/ex22_en.c[]
+----
+
+== Named constants
+
+Names constants are created using the keyword `const`
+
+.Example 3
+[source,c]
+----
+include::{source_dir}/ex23_en.c[]
+----
+
+Named constants can be created also by using 
+the preprocessor and with all uppercase letters
+by convention.
+
+Using `#define`
+
+`#define TEXT_TO_SEARCH_FOR REPLACEMENT_TEXT`
+
+.Example 4
+[source,c]
+----
+include::{source_dir}/ex24_en.c[]
+----
+
+== Arithmetic operators
+
+Applied on numbers (integers or real)
+
+[options="header",cols="^,3"]
+|===
+| Operator | Operation
+| +        | Addition
+| -        | Subtraction
+| *        | Multiplication
+| /        | Division
+| %        | Division by modulo (residue of the division)
+|===
+
+== Printing format placeholders
+
+[options="header",cols="^,3"]
+|===
+| Placeholder | Usage
+| *`%d`*      | integers (`int`)
+| `%i`        | integers (`int`)
+| `%f`        | real numbers (`float`, `double`)
+| `%c`        | characters (`char`)
+| `%s`        | array of characters (strings `char[]`, `char*`) 
+|===
+
+=== Usage of function `printf`
+
+Print on the standard output the following sentences:
+----
+First sentence.
+Second sentence.
+Third sentence.
+----
+
+.Example 3
+[source,c]
+----
+include::{source_dir}/ex25_en.c[]
+----
+
+== Problems
+
+=== Problem 1
+
+Write a program that will compute the value of the mathematical expression:
+`x = 3/2 + (5 – 46*5/12)`
+
+.Solution 1
+[source,c]
+----
+include::{source_dir}/p21.c[]
+----
+
+=== Problem 2
+
+Write a program that for given value of `x` (during the declaration)
+will compute and print the value of `x^2^`.
+
+.Solution 2
+[source,c]
+----
+include::{source_dir}/p22_en.c[]
+----
+
+=== Problem 3
+Write a program that for a given sides of one triangle, it will print the
+perimeter and area of the square (values are `a = 5`, `b = 7.5`, `c = 10.2`).
+
+.Solution 3
+[source,c]
+----
+include::{source_dir}/p23_en.c[]
+----
+
+=== Problem 4
+
+Write a program for computing the arithmetic mean of the 
+numbers 3, 5 and 12..
+
+.Solution 4
+[source,c]
+----
+include::{source_dir}/p24_en.c[]
+----
+
+=== Problem 5
+
+Write a program that will print the remainder from the 
+division of number 19 with 2, 3, 5 and 8.
+
+.Solution 5
+[source,c]
+----
+include::{source_dir}/p25_en.c[]
+----
+
+=== Problem 6
+
+Write a program for computing and printing the circle area 
+and perimeter. The circle radius is read as decimal number.
+
+.Solution 6
+[source,c]
+----
+include::{source_dir}/p26_en.c[]
+----
+
+=== Problem 7
+
+Write a program that reads from standard input two integers 
+and prints their sum, difference, product and division remainder.
+
+.Solution 7
+[source,c]
+----
+include::{source_dir}/p27_en.c[]
+----
+
+=== Problem 8
+
+Write a program that reads uppercase letter from standard input 
+and prints out in lowercase.
+
+TIP: Each character is represented with its ASCII code.
+
+.example
+----
+A = 65, a = 97
+----
+
+.Solution 8
+[source,c]
+----
+include::{source_dir}/p28_en.c[]
+----
+
+include::parts/footer_en.adoc[]
+
+link:{sources_zip}/av2_src_en.zip[Source code ZIP]

@@ -5,8 +5,10 @@ include::parts/attributes_en.adoc[]
 
 :pdf_source: ../pdf
 
-== link:sp_av1_en.html[Exercise 1] 
-link:{pdf_source}/sp_av1_en.pdf[PDF] link:{sources_zip}/sp_av1_src_en.zip[Source code ZIP]
+== Exercise 1
+ 
+link:sp_av1_en.html[HTML] | link:{pdf_source}/sp_av1_en.pdf[PDF] | link:{sources_zip}/sp_av1_src_en.zip[Source code ZIP]
 
-== link:av2.html[Exercise 2] 
-link:{pdf_source}/sp_av2_en.pdf[PDF] link:{sources_zip}/sp_av2_src_en.zip[Source code ZIP]
+== Exercise 2 
+
+link:av2.html[HTML] | link:{pdf_source}/sp_av2_en.pdf[PDF] | link:{sources_zip}/sp_av2_src_en.zip[Source code ZIP]

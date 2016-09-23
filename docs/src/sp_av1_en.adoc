@@ -1,6 +1,6 @@
 # Structured programming
 Exercises 1
-v1.0, 20 September, 2016
+v1.0, 22 September, 2016
 include::parts/attributes_en.adoc[]
 
 :source_dir: ../../src/av1
@@ -89,7 +89,7 @@ the help of the *linker*
 All these elements of the development environment are integrated in IDE.
 Code::Blocks is an example of IDE that can be used in this course.
 
-=== `Code::Blocks` - инсталација
+=== Installing `Code::Blocks`
 
 How to find and install `Code::Blocks`? 
 
@@ -132,7 +132,6 @@ bellow the menu strip
 
 === Creating project
 
-
 .New project
 image::cb_new.png[]
 
@@ -147,11 +146,9 @@ image::cb_compiler.png[]
 
 === Adding source file
   
-* Add source file in the project: 
-`File -> New -> File -> C/C++ Source`
+* Add source file in the project: `File -> New -> File -> C/C++ Source`
 * Choose C as programming language 
-* Enter the file name with the full path, and don't forget to check 
-`Add file to active project`
+* Enter the file name with the full path, and don't forget to check `Add file to active project`
 
 .Adding source file
 image::cb_source.png[]
@@ -182,19 +179,17 @@ try to complete at home, so you can be ready for the next exercises.
 
 === Problem 1
 
-Try to create new project with one `.с` file with the following source
-code:
+Try to create new project with one `.с` file with the following source code:
 
 [source,c]
 ----
-include::{source_dir}/ex11.c[]
+include::{source_dir}/ex11_en.c[]
 ----
 
 * Execute the program
 * What result do you get?
 
-If you made some errors during writing the code, try to find,
-correct them and execute again.
+If you made some errors during writing the code, try to find, correct them and execute again.
 
 Make some errors, intentionally. Execute again!
 
@@ -206,7 +201,7 @@ In the source code add the marked part:
 
 [source,c]
 ----
-include::{source_dir}/ex12.c[]
+include::{source_dir}/ex12_en.c[]
 ----
 
 What is the result of the execution now?

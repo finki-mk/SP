@@ -264,4 +264,4 @@ include::{source_dir}/p28.c[]
 
 include::parts/footer.adoc[]
 
-link:{sources_zip}/av2_src.zip[Source code ZIP]
+link:{sources_zip}/sp_av2_src.zip[Source code ZIP]

@@ -23,8 +23,8 @@ asciidoctor {
         include files
     }
 
-    attributes       \
-            'source-highlighter': 'coderay',
+    attributes         \
+              'source-highlighter': 'coderay',
             'encoding': 'utf-8',
             'imagesdir': './images',
             'toc': 'left',
@@ -34,6 +34,8 @@ asciidoctor {
             'pdf-stylesdir': 'theme',
             'pdf-style': 'finki',
             'pdf-fontsdir': 'fonts'
+
+    dependsOn tasks.withType(Zip)
 }
 
 task srcZip
@@ -43,7 +45,7 @@ task srcZipEn
     task "srcZip${id}"(type: Zip) {
         from('../src/av' + id)
         excludes = ['*.out', '*_en.c']
-        archiveName = "av${id}_src.zip"
+        archiveName = "sp_av${id}_src.zip"
         destinationDir = file('./sources')
     }
     srcZip.dependsOn "srcZip${id}"
@@ -55,7 +57,7 @@ task srcZipEn
         from('../src/av' + id)
         excludes = ['*.out']
         includes = ['*_en.c']
-        archiveName = "av${id}_src_en.zip"
+        archiveName = "sp_av${id}_src_en.zip"
         destinationDir = file('./sources')
     }
     srcZipEn.dependsOn "srcZipEn${id}"

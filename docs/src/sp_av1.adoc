@@ -150,4 +150,4 @@ include::{source_dir}/ex12.c[]
 
 include::parts/footer.adoc[]
 
-link:{sources_zip}/av1_src.zip[Source code ZIP]
+link:{sources_zip}/sp_av1_src.zip[Source code ZIP]

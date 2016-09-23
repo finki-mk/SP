@@ -230,4 +230,4 @@ include::{source_dir}/p28_en.c[]
 
 include::parts/footer_en.adoc[]
 
-link:{sources_zip}/av2_src_en.zip[Source code ZIP]
+link:{sources_zip}/sp_av2_src_en.zip[Source code ZIP]

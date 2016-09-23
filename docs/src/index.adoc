@@ -4,10 +4,11 @@ v1.0, 20 Септември, 2016
 include::parts/attributes.adoc[]
 
 :pdf_source: ../pdf
-:source_code: ../sources
 
-== link:av1.html[Аудиториска вежба 1] 
-link:{pdf_source}/sp_av1.pdf[PDF] link:{source_code}/av1_src.zip[Source code ZIP]
+== Аудиториска вежба 1
 
-== link:av2.html[Аудиториска вежба 2] 
-link:{pdf_source}/sp_av2.pdf[PDF] link:{source_code}/av2_src.zip[Source code ZIP]
+link:sp_av1.html[HTML] | link:{pdf_source}/sp_av1.pdf[PDF] | link:{sources_zip}/sp_av1_src.zip[Source code ZIP]
+
+== Аудиториска вежба 2
+ 
+link:sp_av2.html[HTML] | link:{pdf_source}/sp_av2.pdf[PDF] | link:{sources_zip}/sp_av2_src.zip[Source code ZIP]

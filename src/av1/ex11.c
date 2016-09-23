@@ -4,4 +4,3 @@ int main() {
     printf("Zdravo, kako si?\n");
     return 0;
 }
-

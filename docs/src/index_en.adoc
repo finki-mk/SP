@@ -4,10 +4,9 @@ v1.0, 21 September, 2016
 include::parts/attributes_en.adoc[]
 
 :pdf_source: ../pdf
-:source_code: ../sources
 
 == link:sp_av1_en.html[Exercise 1] 
-link:{pdf_source}/sp_av1_en.pdf[PDF] link:{source_code}/av1_src_en.zip[Source code ZIP]
+link:{pdf_source}/sp_av1_en.pdf[PDF] link:{sources_zip}/sp_av1_src_en.zip[Source code ZIP]
 
 == link:av2.html[Exercise 2] 
-link:{pdf_source}/sp_av2_en.pdf[PDF] link:{source_code}/av2_src_en.zip[Source code ZIP]
+link:{pdf_source}/sp_av2_en.pdf[PDF] link:{sources_zip}/sp_av2_src_en.zip[Source code ZIP]

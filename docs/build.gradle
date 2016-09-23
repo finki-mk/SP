@@ -11,29 +11,34 @@ plugins {
 group 'sp-docs'
 version '1.0-SNAPSHOT'
 
+def ATTRIBUTES = [
+        'source-highlighter': 'coderay',
+        'encoding'          : 'utf-8',
+        'imagesdir'         : './images',
+        'toc'               : 'left',
+        'icons'             : 'font',
+        'idprefix'          : '',
+        'idseparator'       : '-',
+        'pdf-stylesdir'     : 'theme',
+        'pdf-style'         : 'finki',
+        'pdf-fontsdir'      : 'fonts'
+]
+
+def BACKENDS = ['html5', 'pdf']
+def SOURCE_DIR = file('src')
+def OUTPUT_DIR = file('.')
+
+
 asciidoctor {
-    backends = ['html5', 'pdf']
-
-    sourceDir = file('src')
-    outputDir = file('.')
-
-    def files = '*.adoc'
+    backends = BACKENDS
+    sourceDir = SOURCE_DIR
+    outputDir = OUTPUT_DIR
 
     sources {
-        include files
+        include '*.adoc'
     }
 
-    attributes         \
-              'source-highlighter': 'coderay',
-            'encoding': 'utf-8',
-            'imagesdir': './images',
-            'toc': 'left',
-            'icons': 'font',
-            'idprefix': '',
-            'idseparator': '-',
-            'pdf-stylesdir': 'theme',
-            'pdf-style': 'finki',
-            'pdf-fontsdir': 'fonts'
+    attributes ATTRIBUTES
 
     dependsOn tasks.withType(Zip)
 }
@@ -61,4 +66,27 @@ task srcZipEn
         destinationDir = file('./sources')
     }
     srcZipEn.dependsOn "srcZipEn${id}"
+}
+
+fileTree("src")
+        .filter {
+    it.isFile() && it.name.endsWith('.adoc')
+}.files.each {
+    file ->
+        task "adoc_${file.name}"(type: org.asciidoctor.gradle.AsciidoctorTask) {
+            if (file.name.endsWith("en.adoc")) {
+                ATTRIBUTES['pdf-style'] = 'finki-en'
+            } else {
+                ATTRIBUTES['pdf-style'] = 'finki'
+            }
+            backends = BACKENDS
+            sourceDir = SOURCE_DIR
+            outputDir = OUTPUT_DIR
+            sources {
+                include file.name
+            }
+            attributes ATTRIBUTES
+
+            dependsOn tasks.withType(Zip)
+        }
 }

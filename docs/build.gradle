@@ -67,10 +67,12 @@ task srcZipEn
     }
     srcZipEn.dependsOn "srcZipEn${id}"
 }
-
+boolean isValidFile(def name) {
+    return name.endsWith('.adoc') && !name.contains('footer') && !name.contains('attributes')
+}
 fileTree("src")
         .filter {
-    it.isFile() && it.name.endsWith('.adoc')
+    it.isFile() && isValidFile(it.name)
 }.files.each {
     file ->
         task "adoc_${file.name}"(type: org.asciidoctor.gradle.AsciidoctorTask) {

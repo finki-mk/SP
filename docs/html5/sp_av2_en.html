@@ -526,28 +526,45 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#comments-usage">3. Comments usage</a>
 <ul class="sectlevel2">
 <li><a href="#example-hello-world">3.1. Example (Hello world)</a></li>
+<li><a href="#program-for-summing-two-integers">3.2. Program for summing two integers</a></li>
 </ul>
 </li>
-<li><a href="#named-constants">4. Named constants</a></li>
-<li><a href="#arithmetic-operators">5. Arithmetic operators</a></li>
-<li><a href="#printing-format-placeholders">6. Printing format placeholders</a>
+<li><a href="#variables">4. Variables</a>
 <ul class="sectlevel2">
-<li><a href="#usage-of-function-code-printf-code">6.1. Usage of function <code>printf</code></a></li>
+<li><a href="#Начин-на-декларација-на-променливи">4.1. Начин на декларација на променливи</a></li>
+<li><a href="#data-types-in-c">4.2. Data types in C</a></li>
+<li><a href="#defining-variable-names">4.3. Defining variable names</a></li>
 </ul>
 </li>
-<li><a href="#problems">7. Problems</a>
+<li><a href="#named-constants">5. Named constants</a></li>
+<li><a href="#operators">6. Operators</a>
 <ul class="sectlevel2">
-<li><a href="#problem-1">7.1. Problem 1</a></li>
-<li><a href="#problem-2">7.2. Problem 2</a></li>
-<li><a href="#problem-3">7.3. Problem 3</a></li>
-<li><a href="#problem-4">7.4. Problem 4</a></li>
-<li><a href="#problem-5">7.5. Problem 5</a></li>
-<li><a href="#problem-6">7.6. Problem 6</a></li>
-<li><a href="#problem-7">7.7. Problem 7</a></li>
-<li><a href="#problem-8">7.8. Problem 8</a></li>
+<li><a href="#arithmetic-operators">6.1. Arithmetic operators</a></li>
+<li><a href="#relational-operators">6.2. Relational operators</a></li>
+<li><a href="#logical-operators">6.3. Logical operators</a></li>
+<li><a href="#additional-operators">6.4. Additional operators</a></li>
+<li><a href="#unary-operators">6.5. Unary operators</a></li>
 </ul>
 </li>
-<li><a href="#source-code-of-the-examples-and-problems">8. Source code of the examples and problems</a></li>
+<li><a href="#printing-on-the-standard-output">7. Printing on the standard output</a>
+<ul class="sectlevel2">
+<li><a href="#most-used-format-placeholders">7.1. Most used format placeholders</a></li>
+<li><a href="#usage-of-function-code-printf-code">7.2. Usage of function <code>printf</code></a></li>
+</ul>
+</li>
+<li><a href="#problems">8. Problems</a>
+<ul class="sectlevel2">
+<li><a href="#problem-1">8.1. Problem 1</a></li>
+<li><a href="#problem-2">8.2. Problem 2</a></li>
+<li><a href="#problem-3">8.3. Problem 3</a></li>
+<li><a href="#problem-4">8.4. Problem 4</a></li>
+<li><a href="#problem-5">8.5. Problem 5</a></li>
+<li><a href="#problem-6">8.6. Problem 6</a></li>
+<li><a href="#problem-7">8.7. Problem 7</a></li>
+<li><a href="#problem-8">8.8. Problem 8</a></li>
+</ul>
+</li>
+<li><a href="#source-code-of-the-examples-and-problems">9. Source code of the examples and problems</a></li>
 </ul>
 </div>
 </div>
@@ -659,9 +676,9 @@ lines
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>===</p>
 </div>
+<div class="sect2">
+<h3 id="program-for-summing-two-integers">3.2. Program for summing two integers</h3>
 <div class="listingblock">
 <div class="title">Example 2</div>
 <div class="content">
@@ -679,7 +696,118 @@ lines
 </div>
 </div>
 <div class="sect1">
-<h2 id="named-constants">4. Named constants</h2>
+<h2 id="variables">4. Variables</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Variables are symbolic names for places in memory where are stored some values.</p>
+</li>
+<li>
+<p>Before using it, each variable must be <strong>declared</strong>.</p>
+</li>
+<li>
+<p>With each assignment of new value, the old value in the variable is lost.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="Начин-на-декларација-на-променливи">4.1. Начин на декларација на променливи</h3>
+<div class="listingblock">
+<div class="content">
+<pre>data_type variable_name = initial_value;</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="predefined-type">int</span> a = <span class="integer">5</span>;
+<span class="predefined-type">float</span> x = <span class="float">2</span><span class="float">.3</span>;
+<span class="predefined-type">char</span> c = <span class="char">'a'</span>;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data-types-in-c">4.2. Data types in C</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Integers</th>
+<th class="tableblock halign-center valign-top">Characters</th>
+<th class="tableblock halign-center valign-top">Real numbers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>int</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>char</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>float</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>short</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>double</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>long</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="defining-variable-names">4.3. Defining variable names</h3>
+<div class="paragraph">
+<p>In naming variables you can use:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>lowercase letters from <code>a</code> to <code>z</code>;</p>
+</li>
+<li>
+<p>uppercase letters from <code>A</code> to <code>Z</code>;</p>
+</li>
+<li>
+<p>digits from <code>0</code> to <code>9</code> (the name can not start with digit);</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+When choosing a variable name, pick ones that clearly describe the value they store.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+С is <strong>case sensitive</strong>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="named-constants">5. Named constants</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Names constants are created using the keyword <code>const</code></p>
@@ -727,10 +855,12 @@ by convention.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="arithmetic-operators">5. Arithmetic operators</h2>
+<h2 id="operators">6. Operators</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="arithmetic-operators">6.1. Arithmetic operators</h3>
 <div class="paragraph">
-<p>Applied on numbers (integers or real)</p>
+<p>Are used on numbers (integers or real)</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -762,15 +892,16 @@ by convention.</p>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">%</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Division by modulo (residue of the division)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modulo (residue after division)</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<div class="sect2">
+<h3 id="relational-operators">6.2. Relational operators</h3>
+<div class="paragraph">
+<p>Are used on all comparable types, and the result is an integer 0 (false) or 1 (true).</p>
 </div>
-<div class="sect1">
-<h2 id="printing-format-placeholders">6. Printing format placeholders</h2>
-<div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 25%;">
@@ -778,13 +909,189 @@ by convention.</p>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top">Placeholder</th>
+<th class="tableblock halign-center valign-top">Operator</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&lt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Less then</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&lt;=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Less then or equal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Greater then</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&gt;=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Greater than or equal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>==</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Equality</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>!=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Non equality (different)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="logical-operators">6.3. Logical operators</h3>
+<div class="paragraph">
+<p>Used in combination with the relational operators to form complex
+logical expressions, that again return result 0 or 1.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Operator</th>
+<th class="tableblock halign-left valign-top">Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&amp;&amp;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical <strong>AND</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>||</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical <strong>OR</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>!</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Negation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="additional-operators">6.4. Additional operators</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Operator</th>
+<th class="tableblock halign-left valign-top">Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assignment</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>++</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Increment (for +1)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>--</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decrement (for -1)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="unary-operators">6.5. Unary operators</h3>
+<div class="paragraph">
+<p>The operators <code>+</code> and <code>–</code> can be used in unary manner:</p>
+</div>
+<div class="listingblock">
+<div class="title">Changing the sign of the values stored in <code>x</code> and <code>y</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">x = +x;
+y = -y;</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="compound-operators">6.5.1. Compound operators</h4>
+<div class="paragraph">
+<p>Combination of assignment operator with other operator.</p>
+</div>
+<div class="paragraph">
+<p><code>+=, -=, *=, /=, %=</code></p>
+</div>
+<div class="listingblock">
+<div class="title">Example of using compund operators</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">a += <span class="integer">5</span>; <span class="comment">// a = a + 5;</span>
+a += b * c; <span class="comment">// a = a + b * c;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example with varialbes and operators</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> a;
+    <span class="predefined-type">float</span> p;
+    p = <span class="float">1</span><span class="float">.0</span> / <span class="float">2</span><span class="float">.0</span>; <span class="comment">/* p = 0.5 */</span>
+    a = <span class="integer">5</span> / <span class="integer">2</span>;     <span class="comment">/* a = 2   */</span>
+    p = <span class="integer">1</span> / <span class="integer">2</span> + <span class="integer">1</span> / <span class="integer">8</span>; <span class="comment">/* p = 0; */</span>
+    p = <span class="float">3</span><span class="float">.5</span> / <span class="float">2</span><span class="float">.8</span>; <span class="comment">/* p = 1.25 */</span>
+    a = p; <span class="comment">/* a = 1 */</span>
+    a = a + <span class="integer">1</span>; <span class="comment">/* a = 2; */</span>
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="printing-on-the-standard-output">7. Printing on the standard output</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For printing on the standard output (screen) in C we use the
+function <code>printf</code> from the library <code>stdio.h</code> (<strong>St</strong>andar<strong>d</strong> <strong>I</strong>nput <strong>O</strong>tput)</p>
+</div>
+<div class="paragraph">
+<p><code>#include &lt;stdio.h&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>The signature of the function is:</p>
+</div>
+<div class="paragraph">
+<p><code>int printf(control_array, list_of_arguments)</code></p>
+</div>
+<div class="paragraph">
+<p>The <em>control array</em> contains text of any kind, and format placeholders
+with leading <code>%</code> or special characters with leading <code>\</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <em>format placeholders</em> are determined from the variable type we want
+to print.</p>
+</div>
+<div class="sect2">
+<h3 id="most-used-format-placeholders">7.1. Most used format placeholders</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Format</th>
 <th class="tableblock halign-left valign-top">Usage</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><code>%d</code></strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>%d</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integers (<code>int</code>)</p></td>
 </tr>
 <tr>
@@ -801,12 +1108,17 @@ by convention.</p>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>%s</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">array of characters (strings <code>char[]</code>, <code>char*</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">characters (стринг, <code>char[]</code>, <code>char*</code>)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>%%</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">character <code>%</code></p></td>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="sect2">
-<h3 id="usage-of-function-code-printf-code">6.1. Usage of function <code>printf</code></h3>
+<h3 id="usage-of-function-code-printf-code">7.2. Usage of function <code>printf</code></h3>
 <div class="paragraph">
 <p>Print on the standard output the following sentences:</p>
 </div>
@@ -818,7 +1130,7 @@ Third sentence.</pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Example 3</div>
+<div class="title">Example 5</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
@@ -829,14 +1141,25 @@ Third sentence.</pre>
 }</code></pre>
 </div>
 </div>
+<div class="listingblock">
+<div class="title">Пример 6</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> main() {
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content"> is a word long %d letters.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Macedonia</span><span class="delimiter">&quot;</span></span>));
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="problems">7. Problems</h2>
+<h2 id="problems">8. Problems</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="problem-1">7.1. Problem 1</h3>
+<h3 id="problem-1">8.1. Problem 1</h3>
 <div class="paragraph">
 <p>Write a program that will compute the value of the mathematical expression:
 <code>x = 3/2 + (5 – 46*5/12)</code></p>
@@ -855,7 +1178,7 @@ Third sentence.</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="problem-2">7.2. Problem 2</h3>
+<h3 id="problem-2">8.2. Problem 2</h3>
 <div class="paragraph">
 <p>Write a program that for given value of <code>x</code> (during the declaration)
 will compute and print the value of <code>x<sup>2</sup></code>.</p>
@@ -874,7 +1197,7 @@ will compute and print the value of <code>x<sup>2</sup></code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="problem-3">7.3. Problem 3</h3>
+<h3 id="problem-3">8.3. Problem 3</h3>
 <div class="paragraph">
 <p>Write a program that for a given sides of one triangle, it will print the
 perimeter and area of the square (values are <code>a = 5</code>, <code>b = 7.5</code>, <code>c = 10.2</code>).</p>
@@ -899,7 +1222,7 @@ perimeter and area of the square (values are <code>a = 5</code>, <code>b = 7.5</
 </div>
 </div>
 <div class="sect2">
-<h3 id="problem-4">7.4. Problem 4</h3>
+<h3 id="problem-4">8.4. Problem 4</h3>
 <div class="paragraph">
 <p>Write a program for computing the arithmetic mean of the
 numbers 3, 5 and 12..</p>
@@ -921,7 +1244,7 @@ numbers 3, 5 and 12..</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="problem-5">7.5. Problem 5</h3>
+<h3 id="problem-5">8.5. Problem 5</h3>
 <div class="paragraph">
 <p>Write a program that will print the remainder from the
 division of number 19 with 2, 3, 5 and 8.</p>
@@ -943,7 +1266,7 @@ division of number 19 with 2, 3, 5 and 8.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="problem-6">7.6. Problem 6</h3>
+<h3 id="problem-6">8.6. Problem 6</h3>
 <div class="paragraph">
 <p>Write a program for computing and printing the circle area
 and perimeter. The circle radius is read as decimal number.</p>
@@ -968,7 +1291,7 @@ and perimeter. The circle radius is read as decimal number.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="problem-7">7.7. Problem 7</h3>
+<h3 id="problem-7">8.7. Problem 7</h3>
 <div class="paragraph">
 <p>Write a program that reads from standard input two integers
 and prints their sum, difference, product and division remainder.</p>
@@ -992,7 +1315,7 @@ and prints their sum, difference, product and division remainder.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="problem-8">7.8. Problem 8</h3>
+<h3 id="problem-8">8.8. Problem 8</h3>
 <div class="paragraph">
 <p>Write a program that reads uppercase letter from standard input
 and prints out in lowercase.</p>
@@ -1034,7 +1357,7 @@ Each character is represented with its ASCII code.
 </div>
 </div>
 <div class="sect1">
-<h2 id="source-code-of-the-examples-and-problems">8. Source code of the examples and problems</h2>
+<h2 id="source-code-of-the-examples-and-problems">9. Source code of the examples and problems</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://github.com/finki-mk/SP/" class="bare">https://github.com/finki-mk/SP/</a></p>
@@ -1048,7 +1371,7 @@ Each character is represented with its ASCII code.
 <div id="footer">
 <div id="footer-text">
 Верзија 1.0<br>
-Last updated 2016-09-23 15:39:50 +02:00
+Last updated 2016-09-28 13:46:39 +02:00
 </div>
 </div>
 </body>

@@ -530,26 +530,42 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#Програма-за-собирање-два-броја">3.3. Програма за собирање два броја</a></li>
 </ul>
 </li>
-<li><a href="#Именувани-константи">4. Именувани константи</a></li>
-<li><a href="#Аритметички-оператори">5. Аритметички оператори</a></li>
-<li><a href="#Ознаки-за-форамтот-на-печатењето">6. Ознаки за форамтот на печатењето</a>
+<li><a href="#Променливи-variables">4. Променливи (variables)</a>
 <ul class="sectlevel2">
-<li><a href="#Пример-на-користење-на-функцијата-code-printf-code">6.1. Пример на користење на функцијата <code>printf</code></a></li>
+<li><a href="#Начин-на-декларација-на-променливи">4.1. Начин на декларација на променливи</a></li>
+<li><a href="#Типови-на-променливи-во-c">4.2. Типови на променливи во C</a></li>
+<li><a href="#Дефинирање-на-имиња-на-променливи">4.3. Дефинирање на имиња на променливи</a></li>
 </ul>
 </li>
-<li><a href="#Задачи">7. Задачи</a>
+<li><a href="#Именувани-константи">5. Именувани константи</a></li>
+<li><a href="#Оператори">6. Оператори</a>
 <ul class="sectlevel2">
-<li><a href="#Задача-1">7.1. Задача 1</a></li>
-<li><a href="#Задача-2">7.2. Задача 2</a></li>
-<li><a href="#Задача-3">7.3. Задача 3</a></li>
-<li><a href="#Задача-4">7.4. Задача 4</a></li>
-<li><a href="#Задача-5">7.5. Задача 5</a></li>
-<li><a href="#Задача-6">7.6. Задача 6</a></li>
-<li><a href="#Задача-7">7.7. Задача 7</a></li>
-<li><a href="#Задача-8">7.8. Задача 8</a></li>
+<li><a href="#Аритметички-оператори">6.1. Аритметички оператори</a></li>
+<li><a href="#Релациони-оператори">6.2. Релациони оператори</a></li>
+<li><a href="#Логички-оператори">6.3. Логички оператори</a></li>
+<li><a href="#Дополнителни-оператори">6.4. Дополнителни оператори</a></li>
+<li><a href="#Унарни-оператори">6.5. Унарни оператори</a></li>
 </ul>
 </li>
-<li><a href="#Изворен-код-од-примери-и-задачи">8. Изворен код од примери и задачи</a></li>
+<li><a href="#Печатење-на-стандарден-излез">7. Печатење на стандарден излез</a>
+<ul class="sectlevel2">
+<li><a href="#Најчесто-користени-ознаки-за-форматот-на-печатењето">7.1. Најчесто користени ознаки за форматот на печатењето</a></li>
+<li><a href="#Пример-на-користење-на-функцијата-code-printf-code">7.2. Пример на користење на функцијата <code>printf</code></a></li>
+</ul>
+</li>
+<li><a href="#Задачи">8. Задачи</a>
+<ul class="sectlevel2">
+<li><a href="#Задача-1">8.1. Задача 1</a></li>
+<li><a href="#Задача-2">8.2. Задача 2</a></li>
+<li><a href="#Задача-3">8.3. Задача 3</a></li>
+<li><a href="#Задача-4">8.4. Задача 4</a></li>
+<li><a href="#Задача-5">8.5. Задача 5</a></li>
+<li><a href="#Задача-6">8.6. Задача 6</a></li>
+<li><a href="#Задача-7">8.7. Задача 7</a></li>
+<li><a href="#Задача-8">8.8. Задача 8</a></li>
+</ul>
+</li>
+<li><a href="#Изворен-код-од-примери-и-задачи">9. Изворен код од примери и задачи</a></li>
 </ul>
 </div>
 </div>
@@ -717,7 +733,118 @@ povekje redovi
 </div>
 </div>
 <div class="sect1">
-<h2 id="Именувани-константи">4. Именувани константи</h2>
+<h2 id="Променливи-variables">4. Променливи (variables)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Променливите се симболички имиња за места во меморијата во кои се чуваат некакви вредности.</p>
+</li>
+<li>
+<p>Сите променливи пред да се користат треба да се <strong>декларираат</strong>.</p>
+</li>
+<li>
+<p>Со секое ново сместување на вредност во променливата, старата вредност се брише</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="Начин-на-декларација-на-променливи">4.1. Начин на декларација на променливи</h3>
+<div class="listingblock">
+<div class="content">
+<pre>тип_на_променлива име_на_променлива = почетна_вредност;</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Пример</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="predefined-type">int</span> a = <span class="integer">5</span>;
+<span class="predefined-type">float</span> x = <span class="float">2</span><span class="float">.3</span>;
+<span class="predefined-type">char</span> c = <span class="char">'a'</span>;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Типови-на-променливи-во-c">4.2. Типови на променливи во C</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Цели броеви</th>
+<th class="tableblock halign-center valign-top">Знаковни</th>
+<th class="tableblock halign-center valign-top">Децимални</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>int</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>char</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>float</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>short</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>double</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>long</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="Дефинирање-на-имиња-на-променливи">4.3. Дефинирање на имиња на променливи</h3>
+<div class="paragraph">
+<p>При именувањето на променливите може да се користат:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>мали букви од <code>a</code> до <code>z</code>;</p>
+</li>
+<li>
+<p>големи букви од <code>A</code> до <code>Z</code>;</p>
+</li>
+<li>
+<p>цифри од <code>0</code> до <code>9</code> (не смее да започнува со цифра);</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Избирјте имиња на променливи кои јасно го означуваат она што се чува во неа.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+С ги разликува малите и големите букви!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Именувани-константи">5. Именувани константи</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Именуваните константи се креираат со користење на клучниот збор <code>const</code></p>
@@ -764,8 +891,10 @@ povekje redovi
 </div>
 </div>
 <div class="sect1">
-<h2 id="Аритметички-оператори">5. Аритметички оператори</h2>
+<h2 id="Оператори">6. Оператори</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="Аритметички-оператори">6.1. Аритметички оператори</h3>
 <div class="paragraph">
 <p>Се применуваат на броеви (цели или децимални)</p>
 </div>
@@ -804,10 +933,187 @@ povekje redovi
 </tbody>
 </table>
 </div>
+<div class="sect2">
+<h3 id="Релациони-оператори">6.2. Релациони оператори</h3>
+<div class="paragraph">
+<p>Се применуваат над било кои споредливи типови на податоци, а резултатот е цел број 0 (неточно) или 1 (точно).</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Оператор</th>
+<th class="tableblock halign-left valign-top">Значење</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&lt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Помало</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&lt;=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Помало или еднакво</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Поголемо</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&gt;=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Поголемо или еднакво</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>==</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Еднаквост</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>!=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Не еднаквост (различно)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="Логички-оператори">6.3. Логички оператори</h3>
+<div class="paragraph">
+<p>Се користат најчесто во комбинација со релационите оператори за формирање на сложени логички изрази, кои повторно враќаат резултат 0 или 1</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Оператор</th>
+<th class="tableblock halign-left valign-top">Операција</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&amp;&amp;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Логичко <strong>И</strong> (AND)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>||</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Логичко <strong>ИЛИ</strong> (OR)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>!</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Негација</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="Дополнителни-оператори">6.4. Дополнителни оператори</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Оператор</th>
+<th class="tableblock halign-left valign-top">Операција</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Доделување (assignment)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>++</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Инкреметирање за 1 (increment)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>--</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Декрементирање за 1 (decrement)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="Унарни-оператори">6.5. Унарни оператори</h3>
+<div class="paragraph">
+<p>Користење на операторите <code>+</code> и <code>–</code> на унарен начин:</p>
+</div>
+<div class="listingblock">
+<div class="title">Менување на знакот на вредноста во променливите <code>x</code> и <code>y</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">x = +x;
+y = -y;</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Двојни-оператори">6.5.1. Двојни оператори</h4>
+<div class="paragraph">
+<p>Комбинација од оператор за доделување и друг оператор.</p>
+</div>
+<div class="paragraph">
+<p><code>+=, -=, *=, /=, %=</code></p>
+</div>
+<div class="listingblock">
+<div class="title">Пример за користење на двојни оператори</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">a += <span class="integer">5</span>; <span class="comment">// a = a + 5;</span>
+a += b * c; <span class="comment">// a = a + b * c;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Пример со променливи и оператори</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> a;
+    <span class="predefined-type">float</span> p;
+    p = <span class="float">1</span><span class="float">.0</span> / <span class="float">2</span><span class="float">.0</span>; <span class="comment">/* p = 0.5 */</span>
+    a = <span class="integer">5</span> / <span class="integer">2</span>;     <span class="comment">/* a = 2   */</span>
+    p = <span class="integer">1</span> / <span class="integer">2</span> + <span class="integer">1</span> / <span class="integer">8</span>; <span class="comment">/* p = 0; */</span>
+    p = <span class="float">3</span><span class="float">.5</span> / <span class="float">2</span><span class="float">.8</span>; <span class="comment">/* p = 1.25 */</span>
+    a = p; <span class="comment">/* a = 1 */</span>
+    a = a + <span class="integer">1</span>; <span class="comment">/* a = 2; */</span>
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="sect1">
-<h2 id="Ознаки-за-форамтот-на-печатењето">6. Ознаки за форамтот на печатењето</h2>
+<h2 id="Печатење-на-стандарден-излез">7. Печатење на стандарден излез</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>За печатење на стандарден излез (екран) во C се користи готова функција
+<code>printf</code> од бибилиотеката <code>stdio.h</code> (<strong>St</strong>andar<strong>d</strong> <strong>I</strong>nput <strong>O</strong>tput)</p>
+</div>
+<div class="paragraph">
+<p><code>#include &lt;stdio.h&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Функцијата која се употребува е:</p>
+</div>
+<div class="paragraph">
+<p><code>int printf(kontrolna_niza, lista_na_argumenti)</code></p>
+</div>
+<div class="paragraph">
+<p><em>Контролната низа</em> содржи било каков текст, ознаки за форматот на печатење
+на аргументите предводени со <code>%</code> или специјални знаци кои започнуваат со
+<code>\</code>.</p>
+</div>
+<div class="paragraph">
+<p><em>Ознаките за форматот на печатење</em> се одредуваат според видот на
+променливата чија вредноста треба да се испише.</p>
+</div>
+<div class="sect2">
+<h3 id="Најчесто-користени-ознаки-за-форматот-на-печатењето">7.1. Најчесто користени ознаки за форматот на печатењето</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 25%;">
@@ -821,7 +1127,7 @@ povekje redovi
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><strong><code>%d</code></strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>%d</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">за цели броеви (<code>int</code>)</p></td>
 </tr>
 <tr>
@@ -840,10 +1146,15 @@ povekje redovi
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>%s</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">за низа од знаци (стринг, <code>char[]</code>, <code>char*</code>)</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>%%</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">за знакот <code>%</code></p></td>
+</tr>
 </tbody>
 </table>
+</div>
 <div class="sect2">
-<h3 id="Пример-на-користење-на-функцијата-code-printf-code">6.1. Пример на користење на функцијата <code>printf</code></h3>
+<h3 id="Пример-на-користење-на-функцијата-code-printf-code">7.2. Пример на користење на функцијата <code>printf</code></h3>
 <div class="paragraph">
 <p>Да се отпечати на екран во следниов редослед:</p>
 </div>
@@ -879,14 +1190,25 @@ using namespace std;
 }</code></pre>
 </div>
 </div>
+<div class="listingblock">
+<div class="title">Пример 6</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> main() {
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content"> e zbor dolg %d bukvi.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Makedonija</span><span class="delimiter">&quot;</span></span>));
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Задачи">7. Задачи</h2>
+<h2 id="Задачи">8. Задачи</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Задача-1">7.1. Задача 1</h3>
+<h3 id="Задача-1">8.1. Задача 1</h3>
 <div class="paragraph">
 <p>Да се напише програма која ќе ја пресметува вредноста на математичкиот
 израз: <code>x = 3/2 + (5 – 46*5/12)</code></p>
@@ -905,7 +1227,7 @@ using namespace std;
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-2">7.2. Задача 2</h3>
+<h3 id="Задача-2">8.2. Задача 2</h3>
 <div class="paragraph">
 <p>Да се напише програма која за зададена вредност на х
 (при декларација на променливата) ќе го пресмета и отпечати на екран х<sup>2</sup>.</p>
@@ -937,7 +1259,7 @@ using namespace std;
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-3">7.3. Задача 3</h3>
+<h3 id="Задача-3">8.3. Задача 3</h3>
 <div class="paragraph">
 <p>Да се напише програма која за дадени страни на еден разностран триаголник
 ќе ги отпечати на екран периметарот и квадратот од
@@ -982,7 +1304,7 @@ using namespace std;
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-4">7.4. Задача 4</h3>
+<h3 id="Задача-4">8.4. Задача 4</h3>
 <div class="paragraph">
 <p>Да се напише програма за пресметување на аритметичката
 средина на броевите 3, 5 и 12.</p>
@@ -1004,7 +1326,7 @@ using namespace std;
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-5">7.5. Задача 5</h3>
+<h3 id="Задача-5">8.5. Задача 5</h3>
 <div class="paragraph">
 <p>Да се напише програма која ќе ги отпечати на екран
 остатоците при делењето на бројот 19 со 2, 3, 5 и 8.</p>
@@ -1026,7 +1348,7 @@ using namespace std;
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-6">7.6. Задача 6</h3>
+<h3 id="Задача-6">8.6. Задача 6</h3>
 <div class="paragraph">
 <p>Да се напише програма за пресметување и печатење на плоштината и
 периметарот на круг. Радиусот на кругот се чита од стандарден влез
@@ -1052,7 +1374,7 @@ using namespace std;
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-7">7.7. Задача 7</h3>
+<h3 id="Задача-7">8.7. Задача 7</h3>
 <div class="paragraph">
 <p>Да се напише програма која од СВ ќе прочита два цели
 броеви и ќе ја испечати на компјутерскиот екран нивната сума,
@@ -1077,10 +1399,10 @@ using namespace std;
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-8">7.8. Задача 8</h3>
+<h3 id="Задача-8">8.8. Задача 8</h3>
 <div class="paragraph">
-<p>Да се напише програма која чита големa буквa од стандарден влез и ја печати
-истaтa како малa буквa.</p>
+<p>Да се напише програма која чита голема буква од стандарден влез и ја печати
+истата како мала буква.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1119,7 +1441,7 @@ using namespace std;
 </div>
 </div>
 <div class="sect1">
-<h2 id="Изворен-код-од-примери-и-задачи">8. Изворен код од примери и задачи</h2>
+<h2 id="Изворен-код-од-примери-и-задачи">9. Изворен код од примери и задачи</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://github.com/finki-mk/SP/" class="bare">https://github.com/finki-mk/SP/</a></p>
@@ -1133,7 +1455,7 @@ using namespace std;
 <div id="footer">
 <div id="footer-text">
 Верзија 1.0<br>
-Last updated 2016-09-26 16:04:46 +02:00
+Last updated 2016-09-28 13:27:30 +02:00
 </div>
 </div>
 </body>

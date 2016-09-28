@@ -59,13 +59,55 @@ include::{source_dir}/ex21_en.c[]
 - `stdio.h` - library for accessing standard input/output streams (keyboard/screen)
 - `printf` - function for printing on the standard output (screen)
 
-=== 
+=== Program for summing two integers
 
 .Example 2 
 [source,c]
 ----
 include::{source_dir}/ex22_en.c[]
 ----
+
+== Variables
+
+* Variables are symbolic names for places in memory where are stored some values.
+* Before using it, each variable must be *declared*.
+* With each assignment of new value, the old value in the variable is lost.
+
+=== Начин на декларација на променливи
+
+----
+data_type variable_name = initial_value;
+----
+
+.Example
+[source,c]
+----
+int a = 5;
+float x = 2.3;
+char c = 'a';
+----
+
+=== Data types in C
+
+[options="header",cols="^,^,^"]
+|===
+| Integers | Characters | Real numbers
+| `int`       | `char`   | `float`
+| `short`     |          | `double`
+| `long`      |          |
+|===
+
+=== Defining variable names
+
+In naming variables you can use:
+
+* lowercase letters from `a` to `z`;
+* uppercase letters from `A` to `Z`;
+* digits from `0` to `9` (the name can not start with digit);
+
+TIP: When choosing a variable name, pick ones that clearly describe the value they store.
+
+WARNING: С is *case sensitive*
 
 == Named constants
 
@@ -91,9 +133,11 @@ Using `#define`
 include::{source_dir}/ex24_en.c[]
 ----
 
-== Arithmetic operators
+== Operators
 
-Applied on numbers (integers or real)
+=== Arithmetic operators
+
+Are used on numbers (integers or real)
 
 [options="header",cols="^,3"]
 |===
@@ -102,19 +146,118 @@ Applied on numbers (integers or real)
 | -        | Subtraction
 | *        | Multiplication
 | /        | Division
-| %        | Division by modulo (residue of the division)
+| %        | Modulo (residue after division)
 |===
 
-== Printing format placeholders
+=== Relational operators
+
+Are used on all comparable types, and the result is an integer 0 (false) or 1 (true).
 
 [options="header",cols="^,3"]
 |===
-| Placeholder | Usage
-| *`%d`*      | integers (`int`)
-| `%i`        | integers (`int`)
-| `%f`        | real numbers (`float`, `double`)
-| `%c`        | characters (`char`)
-| `%s`        | array of characters (strings `char[]`, `char*`) 
+| Operator | Meaning
+| `<`      | Less then
+| `\<=`    | Less then or equal
+| `>`      | Greater then
+| `>=`     | Greater than or equal
+| `==`     | Equality
+| `!=`     | Non equality (different)
+|===
+
+=== Logical operators
+
+Used in combination with the relational operators to form complex
+logical expressions, that again return result 0 or 1.
+
+[options="header",cols="^,3"]
+|===
+| Operator | Operation
+| `&&`     | Logical *AND*
+| `\|\|`   | Logical *OR*
+| `!`      | Negation
+|===
+
+
+=== Additional operators
+
+[options="header",cols="^,3"]
+|===
+| Operator | Operation
+| `=`      | Assignment
+| `++`     | Increment (for +1)
+| `--`     | Decrement (for -1)
+|===
+
+=== Unary operators
+
+The operators `+` and `–` can be used in unary manner:
+
+.Changing the sign of the values stored in `x` and `y`
+[source,c]
+----
+x = +x;
+y = -y;
+----
+
+==== Compound operators
+
+Combination of assignment operator with other operator.
+
+`+=, -=, *=, /=, %=`
+
+.Example of using compund operators
+[source,c]
+----
+a += 5; // a = a + 5;
+a += b * c; // a = a + b * c;
+----
+
+.Example with varialbes and operators
+[source,c]
+----
+#include <stdio.h>	
+
+int main() {
+    int a;
+    float p;
+    p = 1.0 / 2.0; /* p = 0.5 */
+    a = 5 / 2;     /* a = 2   */
+    p = 1 / 2 + 1 / 8; /* p = 0; */
+    p = 3.5 / 2.8; /* p = 1.25 */
+    a = p; /* a = 1 */
+    a = a + 1; /* a = 2; */
+    return 0;		
+}
+----
+
+== Printing on the standard output
+
+For printing on the standard output (screen) in C we use the 
+function `printf` from the library `stdio.h` (**St**andar**d** **I**nput **O**tput) 
+
+`#include <stdio.h>`
+
+The signature of the function is:
+
+`int printf(control_array, list_of_arguments)`
+
+The _control array_ contains text of any kind, and format placeholders
+with leading `%` or special characters with leading `\`.
+
+The _format placeholders_ are determined from the variable type we want
+to print.
+
+=== Most used format placeholders
+
+[options="header",cols="^,3"]
+|===
+| Format | Usage
+| `%d`   | integers (`int`)
+| `%i`   | integers (`int`)
+| `%f`   | real numbers (`float`, `double`)
+| `%c`   | characters (`char`)
+| `%s`   | characters (стринг, `char[]`, `char*`)
+| `%%`   | character `%`
 |===
 
 === Usage of function `printf`
@@ -126,10 +269,16 @@ Second sentence.
 Third sentence.
 ----
 
-.Example 3
+.Example 5
 [source,c]
 ----
 include::{source_dir}/ex25_en.c[]
+----
+
+.Пример 6
+[source,c]
+----
+include::{source_dir}/ex26_en.c[]
 ----
 
 == Problems

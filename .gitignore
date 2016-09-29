@@ -34,3 +34,6 @@
 /.idea/
 /docs/.gradle/
 /.gradle/
+/docs/revealjs/
+/docs/deckjs/
+/docs/build/

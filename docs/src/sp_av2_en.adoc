@@ -1,7 +1,7 @@
 # Structured programming
 Exercises 2
 v1.0, 22 September, 2016
-include::parts/attributes.adoc[]
+include::parts/attributes_en.adoc[]
 
 :source_dir: ../../src/av2
 
@@ -41,7 +41,7 @@ C supports two types of comments:
 `/\*` and end with `*/`
 ----
 /*
-Longer comment 
+Longer comment
 in multiple
 lines
 */
@@ -73,7 +73,7 @@ include::{source_dir}/ex22_en.c[]
 * Before using it, each variable must be *declared*.
 * With each assignment of new value, the old value in the variable is lost.
 
-=== Начин на декларација на променливи
+=== Declaring variables
 
 ----
 data_type variable_name = initial_value;

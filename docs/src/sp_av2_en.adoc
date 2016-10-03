@@ -133,102 +133,6 @@ Using `#define`
 include::{source_dir}/ex24_en.c[]
 ----
 
-== Operators
-
-=== Arithmetic operators
-
-Are used on numbers (integers or real)
-
-[options="header",cols="^,3"]
-|===
-| Operator | Operation
-| +        | Addition
-| -        | Subtraction
-| *        | Multiplication
-| /        | Division
-| %        | Modulo (residue after division)
-|===
-
-=== Relational operators
-
-Are used on all comparable types, and the result is an integer 0 (false) or 1 (true).
-
-[options="header",cols="^,3"]
-|===
-| Operator | Meaning
-| `<`      | Less then
-| `\<=`    | Less then or equal
-| `>`      | Greater then
-| `>=`     | Greater than or equal
-| `==`     | Equality
-| `!=`     | Non equality (different)
-|===
-
-=== Logical operators
-
-Used in combination with the relational operators to form complex
-logical expressions, that again return result 0 or 1.
-
-[options="header",cols="^,3"]
-|===
-| Operator | Operation
-| `&&`     | Logical *AND*
-| `\|\|`   | Logical *OR*
-| `!`      | Negation
-|===
-
-
-=== Additional operators
-
-[options="header",cols="^,3"]
-|===
-| Operator | Operation
-| `=`      | Assignment
-| `++`     | Increment (for +1)
-| `--`     | Decrement (for -1)
-|===
-
-=== Unary operators
-
-The operators `+` and `–` can be used in unary manner:
-
-.Changing the sign of the values stored in `x` and `y`
-[source,c]
-----
-x = +x;
-y = -y;
-----
-
-==== Compound operators
-
-Combination of assignment operator with other operator.
-
-`+=, -=, *=, /=, %=`
-
-.Example of using compund operators
-[source,c]
-----
-a += 5; // a = a + 5;
-a += b * c; // a = a + b * c;
-----
-
-.Example with varialbes and operators
-[source,c]
-----
-#include <stdio.h>	
-
-int main() {
-    int a;
-    float p;
-    p = 1.0 / 2.0; /* p = 0.5 */
-    a = 5 / 2;     /* a = 2   */
-    p = 1 / 2 + 1 / 8; /* p = 0; */
-    p = 3.5 / 2.8; /* p = 1.25 */
-    a = p; /* a = 1 */
-    a = a + 1; /* a = 2; */
-    return 0;		
-}
-----
 
 == Printing on the standard output
 
@@ -280,6 +184,22 @@ include::{source_dir}/ex25_en.c[]
 ----
 include::{source_dir}/ex26_en.c[]
 ----
+
+== Operators
+
+=== Arithmetic operators
+
+Are used on numbers (integers or real)
+
+[options="header",cols="^,3"]
+|===
+| Operator | Operation
+| +        | Addition
+| -        | Subtraction
+| *        | Multiplication
+| /        | Division
+| %        | Modulo (residue after division)
+|===
 
 == Problems
 

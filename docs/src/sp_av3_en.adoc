@@ -1,0 +1,389 @@
+# Structured programming
+Exercises 3
+v1.0, 3 October, 2016
+include::parts/attributes_en.adoc[]
+
+:source_dir: ../../src/av3
+
+== Reminder from lectures
+
+* Operators
+** Arithmetic
+** Relational
+** Logical
+* Casting values – *cast* operation
+
+=== Relational operators
+
+Are used on all comparable types, and the result is an integer 0 (false) or 1 (true).
+
+[options="header",cols="^,3"]
+|===
+| Operator | Meaning
+| `<`      | Less then
+| `\<=`    | Less then or equal
+| `>`      | Greater then
+| `>=`     | Greater than or equal
+| `==`     | Equality
+| `!=`     | Non equality (different)
+|===
+
+=== Logical operators
+
+Used in combination with the relational operators to form complex
+logical expressions, that again return result 0 or 1.
+
+[options="header",cols="^,3"]
+|===
+| Operator | Operation
+| `&&`     | Logical *AND*
+| `\|\|`   | Logical *OR*
+| `!`      | Negation
+|===
+
+.Example
+[source,c]
+----
+int a = 5 && 0; // a = 0;
+a = 2 && 5;     // a = 1;
+a = 0 || 5;     // a = 1;
+a = !0;         // a = 1;
+a = !5;         // a = 0;
+----
+
+=== Additional operators
+
+* Assignment operator `=`
+* Incrementation and decrementation operators (`++`, `--`)
+** `++` incrementing (increasing the value for 1)
+** `--` decrementing (decreasing the value for 1)
+* Using the operators `+` and `–` in unary manner
+
+[source,c]
+----
+X = + Y;
+X = - Y;
+----
+
+* Compound operators
+** Combination of assignment operator and other operator (+=, -=, *=, /=, %=)
+
+=== Assignment operator `=`
+
+* All expressions have values, even the ones that contain `=`
+* The value of that expression is taken from the right hand side
+* So an assignment of this form can be applied:
+
+[source,c]
+----
+ x = (y = 10) * (z = 5);
+ x = y = z = 20;
+----
+
+=== Increment and decrement operators 
+
+* Increment operator `++` (increasing the value of the operand for 1)
+* Decrement operator `--`(decreasing the value of the operand for 1)
+* Can be applied in *prefix* or *postfix* notation:
+
+#### Prefix 
+
+The value of the variable is incremented *before* the evaluation of the 
+expression it is part of
+
+[source,c]
+----
+a = ++b;
+----
+	
+#### Postfix 
+
+The value of the variable is incremented *after* the evaluation of the 
+expression it is part of
+
+[source,c]
+----
+a = b++;
+----
+
+=== Compound operators
+ 
+* Operator `+=`
+
+.Example
+[source,c]
+----
+a += 5; // a = a + 5;
+a += b * c; // a = a + b * c;
+----
+* Operator `-=`
+
+.Example
+[source,c]
+----
+a -= 3; // a = a – 3;
+----
+* Operator `*=`
+
+.Example
+[source,c]
+----
+a *= 3; // a = a * 3;
+----
+
+* Operator `/=`
+
+.Example
+[source,c]
+----
+a /= 3; // a = a / 3;
+----
+
+* Operator `%=`
+
+.Example
+[source,c]
+----
+a %= 3; // a = a % 3;
+----
+
+== Examples
+
+=== Variables and assignment
+
+[source,c]
+----
+include::{source_dir}/ex3_1_en.c[]
+----
+
+=== Casting – `cast` operation
+
+.Format
+[source,c]
+----
+(data_type) value
+----
+
+.Example
+[source,c]
+----
+int i;
+double d = 7.28;	
+i = (int) d;
+----
+
+.Example
+[source,c]
+----
+(int) 5.56              // 5.56 in 5
+(long) 8.28             // 8.28 in 8L
+(double) 2              // 2 in 2.0
+(char) 70               // 70 in char with ASCII 70 ('F')
+(unsigned short) 3.14   //3.14 in 3 (unsigned short)
+----
+
+=== Casting in another type
+
+Manipulating the format specification **`%f`** and division operation
+
+[source,c]
+----
+include::{source_dir}/ex3_2_en.c[]
+----
+
+=== Casting
+
+* In the previous example we used cast operator 
+(converting one type to another):
+
+[source,c]
+----
+qutient = (float) integer1 / integer2; 
+----
+
+* Because `integer1` and `integer2` are integers, the result from the 
+integer division would *not be* the expected one. To get a float result
+one of the values `integer1` or `integer2` should be casted to `float`
+or `double`.
+* The same effect of casting `int` to `double` can be 
+achieved by multiplying the variable with const `double` with  value `1.0`
+
+[source,c]
+----
+kol = 1.0 * integer1 / integer2;
+----
+
+== Problems
+
+=== Problem 1
+
+Write a program that reads character from SI and depending if it is lowercase or uppercase
+will print 1 or 0 accordingly.
+
+
+TIP: Use logical and relational operators for testing the ASCII value of the character.
+
+* Extra: Check if the character is digit
+
+
+.Solution 1
+[source,c]
+----
+include::{source_dir}/p3_1_en.c[]
+----
+
+.Solution of extra
+[source,c]
+----
+rez = (ch >= '0') && (ch <= '9');
+----
+
+=== Problem 2
+
+Write a program that reads two integers (x, y) 
+and will print the result of (z) the following expression
+
+    z = x++ + --y + (x<y)
+
+What is the value of `z` For `x = 1`, `y = 2`?
+
+.Solution 2
+[source,c]
+----
+include::{source_dir}/p3_2_en.c[]
+----
+
+.What will hapen in this situation:
+
+[source,c]
+----
+z = x++ + --y + x<y;
+----
+
+=== Problem 3
+
+* Given
+
+	r = (x<y || y<z++)
+	
+	What will be the value of r for x=1, y=2, z=3?
+	What will be the value of z?
+	
+* Given:
+
+	r = (x>y && y<z++)
+	
+	What will be the value of r for x=1, y=2, z=3?
+	What will be the value of z?
+
+.Solution 3
+[source,c]
+----
+include::{source_dir}/p3_3_en.c[]
+----
+
+.Output
+----
+r=1, z=3
+
+r=0, z=3
+----
+
+=== Problem 4
+
+* Given:
+
+[source,c]
+----
+include::{source_dir}/p3_4a_en.c[]
+----	
+
+What will be the value of `y` for `x=5`?
+
+.Output
+
+y=1
+
+* Given:
+
+[source,c]
+----
+include::{source_dir}/p3_4b.c[]
+----	
+    
+What will be the value `z` for `x=5`, `y=6`?
+
+.Output
+----
+z=2
+----
+
+=== Problem 5
+
+Write a program where you read from SI price of product, and then will
+print it's price with calculated with taxes.
+
+TIP: The tax is 18% of the price.
+
+.Solution 5
+[source,c]
+----
+include::{source_dir}/p3_5_en.c[]
+----
+
+=== Problem 6
+
+Write a program where you read from SI price of product, number of
+installments and interest rate (percents from 0 to 100). The program
+should output the amount of the installment and total price including
+the interest.
+
+TIP: First compute the total sum, then the installment amount.
+
+
+.Solution 6
+[source,c]
+----
+include::{source_dir}/p3_6_en.c[]
+----
+
+=== Problem 7
+
+Read a three digit integer from SI. Then print the most significant and 
+least significant digit.
+
+_Example:_ For the number 795, the program should print:
+----
+Most significant digit is 7, and least significant digit is 5.
+----
+
+TIP: Use integer division and modulo operation. 
+
+
+.Solution 7
+[source,c]
+----
+include::{source_dir}/p3_7_en.c[]
+----
+
+=== Problem 8
+
+Write a program where from the birth date read from SI (in format `ddmmYYYY`) would print
+the month and day of birth.
+
+_Example:_ 
+For the following input 18091992, the program should print: 18.09
+
+TIP: Use integer division and modulo operation.
+
+Try to solve using only the `scanf` function.
+
+.Solution 8
+[source,c]
+----
+include::{source_dir}/p3_8_en.c[]
+----
+
+include::parts/footer_en.adoc[]
+
+link:{sources_zip}/sp_av3_src_en.zip[Source code ZIP]

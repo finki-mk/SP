@@ -12,3 +12,7 @@ link:sp_av1.html[HTML] | link:{pdf_source}/sp_av1.pdf[PDF] | link:{sources_zip}/
 == Аудиториска вежба 2
  
 link:sp_av2.html[HTML] | link:{pdf_source}/sp_av2.pdf[PDF] | link:{sources_zip}/sp_av2_src.zip[Source code ZIP]
+
+== Аудиториска вежба 3
+ 
+link:sp_av3.html[HTML] | link:{pdf_source}/sp_av3.pdf[PDF] | link:{sources_zip}/sp_av3_src.zip[Source code ZIP]

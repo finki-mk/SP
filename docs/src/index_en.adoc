@@ -12,3 +12,7 @@ link:sp_av1_en.html[HTML] | link:{pdf_source}/sp_av1_en.pdf[PDF] | link:{sources
 == Exercise 2 
 
 link:sp_av2_en.html[HTML] | link:{pdf_source}/sp_av2_en.pdf[PDF] | link:{sources_zip}/sp_av2_src_en.zip[Source code ZIP]
+
+== Exercise 3 
+
+link:sp_av3_en.html[HTML] | link:{pdf_source}/sp_av3_en.pdf[PDF] | link:{sources_zip}/sp_av3_src_en.zip[Source code ZIP]

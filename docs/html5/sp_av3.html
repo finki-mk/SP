@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<meta name="author" content="Exercises 2">
-<title>Structured programming</title>
+<meta name="author" content="Аудиториски вежби 3">
+<title>Структурно програмирање</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -512,268 +512,455 @@ table.CodeRay td.code>pre{padding:0}
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Structured programming</h1>
+<h1>Структурно програмирање</h1>
 <div class="details">
-<span id="author" class="author">Exercises 2</span><br>
-<span id="revnumber">version 1.0,</span>
-<span id="revdate">22 September, 2016</span>
+<span id="author" class="author">Аудиториски вежби 3</span><br>
+<span id="revnumber">Верзија 1.0,</span>
+<span id="revdate">3 Октомври, 2016</span>
 </div>
 <div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
+<div id="toctitle">Содржина</div>
 <ul class="sectlevel1">
-<li><a href="#simple-c-program-structure">1. Simple C program structure</a></li>
-<li><a href="#c-functions">2. C Functions</a></li>
-<li><a href="#comments-usage">3. Comments usage</a>
+<li><a href="#Потсетување-од-предавања">1. Потсетување од предавања</a>
 <ul class="sectlevel2">
-<li><a href="#example-hello-world">3.1. Example (Hello world)</a></li>
-<li><a href="#program-for-summing-two-integers">3.2. Program for summing two integers</a></li>
+<li><a href="#Релациски-оператори">1.1. Релациски оператори</a></li>
+<li><a href="#Логички-оператори">1.2. Логички оператори</a></li>
+<li><a href="#Дополнителни-оператори">1.3. Дополнителни оператори</a></li>
+<li><a href="#Оператор-за-доделување-code-code">1.4. Оператор за доделување <code>=</code></a></li>
+<li><a href="#Оператори-за-инкрементирање-и-декрементирање">1.5. Оператори за инкрементирање и декрементирање</a></li>
+<li><a href="#Двојни-оператори">1.6. Двојни оператори</a></li>
 </ul>
 </li>
-<li><a href="#variables">4. Variables</a>
+<li><a href="#Примери">2. Примери</a>
 <ul class="sectlevel2">
-<li><a href="#declaring-variables">4.1. Declaring variables</a></li>
-<li><a href="#data-types-in-c">4.2. Data types in C</a></li>
-<li><a href="#defining-variable-names">4.3. Defining variable names</a></li>
+<li><a href="#Работа-со-променливи-и-доделување-вредности">2.1. Работа со променливи и доделување вредности</a></li>
+<li><a href="#Промена-на-вид-на-вредност-code-cast-code-операција">2.2. Промена на вид на вредност – <code>cast</code> операција</a></li>
+<li><a href="#Претворање-во-друг-тип">2.3. Претворање во друг тип</a></li>
+<li><a href="#Кастирање">2.4. Кастирање</a></li>
 </ul>
 </li>
-<li><a href="#named-constants">5. Named constants</a></li>
-<li><a href="#printing-on-the-standard-output">6. Printing on the standard output</a>
+<li><a href="#Задачи">3. Задачи</a>
 <ul class="sectlevel2">
-<li><a href="#most-used-format-placeholders">6.1. Most used format placeholders</a></li>
-<li><a href="#usage-of-function-code-printf-code">6.2. Usage of function <code>printf</code></a></li>
+<li><a href="#Задача-1">3.1. Задача 1</a></li>
+<li><a href="#Задача-2">3.2. Задача 2</a></li>
+<li><a href="#Задача-3">3.3. Задача 3</a></li>
+<li><a href="#Задача-4">3.4. Задача 4</a></li>
+<li><a href="#Задача-5">3.5. Задача 5</a></li>
+<li><a href="#Задача-6">3.6. Задача 6</a></li>
+<li><a href="#Задача-7">3.7. Задача 7</a></li>
+<li><a href="#Задача-8">3.8. Задача 8</a></li>
 </ul>
 </li>
-<li><a href="#operators">7. Operators</a>
-<ul class="sectlevel2">
-<li><a href="#arithmetic-operators">7.1. Arithmetic operators</a></li>
-</ul>
-</li>
-<li><a href="#problems">8. Problems</a>
-<ul class="sectlevel2">
-<li><a href="#problem-1">8.1. Problem 1</a></li>
-<li><a href="#problem-2">8.2. Problem 2</a></li>
-<li><a href="#problem-3">8.3. Problem 3</a></li>
-<li><a href="#problem-4">8.4. Problem 4</a></li>
-<li><a href="#problem-5">8.5. Problem 5</a></li>
-<li><a href="#problem-6">8.6. Problem 6</a></li>
-<li><a href="#problem-7">8.7. Problem 7</a></li>
-<li><a href="#problem-8">8.8. Problem 8</a></li>
-</ul>
-</li>
-<li><a href="#source-code-of-the-examples-and-problems">9. Source code of the examples and problems</a></li>
+<li><a href="#Изворен-код-од-примери-и-задачи">4. Изворен код од примери и задачи</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="simple-c-program-structure">1. Simple C program structure</h2>
+<h2 id="Потсетување-од-предавања">1. Потсетување од предавања</h2>
 <div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Оператори</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Аритметички</p>
+</li>
+<li>
+<p>Релациски</p>
+</li>
+<li>
+<p>Логички</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Промена на вид на вредност – <strong>cast</strong> операција</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="Релациски-оператори">1.1. Релациски оператори</h3>
 <div class="paragraph">
-<p>All the source code written in C is organized in <strong>functions</strong></p>
+<p>Се применуваат над било кои споредливи типови на податоци, а резултатот е цел број 0 (неточно) или 1 (точно).</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="predefined-type">int</span> main() {
-  variable_declarations;
-  expressions;
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="c-functions">2. C Functions</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><code>main</code> - C <strong>main</strong> function</p>
-</li>
-<li>
-<p>In parentheses <code>()</code> we put the input arguments</p>
-</li>
-<li>
-<p>The return type of the functions is before the name
-(<code>int</code> – the function returns integer)</p>
-</li>
-<li>
-<p>The function body starts with <code>{</code>, and ends with <code>}</code></p>
-</li>
-<li>
-<p>All declarations and expressions are separated with <code>;</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="comments-usage">3. Comments usage</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Comments are used for extra explanation or documenting the source code.
-C supports two types of comments:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>one line comments that start with double slash <code>//</code></p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>// comment in one line</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>multiple line comments that can span across multiple lines and start with
-<code>/*</code> and end with <code>*/</code></p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>/*
-Longer comment
-in multiple
-lines
-*/</pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="example-hello-world">3.1. Example (Hello world)</h3>
-<div class="listingblock">
-<div class="title">Example 1</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="cpp"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="comment">// main function</span>
-<span class="predefined-type">int</span> main() {
-    <span class="comment">/*
-    Printing a message on the standard output (the screen)
-    */</span>
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Welcome to FINKI!</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>#include</code> - directive for including external libraries</p>
-</li>
-<li>
-<p><code>stdio.h</code> - library for accessing standard input/output streams (keyboard/screen)</p>
-</li>
-<li>
-<p><code>printf</code> - function for printing on the standard output (screen)</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="program-for-summing-two-integers">3.2. Program for summing two integers</h3>
-<div class="listingblock">
-<div class="title">Example 2</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> a = <span class="integer">5</span>;
-    <span class="predefined-type">int</span> b = <span class="integer">10</span>;
-    <span class="predefined-type">int</span> c = a + b;
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="variables">4. Variables</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Variables are symbolic names for places in memory where are stored some values.</p>
-</li>
-<li>
-<p>Before using it, each variable must be <strong>declared</strong>.</p>
-</li>
-<li>
-<p>With each assignment of new value, the old value in the variable is lost.</p>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="declaring-variables">4.1. Declaring variables</h3>
-<div class="listingblock">
-<div class="content">
-<pre>data_type variable_name = initial_value;</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="predefined-type">int</span> a = <span class="integer">5</span>;
-<span class="predefined-type">float</span> x = <span class="float">2</span><span class="float">.3</span>;
-<span class="predefined-type">char</span> c = <span class="char">'a'</span>;</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="data-types-in-c">4.2. Data types in C</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top">Integers</th>
-<th class="tableblock halign-center valign-top">Characters</th>
-<th class="tableblock halign-center valign-top">Real numbers</th>
+<th class="tableblock halign-center valign-top">Оператор</th>
+<th class="tableblock halign-left valign-top">Значење</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>int</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>char</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>float</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&lt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Помало</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>short</code></p></td>
-<td class="tableblock halign-center valign-top"></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>double</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&lt;=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Помало или еднакво</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>long</code></p></td>
-<td class="tableblock halign-center valign-top"></td>
-<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Поголемо</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&gt;=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Поголемо или еднакво</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>==</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Еднаквост</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>!=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Не еднаквост (различно)</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="defining-variable-names">4.3. Defining variable names</h3>
+<h3 id="Логички-оператори">1.2. Логички оператори</h3>
 <div class="paragraph">
-<p>In naming variables you can use:</p>
+<p>Се користат најчесто во комбинација со релационите оператори за формирање на сложени логички изрази, кои повторно враќаат резултат 0 или 1</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Оператор</th>
+<th class="tableblock halign-left valign-top">Операција</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>&amp;&amp;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Логичко <strong>И</strong> (AND)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>||</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Логичко <strong>ИЛИ</strong> (OR)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>!</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Негација</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Пример:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="predefined-type">int</span> a = <span class="integer">5</span> &amp;&amp; <span class="integer">0</span>; <span class="comment">// a = 0;</span>
+a = <span class="integer">2</span> &amp;&amp; <span class="integer">5</span>;     <span class="comment">// a = 1;</span>
+a = <span class="integer">0</span> || <span class="integer">5</span>;     <span class="comment">// a = 1;</span>
+a = !<span class="integer">0</span>;         <span class="comment">// a = 1;</span>
+a = !<span class="integer">5</span>;         <span class="comment">// a = 0;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Дополнителни-оператори">1.3. Дополнителни оператори</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Оператор за доделување =</p>
+</li>
+<li>
+<p>Оператори за инкрементирање и декрементирање (++, --)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>++</code> инкрементирање (зголемување на вредноста на операндот за 1)</p>
+</li>
+<li>
+<p><code>--</code> декрементирање (намалување на вредноста на операндот за 1)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Користење на операторите + и – на унарен начин</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">X = + Y;
+X = - Y;</code></pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>lowercase letters from <code>a</code> to <code>z</code>;</p>
-</li>
+<p>Двојни оператори</p>
+<div class="ulist">
+<ul>
 <li>
-<p>uppercase letters from <code>A</code> to <code>Z</code>;</p>
-</li>
-<li>
-<p>digits from <code>0</code> to <code>9</code> (the name can not start with digit);</p>
+<p>Комбинација од оператор за доделување и друг оператор (+=, -=, *=, /=, %=)</p>
 </li>
 </ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Оператор-за-доделување-code-code">1.4. Оператор за доделување <code>=</code></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Сите изрази имаат вредност, дури и оние кои содржат =</p>
+</li>
+<li>
+<p>Вредноста на таков израз е вредноста на изразот кој се наоѓа на десна страна</p>
+</li>
+<li>
+<p>Затоа е можно и доделување од следниот облик:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"> x = (y = <span class="integer">10</span>) * (z = <span class="integer">5</span>);
+ x = y = z = <span class="integer">20</span>;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Оператори-за-инкрементирање-и-декрементирање">1.5. Оператори за инкрементирање и декрементирање</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Оператор за инкрементирање ++ (зголемување на вредноста на операндот за 1)</p>
+</li>
+<li>
+<p>Оператор за декрементирање --(намалување на вредноста на операндот за 1)</p>
+</li>
+<li>
+<p>Можат да бидат зададени во префикс или постфикс нотација:</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="Префикс">1.5.1. Префикс</h4>
+<div class="paragraph">
+<p>Вредноста на променливата се зголемува пред да се пресмета изразот во која таа учествува</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">a = ++b;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Постфикс">1.5.2. Постфикс</h4>
+<div class="paragraph">
+<p>Вредноста на променливата се зголемува откако ќе се пресмета изразот</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">a = b++;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Двојни-оператори">1.6. Двојни оператори</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Оператор <code>+=</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">a += <span class="integer">5</span>; <span class="comment">// a = a + 5;</span>
+a += b * c; <span class="comment">// a = a + b * c;</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Оператор <code>-=</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">a -= <span class="integer">3</span>; <span class="comment">// a = a – 3;</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Оператор <code>*=</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">a *= <span class="integer">3</span>; <span class="comment">// a = a * 3;</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Оператор <code>/=</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">a /= <span class="integer">3</span>; <span class="comment">// a = a / 3;</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Оператор <code>%=</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">a %= <span class="integer">3</span>; <span class="comment">// a = a % 3;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Примери">2. Примери</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="Работа-со-променливи-и-доделување-вредности">2.1. Работа со променливи и доделување вредности</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+<span class="predefined-type">int</span> main () {
+    <span class="predefined-type">int</span> a;
+    <span class="predefined-type">float</span> p;
+    p = <span class="float">1</span><span class="float">.0</span> / <span class="float">2</span><span class="float">.0</span>; <span class="comment">/* p = 0.5 */</span>
+    a = <span class="integer">5</span> / <span class="integer">2</span>; <span class="comment">/* a = 2 */</span>
+    p = <span class="integer">1</span> / <span class="integer">2</span> + <span class="integer">1</span> / <span class="integer">8</span>; <span class="comment">/* p = 0; */</span>
+    p = <span class="float">3</span><span class="float">.5</span> / <span class="float">2</span><span class="float">.8</span>; <span class="comment">/* p = 1.25 */</span>
+    a = p; <span class="comment">/* a = 1 */</span>
+    a = a + <span class="integer">1</span>; <span class="comment">/* a = 2; */</span>
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Промена-на-вид-на-вредност-code-cast-code-операција">2.2. Промена на вид на вредност – <code>cast</code> операција</h3>
+<div class="listingblock">
+<div class="title">Формат</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">(podatocen tip) vrednost</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Пример</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="predefined-type">int</span> i;
+<span class="predefined-type">double</span> d = <span class="float">7</span><span class="float">.28</span>;
+i = (<span class="predefined-type">int</span>) d;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Пример</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">(<span class="predefined-type">int</span>) <span class="float">5</span><span class="float">.56</span>              <span class="comment">// 5.56 во 5</span>
+(<span class="predefined-type">long</span>) <span class="float">8</span><span class="float">.28</span>             <span class="comment">// 8.28 во 8L</span>
+(<span class="predefined-type">double</span>) <span class="integer">2</span>              <span class="comment">// 2 во 2.0</span>
+(<span class="predefined-type">char</span>) <span class="integer">70</span>               <span class="comment">// 70 во char чиј код е 70 ('F')</span>
+(<span class="predefined-type">unsigned</span> <span class="predefined-type">short</span>) <span class="float">3</span><span class="float">.14</span>   <span class="comment">//3.14 во 3 (unsigned short)</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Претворање-во-друг-тип">2.3. Претворање во друг тип</h3>
+<div class="paragraph">
+<p>Манипулирање со спецификатор за конверзија <strong><code>%f</code></strong> и со оператор за делење</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> integer1; <span class="comment">/* prviot broj sto kje go vnesuva korisnikot */</span>
+    <span class="predefined-type">int</span> integer2; <span class="comment">/* vtoriot broj sto kje go vnesuva korisnikot */</span>
+    <span class="predefined-type">int</span> sum; <span class="comment">/* promenliva vo koja kje se zachuva sumata */</span>
+    <span class="predefined-type">float</span> kol; <span class="comment">/* promenliva vo koja kje se zachuva kolichnikot */</span>
+
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesi prv cel broj</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;integer1);
+
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesi vtor cel broj</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>); <span class="comment">/* procitaj cel broj */</span>
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;integer2); <span class="comment">/* procitaj cel broj */</span>
+
+    sum = integer1 + integer2; <span class="comment">/* dodeli go zbirot na sum */</span>
+    kol = (<span class="predefined-type">float</span>) integer1 / integer2; <span class="comment">/* dodeli go kolicnikot na kol */</span>
+
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Nivnata suma e %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, sum); <span class="comment">/* pecati sum */</span>
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Nivniot kolicnik e %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, kol); <span class="comment">/* pecati kol */</span>
+
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Кастирање">2.4. Кастирање</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Во претходниот пример беше искористен каст оператор (оператор кој овозможува преминување од еден во друг тип):</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">kol = (<span class="predefined-type">float</span>) integer1 / integer2;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Бидејќи <code>integer1</code> и <code>integer2</code> се цели броеви, резултатот кој ќе се добиеше по целобројното делење не ќе беше она што го очекувавме. Значи, барем една од тие вредности на <code>integer1</code> или <code>integer2</code> требаше некако да се претвори во реален број. Тоа ни го овозможи операторот <code>(float)</code>, кој <code>integer1</code> го претвори во реален број, а со тоа и целото делење се претвори во делење на реални броеви.</p>
+</li>
+<li>
+<p>Истиот ефект на кастирање на <code>int</code> во <code>double</code> може да се постигне и со множење на променливата со <code>double</code> константа <code>1.0</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">kol = <span class="float">1</span><span class="float">.0</span> * integer1 / integer2;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Задачи">3. Задачи</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="Задача-1">3.1. Задача 1</h3>
+<div class="paragraph">
+<p>Да се напише програма која чита знак од тастатура и во зависнот од тоа дали е мала или голема буква печати 1 или 0, соодветно.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -782,386 +969,197 @@ lines
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-When choosing a variable name, pick ones that clearly describe the value they store.
+Користете логички и релациони оператори за тестирање на ASCII вредноста на знакот.
 </td>
 </tr>
 </table>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-С is <strong>case sensitive</strong>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="named-constants">5. Named constants</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Names constants are created using the keyword <code>const</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Бонус: Направете проверка дали знакот е цифра</p>
+</li>
+</ul>
 </div>
 <div class="listingblock">
-<div class="title">Example 3</div>
+<div class="title">Решение 1</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
 <span class="predefined-type">int</span> main() {
-    <span class="directive">const</span> <span class="predefined-type">long</span> <span class="predefined-type">double</span> PI = <span class="float">3</span><span class="float">.141592653590</span>L;
-    <span class="directive">const</span> <span class="predefined-type">int</span> DAYS_IN_WEEK = <span class="integer">7</span>;
-    <span class="directive">const</span> SUNDAY = <span class="integer">0</span>; <span class="comment">// by default int</span>
-    DAYS_IN_WEEK = <span class="integer">7</span>; <span class="comment">// error</span>
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Named constants can be created also by using
-the preprocessor and with all uppercase letters
-by convention.</p>
-</div>
-<div class="paragraph">
-<p>Using <code>#define</code></p>
-</div>
-<div class="paragraph">
-<p><code>#define TEXT_TO_SEARCH_FOR REPLACEMENT_TEXT</code></p>
-</div>
-<div class="listingblock">
-<div class="title">Example 4</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-<span class="preprocessor">#define</span> PI <span class="float">3</span><span class="float">.141592653590</span>L
-<span class="preprocessor">#define</span> DAYS_IN_WEEKS <span class="integer">7</span>
-<span class="preprocessor">#define</span> SUNDAY <span class="integer">0</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">long</span> number = PI;
-    <span class="predefined-type">int</span> day = SUNDAY;
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="printing-on-the-standard-output">6. Printing on the standard output</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>For printing on the standard output (screen) in C we use the
-function <code>printf</code> from the library <code>stdio.h</code> (<strong>St</strong>andar<strong>d</strong> <strong>I</strong>nput <strong>O</strong>tput)</p>
-</div>
-<div class="paragraph">
-<p><code>#include &lt;stdio.h&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>The signature of the function is:</p>
-</div>
-<div class="paragraph">
-<p><code>int printf(control_array, list_of_arguments)</code></p>
-</div>
-<div class="paragraph">
-<p>The <em>control array</em> contains text of any kind, and format placeholders
-with leading <code>%</code> or special characters with leading <code>\</code>.</p>
-</div>
-<div class="paragraph">
-<p>The <em>format placeholders</em> are determined from the variable type we want
-to print.</p>
-</div>
-<div class="sect2">
-<h3 id="most-used-format-placeholders">6.1. Most used format placeholders</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top">Format</th>
-<th class="tableblock halign-left valign-top">Usage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>%d</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integers (<code>int</code>)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>%i</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integers (<code>int</code>)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>%f</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">real numbers (<code>float</code>, <code>double</code>)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>%c</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">characters (<code>char</code>)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>%s</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">characters (стринг, <code>char[]</code>, <code>char*</code>)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>%%</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">character <code>%</code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="usage-of-function-code-printf-code">6.2. Usage of function <code>printf</code></h3>
-<div class="paragraph">
-<p>Print on the standard output the following sentences:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>First sentence.
-Second sentence.
-Third sentence.</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example 5</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">First sentence.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Second sentence.</span><span class="char">\n</span><span class="content">Third sentence.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">char</span> ch;
+    <span class="predefined-type">int</span> rez;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter char: </span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%c</span><span class="delimiter">&quot;</span></span>, &amp;ch);
+    rez = (ch &gt;= <span class="char">'a'</span>) &amp;&amp; (ch &lt;= <span class="char">'z'</span>);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, rez);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Пример 6</div>
+<div class="title">Решение на бонусот</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">rez = (ch &gt;= <span class="char">'0'</span>) &amp;&amp; (ch &lt;= <span class="char">'9'</span>);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Задача-2">3.2. Задача 2</h3>
+<div class="paragraph">
+<p>Да се напише програма која ќе чита два цели броеви (x, y) од тастура и на компјутерскиот екран ќе го испечати резултатот (z) од следниот израз</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>z = x++ + --y + (x&lt;y)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Каква вредност ќе има <code>z</code> за <code>x = 1</code>, <code>y = 2</code>?</p>
+</div>
+<div class="listingblock">
+<div class="title">Решение 2</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
 <span class="predefined-type">int</span> main() {
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content"> is a word long %d letters.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Macedonia</span><span class="delimiter">&quot;</span></span>));
+    <span class="predefined-type">int</span> x, y, z;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter x and y: </span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d%d</span><span class="delimiter">&quot;</span></span>, &amp;x, &amp;y);
+    z = x++ + --y + (x &lt; y);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">z = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, z);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
 </div>
+<div class="listingblock">
+<div class="title">Што ќе се случи во оваа ситуација:</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">z = x++ + --y + x&lt;y;</code></pre>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="operators">7. Operators</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="arithmetic-operators">7.1. Arithmetic operators</h3>
-<div class="paragraph">
-<p>Are used on numbers (integers or real)</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top">Operator</th>
-<th class="tableblock halign-left valign-top">Operation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">+</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Addition</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Subtraction</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplication</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">/</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Division</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">%</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Modulo (residue after division)</p></td>
-</tr>
-</tbody>
-</table>
+<h3 id="Задача-3">3.3. Задача 3</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Нека е дадено:</p>
+<div class="literalblock">
+<div class="content">
+<pre>r = (x&lt;y || y&lt;z++)</pre>
 </div>
 </div>
+<div class="literalblock">
+<div class="content">
+<pre>Каква вредност ќе има r за x=1, y=2, z=3?
+Каква вредност ќе има z?</pre>
 </div>
-<div class="sect1">
-<h2 id="problems">8. Problems</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="problem-1">8.1. Problem 1</h3>
-<div class="paragraph">
-<p>Write a program that will compute the value of the mathematical expression:
-<code>x = 3/2 + (5 – 46*5/12)</code></p>
+</div>
+</li>
+<li>
+<p>Нека е дадено:</p>
+<div class="literalblock">
+<div class="content">
+<pre>r = (x&gt;y &amp;&amp; y&lt;z++)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Каква вредност ќе има r за x=1, y=2, z=3?
+Каква вредност ќе има z?</pre>
+</div>
+</div>
+</li>
+</ul>
 </div>
 <div class="listingblock">
-<div class="title">Solution 1</div>
+<div class="title">Решение 3</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
 <span class="predefined-type">int</span> main() {
-    <span class="predefined-type">float</span> x = <span class="float">3</span><span class="float">.0</span> / <span class="integer">2</span> + (<span class="integer">5</span> - <span class="integer">46</span> * <span class="float">5</span><span class="float">.0</span> / <span class="integer">12</span>);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">x = %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, x);
+    <span class="predefined-type">int</span> x = <span class="integer">1</span>, y = <span class="integer">2</span>, z = <span class="integer">3</span>, r;
+    r = (x &lt; y || y &lt; z++);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">r = %d, z = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, r, z);
+
+    r = (x &gt; y &amp;&amp; y &lt; z++);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">r = %d, z = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, r, z);
+
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="problem-2">8.2. Problem 2</h3>
-<div class="paragraph">
-<p>Write a program that for given value of <code>x</code> (during the declaration)
-will compute and print the value of <code>x<sup>2</sup></code>.</p>
-</div>
 <div class="listingblock">
-<div class="title">Solution 2</div>
+<div class="title">Излез</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+<pre>r=1, z=3
 
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> x = <span class="integer">7</span>;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Number %d squared is %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, x, x * x);
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
+r=0, z=3</pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="problem-3">8.3. Problem 3</h3>
-<div class="paragraph">
-<p>Write a program that for a given sides of one triangle, it will print the
-perimeter and area of the square (values are <code>a = 5</code>, <code>b = 7.5</code>, <code>c = 10.2</code>).</p>
+<h3 id="Задача-4">3.4. Задача 4</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Нека е дадено:</p>
+</li>
+</ul>
 </div>
 <div class="listingblock">
-<div class="title">Solution 3</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">float</span> a = <span class="float">5</span><span class="float">.0</span>;
-    <span class="predefined-type">float</span> b = <span class="float">7</span><span class="float">.5</span>;
-    <span class="predefined-type">float</span> c = <span class="integer">1</span><span class="float">0</span><span class="float">.2</span>;
-    <span class="predefined-type">float</span> L = a + b + c;
-    <span class="predefined-type">float</span> s = L / <span class="integer">2</span>;
-    <span class="predefined-type">float</span> P = s * (s - a) * (s - b) * (s - c);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Perimeter is: %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, L);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Area is: %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, P);
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="problem-4">8.4. Problem 4</h3>
-<div class="paragraph">
-<p>Write a program for computing the arithmetic mean of the
-numbers 3, 5 and 12..</p>
-</div>
-<div class="listingblock">
-<div class="title">Solution 4</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> a = <span class="integer">3</span>;
-    <span class="predefined-type">int</span> b = <span class="integer">5</span>;
-    <span class="predefined-type">int</span> c = <span class="integer">12</span>;
-    <span class="predefined-type">float</span> as = (a + b + c) / <span class="float">3</span><span class="float">.0</span>;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The arithmetic mean is %2.f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, as);
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="problem-5">8.5. Problem 5</h3>
-<div class="paragraph">
-<p>Write a program that will print the remainder from the
-division of number 19 with 2, 3, 5 and 8.</p>
-</div>
-<div class="listingblock">
-<div class="title">Solution 5</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> a = <span class="integer">19</span>;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The residue of division with 2 is: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, a % <span class="integer">2</span>);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The residue of division with 3 is: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, a % <span class="integer">3</span>);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The residue of division with 5 is: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, a % <span class="integer">5</span>);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The residue of division with 8 is: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, a % <span class="integer">8</span>);
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="problem-6">8.6. Problem 6</h3>
-<div class="paragraph">
-<p>Write a program for computing and printing the circle area
-and perimeter. The circle radius is read as decimal number.</p>
-</div>
-<div class="listingblock">
-<div class="title">Solution 6</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-<span class="preprocessor">#define</span> PI <span class="float">3</span><span class="float">.14</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">float</span> radius;
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%f</span><span class="delimiter">&quot;</span></span>, &amp;radius);
-
-    <span class="predefined-type">float</span> perimeter = <span class="integer">2</span> * radius * PI ;
-    <span class="predefined-type">float</span> area = radius * radius * PI;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">L = %f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, perimeter);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">P = %f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, area);
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="problem-7">8.7. Problem 7</h3>
-<div class="paragraph">
-<p>Write a program that reads from standard input two integers
-and prints their sum, difference, product and division remainder.</p>
-</div>
-<div class="listingblock">
-<div class="title">Solution 7</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
 <span class="predefined-type">int</span> main() {
     <span class="predefined-type">int</span> x, y;
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d %d</span><span class="delimiter">&quot;</span></span>, &amp;x, &amp;y);
-
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d + %d = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, x, y, x + y);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d - %d = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, x, y, x - y);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d * %d = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, x, y, x * y);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d %% %d = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, x, y, x % y);
+    y = scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;x);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">y = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, y);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Каква вредност ќе има <code>y</code> за <code>x=5</code>?</p>
+</div>
+<div class="paragraph">
+<div class="title">Излез</div>
+<p>y=1</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Нека е дадено:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> x, y, z;
+    z = scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d%d</span><span class="delimiter">&quot;</span></span>, &amp;x, &amp;y);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">z = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, z);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Каква вредност ќе има <code>z</code> за <code>x=5</code>, <code>y=6</code>?</p>
+</div>
+<div class="listingblock">
+<div class="title">Излез</div>
+<div class="content">
+<pre>z=2</pre>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="problem-8">8.8. Problem 8</h3>
+<h3 id="Задача-5">3.5. Задача 5</h3>
 <div class="paragraph">
-<p>Write a program that reads uppercase letter from standard input
-and prints out in lowercase.</p>
+<p>Да се напише програма каде од тастатура ќе се внесе цена на производ, а потоа ќе ја испечати неговата цена со пресметан ддв.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1170,27 +1168,145 @@ and prints out in lowercase.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Each character is represented with its ASCII code.
+ДДВ е 18% од почетната цена
 </td>
 </tr>
 </table>
 </div>
 <div class="listingblock">
-<div class="title">example</div>
-<div class="content">
-<pre>A = 65, a = 97</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Solution 8</div>
+<div class="title">Решение 5</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
 <span class="predefined-type">int</span> main() {
-    <span class="predefined-type">char</span> c;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter an uppercase letter: </span><span class="delimiter">&quot;</span></span>);
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%c</span><span class="delimiter">&quot;</span></span>, &amp;c);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%c lowercase is: '%c'</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, c, c + (<span class="char">'a'</span> - <span class="char">'A'</span>));
+    <span class="predefined-type">float</span> cena;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesete ja cenata na proizvodot: </span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%f</span><span class="delimiter">&quot;</span></span>, &amp;cena);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vkupnata cena na proizvodot e %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, cena * <span class="float">1</span><span class="float">.18</span>);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Задача-6">3.6. Задача 6</h3>
+<div class="paragraph">
+<p>Да се напише програма каде од тастатура ќе се внесе цена на производ, број на рати на кои се исплаќа и камата (каматата е број изразен во проценти од 0 до 100). Програмата треба да го испечати износот на ратата и вкупната сума што ќе се исплати за производот</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Пресметајте ја целата сума, па потоа ратата.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Решение 6</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">float</span> cena, kamata, rata, vkupno;
+    <span class="predefined-type">int</span> brRati;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesete ja cenata na proizvodot: </span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%f</span><span class="delimiter">&quot;</span></span>, &amp;cena);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesete go brojot na rati: </span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;brRati);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesete ja kamatata: </span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%f</span><span class="delimiter">&quot;</span></span>, &amp;kamata);
+    vkupno = cena * (<span class="integer">1</span> + kamata / <span class="integer">100</span>);
+    rata = vkupno / brRati;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Edna rata kje iznesuva: %.3f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, rata);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vkupnata isplatena suma ke bide %.3f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, vkupno);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Задача-7">3.7. Задача 7</h3>
+<div class="paragraph">
+<p>Да се напише програма каде од тастатура ќе се внесе трицифрен цел број. Програмата ќе ја испечати најзначајната и најмалку значајната цифра од бројот</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Пример: Ако се внесе следниот бројот 795, програмата ќе испечати:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Najznacajna cifra e 7, a najmalku znacajna e 5.</pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Искористете целобројно делење и остаток од делење.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Решение 7</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> broj;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesete go brojot:</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;broj);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Najznacajnata cifra e </span><span class="delimiter">&quot;</span></span>);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d, a najmalku znacajnata e %d.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, (broj / <span class="integer">100</span>),
+           (broj % <span class="integer">10</span>));
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Задача-8">3.8. Задача 8</h3>
+<div class="paragraph">
+<p>Да се напише програма каде од тастатура ќе се внесе датумот на раѓање во формат (ddmmgggg). Програмата на компјутерскиот екран ќе го испечати денот и месецот на раѓање.</p>
+</div>
+<div class="paragraph">
+<div class="title">Пример:</div>
+<p>Ако се внесе следниот број 18091992, програмата ќе испечати:
+          	18.09</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Искористете целобројно делење и остаток од делење.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Решение 8</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">long</span> <span class="predefined-type">int</span> datum;
+    <span class="predefined-type">int</span> den, mesec;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesete datum na ragjanje:</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%ld</span><span class="delimiter">&quot;</span></span>, &amp;datum);
+    den = datum / <span class="integer">1000000</span>;
+    mesec = (datum / <span class="integer">10000</span>) % <span class="integer">100</span>;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Denot i mesecot na ragjanje se %02d.%02d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, den, mesec);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
@@ -1200,21 +1316,21 @@ Each character is represented with its ASCII code.
 </div>
 </div>
 <div class="sect1">
-<h2 id="source-code-of-the-examples-and-problems">9. Source code of the examples and problems</h2>
+<h2 id="Изворен-код-од-примери-и-задачи">4. Изворен код од примери и задачи</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://github.com/finki-mk/SP/" class="bare">https://github.com/finki-mk/SP/</a></p>
 </div>
 <div class="paragraph">
-<p><a href="https://finki-mk.github.io/SP/sources/sp_av2_src_en.zip">Source code ZIP</a></p>
+<p><a href="https://finki-mk.github.io/SP/sources/sp_av3_src.zip">Source code ZIP</a></p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0<br>
-Last updated 2016-10-03 16:56:27 +02:00
+Верзија 1.0<br>
+Last updated 2016-10-03 22:48:40 +02:00
 </div>
 </div>
 </body>

@@ -179,7 +179,7 @@ Third sentence.
 include::{source_dir}/ex25_en.c[]
 ----
 
-.Пример 6
+.Example 6
 [source,c]
 ----
 include::{source_dir}/ex26_en.c[]
@@ -227,7 +227,7 @@ include::{source_dir}/p22_en.c[]
 
 === Problem 3
 Write a program that for a given sides of one triangle, it will print the
-perimeter and area of the square (values are `a = 5`, `b = 7.5`, `c = 10.2`).
+perimeter and area squared (values are `a = 5`, `b = 7.5`, `c = 10.2`).
 
 .Solution 3
 [source,c]
@@ -237,8 +237,7 @@ include::{source_dir}/p23_en.c[]
 
 === Problem 4
 
-Write a program for computing the arithmetic mean of the 
-numbers 3, 5 and 12..
+Write a program for computing the arithmetic mean of the numbers 3, 5 and 12.
 
 .Solution 4
 [source,c]

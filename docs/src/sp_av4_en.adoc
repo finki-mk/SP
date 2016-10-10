@@ -9,7 +9,7 @@ include::parts/attributes_en.adoc[]
 
 === From lectures
 
-image:if_condition.png[if-else]
+image::if_condition.png[if-else]
 
 [source,c]
 ----
@@ -72,7 +72,7 @@ The coordinates of a point are read from SI.
 Write a program that will print out the quadrant or the axis where the point belongs. 
 If the point lays on the origin, print out a appropriate message. 
 
-image:im2.jpg[kvadranti]
+image::im2.jpg[kvadranti]
 
 .Solution (a):
 [source,c]
@@ -81,7 +81,7 @@ include::{source_dir}/p4_3a_en.c[]
 ----
 
 .Solution (b): 
-image:im3.jpg[kvadranti]
+image::im3.jpg[kvadranti]
 
 [source,c]
 ----

@@ -9,7 +9,7 @@ include::parts/attributes.adoc[]
 
 === Потсетување од предавања
 
-image:im1.jpg[if-else]
+image::im1.jpg[if-else]
 
 [source,c]
 ----
@@ -69,7 +69,7 @@ include::{source_dir}/p4_2.c[]
 
 Од тастатура се внесуваат координати на една точка од рамнина. Да се напише програма со која ќе се испечати на кој квадрант припаѓа внесената точка. 
 
-image:im2.jpg[kvadranti]
+image::im2.jpg[kvadranti]
 
 .Решение:
 
@@ -80,7 +80,7 @@ include::{source_dir}/p4_3a.c[]
 
 .Решение в2: 
 
-image:im3.jpg[kvadranti]
+image::im3.jpg[kvadranti]
 
 [source,c]
 ----

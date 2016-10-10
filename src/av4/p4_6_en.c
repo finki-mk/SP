@@ -2,14 +2,14 @@
 
 int main() {
     float a, b, c;
-    printf("Vnesi dolzini na strani: \n");
+    printf("Enter lengths of sides: \n");
     scanf("%f %f %f", &a, &b, &c);
     if ((a + b <= c) || (a + c <= b) || (b + c <= a))
-        printf("Ne moze da se konstruira triagolnik.\n");
+        printf("A triangle can not be constructed.\n");
     else {
         if (a >= b) {
             float tmp = a; 
-            a = b;
+            a = b; 
             b = tmp;
         }
         if (a >= c) {
@@ -21,12 +21,13 @@ int main() {
             float tmp = b; 
             b = c; 
             c = tmp;
-        } // po ova najdolgata strana kje bide vo c
+        }
+        // now the longest side is in the variable c
         if (c * c == a * a + b * b) {
-            printf("Tragolnikot e pravoagolen.\n");
-            printf("Ploshtinata mu e %7.3f\n", a * b / 2);
+            printf("The triangle is right triangle.\n");
+            printf("Area is %7.3f\n", a * b / 2);
         } else {
-            printf("Tragolnikot NE e pravoagolen.\n");
+            printf("The triangle is NOT a right triangle.\n");
         }
     }
     return 0;

@@ -46,7 +46,7 @@ asciidoctor {
 task srcZip
 task srcZipEn
 
-(1..3).each { id ->
+(1..5).each { id ->
     task "srcZip${id}"(type: Zip) {
         from('../src/av' + id)
         excludes = ['*.out', '*_en.c']
@@ -57,7 +57,7 @@ task srcZipEn
 }
 
 
-(1..3).each { id ->
+(1..5).each { id ->
     task "srcZipEn${id}"(type: Zip) {
         from('../src/av' + id)
         excludes = ['*.out']

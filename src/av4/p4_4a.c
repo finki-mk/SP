@@ -1,8 +1,6 @@
 #include <stdio.h>
-int main ()
-{
+int main () {
     int poeni, ocenka = 0;
-
     printf("Vnesi poeni: \n");
     scanf("%d", &poeni);
     if (poeni >= 0 && poeni <= 50) ocenka = 5;

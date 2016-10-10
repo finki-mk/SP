@@ -1,6 +1,5 @@
-#include <stdio.h> 
-int main() 
-{
+#include <stdio.h>
+int main() {
     char odgovor;
     printf("Dali SP e lesen predmet? (d/n): ");
     //odgovor=getchar();
@@ -19,5 +18,3 @@ int main()
 
     return 0;
 }
-
-

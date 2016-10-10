@@ -1,0 +1,201 @@
+# Structured programming
+Exercises 4
+v1.0, 10 October, 2016
+include::parts/attributes_en.adoc[]
+
+:source_dir: ../../src/av4
+
+== Flow control statements `if-else`
+
+=== From lectures
+
+image:if_condition.png[if-else]
+
+[source,c]
+----
+if ( condition ) {
+    expressions_for_true_condition;
+} 
+else {
+    expressions_for_false_condition;
+} 
+----
+
+=== What will be the output?
+
+[source,c]
+----
+include::{source_dir}/ex4_1_en.c[]
+----
+
+.Output
+----
+m = 5, n = 11
+----
+== Problems
+
+=== Problem 1
+
+Write a program that will print the maximum of two number read from SI.
+
+.Solution:
+[source,c]
+----
+include::{source_dir}/p4_1a.c[]
+----
+
+.Solution b2 – without if-else:
+
+[source,c]
+----
+include::{source_dir}/p4_1b.c[]
+----
+
+=== Problem 2
+
+Write a program that checks if given year read from SI is leap or not and prints out a appropriate message.
+
+.Example leap years
+1976, 2000, 2004, 2008, 2012...
+
+TIP: The year is leap is divisible by 4 and not divisible by 100, or divisible by 400
+
+.Solution:
+[source,c]
+----
+include::{source_dir}/p4_2.c[]
+----
+
+=== Problem 3
+
+The coordinates of a point are read from SI. 
+Write a program that will print out the quadrant or the axis where the point belongs. 
+If the point lays on the origin, print out a appropriate message. 
+
+image:im2.jpg[kvadranti]
+
+.Solution (a):
+[source,c]
+----
+include::{source_dir}/p4_3a_en.c[]
+----
+
+.Solution (b): 
+image:im3.jpg[kvadranti]
+
+[source,c]
+----
+include::{source_dir}/p4_3b_en.c[]
+----
+
+
+. _Does this program cover all the cases?_
+
+. _Will it print anything for any given point?_   
+
+
+.Solution (c):
+[source,c]
+----
+include::{source_dir}/p4_3c.c[]
+----
+
+=== Problem 4 
+
+Write a program that will generate and print the grade according to the following table:
+
+[options="header"]
+|===
+| Points    | Grade
+| `0-50`    | 5
+| `51-60`   | 6
+| `61-70`   | 7
+| `71-80`   | 8
+| `81-90`   | 9
+| `91-100`  | 10
+|===
+
+.Solution (a)
+[source,c]
+----
+include::{source_dir}/p4_4a_en.c[]
+----
+
+.Solution (b)
+[source,c]
+----
+include::{source_dir}/p4_4b_en.c[]
+----
+
+=== Problem 5
+
+Change the previous program, so the sign of the number should be printed (+/-) depending on the last digit of the points number:
+
+[options="header"]
+|===
+| last digit    | prints
+| `1 - 3`       | -
+| `4 - 7`       | `<blank_space>`
+| `8 - 0`       | +
+|===
+
+.example
+----
+81 = 9-
+94 = 10
+68 = 7+
+----
+
+NOTE: For grade 5 doesn't add + or –, and for grade 10 should not add +.
+
+.Solution:
+[source,c]
+----
+include::{source_dir}/p4_5_en.c[]
+----
+
+=== Problem 6
+
+Read from standard input three numbers in arbitrary order. 
+The numbers are lengths of triangle sides. 
+Write a program that will check if triangle can be constructed from given lengths, if so, then should check if the triangle is right triangle and compute its area.
+On contrary, appropriate messages should be printed.
+
+.Solution:
+[source,c]
+----
+include::{source_dir}/p4_6_en.c[]
+----
+
+=== Problem 7
+
+Write a program for simple calculator. 
+The program reads two numbers and operator in format:
+
+`num1 operator num2`
+
+After the operation, depending on the operator, the result should be printed in format:
+
+----
+num1 operator num2 = result
+----
+
+.Solution:
+[source,c]
+----
+include::{source_dir}/p4_7_en.c[]
+----
+
+== Try these problems at home
+
+=== Problem 1
+
+For three segments read from SI, the program should check if a triangle can be formed, then print the kind.
+
+=== Problem 2 *
+
+For given center of circle and it's radius the program should determine the quadrants it is overlapping.
+
+include::parts/footer_en.adoc[]
+
+link:{sources_zip}/sp_av4_src_en.zip[Source code ZIP]

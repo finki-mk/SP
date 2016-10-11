@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<meta name="author" content="Аудиториски вежби 5">
-<title>Структурно програмирање</title>
+<meta name="author" content="Exercises 5">
+<title>Structured programming</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -512,60 +512,62 @@ table.CodeRay td.code>pre{padding:0}
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Структурно програмирање</h1>
+<h1>Structured programming</h1>
 <div class="details">
-<span id="author" class="author">Аудиториски вежби 5</span><br>
-<span id="revnumber">Верзија 1.0,</span>
-<span id="revdate">10 Октомври, 2016</span>
+<span id="author" class="author">Exercises 5</span><br>
+<span id="revnumber">version 1.0,</span>
+<span id="revdate">10 October, 2016</span>
 </div>
 <div id="toc" class="toc2">
-<div id="toctitle">Содржина</div>
+<div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#Контролни-структури-за-циклуси">1. Контролни структури за циклуси</a>
+<li><a href="#loop-structures-code-for-code-code-while-code-code-do-while-code">1. Loop structures <code>for</code>, <code>while</code>, <code>do-while</code></a>
 <ul class="sectlevel2">
-<li><a href="#Задача-1а">1.1. Задача 1а</a></li>
-<li><a href="#Задача-1б">1.2. Задача 1б</a></li>
-<li><a href="#Задача-2">1.3. Задача 2</a></li>
-<li><a href="#Задача-3">1.4. Задача 3</a></li>
-<li><a href="#Задача-4">1.5. Задача 4</a></li>
-<li><a href="#Задача-5">1.6. Задача 5</a></li>
-<li><a href="#Задача-6">1.7. Задача 6</a></li>
-<li><a href="#Задача-7">1.8. Задача 7</a></li>
-<li><a href="#Задача-8">1.9. Задача 8</a></li>
-<li><a href="#Задача-9">1.10. Задача 9</a></li>
-<li><a href="#Задача-10">1.11. Задача 10</a></li>
+<li><a href="#problem-1a">1.1. Problem 1a</a></li>
+<li><a href="#problem-1b">1.2. Problem 1b</a></li>
+<li><a href="#problem-2">1.3. Problem 2</a></li>
+<li><a href="#problem-3">1.4. Problem 3</a></li>
+<li><a href="#problem-4">1.5. Problem 4</a></li>
+<li><a href="#problem-5">1.6. Problem 5</a></li>
+<li><a href="#problem-6">1.7. Problem 6</a></li>
+<li><a href="#problem-7">1.8. Problem 7</a></li>
+<li><a href="#problem-8">1.9. Problem 8</a></li>
+<li><a href="#problem-9">1.10. Problem 9</a></li>
+<li><a href="#problem-10">1.11. Problem 10</a></li>
 </ul>
 </li>
-<li><a href="#Контролна-структура-за-повеќекратно-гранење-switch">2. Контролна структура за повеќекратно гранење (switch)</a>
+<li><a href="#the-code-switch-code-expression">2. The <code>switch</code> expression</a>
 <ul class="sectlevel2">
-<li><a href="#Пример">2.1. Пример</a></li>
-<li><a href="#Задача-1">2.2. Задача 1</a></li>
-<li><a href="#Задача-2-2">2.3. Задача 2</a></li>
-<li><a href="#Задача-3-2">2.4. Задача 3</a></li>
-<li><a href="#Пример-за-реализација-на-текст-мени">2.5. Пример за реализација на (текст) мени</a></li>
+<li><a href="#example">2.1. Example</a></li>
+<li><a href="#problem-1">2.2. Problem 1</a></li>
+<li><a href="#problem-2-2">2.3. Problem 2</a></li>
+<li><a href="#problem-3-2">2.4. Problem 3</a></li>
+<li><a href="#example-of-text-menu-command-line-interface-cli">2.5. Example of text menu (Command Line Interface - CLI)</a></li>
 </ul>
 </li>
-<li><a href="#Задача-за-вежбање-1">3. Задача за вежбање 1</a>
+<li><a href="#practice-problems">3. Practice problems</a>
 <ul class="sectlevel2">
-<li><a href="#Задача-за-вежбање-2">3.1. Задача за вежбање 2</a></li>
-<li><a href="#Задача-за-вежбање-3">3.2. Задача за вежбање 3</a></li>
+<li><a href="#practice-problem-1">3.1. Practice problem  1</a></li>
+<li><a href="#practice-problem-2">3.2. Practice problem 2</a></li>
+<li><a href="#practice-problem-3">3.3. Practice problem 3</a></li>
 </ul>
 </li>
-<li><a href="#Изворен-код-од-примери-и-задачи">4. Изворен код од примери и задачи</a></li>
+<li><a href="#source-code-of-the-examples-and-problems">4. Source code of the examples and problems</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="Контролни-структури-за-циклуси">1. Контролни структури за циклуси</h2>
+<h2 id="loop-structures-code-for-code-code-while-code-code-do-while-code">1. Loop structures <code>for</code>, <code>while</code>, <code>do-while</code></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Задача-1а">1.1. Задача 1а</h3>
+<h3 id="problem-1a">1.1. Problem 1a</h3>
 <div class="paragraph">
-<p>Да се напише програма за пресметување на сумата на сите парни двоцифрени броеви. Добиената сума се печати на екран.</p>
+<p>Write a program that computes the sum of all even two-digit numbers.
+Print the result on standard output.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Solution</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
@@ -581,9 +583,10 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-1б">1.2. Задача 1б</h3>
+<h3 id="problem-1b">1.2. Problem 1b</h3>
 <div class="paragraph">
-<p>Да се напише програма за пресметување на сумата на сите непарни двоцифрени броеви. Програмата ја печати сумата на екран во следниот формат:</p>
+<p>Write a program that computes the sum of all odd two-digit numbers.
+Print the result on standard output in the following format:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -597,13 +600,13 @@ table.CodeRay td.code>pre{padding:0}
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Програмата да се реши без користење на наредбата <code>if</code>
+The program should be written without using <code>if</code>
 </td>
 </tr>
 </table>
 </div>
 <div class="listingblock">
-<div class="title">Решение 1:</div>
+<div class="title">Solution 1</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
@@ -622,7 +625,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение 2:</div>
+<div class="title">Solution 2</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
@@ -641,12 +644,12 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-2">1.3. Задача 2</h3>
+<h3 id="problem-2">1.3. Problem 2</h3>
 <div class="paragraph">
-<p>Да се напише програма за пресметување на \$y = x^n\$ за даден природен број n, n &gt;= 1 и реален број x.</p>
+<p>Write a program that computes на \$y = x^n\$ for given natural number n, n &gt;= 1 and real number x.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение 1:</div>
+<div class="title">Solution 1</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
@@ -666,7 +669,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение 2:</div>
+<div class="title">Solution 2</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
@@ -686,7 +689,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение 3:</div>
+<div class="title">Solution 3</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
@@ -705,7 +708,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение 4:</div>
+<div class="title">Solution 4</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
@@ -723,9 +726,9 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-3">1.4. Задача 3</h3>
+<h3 id="problem-3">1.4. Problem 3</h3>
 <div class="paragraph">
-<p>Да се напише програма што од n броеви (внесени од тастатура) ќе го определи бројот на броеви што се деливи со 3, при делењето со 3 имаат остаток 1, односно 2.</p>
+<p>Write a program that for n numbers read from SI will count the numbers divisible by 3, have residue 1, and have residue 2.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -734,19 +737,19 @@ table.CodeRay td.code>pre{padding:0}
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Задачата да се реши со <code>while, do&#8230;&#8203;while</code> и <code>for</code>
+Solve the problem using <code>while</code>, <code>do&#8230;&#8203;while</code> and <code>for</code>
 </td>
 </tr>
 </table>
 </div>
 <div class="listingblock">
-<div class="title">Решение со <code>while</code>:</div>
+<div class="title">Solution with <code>while</code>:</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
     <span class="predefined-type">int</span> n = <span class="integer">1</span>, i = <span class="integer">0</span>, number, div, r1, r2;
-    div = r1 = r2 = <span class="integer">0</span>; <span class="comment">/*  brojaci */</span>
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);   <span class="comment">/* koklu broevi kje bidat vneseni */</span>
+    div = r1 = r2 = <span class="integer">0</span>; <span class="comment">/*  counters */</span>
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);   <span class="comment">/* numbers read from SI */</span>
     <span class="keyword">while</span> (i &lt; n) {
         scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;number);
         <span class="keyword">if</span> (number % <span class="integer">3</span> == <span class="integer">0</span>)
@@ -764,13 +767,13 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение со <code>do&#8230;&#8203; while</code>:</div>
+<div class="title">Solution with <code>do&#8230;&#8203; while</code>:</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
     <span class="predefined-type">int</span> n = <span class="integer">1</span>, i = <span class="integer">0</span>, number, div, r1, r2;
-    div = r1 = r2 = <span class="integer">0</span>; <span class="comment">/*  brojaci */</span>
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);   <span class="comment">/* koklu broevi kje bidat vneseni */</span>
+    div = r1 = r2 = <span class="integer">0</span>; <span class="comment">/*  counters */</span>
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);   <span class="comment">/* numbers read from SI */</span>
     <span class="keyword">do</span> {
         scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;number);
         <span class="keyword">if</span> (number % <span class="integer">3</span> == <span class="integer">0</span>)
@@ -788,13 +791,13 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение со <code>for</code>:</div>
+<div class="title">Solution with <code>for</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
     <span class="predefined-type">int</span> n = <span class="integer">1</span>, i = <span class="integer">0</span>, number, div, r1, r2;
-    div = r1 = r2 = <span class="integer">0</span>; <span class="comment">/*  brojaci */</span>
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);   <span class="comment">/* koklu broevi kje bidat vneseni */</span>
+    div = r1 = r2 = <span class="integer">0</span>; <span class="comment">/*  counters */</span>
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);   <span class="comment">/* numbers read from SI */</span>
     <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; ++i) {
         scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;number);
         <span class="keyword">if</span> (number % <span class="integer">3</span> == <span class="integer">0</span>)
@@ -812,9 +815,9 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-4">1.5. Задача 4</h3>
+<h3 id="problem-4">1.5. Problem 4</h3>
 <div class="paragraph">
-<p>Да се напише програма што на екран ќе ги испечати сите четири-цифрени броеви кај кои збирот на трите најмалку значајни цифри е еднаков со најзначајната цифра.</p>
+<p>Write a program that will print all 4-digit numbers in which the sum of the three least significant digits is equal to the most significant digit.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -829,7 +832,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Solution</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
@@ -853,16 +856,16 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-5">1.6. Задача 5</h3>
+<h3 id="problem-5">1.6. Problem 5</h3>
 <div class="paragraph">
-<p>Да се напише програма што ќе ги испечати сите броеви од зададен опсег кои исто се читаат и одлево надесно и оддесно налево.</p>
+<p>Write a program that will print all numbers in given range which are read the same from left to right and opposite.</p>
 </div>
 <div class="paragraph">
-<div class="title">пример</div>
+<div class="title">example</div>
 <p><code>12345</code> &#8594; <code>54321</code></p>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Solution</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
@@ -884,12 +887,13 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-6">1.7. Задача 6</h3>
+<h3 id="problem-6">1.7. Problem 6</h3>
 <div class="paragraph">
-<p>Да се напише програма што од непознат број на цели броеви што се внесуваат од тастатура ќе го определи бројот со максимална вредност. Програмата завршува ако наместо број се внесе знак што не е цифра.</p>
+<p>Write a program that for unknown count of integers read from SI will find the number with maximum value.
+The program stops when the reading of integer fails.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Solution</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
@@ -902,7 +906,7 @@ table.CodeRay td.code>pre{padding:0}
         }
         printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, max);
     } <span class="keyword">else</span> {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Ne e vnesen broj.</span><span class="delimiter">&quot;</span></span>);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">This is not a number.</span><span class="delimiter">&quot;</span></span>);
     }
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
@@ -910,12 +914,14 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-7">1.8. Задача 7</h3>
+<h3 id="problem-7">1.8. Problem 7</h3>
 <div class="paragraph">
-<p>Да се напише програма што од непознат број на цели броеви што се внесуваат од тастатура ќе го определи бројот со максимална вредност. Притоа броевите поголеми од 100 не се земаат предвид т.е. се игнорираат. Програмата завршува ако наместо број се внесе знак што не е цифра.</p>
+<p>Write a program that for unknown count of integers read from SI will find the number with maximum value.
+Numbers larger than 100 should be ignored.
+The program stops when the reading of integer fails.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Solution</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
@@ -929,23 +935,23 @@ table.CodeRay td.code>pre{padding:0}
         }
         printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, max);
     } <span class="keyword">else</span> {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Ne e vnesen broj.</span><span class="delimiter">&quot;</span></span>);}
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">This is not a number.</span><span class="delimiter">&quot;</span></span>);}
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-8">1.9. Задача 8</h3>
+<h3 id="problem-8">1.9. Problem 8</h3>
 <div class="paragraph">
-<p>Да се напише програма што од непознат број на цели броеви што се внесуваат од тастатура ќе ги определи двата броја со најголеми вредности. Програмата завршува ако наместо број се внесе знак што не е цифра.</p>
+<p>Write a program that for unknown count of integers read from SI will find the two with maximum values.</p>
 </div>
 <div class="paragraph">
-<div class="title">пример</div>
-<p>Ако се внесат броевите 2 4 7 4 2 1 8 6 9 7 10 3 програмата ќе отпечати 10 и 9.</p>
+<div class="title">example</div>
+<p>For the numbers 2 4 7 4 2 1 8 6 9 7 10 3 the program should print 10 and 9.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Solution</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
@@ -967,7 +973,7 @@ table.CodeRay td.code>pre{padding:0}
         printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, max1);
         printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, max2);
     } <span class="keyword">else</span> {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesete najmalku 2 broja</span><span class="delimiter">&quot;</span></span>);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter at least 2 numbers</span><span class="delimiter">&quot;</span></span>);
     }
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
@@ -975,33 +981,34 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-9">1.10. Задача 9</h3>
+<h3 id="problem-9">1.10. Problem 9</h3>
 <div class="paragraph">
-<p>Да се напише програма што од N цели броеви внесени од тастатура ќе ја определи разликата од сумите на броевите на парни и непарни позиции (според редоследот на внесување). Ако оваа разлика е помала од 10 на екран се печати "Dvete sumi se slicni" а во спротивно на екран се печати "Dvete sumi mnogu se razlikuvaat".</p>
+<p>Write a program that for N integers read from SI will the difference of the sums of numbers on odd and even positions (by the order of reading).
+If this difference is less than 10 print the message <code>"The two sums are close"</code> else print <code>"The two sums are far"</code>.</p>
 </div>
 <div class="paragraph">
-<div class="title">пример</div>
-<p>За броевите внесени од тастатура:</p>
+<div class="title">example</div>
+<p>For numbers:</p>
 </div>
 <div class="paragraph">
 <p><em>2</em> <strong>4</strong> <em>3</em> <strong>4</strong> <em>2</em> <strong>1</strong> <em>1</em> <strong>6</strong> <em>1</em> <strong>7</strong></p>
 </div>
 <div class="paragraph">
-<p><em>suma_neparni_pozicii</em> = 9</p>
+<p><em>sum_odd_positions</em> = 9</p>
 </div>
 <div class="paragraph">
-<p><strong>suma_parni_pozicii</strong> = 22</p>
+<p><strong>sum_even_positions</strong> = 22</p>
 </div>
 <div class="paragraph">
-<p>На екран ќе се испечати:</p>
+<p>Will print:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Dvete sumi mnogu se razlikuvaat</pre>
+<pre>The two sums are far</pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Solution</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
@@ -1018,9 +1025,9 @@ table.CodeRay td.code>pre{padding:0}
     }
     difference = sum_even_positions - sum_odd_positions;
     <span class="keyword">if</span> (difference &lt; <span class="integer">10</span> &amp;&amp; difference &gt; -<span class="integer">10</span>) { <span class="comment">//if(abs(difference) &lt; 10){</span>
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Dvete sumi se slicni</span><span class="delimiter">&quot;</span></span>);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The two sums are close</span><span class="delimiter">&quot;</span></span>);
     } <span class="keyword">else</span> {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Dvete sumi mnogu se razlikuvaat</span><span class="delimiter">&quot;</span></span>);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The two sums are far</span><span class="delimiter">&quot;</span></span>);
     }
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
@@ -1028,12 +1035,13 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-10">1.11. Задача 10</h3>
+<h3 id="problem-10">1.11. Problem 10</h3>
 <div class="paragraph">
-<p>Да се напише програма што од непознат број на цели броеви кои се внесуваат од тастатура ќе ги определи позициите (редните броеви на внесување) на двата последователни броја што ја имаат најголемата сума. Програмата завршува ако едно по друго (последователно) се внесат два негативни цели броја.</p>
+<p>Write a program that for unknown count of integers read from SI will find the positions of the successive numbers with maximum sum.
+The program stops when two successive read numbers are negative.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Solution</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
@@ -1055,7 +1063,7 @@ table.CodeRay td.code>pre{padding:0}
         position++;
     }
     <span class="keyword">if</span> (position &gt; <span class="integer">2</span>)
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Broevite se na pozicii %d i %d i nivnata suma e %d</span><span class="delimiter">&quot;</span></span>,
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Numbers are found on positions %d and %d with sum: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>,
                pol_position - <span class="integer">1</span>, pol_position, max_sum);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
@@ -1065,28 +1073,28 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect1">
-<h2 id="Контролна-структура-за-повеќекратно-гранење-switch">2. Контролна структура за повеќекратно гранење (switch)</h2>
+<h2 id="the-code-switch-code-expression">2. The <code>switch</code> expression</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Пример">2.1. Пример</h3>
+<h3 id="example">2.1. Example</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
-    <span class="predefined-type">char</span> odgovor;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Dali SP e lesen predmet? (d/n): </span><span class="delimiter">&quot;</span></span>);
-    <span class="comment">//odgovor=getchar();</span>
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%c</span><span class="delimiter">&quot;</span></span>, &amp;odgovor);
+    <span class="predefined-type">char</span> answer;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Is SP an easy course? (Y/N): </span><span class="delimiter">&quot;</span></span>);
+    <span class="comment">//answer=getchar();</span>
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%c</span><span class="delimiter">&quot;</span></span>, &amp;answer);
 
-    <span class="keyword">switch</span> (odgovor) {
-    <span class="keyword">case</span> <span class="char">'D'</span>:
-    <span class="keyword">case</span> <span class="char">'d'</span>: printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">I jas mislam taka!</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-        <span class="keyword">break</span>;
-    <span class="keyword">case</span> <span class="char">'N'</span>:
-    <span class="keyword">case</span> <span class="char">'n'</span>: printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Navistina?</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-        <span class="keyword">break</span>;
-    <span class="keyword">default</span>:
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Ova e DA ili NE?</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">switch</span> (answer) {
+        <span class="keyword">case</span> <span class="char">'Y'</span>:
+        <span class="keyword">case</span> <span class="char">'y'</span>: printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">I think so too!</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="char">'N'</span>:
+        <span class="keyword">case</span> <span class="char">'n'</span>: printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Really?</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">default</span>:
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Is this Yes or No?</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
     }
 
     <span class="keyword">return</span> <span class="integer">0</span>;
@@ -1095,34 +1103,33 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-1">2.2. Задача 1</h3>
+<h3 id="problem-1">2.2. Problem 1</h3>
 <div class="paragraph">
-<p>Да се напише програма што за знак внесен од тастатура ќе одреди дали е самогласка, цифра или другo.</p>
+<p>Write a program that for a read character from SI will print if it is a vowel, digit or something else.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Solution</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-<span class="predefined-type">int</span> main()
-{
-    <span class="predefined-type">char</span> znak;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesi znak: </span><span class="delimiter">&quot;</span></span>);
-    znak=getchar(); <span class="comment">/* scanf(&quot;%c&quot;, &amp;znak); */</span>
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">char</span> character;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter character: </span><span class="delimiter">&quot;</span></span>);
+    character = getchar(); <span class="comment">/* scanf(&quot;%c&quot;, &amp;character); */</span>
 
-    <span class="keyword">switch</span> (znak) {
-    <span class="keyword">case</span> <span class="char">'a'</span>: <span class="keyword">case</span> <span class="char">'A'</span>:
-    <span class="keyword">case</span> <span class="char">'e'</span>: <span class="keyword">case</span> <span class="char">'E'</span>:
-    <span class="keyword">case</span> <span class="char">'i'</span>: <span class="keyword">case</span> <span class="char">'I'</span>:
-    <span class="keyword">case</span> <span class="char">'o'</span>: <span class="keyword">case</span> <span class="char">'O'</span>:
-    <span class="keyword">case</span> <span class="char">'u'</span>: <span class="keyword">case</span> <span class="char">'U'</span>:
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesena e samoglaskata: %c</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, znak);
-        <span class="keyword">break</span>;
-    <span class="keyword">case</span> <span class="char">'0'</span>: <span class="keyword">case</span> <span class="char">'1'</span>: <span class="keyword">case</span> <span class="char">'2'</span>: <span class="keyword">case</span> <span class="char">'3'</span>: <span class="keyword">case</span> <span class="char">'4'</span>:
-    <span class="keyword">case</span> <span class="char">'5'</span>: <span class="keyword">case</span> <span class="char">'6'</span>: <span class="keyword">case</span> <span class="char">'7'</span>: <span class="keyword">case</span> <span class="char">'8'</span>: <span class="keyword">case</span> <span class="char">'9'</span>:
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesena e cifrata: %c</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, znak);
-        <span class="keyword">break</span>;
-    <span class="keyword">default</span>:
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesen e znakot: %c</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, znak);
+    <span class="keyword">switch</span> (character) {
+        <span class="keyword">case</span> <span class="char">'a'</span>: <span class="keyword">case</span> <span class="char">'A'</span>:
+        <span class="keyword">case</span> <span class="char">'e'</span>: <span class="keyword">case</span> <span class="char">'E'</span>:
+        <span class="keyword">case</span> <span class="char">'i'</span>: <span class="keyword">case</span> <span class="char">'I'</span>:
+        <span class="keyword">case</span> <span class="char">'o'</span>: <span class="keyword">case</span> <span class="char">'O'</span>:
+        <span class="keyword">case</span> <span class="char">'u'</span>: <span class="keyword">case</span> <span class="char">'U'</span>:
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vowel is entered: %c</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, character);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="char">'0'</span>: <span class="keyword">case</span> <span class="char">'1'</span>: <span class="keyword">case</span> <span class="char">'2'</span>: <span class="keyword">case</span> <span class="char">'3'</span>: <span class="keyword">case</span> <span class="char">'4'</span>:
+        <span class="keyword">case</span> <span class="char">'5'</span>: <span class="keyword">case</span> <span class="char">'6'</span>: <span class="keyword">case</span> <span class="char">'7'</span>: <span class="keyword">case</span> <span class="char">'8'</span>: <span class="keyword">case</span> <span class="char">'9'</span>:
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Digit is entered: %c</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, character);
+            <span class="keyword">break</span>;
+        <span class="keyword">default</span>:
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Character is entered: %c</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, character);
     }
 
     <span class="keyword">return</span> <span class="integer">0</span>;
@@ -1131,26 +1138,26 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-2-2">2.3. Задача 2</h3>
+<h3 id="problem-2-2">2.3. Problem 2</h3>
 <div class="paragraph">
-<p>Да се напише програма што ќе претставува едноставен калкулатор. Во програмата се вчитуваат два броја и оператор во формат:</p>
+<p>Write a program for simple calculator.
+The program should read two numbers and operator in the following format:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>broj1 operator broj2</pre>
+<pre>num1 operator num2</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>По извршената операција во зависност од операторот, се печати резултатот во
-формат:</p>
+<p>After the operation depending on the sign, the result is printed in the following format:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>broj1 operator broj2 = rezultat</pre>
+<pre>num1 operator num2 = result</pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Solution</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
@@ -1170,13 +1177,13 @@ table.CodeRay td.code>pre{padding:0}
         <span class="keyword">break</span>;
     <span class="keyword">case</span> <span class="char">'/'</span>:
         <span class="keyword">if</span> (num2 == <span class="integer">0</span>) {
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Delenje so 0</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Division with 0</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
         } <span class="keyword">else</span> {
             result = num1 / num2;
         }
         <span class="keyword">break</span>;
     <span class="keyword">default</span>:
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Nepoznat operator %c</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, op);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Unknown operator %c</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, op);
         <span class="keyword">break</span>;
     }
     <span class="keyword">if</span> (result) printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%.2f %c %.2f = %f</span><span class="delimiter">&quot;</span></span>, num1, op, num2, result);
@@ -1186,104 +1193,105 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-3-2">2.4. Задача 3</h3>
+<h3 id="problem-3-2">2.4. Problem 3</h3>
 <div class="paragraph">
-<p>Да се напише програма што  ќе го пресмета просекот на еден студент, како и бројот на испити на што студентот паднал. Бројот на испити кои студентот ги полагал не е познат.</p>
+<p>Write a program that will compute the average of a student, and the number of failed exams.
+The number of taken exams by the student is not known.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение 1:</div>
+<div class="title">Solution 1</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> ocena, suma = <span class="integer">0</span>, broceni = <span class="integer">0</span>, padnal = <span class="integer">0</span>;
-    <span class="keyword">while</span> (scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;ocena) == <span class="integer">1</span>) {
-        <span class="keyword">while</span> (ocena &lt; <span class="integer">5</span> || ocena &gt; <span class="integer">10</span>) {
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">vnesi ocena od 5 do 10 : </span><span class="delimiter">&quot;</span></span>);
-            <span class="keyword">if</span> (scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;ocena) != <span class="integer">1</span>) <span class="keyword">break</span>;
+    <span class="predefined-type">int</span> grade, sum = <span class="integer">0</span>, num_grades = <span class="integer">0</span>, failed = <span class="integer">0</span>;
+    <span class="keyword">while</span> (scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;grade) == <span class="integer">1</span>) {
+        <span class="keyword">while</span> (grade &lt; <span class="integer">5</span> || grade &gt; <span class="integer">10</span>) {
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter grade from 5 to 10: </span><span class="delimiter">&quot;</span></span>);
+            <span class="keyword">if</span> (scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;grade) != <span class="integer">1</span>) <span class="keyword">break</span>;
         }
-        <span class="comment">/* presmetuvanje */</span>
-        <span class="keyword">if</span> (ocena &gt;= <span class="integer">6</span> &amp;&amp; ocena &lt;= <span class="integer">10</span>) {
-            suma += ocena;
-            broceni++;
+        <span class="comment">/* counting */</span>
+        <span class="keyword">if</span> (grade &gt;= <span class="integer">6</span> &amp;&amp; grade &lt;= <span class="integer">10</span>) {
+            sum += grade;
+            num_grades++;
         }
-        <span class="keyword">else</span> <span class="comment">/*if (ocena == 5) */</span>
-            padnal++;
+        <span class="keyword">else</span> <span class="comment">/*if (grade == 5) */</span>
+            failed++;
     }
-    <span class="keyword">if</span> (broceni == <span class="integer">0</span>)
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Nema polozeni ispiti</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">if</span> (num_grades == <span class="integer">0</span>)
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">No passed exams</span><span class="delimiter">&quot;</span></span>);
     <span class="keyword">else</span>
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Prosekot e %4.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, (<span class="predefined-type">float</span>)suma / broceni);
-    <span class="keyword">if</span> (padnal != <span class="integer">0</span>)
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Padnal na %d ispiti</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, padnal);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Average is %4.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, (<span class="predefined-type">float</span>)sum / num_grades);
+    <span class="keyword">if</span> (failed != <span class="integer">0</span>)
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Failed on %d exams</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, failed);
     <span class="keyword">else</span>
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Ne padnal na ispit</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">No failed exams</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение 2:</div>
+<div class="title">Solution 2</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> ocena, suma = <span class="integer">0</span>, broceni = <span class="integer">0</span>, padnal = <span class="integer">0</span>;
-    <span class="keyword">while</span> (scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;ocena) == <span class="integer">1</span>) {
-        <span class="keyword">switch</span> (ocena) {
+    <span class="predefined-type">int</span> grade, sum = <span class="integer">0</span>, num_grades = <span class="integer">0</span>, failed = <span class="integer">0</span>;
+    <span class="keyword">while</span> (scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;grade) == <span class="integer">1</span>) {
+        <span class="keyword">switch</span> (grade) {
             <span class="keyword">case</span> <span class="integer">6</span>:
             <span class="keyword">case</span> <span class="integer">7</span>:
             <span class="keyword">case</span> <span class="integer">8</span>:
             <span class="keyword">case</span> <span class="integer">9</span>:
-            <span class="keyword">case</span> <span class="integer">10</span>: suma += ocena;
-                     broceni++; <span class="keyword">break</span>;
-            <span class="keyword">case</span> <span class="integer">5</span>:  padnal++; <span class="keyword">break</span>;
-            <span class="keyword">default</span>: printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">vnesi ocena od 5 do 10 : </span><span class="delimiter">&quot;</span></span>); <span class="keyword">break</span>;
+            <span class="keyword">case</span> <span class="integer">10</span>: sum += grade;
+                     num_grades++; <span class="keyword">break</span>;
+            <span class="keyword">case</span> <span class="integer">5</span>:  failed++; <span class="keyword">break</span>;
+            <span class="keyword">default</span>: printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter grade from 5 to 10: </span><span class="delimiter">&quot;</span></span>); <span class="keyword">break</span>;
         }
     }
 
-    <span class="keyword">if</span> (broceni == <span class="integer">0</span>)
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Nema polozeni ispiti</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">if</span> (num_grades == <span class="integer">0</span>)
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">No passed exams</span><span class="delimiter">&quot;</span></span>);
     <span class="keyword">else</span>
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Prosekot e %4.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, (<span class="predefined-type">float</span>)suma / broceni);
-    <span class="keyword">if</span> (padnal != <span class="integer">0</span>)
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Padnal na %d ispiti</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, padnal);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Average is %4.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, (<span class="predefined-type">float</span>)sum / num_grades);
+    <span class="keyword">if</span> (failed != <span class="integer">0</span>)
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Failed on %d exams</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, failed);
     <span class="keyword">else</span>
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Ne padnal na ispit</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">No failed exams</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Пример-за-реализација-на-текст-мени">2.5. Пример за реализација на (текст) мени</h3>
+<h3 id="example-of-text-menu-command-line-interface-cli">2.5. Example of text menu (Command Line Interface - CLI)</h3>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Solution</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> vrednost, izbor;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesi pocetnа vrednost: </span><span class="delimiter">&quot;</span></span>);
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;vrednost);
+    <span class="predefined-type">int</span> value, choice;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter initial value: </span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;value);
 
     <span class="keyword">do</span> {
         <span class="keyword">do</span> {
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Meni:</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">1 - zgolemi</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">2 - namali</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">3 - dupliraj</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">0 - kraj</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">izbor : </span><span class="delimiter">&quot;</span></span>);
-            scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;izbor);
-        } <span class="keyword">while</span> ((izbor &lt; <span class="integer">0</span>) || (izbor &gt; <span class="integer">3</span>));
-                <span class="keyword">switch</span> (izbor) {
-                        <span class="keyword">case</span> <span class="integer">1</span>: vrednost++; <span class="keyword">break</span>;
-                        <span class="keyword">case</span> <span class="integer">2</span>: vrednost--; <span class="keyword">break</span>;
-                        <span class="keyword">case</span> <span class="integer">3</span>: vrednost *= <span class="integer">2</span>; <span class="keyword">break</span>;
-                        <span class="keyword">case</span> <span class="integer">0</span>: printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Kraj</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);            <span class="keyword">break</span>;
-                        <span class="keyword">default</span>: printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Nevaliden izbor!</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>); <span class="keyword">break</span>;
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Menu:</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">1 - increase</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">2 - decrease</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">3 - double</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">0 - END</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">choice : </span><span class="delimiter">&quot;</span></span>);
+            scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;choice);
+        } <span class="keyword">while</span> ((choice &lt; <span class="integer">0</span>) || (choice &gt; <span class="integer">3</span>));
+                <span class="keyword">switch</span> (choice) {
+                        <span class="keyword">case</span> <span class="integer">1</span>: value++; <span class="keyword">break</span>;
+                        <span class="keyword">case</span> <span class="integer">2</span>: value--; <span class="keyword">break</span>;
+                        <span class="keyword">case</span> <span class="integer">3</span>: value *= <span class="integer">2</span>; <span class="keyword">break</span>;
+                        <span class="keyword">case</span> <span class="integer">0</span>: printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">End</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);            <span class="keyword">break</span>;
+                        <span class="keyword">default</span>: printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Invalid choice!</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>); <span class="keyword">break</span>;
                         }
-                        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vrednost = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, vrednost);
+                        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">value = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, value);
           }
-          <span class="keyword">while</span> (izbor != <span class="integer">0</span>);
+          <span class="keyword">while</span> (choice != <span class="integer">0</span>);
   <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
@@ -1292,17 +1300,19 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect1">
-<h2 id="Задача-за-вежбање-1">3. Задача за вежбање 1</h2>
+<h2 id="practice-problems">3. Practice problems</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="practice-problem-1">3.1. Practice problem  1</h3>
 <div class="paragraph">
-<p>Нека \$x = sin y\$ се менува од <code>0.02</code> до <code>0.80</code> со чекор <code>0.01</code>.
-Да се напише програма што ќе го табелира <code>y</code> во форма степени, минути и секунди.</p>
+<p>Given \$x = sin y\$ with initial value <code>0.02</code> up to <code>0.80</code> with step <code>0.01</code>.
+Write a program that will print table of <code>y</code> in degrees, minutes and seconds.</p>
 </div>
 <div class="paragraph">
 <p>\$y=arctan(\frac{x}{\sqrt{1 - x^2}})\$</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Solution</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="comment">/* #define _USE_MATH_DEFINES */</span>
@@ -1310,7 +1320,7 @@ table.CodeRay td.code>pre{padding:0}
 <span class="predefined-type">int</span> main() {
     <span class="predefined-type">float</span> x, y;
     <span class="predefined-type">int</span> step, min, sec;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">  x</span><span class="char">\t</span><span class="content">stepeni</span><span class="char">\t</span><span class="content">minuti</span><span class="char">\t</span><span class="content">sekundi</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">  x</span><span class="char">\t</span><span class="content">degrees</span><span class="char">\t</span><span class="content">minutes</span><span class="char">\t</span><span class="content">seconds</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
     <span class="keyword">for</span> (x = <span class="float">0</span><span class="float">.02</span>; x &lt;= <span class="float">0</span><span class="float">.8</span>; x += <span class="float">0</span><span class="float">.01</span>) {
         y = <span class="integer">180</span>/M_PI * atan(x / sqrt(<span class="integer">1</span> - x*x));
         step = y;
@@ -1322,10 +1332,11 @@ table.CodeRay td.code>pre{padding:0}
 }</code></pre>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="Задача-за-вежбање-2">3.1. Задача за вежбање 2</h3>
+<h3 id="practice-problem-2">3.2. Practice problem 2</h3>
 <div class="paragraph">
-<p>Да се напише програма за приближно пресметување на \$\pi\$ според формулата за развој на <a href="https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80"><em>Gregory–Leibniz</em></a></p>
+<p>Write a program for computing approximation of \$\pi\$ using the series of <a href="https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80"><em>Gregory–Leibniz</em></a></p>
 </div>
 <div class="paragraph">
 <p>\$1 − \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} − \ldots= \frac{\pi}{4}\$</p>
@@ -1336,15 +1347,35 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>користејќи ги првите 100 члена.</p>
+<p>using the first 100 members.</p>
 </li>
 <li>
-<p>се додека апсолутната вредност на членот што се додава е поголема од 10-6</p>
+<p>until the absolute value of the member that is adding is less then 10e-6</p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
-<div class="title">Решение 1.1:</div>
+<div class="title">Solution 1.1</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+<span class="preprocessor">#include</span> <span class="include">&lt;math.h&gt;</span>
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">double</span> member = <span class="integer">1</span>, pi = <span class="integer">0</span>;
+    <span class="predefined-type">int</span> i, sign = <span class="integer">1</span>, divisor = <span class="integer">1</span>;
+    <span class="keyword">for</span>(i=<span class="integer">0</span>; i&lt;<span class="integer">100</span>; i++) {
+        pi += member;
+        divisor += <span class="integer">2</span>;
+        sign = -sign;
+        member = (<span class="predefined-type">double</span>)sign / divisor;
+    }
+    pi*=<span class="integer">4</span>;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">pi (approximate) = %lf</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, pi);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Solution 1.2</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="preprocessor">#include</span> <span class="include">&lt;math.h&gt;</span>
@@ -1364,27 +1395,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение 1.2:</div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-<span class="preprocessor">#include</span> <span class="include">&lt;math.h&gt;</span>
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">double</span> clen = <span class="integer">1</span>, pi = <span class="integer">0</span>;
-    <span class="predefined-type">int</span> i, znak = <span class="integer">1</span>, imenitel = <span class="integer">1</span>;
-    <span class="keyword">for</span>(i=<span class="integer">0</span>; i&lt;<span class="integer">100</span>; i++) {
-        pi += clen;
-        imenitel += <span class="integer">2</span>;
-        znak = -znak;
-        clen = (<span class="predefined-type">double</span>)znak / imenitel;
-    }
-    pi*=<span class="integer">4</span>;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">pi (priblizno) = %lf</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, pi);
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Решение 2:</div>
+<div class="title">Solution 2</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="preprocessor">#include</span> <span class="include">&lt;math.h&gt;</span>
@@ -1412,12 +1423,12 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-за-вежбање-3">3.2. Задача за вежбање 3</h3>
+<h3 id="practice-problem-3">3.3. Practice problem 3</h3>
 <div class="paragraph">
-<p>Да се напише програма за приближно пресметување на \$\pi\$ користејќи го изразот \$4*\pi=arctan(1)\$ и развојот на \$arctan\$ во ред.</p>
+<p>Write a program for approximate computation of \$\pi\$ using the expression \$4*\pi=arctan(1)\$ and continuation of \$arctan\$ into infinite series.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Solution</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="preprocessor">#include</span> <span class="include">&lt;math.h&gt;</span>
@@ -1451,21 +1462,21 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect1">
-<h2 id="Изворен-код-од-примери-и-задачи">4. Изворен код од примери и задачи</h2>
+<h2 id="source-code-of-the-examples-and-problems">4. Source code of the examples and problems</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://github.com/finki-mk/SP/" class="bare">https://github.com/finki-mk/SP/</a></p>
 </div>
 <div class="paragraph">
-<p><a href="https://finki-mk.github.io/SP/sources/sp_av5_src.zip">Source code ZIP</a></p>
+<p><a href="https://finki-mk.github.io/SP/sources/sp_av5_src_en.zip">Source code ZIP</a></p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Верзија 1.0<br>
-Last updated 2016-10-11 15:59:35 +02:00
+Version 1.0<br>
+Last updated 2016-10-11 16:35:13 +02:00
 </div>
 </div>
 <script type="text/x-mathjax-config">

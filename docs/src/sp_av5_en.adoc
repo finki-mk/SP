@@ -1,0 +1,323 @@
+# Structured programming
+Exercises 5
+v1.0, 10 October, 2016
+include::parts/attributes_en.adoc[]
+
+:source_dir: ../../src/av5
+== Loop structures `for`, `while`, `do-while`
+
+=== Problem 1a
+
+Write a program that computes the sum of all even two-digit numbers. 
+Print the result on standard output.
+
+.Solution
+[source,c]
+----
+include::{source_dir}/p5_1a_en.c[]
+----
+
+=== Problem 1b
+
+Write a program that computes the sum of all odd two-digit numbers. 
+Print the result on standard output in the following format: 
+
+----
+11 + 13 + 15 + 17 + ... + 97 + 99 = 2475
+----
+
+NOTE: The program should be written without using `if`
+
+.Solution 1
+[source,c]
+----
+include::{source_dir}/p5_1b1_en.c[]
+----
+
+
+.Solution 2
+[source,c]
+----
+include::{source_dir}/p5_1b2.c[]
+----
+
+=== Problem 2
+
+Write a program that computes на stem:[y = x^n] for given natural number n, n >= 1 and real number x.
+
+.Solution 1
+[source,c]
+----
+include::{source_dir}/p5_2a_en.c[]
+----
+
+.Solution 2
+[source,c]
+----
+include::{source_dir}/p5_2b_en.c[]
+----
+
+.Solution 3
+[source,c]
+----
+include::{source_dir}/p5_2c_en.c[]
+----
+
+.Solution 4
+[source,c]
+----
+include::{source_dir}/p5_2d_en.c[]
+----
+
+=== Problem 3
+
+Write a program that for n numbers read from SI will count the numbers divisible by 3, have residue 1, and have residue 2.
+
+NOTE: Solve the problem using `while`, `do...while` and `for`
+
+.Solution with `while`:
+
+[source,c]
+----
+include::{source_dir}/p5_3a_en.c[]
+----
+
+.Solution with `do... while`:
+
+[source,c]
+----
+include::{source_dir}/p5_3b_en.c[]
+----
+
+.Solution with `for`
+
+[source,c]
+----
+include::{source_dir}/p5_3c_en.c[]
+----
+
+=== Problem 4 
+
+Write a program that will print all 4-digit numbers in which the sum of the three least significant digits is equal to the most significant digit.
+
+TIP: 4031 (4=0+3+1), 5131 (5=1+3+1)
+
+
+.Solution
+[source,c]
+----
+include::{source_dir}/p5_4_en.c[]
+----
+
+=== Problem 5
+
+Write a program that will print all numbers in given range which are read the same from left to right and opposite.
+
+.example 
+`12345` -> `54321`
+
+.Solution
+[source,c]
+----
+include::{source_dir}/p5_5_en.c[]
+----
+
+=== Problem 6
+
+Write a program that for unknown count of integers read from SI will find the number with maximum value. 
+The program stops when the reading of integer fails.
+
+.Solution
+[source,c]
+----
+include::{source_dir}/p5_6_en.c[]
+----
+
+=== Problem 7
+
+Write a program that for unknown count of integers read from SI will find the number with maximum value. 
+Numbers larger than 100 should be ignored. 
+The program stops when the reading of integer fails.
+
+.Solution
+[source,c]
+----
+include::{source_dir}/p5_7_en.c[]
+----
+
+=== Problem 8
+
+Write a program that for unknown count of integers read from SI will find the two with maximum values.
+
+.example
+For the numbers 2 4 7 4 2 1 8 6 9 7 10 3 the program should print 10 and 9.
+
+.Solution
+[source,c]
+----
+include::{source_dir}/p5_8_en.c[]
+----
+
+=== Problem 9
+
+Write a program that for N integers read from SI will the difference of the sums of numbers on odd and even positions (by the order of reading). 
+If this difference is less than 10 print the message `"The two sums are close"` else print `"The two sums are far"`.
+
+.example
+For numbers:
+
+_2_ *4* _3_ *4* _2_ *1* _1_ *6* _1_ *7*
+
+_sum_odd_positions_ = 9
+
+*sum_even_positions* = 22
+
+Will print: 
+----
+The two sums are far
+----
+
+
+.Solution
+[source,c]
+----
+include::{source_dir}/p5_9_en.c[]
+----
+
+=== Problem 10
+
+Write a program that for unknown count of integers read from SI will find the positions of the successive numbers with maximum sum. 
+The program stops when two successive read numbers are negative.
+
+.Solution
+[source,c]
+----
+include::{source_dir}/p5_10_en.c[]
+----
+
+== The `switch` expression
+
+=== Example
+
+[source,c]
+----
+include::{source_dir}/ex5_1_en.c[]
+----
+
+=== Problem 1
+
+Write a program that for a read character from SI will print if it is a vowel, digit or something else.
+
+.Solution
+[source,c]
+----
+include::{source_dir}/p5_11_en.c[]
+----
+
+
+=== Problem 2
+
+Write a program for simple calculator. 
+The program should read two numbers and operator in the following format:
+
+----
+num1 operator num2
+----
+
+After the operation depending on the sign, the result is printed in the following format:
+
+----
+num1 operator num2 = result
+----
+
+.Solution
+[source,c]
+----
+include::{source_dir}/p5_12_en.c[]
+----
+
+=== Problem 3
+
+Write a program that will compute the average of a student, and the number of failed exams.
+The number of taken exams by the student is not known.
+
+.Solution 1
+[source,c]
+----
+include::{source_dir}/p5_13a_en.c[]
+----
+
+
+.Solution 2
+[source,c]
+----
+include::{source_dir}/p5_13b_en.c[]
+----
+
+
+=== Example of text menu (Command Line Interface - CLI)
+
+.Solution
+[source,c]
+----
+include::{source_dir}/ex5_2_en.c[]
+----
+
+== Practice problems
+
+=== Practice problem  1
+
+Given stem:[x = sin y] with initial value `0.02` up to `0.80` with step `0.01`.
+Write a program that will print table of `y` in degrees, minutes and seconds.
+
+stem:[y=arctan(\frac{x}{\sqrt{1 - x^2}})]
+
+.Solution
+[source,c]
+----
+include::{source_dir}/p5_14_en.c[]
+----
+
+=== Practice problem 2
+
+Write a program for computing approximation of stem:[\pi] using the series of https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80[_Gregory–Leibniz_]
+
+stem:[1 − \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} − \ldots= \frac{\pi}{4}]
+
+stem:[\sum_{n=0}^{\infty}\frac{(-1)^n}{2n + 1} = \frac{\pi}{4}]
+
+* using the first 100 members.
+* until the absolute value of the member that is adding is less then 10e-6
+
+
+.Solution 1.1
+[source,c]
+----
+include::{source_dir}/p5_15a_en.c[]
+----
+
+.Solution 1.2
+[source,c]
+----
+include::{source_dir}/p5_15b.c[]
+----
+
+.Solution 2
+[source,c]
+----
+include::{source_dir}/p5_15c.c[]
+----
+
+=== Practice problem 3
+
+Write a program for approximate computation of stem:[\pi] using the expression stem:[4*\pi=arctan(1)] and continuation of stem:[arctan] into infinite series.
+
+.Solution
+[source,c]
+----
+include::{source_dir}/p5_16.c[]
+----
+
+include::parts/footer_en.adoc[]
+
+link:{sources_zip}/sp_av5_src_en.zip[Source code ZIP]

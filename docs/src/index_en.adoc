@@ -20,3 +20,7 @@ link:sp_av3_en.html[HTML] | link:{pdf_source}/sp_av3_en.pdf[PDF] | link:{sources
 == Exercise 4
 
 link:sp_av4_en.html[HTML] | link:{pdf_source}/sp_av4_en.pdf[PDF] | link:{sources_zip}/sp_av4_src_en.zip[Source code ZIP]
+
+== Exercise 5
+
+link:sp_av5_en.html[HTML] | link:{pdf_source}/sp_av5_en.pdf[PDF] | link:{sources_zip}/sp_av5_src_en.zip[Source code ZIP]

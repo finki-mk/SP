@@ -573,6 +573,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="sect2">
 <h3 id="Што-ќе-отпечати">1.2. Што ќе отпечати?</h3>
 <div class="listingblock">
+<div class="title">Пример <code>ex4_1.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
@@ -603,7 +604,7 @@ table.CodeRay td.code>pre{padding:0}
 <p>Да се напише програма со која ќе се отпечати максимумот од два броја чии вредности се читаат од тастатура.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Решение <code>p4_1a.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
@@ -620,7 +621,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение в2 – без if-else:</div>
+<div class="title">Решение в2 – без if-else <code>p4_1b.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
@@ -655,7 +656,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Решение <code>p4_2.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
@@ -683,7 +684,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Решение <code>p4_3a.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
@@ -707,26 +708,25 @@ table.CodeRay td.code>pre{padding:0}
 <div class="content">
 <img src="./images/im3.jpg" alt="kvadranti">
 </div>
-<div class="title">Слика 1. Решение в2:</div>
 </div>
 <div class="listingblock">
+<div class="title">Решение в2 <code>p4_3b.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
-        <span class="predefined-type">float</span> x, y;
-        printf (<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesi koordinati </span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-        scanf (<span class="string"><span class="delimiter">&quot;</span><span class="content">%f %f</span><span class="delimiter">&quot;</span></span>, &amp;x, &amp;y);
-        <span class="keyword">if</span> (x &gt; <span class="integer">0</span>)
-                <span class="keyword">if</span> (y &gt; <span class="integer">0</span>)
-                        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">I kvadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-                <span class="keyword">else</span>
-                        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">IV kvadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">float</span> x, y;
+    printf (<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesi koordinati </span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    scanf (<span class="string"><span class="delimiter">&quot;</span><span class="content">%f %f</span><span class="delimiter">&quot;</span></span>, &amp;x, &amp;y);
+    <span class="keyword">if</span> (x &gt; <span class="integer">0</span>)
+        <span class="keyword">if</span> (y &gt; <span class="integer">0</span>)
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">I kvadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
         <span class="keyword">else</span>
-                <span class="keyword">if</span> (y &gt; <span class="integer">0</span>)
-                        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">II kvadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-                <span class="keyword">else</span>
-                        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">III kvadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-        <span class="keyword">return</span> <span class="integer">0</span>;
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">IV kvadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">else</span> <span class="keyword">if</span> (y &gt; <span class="integer">0</span>)
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">II kvadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">else</span>
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">III kvadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
 </div>
@@ -741,7 +741,7 @@ table.CodeRay td.code>pre{padding:0}
 </ol>
 </div>
 <div class="listingblock">
-<div class="title">Решение в3:</div>
+<div class="title">Решение в3 <code>p4_3c.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
@@ -818,7 +818,7 @@ table.CodeRay td.code>pre{padding:0}
 </tbody>
 </table>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Решение <code>p4_4a.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
@@ -838,7 +838,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение в2:</div>
+<div class="title">Решение в2 <code>p4_4b.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
@@ -914,7 +914,7 @@ table.CodeRay td.code>pre{padding:0}
 </table>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Решение <code>p4_5.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
@@ -951,7 +951,7 @@ table.CodeRay td.code>pre{padding:0}
 <p>Од тастатура се внесуваат должини на три отсечки во произволен редослед. Да се напише програма што ќе провери дали од отсечките може да се конструира триаголник, при што ако може, треба да се провери дали истиот е правоаголен и да се пресмета неговата плоштина. Во спротивно, треба да се испечатат соодветни пораки.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Решение <code>p4_6.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
@@ -995,7 +995,7 @@ table.CodeRay td.code>pre{padding:0}
 <p>Од тастатура се внесуваат должини на три отсечки во произволен редослед. Да се провери дали од дадените отсечки може да се конструра триаголник. Ако може, да се испечати дали триаголникот е разностран, равностарн или разнокрак и да му се пресмета плоштината.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение:</div>
+<div class="title">Решение <code>p4_7.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="preprocessor">#include</span> <span class="include">&lt;math.h&gt;</span>
@@ -1056,7 +1056,7 @@ table.CodeRay td.code>pre{padding:0}
 <div id="footer">
 <div id="footer-text">
 Верзија 1.0<br>
-Last updated 2016-10-10 16:57:17 +02:00
+Last updated 2016-10-13 11:27:44 +02:00
 </div>
 </div>
 <script type="text/x-mathjax-config">

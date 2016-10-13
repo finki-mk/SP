@@ -573,6 +573,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="sect2">
 <h3 id="what-will-be-the-output">1.2. What will be the output?</h3>
 <div class="listingblock">
+<div class="title">Example <code>ex4_1_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
@@ -603,7 +604,7 @@ table.CodeRay td.code>pre{padding:0}
 <p>Write a program that will print the maximum of two number read from SI.</p>
 </div>
 <div class="listingblock">
-<div class="title">Solution:</div>
+<div class="title">Solution <code>p4_1a.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
@@ -620,7 +621,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Solution b2 – without if-else:</div>
+<div class="title">Solution b – without if-else <code>p4_1b.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
@@ -655,18 +656,19 @@ The year is leap is divisible by 4 and not divisible by 100, or divisible by 400
 </table>
 </div>
 <div class="listingblock">
-<div class="title">Solution:</div>
+<div class="title">Solution <code>p4_2_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
 <span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> godina;
-    printf (<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesi godina: </span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-    scanf (<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;godina);
-    <span class="keyword">if</span> ((godina % <span class="integer">4</span> == <span class="integer">0</span> &amp;&amp; godina % <span class="integer">100</span> != <span class="integer">0</span>) || godina % <span class="integer">400</span> == <span class="integer">0</span>)
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d e prestapna.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, godina);
-    <span class="keyword">else</span>
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d e prosta.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, godina);
+    <span class="predefined-type">int</span> year;
+    printf (<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter year: </span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;year);
+    <span class="keyword">if</span> ((year % <span class="integer">4</span> == <span class="integer">0</span> &amp;&amp; year % <span class="integer">100</span> != <span class="integer">0</span>) || year % <span class="integer">400</span> == <span class="integer">0</span>) {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d is leap.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, year);
+    } <span class="keyword">else</span> {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d is not leap.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, year);
+    }
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
@@ -685,7 +687,7 @@ If the point lays on the origin, print out a appropriate message.</p>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Solution (a):</div>
+<div class="title">Solution (a) <code>p4_3a_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
@@ -709,25 +711,25 @@ If the point lays on the origin, print out a appropriate message.</p>
 <div class="content">
 <img src="./images/im3.jpg" alt="kvadranti">
 </div>
-<div class="title">Figure 1. Solution (b):</div>
+<div class="title">Figure 1. Solution (b) <code>p4_3b_en.c</code></div>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
-        <span class="predefined-type">float</span> x, y;
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter coordinates </span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-        scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%f %f</span><span class="delimiter">&quot;</span></span>, &amp;x, &amp;y);
-        <span class="keyword">if</span> (x &gt; <span class="integer">0</span>)
-                <span class="keyword">if</span> (y &gt; <span class="integer">0</span>)
-                        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">I quadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-                <span class="keyword">else</span>
-                        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">IV quadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-        <span class="keyword">else</span> <span class="keyword">if</span> (y &gt; <span class="integer">0</span>)
-                printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">II quadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">float</span> x, y;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter coordinates </span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%f %f</span><span class="delimiter">&quot;</span></span>, &amp;x, &amp;y);
+    <span class="keyword">if</span> (x &gt; <span class="integer">0</span>)
+        <span class="keyword">if</span> (y &gt; <span class="integer">0</span>)
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">I quadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
         <span class="keyword">else</span>
-                printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">III quadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-        <span class="keyword">return</span> <span class="integer">0</span>;
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">IV quadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">else</span> <span class="keyword">if</span> (y &gt; <span class="integer">0</span>)
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">II quadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">else</span>
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">III quadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
 </div>
@@ -742,34 +744,33 @@ If the point lays on the origin, print out a appropriate message.</p>
 </ol>
 </div>
 <div class="listingblock">
-<div class="title">Solution (c):</div>
+<div class="title">Solution (c) <code>p4_3c_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main () {
     <span class="predefined-type">float</span> x, y;
-    printf (<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesi koordinati </span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    printf (<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter coordinates </span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
     scanf (<span class="string"><span class="delimiter">&quot;</span><span class="content">%f %f</span><span class="delimiter">&quot;</span></span>, &amp;x, &amp;y);
     <span class="keyword">if</span> (x &gt; <span class="integer">0</span>)
         <span class="keyword">if</span> (y &gt; <span class="integer">0</span>)
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">I kvadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">I quadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
         <span class="keyword">else</span> <span class="keyword">if</span> (y &lt; <span class="integer">0</span>)
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">IV kvadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">IV quadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
         <span class="keyword">else</span>
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Pozitivna X oska.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Positive X axis.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
     <span class="keyword">else</span> <span class="keyword">if</span> (x &lt; <span class="integer">0</span>)
         <span class="keyword">if</span> (y &gt; <span class="integer">0</span>)
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">II kvadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">II quadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
         <span class="keyword">else</span> <span class="keyword">if</span> (y &lt; <span class="integer">0</span>)
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">III kvadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">III quadrant.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
         <span class="keyword">else</span>
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Negativna X oska.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Negative X axis.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">else</span> <span class="keyword">if</span> (y &gt; <span class="integer">0</span>)
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Positive Y axis.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">else</span> <span class="keyword">if</span> (y &lt; <span class="integer">0</span>)
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Negative Y oska.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
     <span class="keyword">else</span>
-        <span class="keyword">if</span> (y &gt; <span class="integer">0</span>)
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Pozitivna Y oska.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-        <span class="keyword">else</span> <span class="keyword">if</span> (y &lt; <span class="integer">0</span>)
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Negativna Y oska.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-        <span class="keyword">else</span>
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Koordinaten pocetok.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Origin.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
@@ -819,7 +820,7 @@ If the point lays on the origin, print out a appropriate message.</p>
 </tbody>
 </table>
 <div class="listingblock">
-<div class="title">Solution (a)</div>
+<div class="title">Solution (a) <code>p4_4a_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
@@ -840,7 +841,7 @@ If the point lays on the origin, print out a appropriate message.</p>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Solution (b)</div>
+<div class="title">Solution (b) <code>p4_4b_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
@@ -916,7 +917,7 @@ For grade 5 doesn&#8217;t add + or –, and for grade 10 should not add +.
 </table>
 </div>
 <div class="listingblock">
-<div class="title">Solution:</div>
+<div class="title">Solution <code>p4_5_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
@@ -956,7 +957,7 @@ Write a program that will check if triangle can be constructed from given length
 On contrary, appropriate messages should be printed.</p>
 </div>
 <div class="listingblock">
-<div class="title">Solution:</div>
+<div class="title">Solution <code>p4_6_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
@@ -1013,7 +1014,7 @@ The program reads two numbers and operator in format:</p>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Solution:</div>
+<div class="title">Solution <code>p4_7_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="predefined-type">int</span> main() {
@@ -1084,7 +1085,7 @@ The program reads two numbers and operator in format:</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2016-10-10 16:57:48 +02:00
+Last updated 2016-10-13 11:31:04 +02:00
 </div>
 </div>
 <script type="text/x-mathjax-config">

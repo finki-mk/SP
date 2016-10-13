@@ -23,6 +23,7 @@ else {
 
 === What will be the output?
 
+.Example `ex4_1_en.c`
 [source,c]
 ----
 include::{source_dir}/ex4_1_en.c[]
@@ -38,14 +39,13 @@ m = 5, n = 11
 
 Write a program that will print the maximum of two number read from SI.
 
-.Solution:
+.Solution `p4_1a.c`
 [source,c]
 ----
 include::{source_dir}/p4_1a.c[]
 ----
 
-.Solution b2 – without if-else:
-
+.Solution b – without if-else `p4_1b.c`
 [source,c]
 ----
 include::{source_dir}/p4_1b.c[]
@@ -60,10 +60,10 @@ Write a program that checks if given year read from SI is leap or not and prints
 
 TIP: The year is leap is divisible by 4 and not divisible by 100, or divisible by 400
 
-.Solution:
+.Solution `p4_2_en.c`
 [source,c]
 ----
-include::{source_dir}/p4_2.c[]
+include::{source_dir}/p4_2_en.c[]
 ----
 
 === Problem 3
@@ -74,13 +74,13 @@ If the point lays on the origin, print out a appropriate message.
 
 image::im2.jpg[kvadranti]
 
-.Solution (a):
+.Solution (a) `p4_3a_en.c`
 [source,c]
 ----
 include::{source_dir}/p4_3a_en.c[]
 ----
 
-.Solution (b): 
+.Solution (b) `p4_3b_en.c`
 image::im3.jpg[kvadranti]
 
 [source,c]
@@ -94,10 +94,10 @@ include::{source_dir}/p4_3b_en.c[]
 . _Will it print anything for any given point?_   
 
 
-.Solution (c):
+.Solution (c) `p4_3c_en.c`
 [source,c]
 ----
-include::{source_dir}/p4_3c.c[]
+include::{source_dir}/p4_3c_en.c[]
 ----
 
 === Problem 4 
@@ -115,13 +115,13 @@ Write a program that will generate and print the grade according to the followin
 | `91-100`  | 10
 |===
 
-.Solution (a)
+.Solution (a) `p4_4a_en.c`
 [source,c]
 ----
 include::{source_dir}/p4_4a_en.c[]
 ----
 
-.Solution (b)
+.Solution (b) `p4_4b_en.c`
 [source,c]
 ----
 include::{source_dir}/p4_4b_en.c[]
@@ -148,7 +148,7 @@ Change the previous program, so the sign of the number should be printed (+/-) d
 
 NOTE: For grade 5 doesn't add + or –, and for grade 10 should not add +.
 
-.Solution:
+.Solution `p4_5_en.c`
 [source,c]
 ----
 include::{source_dir}/p4_5_en.c[]
@@ -161,7 +161,7 @@ The numbers are lengths of triangle sides.
 Write a program that will check if triangle can be constructed from given lengths, if so, then should check if the triangle is right triangle and compute its area.
 On contrary, appropriate messages should be printed.
 
-.Solution:
+.Solution `p4_6_en.c`
 [source,c]
 ----
 include::{source_dir}/p4_6_en.c[]
@@ -180,7 +180,7 @@ After the operation, depending on the operator, the result should be printed in 
 num1 operator num2 = result
 ----
 
-.Solution:
+.Solution `p4_7_en.c`
 [source,c]
 ----
 include::{source_dir}/p4_7_en.c[]

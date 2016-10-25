@@ -1,0 +1,101 @@
+# Structured programming
+Exercises 6
+v1.0, 25 October, 2016
+include::parts/attributes_en.adoc[]
+
+:source_dir: ../../src/av6
+== Arrays `[]`
+
+=== Declaring arrays
+
+[source,c]
+----
+type variable_name[SIZE];
+
+int a[10];
+float x[99];
+char c[5];
+----
+
+=== Accessing array element
+
+[source,c]
+----
+array[element_index];
+
+int a[10];
+a[0] = 1; // assigning value 1 of the first element
+printf("%d", a[9]); // printing the value of the last element
+----
+
+== Problems
+
+=== Problem 1
+
+Write a program that for two arrays read from SI will check if they are equal. 
+Print out the result from the comparison.
+The maximum size of arrays is 100.
+
+.Solution `p6_1_en.c`
+[source,c]
+----
+include::{source_dir}/p6_1_en.c[]
+----
+
+=== Problem 2
+
+Write a program that for an array read from SI, will compute the sum of even elements, the sum of odd elements and will compute the ratio even/odd.
+
+.Example
+For array:
+`3 2 7 6 2 5 1`
+The program should print:
+----
+Sum even: 8
+Sum odds: 16
+Ratio: 0.75
+----
+
+.Solution `p6_2_en.c`
+[source,c]
+----
+include::{source_dir}/p6_2_en.c[]
+----
+
+=== Problem 3
+
+Write a program that will compute the scalar product of two vectors with `n` coordinates. 
+The number of coordinates `n` and the coordinates are read from SI. 
+Print the result on the SO.
+
+.Solution `p6_3_en.c`
+[source,c]
+----
+include::{source_dir}/p6_3_en.c[]
+----
+
+=== Problem 4
+
+Write a program that will check if a given array with `n` elements read from SI is ascending, descending or neither. 
+Print the result.
+
+.Solution `p6_4_en.c`
+[source,c]
+----
+include::{source_dir}/p6_4_en.c[]
+----
+
+=== Problem 5
+
+Write a program that will remove duplicate from an array. 
+After the transformation print the array.
+
+.Solution `p6_5_en.c`
+[source,c]
+----
+include::{source_dir}/p6_5_en.c[]
+----
+
+include::parts/footer_en.adoc[]
+
+link:{sources_zip}/sp_av6_src_en.zip[Source code ZIP]

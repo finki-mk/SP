@@ -14,8 +14,8 @@ int main() {
             sumPar += a[i];
         }
     }
-    printf("Sum of odd elements: %d\nSum of even elements: %d\n", sumPar, sumNep);
-    printf("The ratio is %.2f\n", (float)brPar / brNep);
+    printf("Suma parni: %d\nSuma neparni: %d\n", sumPar, sumNep);
+    printf("Odnos: %.2f\n", (float)brPar / brNep);
     return 0;
 }
 

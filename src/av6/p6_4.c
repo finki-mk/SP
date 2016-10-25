@@ -19,11 +19,11 @@ int main() {
         }
     }
     if (!opagacka && !rastecka)
-        printf("Array is not increasing and not decreasing\n");
+        printf("Nizata ne e nitu rastechka nitu opagjachka\n");
     else if (opagacka)
-        printf("Array is decreasing\n");
+        printf("Nizata e opagjachka\n");
     else if (rastecka)
-        printf("Array is increasing\n");
+        printf("Nizata e rastechka\n");
     return 0;
 }
 

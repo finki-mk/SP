@@ -1,15 +1,21 @@
 #include <stdio.h>
+#define _USE_MATH_DEFINES
 #include <math.h>
 int main() {
-    double member = 1, pi = 0;
-    int i, sign = 1, divisor = 1;
-    for(i = 0; i < 100; i++) {
+    double pi = 0, sign = 4, member = sign;
+    int denominator = 1;
+    do {
         pi += member;
-        divisor += 2;
+        denominator += 2;
         sign = -sign;
-        member = (double)sign / divisor;
-    }
-    pi *= 4;
-    printf("pi (approximate) = %lf\n", pi);
+        member = sign / denominator;
+    } while (fabs(member) > 1e-6);
+
+    /*  pi = member;
+        while (fabs(member) > 1e-6)
+            pi += member = ((sign*=-1) / (denominator+=2));*/
+
+    printf("pi (aproximate) = %10.8lf \t pi = %10.8lf\n", pi, M_PI);
+
     return 0;
 }

@@ -1,13 +1,14 @@
 #include <stdio.h>
+#define _USE_MATH_DEFINES
 #include <math.h>
 int main() {
     double member = 1, pi = 0;
-    int i, sign = 1, divisor = 1;
+    int i, sign = 1, denominator = 1;
     for(i=0; i<100; i++) {
         pi += member;
-        divisor += 2;
+        denominator += 2;
         sign = -sign;
-        member = (double)sign / divisor;
+        member = (double)sign / denominator;
     }
     pi*=4;
     printf("pi (approximate) = %lf\n", pi);

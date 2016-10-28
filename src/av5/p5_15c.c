@@ -1,22 +1,24 @@
-#include <stdio.h> 
+#include <stdio.h>
+#define _USE_MATH_DEFINES
 #include <math.h>
-int main() 
-{
-    double pi = 0, znak = 4, clen = znak;
-    int imenitel = 1;
-    do
-    {
-        pi += clen;
-        imenitel += 2;
-        znak = -znak;
-        clen = znak / imenitel;
-    } while (fabs(clen) > 1e-6); 
+int main() {
+	int faktori = 1, faktorb = 1;
+	double pi = 1, clen = 1;
+	/* vo ciklusot se presmetuva pi/2 */
+	do {
+		faktori += 2;
+		clen *= (double)faktorb / faktori;
+		faktorb++;
+		pi += clen;
+	} while (clen > 1e-6);
 
-/*    pi = clen;
-    while (fabs(clen) > 1e-6) 
-        pi += clen = ((znak*=-1) / (imenitel+=2));*/
 
-    printf("pi (priblizno) = %10.8lf \t pi = %10.8lf\n", pi, M_PI);
+/*	do
+		pi += clen*= (double)faktorb++ / (faktori+=2);
+	while (clen > 1e-6); */
 
-    return 0;
+	pi *= 2;
+	printf("pi (priblizno) = %10.8lf \t pi = %10.8lf\n", pi, M_PI);
+
+	return 0;
 }

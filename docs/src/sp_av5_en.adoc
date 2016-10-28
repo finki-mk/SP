@@ -113,8 +113,8 @@ include::{source_dir}/p5_4_en.c[]
 
 Write a program that will print all numbers in given range which are read the same from left to right and opposite.
 
-.example 
-`12345` -> `54321`
+.example numbers
+`12321 5061605`
 
 .Solution
 [source,c]

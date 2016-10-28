@@ -1,15 +1,21 @@
-#include <stdio.h> 
+#include <stdio.h>
+#define _USE_MATH_DEFINES
 #include <math.h>
 int main() {
-    double clen = 1, pi = 0;
-    int i, znak = 1, imenitel = 1;
-    for(i=0; i<100; i++) {
+    double pi = 0, znak = 4, clen = znak;
+    int imenitel = 1;
+    do {
         pi += clen;
         imenitel += 2;
         znak = -znak;
-        clen = (double)znak / imenitel;
-    }
-    pi*=4;
-    printf("pi (priblizno) = %lf\n", pi);
+        clen = znak / imenitel;
+    } while (fabs(clen) > 1e-6);
+
+    /*  pi = clen;
+        while (fabs(clen) > 1e-6)
+            pi += clen = ((znak*=-1) / (imenitel+=2));*/
+
+    printf("pi (priblizno) = %10.8lf \t pi = %10.8lf\n", pi, M_PI);
+
     return 0;
 }

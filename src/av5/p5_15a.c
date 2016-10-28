@@ -1,4 +1,5 @@
-#include <stdio.h> 
+#include <stdio.h>
+#define _USE_MATH_DEFINES
 #include <math.h>
 int main() {
     double clen = 1, pi = 0;

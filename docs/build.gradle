@@ -67,9 +67,17 @@ task srcZipEn
     }
     srcZipEn.dependsOn "srcZipEn${id}"
 }
+task "kol_zip"(type: Zip) {
+    from('../src/kol')
+    excludes = ["*.out"]
+    archiveName = "sp_kol_src.zip"
+    destinationDir = file('./sources')
+}
+
 boolean isValidFile(def name) {
     return name.endsWith('.adoc') && !name.contains('footer') && !name.contains('attributes')
 }
+
 fileTree("src")
         .filter {
     it.isFile() && isValidFile(it.name)

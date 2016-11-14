@@ -17,14 +17,14 @@ include::parts/attributes.adoc[]
 
 .Пример:
 ----
-	Влез:		Излез:
-	5		
-	1 2 3		Ne moze 
-	3 4 5		Moze
-	5 12 13		Moze
-	50 53 1		Ne moze
-	16 12 20	Moze
-			    Najgolem perimetar: 48, reden broj 5
+Влез:		Излез:
+5		
+1 2 3    Ne moze
+3 4 5    Moze
+5 12 13  Moze
+50 53 1  Ne moze
+16 12 20 Moze
+Najgolem perimetar: 48, reden broj 5
 ----
 
 .Решение `p_kol1_1.c`

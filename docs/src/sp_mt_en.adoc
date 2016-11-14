@@ -1,325 +1,77 @@
-# Структурно програмирање
-Аудиториски вежби 5
-v1.0, 10 Октомври, 2016
-include::parts/attributes.adoc[]
+# Structured programming
+Example midterm problems
+v1.0, 3 November, 2016
+include::parts/attributes_en.adoc[]
 
-:source_dir: ../../src/av5
-== Контролни структури за циклуси
+:source_dir: ../../src/mt
+== Problems
 
-=== Задача 1а
+=== Easy problem
 
-Да се напише програма за пресметување на сумата на сите парни двоцифрени броеви. Добиената сума се печати на екран.
+Write a program that will read characters from SI while the character `.` is read. 
+Than the program should print on the standard output the character with most consecutive occurrences. 
+If there are more characters with same number of consecutive occurrences print the first of them.
 
-.Решение:
+.Example
+
+----
+Input:
+thiiis shooould beeeeee an easy problem
+Output:
+e 18
+----
+
+=== Cyclic numbers
+
+A whole number is "cyclic" if for each of the digits of the number the following rules apply:
+
+* the two neighboring digits (left and right of the digit) are bigger than the digit;
+or
+* the two neighboring digits (left and right of the digit) are smaller than the digit
+* if the digit does not have two neighboring digits (i.e. it is the most significant or least significant digit) than it is not checked for the rule (left out)
+
+From SI read unknown number of integers (until there is something that can not be interpreted as a integers). 
+From all integers entered from SI print out and count only the cyclic numbers.
+
+_Explanation_:
+----
+3241 is a number with cyclic digits ( 3 > 2 < 4 > 1)
+121435 is a number with cyclic digits ( 1 < 2 > 1 < 4 > 3 < 5)
+565794 - is NOT a number with cyclic digits (5 < 6 > 5 < 7 < 9 > 4)
+32112 - is NOT a number with cyclic digits (3 > 2 > 1 = 1 < 2 )
+----
+
+WARNING: Arrays are not allowed! Solve the problem without using arrays.
+
+.Solution `p1_mt1.c`
 [source,c]
 ----
-include::{source_dir}/p5_1a.c[]
+include::{source_dir}/p1_mt1.c[]
 ----
+=== Consecutive pairs with m digits
 
-=== Задача 1б
+Read from SI an integer m, and then unknown number of integers.
+Print the lengths of the sequences containing at least two consecutive integers such as:
 
-Да се напише програма за пресметување на сумата на сите непарни двоцифрени броеви. Програмата ја печати сумата на екран во следниот формат: 
+* next number is greater then the previous
+* each number is composed of m digits.
 
+NOTE: _The problem should be solved without using arrays._
+
+.Example
 ----
-11 + 13 + 15 + 17 + ... + 97 + 99 = 2475
-----
+Input:
+3 45 456 567 784 67890 12 543 321 462 2 23 34 567 765 898 975
+Output:
+3 2 4
+----            
 
-NOTE: Програмата да се реши без користење на наредбата `if`
-
-.Решение 1:
+.Solution `p2_mt1.c`:
 [source,c]
 ----
-include::{source_dir}/p5_1b1.c[]
+include::{source_dir}/p2_mt1.c[]
 ----
 
+include::parts/footer_en.adoc[]
 
-.Решение 2:
-[source,c]
-----
-include::{source_dir}/p5_1b2.c[]
-----
-
-=== Задача 2
-
-Да се напише програма за пресметување на stem:[y = x^n] за даден природен број n, n >= 1 и реален број x.
-
-.Решение 1:
-[source,c]
-----
-include::{source_dir}/p5_2a.c[]
-----
-
-.Решение 2:
-[source,c]
-----
-include::{source_dir}/p5_2b.c[]
-----
-
-.Решение 3:
-[source,c]
-----
-include::{source_dir}/p5_2c.c[]
-----
-
-.Решение 4:
-[source,c]
-----
-include::{source_dir}/p5_2d.c[]
-----
-
-=== Задача 3
-
-Да се напише програма што од n броеви (внесени од тастатура) ќе го определи бројот на броеви што се деливи со 3, при делењето со 3 имаат остаток 1, односно 2.
-
-NOTE: Задачата да се реши со `while, do...while` и `for`
-
-.Решение со `while`:
-
-[source,c]
-----
-include::{source_dir}/p5_3a.c[]
-----
-
-.Решение со `do... while`:
-
-[source,c]
-----
-include::{source_dir}/p5_3b.c[]
-----
-
-.Решение со `for`:
-
-[source,c]
-----
-include::{source_dir}/p5_3c.c[]
-----
-
-=== Задача 4 
-
-Да се напише програма што на екран ќе ги испечати сите четири-цифрени броеви кај кои збирот на трите најмалку значајни цифри е еднаков со најзначајната цифра.
-
-TIP: 4031 (4=0+3+1), 5131 (5=1+3+1)
-
-
-.Решение:
-[source,c]
-----
-include::{source_dir}/p5_4.c[]
-----
-
-=== Задача 5
-
-Да се напише програма што ќе ги испечати сите броеви од зададен опсег кои се читаат исто и одлево надесно и оддесно налево.
-
-.пример броеви
-`12321 5061605`
-
-.Решение:
-[source,c]
-----
-include::{source_dir}/p5_5.c[]
-----
-
-=== Задача 6
-
-Да се напише програма што од непознат број на цели броеви што се внесуваат од тастатура ќе го определи бројот со максимална вредност.
-Програмата завршува ако се внесе невалидна репрезентација на број.
-
-.Решение:
-[source,c]
-----
-include::{source_dir}/p5_6.c[]
-----
-
-=== Задача 7
-
-Да се напише програма што од непознат број на цели броеви што се внесуваат од тастатура ќе го определи бројот со максимална вредност. 
-Притоа, броевите поголеми од 100 не се земаат предвид т.е. се игнорираат. 
-Програмата завршува ако се внесе невалидна репрезентација на број.
-
-.Решение:
-[source,c]
-----
-include::{source_dir}/p5_7.c[]
-----
-
-=== Задача 8
-
-Да се напише програма што од непознат број на цели броеви што се внесуваат од тастатура ќе ги определи двата броја со најголеми вредности. 
-Програмата завршува ако се внесе невалидна репрезентација на број. 
-
-.пример
-Ако се внесат броевите 2 4 7 4 2 1 8 6 9 7 10 3 програмата ќе отпечати 10 и 9.
-
-.Решение:
-[source,c]
-----
-include::{source_dir}/p5_8.c[]
-----
-
-=== Задача 9
-
-Да се напише програма што од N цели броеви внесени од тастатура ќе ја определи разликата од сумите на броевите на парни и непарни позиции (според редоследот на внесување). 
-Ако оваа разлика е помала од 10 на екран се печати "Dvete sumi se slicni", а во спротивно "Dvete sumi mnogu se razlikuvaat".
-
-.пример
-За броевите внесени од тастатура:
-
-_2_ *4* _3_ *4* _2_ *1* _1_ *6* _1_ *7*
-
-_suma_neparni_pozicii_ = 9
-
-*suma_parni_pozicii* = 22
-
-На екран ќе се испечати: 
-----
-Dvete sumi mnogu se razlikuvaat
-----
-
-.Решение:
-[source,c]
-----
-include::{source_dir}/p5_9.c[]
-----
-
-=== Задача 10
-
-Да се напише програма што од непознат број на цели броеви кои се внесуваат од тастатура ќе ги определи позициите (редните броеви на внесување) на двата последователни броја што ја имаат најголемата сума. 
-Програмата завршува ако едно по друго (последователно) се внесат два негативни цели броја.
-
-.Решение:
-[source,c]
-----
-include::{source_dir}/p5_10.c[]
-----
-
-== Контролна структура за повеќекратно гранење (switch)
-
-=== Пример
-
-[source,c]
-----
-include::{source_dir}/ex5_1.c[]
-----
-
-=== Задача 1
-
-Да се напише програма што за знак внесен од тастатура ќе одреди дали е самогласка, цифра или другo.
-
-.Решение:
-[source,c]
-----
-include::{source_dir}/p5_11.c[]
-----
-
-
-=== Задача 2
-
-Да се напише програма што ќе претставува едноставен калкулатор. Во програмата се вчитуваат два броја и оператор во формат:
-
-----
-broj1 operator broj2
-----
-
-По извршената операција во зависност од операторот, се печати резултатот во
-формат:
-
-----
-broj1 operator broj2 = rezultat
-----
-
-.Решение:
-[source,c]
-----
-include::{source_dir}/p5_12.c[]
-----
-
-=== Задача 3
-
-Да се напише програма што  ќе го пресмета просекот на еден студент, како и бројот на испити на што студентот паднал. Бројот на испити кои студентот ги полагал не е познат.
-
-.Решение 1:
-[source,c]
-----
-include::{source_dir}/p5_13a.c[]
-----
-
-
-.Решение 2:
-[source,c]
-----
-include::{source_dir}/p5_13b.c[]
-----
-
-
-=== Пример за реализација на (текст) мени
-
-.Решение:
-[source,c]
-----
-include::{source_dir}/ex5_2.c[]
-----
-
-== Задачи за вежбање
-
-=== Задача за вежбање 1
-
-Нека stem:[x = sin y] се менува од `0.02` до `0.80` со чекор `0.01`. 
-Да се напише програма што ќе го табелира `y` во форма степени, минути и секунди.
-
-stem:[y=arctan(\frac{x}{\sqrt{1 - x^2}})]
-
-.Решение:
-[source,c]
-----
-include::{source_dir}/p5_14.c[]
-----
-
-=== Задача за вежбање 2
-
-Да се напише програма за приближно пресметување на stem:[\pi] според формулата за развој на https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80[_Gregory–Leibniz_]
-
-stem:[1 − \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} − \ldots= \frac{\pi}{4}]
-
-stem:[\sum_{n=0}^{\infty}\frac{(-1)^n}{2n + 1} = \frac{\pi}{4}]
-
-* користејќи ги првите 100 члена.
-* се додека апсолутната вредност на членот што се додава е поголема од stem:[10^{-6}]
-
-.Решение 1.1:
-[source,c]
-----
-include::{source_dir}/p5_15a.c[]
-----
-
-.Решение 1.2:
-[source,c]
-----
-include::{source_dir}/p5_15b.c[]
-----
-
-.Решение 2:
-[source,c]
-----
-include::{source_dir}/p5_15c.c[]
-----
-
-=== Задача за вежбање 3
-
-Да се напише програма за приближно пресметување на stem:[\pi] користејќи го изразот stem:[4*\pi=arctan(1)] и развојот на stem:[arctan] во ред.
-
-Забелешка: Развојот на stem:[arctan(1)] во ред со користење на двоен факториел е: 
-
-stem:[1 + \frac{1}{3} + \frac{1*2}{3*5} + \frac{1*2*3}{3*5*7} + \frac{1*2*3*4}{3*5*7*9} + \ldots = \frac{\pi}{2}]
-
-stem:[\sum_{n=0}^{\infty}\frac{n!}{(2n + 1)!!} = \frac{\pi}{2}]
-
-.Решение:
-[source,c]
-----
-include::{source_dir}/p5_16.c[]
-----
-
-include::parts/footer.adoc[]
-
-link:{sources_zip}/sp_av5_src.zip[Source code ZIP]
+link:{sources_zip}/sp_mt_en_src.zip[Source code ZIP]

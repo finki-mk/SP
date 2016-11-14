@@ -534,6 +534,8 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#Задача-3">2.3. Задача 3</a></li>
 <li><a href="#Задача-4">2.4. Задача 4</a></li>
 <li><a href="#Задача-5">2.5. Задача 5</a></li>
+<li><a href="#Задача-6">2.6. Задача 6</a></li>
+<li><a href="#Задача-7">2.7. Задача 7</a></li>
 </ul>
 </li>
 <li><a href="#Изворен-код-од-примери-и-задачи">3. Изворен код од примери и задачи</a></li>
@@ -734,12 +736,98 @@ Odnos: 0.75</pre>
 <div class="sect2">
 <h3 id="Задача-5">2.5. Задача 5</h3>
 <div class="paragraph">
+<p>Да се напише програма за ротирање на елементите на една низа за едно место во десно. На крај, да се испечати на екран ротираната низа. Елементите од низата се читаат од стандарден влез.</p>
+</div>
+<div class="listingblock">
+<div class="title">Решение <code>p6_5.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="comment">/*
+Да се напише програма за ротирање на елементите на една низа за едно место во десно.
+*/</span>
+<span class="preprocessor">#include</span><span class="include">&lt;stdio.h&gt;</span>
+<span class="preprocessor">#define</span> MAX <span class="integer">100</span>
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> n, i, temp;
+    <span class="predefined-type">int</span> a[MAX];
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Golemina na niza:  </span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);
+
+    <span class="keyword">for</span>(i = <span class="integer">0</span>; i &lt; n; ++i) {
+        scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;a[i]);
+    }
+
+    temp = a[n-<span class="integer">1</span>];
+    <span class="keyword">for</span>(i = n - <span class="integer">1</span>; i &gt; <span class="integer">0</span>; i--) {
+        a[i] = a[i-<span class="integer">1</span>];
+    }
+    a[<span class="integer">0</span>] = temp;
+
+    <span class="keyword">for</span>(i = <span class="integer">0</span>; i &lt; n; ++i) {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d </span><span class="delimiter">&quot;</span></span>, a[i]);
+    }
+
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Задача-6">2.6. Задача 6</h3>
+<div class="paragraph">
+<p>Да се напише програма за ротирање на елементите на една низа за m местa во десно. На крај, да се испечати на екран ротираната низа. Елементите од низата и бројот на ротирања се читаат од стандарден влез.</p>
+</div>
+<div class="listingblock">
+<div class="title">Решение <code>p6_6.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="comment">/*
+Да се напише програма за ротирање на елементите на една низа за 'm' (се задава од тастатура) местa во десно.
+*/</span>
+<span class="preprocessor">#include</span><span class="include">&lt;stdio.h&gt;</span>
+<span class="preprocessor">#define</span> MAX <span class="integer">100</span>
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> n, i, j, temp, m;
+    <span class="predefined-type">int</span> a[MAX];
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Golemina na niza:  </span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);
+
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Broj na rotiranja:  </span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;m);
+
+    <span class="keyword">for</span>(i = <span class="integer">0</span>; i &lt; n; ++i) {
+        scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;a[i]);
+    }
+
+        <span class="keyword">for</span>(i = <span class="integer">0</span>; i &lt; n; ++i) {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d </span><span class="delimiter">&quot;</span></span>, a[i]);
+    }
+
+    <span class="keyword">for</span>(j = <span class="integer">0</span>; j &lt; m; j++) {
+                temp = a[n-<span class="integer">1</span>];
+                <span class="keyword">for</span>(i = n - <span class="integer">1</span>; i &gt; <span class="integer">0</span>; i--) {
+                        a[i] = a[i-<span class="integer">1</span>];
+                }
+                a[<span class="integer">0</span>] = temp;
+        }
+
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">for</span>(i = <span class="integer">0</span>; i &lt; n; ++i) {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d </span><span class="delimiter">&quot;</span></span>, a[i]);
+    }
+
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Задача-7">2.7. Задача 7</h3>
+<div class="paragraph">
 <p>Да се напише програма која што ќе ги избрише дупликатите од една низа.
 На крај, да се испечати на екран новодобиената низа.
 Елементите од низата се читаат од стандарден влез.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение <code>p6_5.c</code></div>
+<div class="title">Решение <code>p6_7.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="preprocessor">#define</span> MAX <span class="integer">100</span>
@@ -782,7 +870,7 @@ Odnos: 0.75</pre>
 <div id="footer">
 <div id="footer-text">
 Верзија 1.0<br>
-Last updated 2016-10-25 12:31:17 +02:00
+Last updated 2016-11-15 00:22:35 +01:00
 </div>
 </div>
 <script type="text/x-mathjax-config">

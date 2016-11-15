@@ -534,6 +534,11 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#Функции-од-математичката-библиотека-code-math-h-code">2.2. Функции од математичката библиотека <code>math.h</code></a></li>
 <li><a href="#Најчесто-користени-математички-функции">2.3. Најчесто користени математички функции</a></li>
 <li><a href="#Задача-1-2">2.4. Задача 1</a></li>
+<li><a href="#Задача-2-2">2.5. Задача 2</a></li>
+<li><a href="#Задача-3-2">2.6. Задача 3</a></li>
+<li><a href="#Задача-4">2.7. Задача 4</a></li>
+<li><a href="#Задача-5">2.8. Задача 5</a></li>
+<li><a href="#Задача-6">2.9. Задача 6</a></li>
 </ul>
 </li>
 <li><a href="#Изворен-код-од-примери-и-задачи">3. Изворен код од примери и задачи</a></li>
@@ -842,13 +847,279 @@ table.CodeRay td.code>pre{padding:0}
 <div class="sect2">
 <h3 id="Задача-1-2">2.4. Задача 1</h3>
 <div class="paragraph">
-<p>Да се напише програма која ќе провери дали дадена низа од <code>n</code> елементи која се чита од стандарден влез е <em>строго растечка</em>, <em>строго опаѓачка</em> или ниту строго растечка ниту строго опаѓачка.
-Резултатот да се испечати на екран.</p>
+<p>Да се напишат соодветни функции за пресметување на дијаметар, периметар и плоштина на круг чиј што радиус се предава како аргумент.
+Потоа да се напише и програма во која за внесен (од тастатура) радиус ќе се повикаат овие функции за да се пресметаат дијаметарот, периметарот и плоштината на соодветниот круг.</p>
 </div>
 <div class="listingblock">
-<div class="title">Решение <code>p6_4.c</code></div>
+<div class="title">Решение <code>p7_4.c</code></div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">Unresolved directive in sp_av7.adoc - include::../../src/av7/p6_4.c[]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+<span class="preprocessor">#define</span> PI <span class="float">3</span><span class="float">.14</span>
+
+<span class="predefined-type">double</span> dijametar(<span class="predefined-type">double</span> radius);
+<span class="predefined-type">double</span> perimetar(<span class="predefined-type">double</span> radius);
+<span class="predefined-type">double</span> ploshtina(<span class="predefined-type">double</span> radius);
+
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">float</span> radius, D, L, P;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesete radius na krugot: </span><span class="delimiter">&quot;</span></span>);
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%f</span><span class="delimiter">&quot;</span></span>, &amp;radius);
+
+    D = dijametar(radius);
+    L = perimetar(radius);
+    P = ploshtina(radius);
+
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Dijametar na krugot = %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, D);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Perimetar na krugot = %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, L);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Ploshtina na krugot = %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, P);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}
+
+<span class="predefined-type">double</span> dijametar(<span class="predefined-type">double</span> radius) {
+    <span class="keyword">return</span> <span class="integer">2</span> * radius;
+}
+
+<span class="predefined-type">double</span> perimetar(<span class="predefined-type">double</span> radius) {
+    <span class="keyword">return</span> <span class="integer">2</span> * radius * PI;
+}
+
+<span class="predefined-type">double</span> ploshtina(<span class="predefined-type">double</span> radius) {
+    <span class="keyword">return</span> radius * radius * PI;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Задача-2-2">2.5. Задача 2</h3>
+<div class="paragraph">
+<p>Да се напише програма која што ќе ги отпечати сите четирицифрени природни броеви кои се деливи со збирот на двата броја составени од првите две цифри и од последните две цифри на четирицифрениот број.
+На крајот треба да отпечати и колку вакви броеви се пронајдени.</p>
+</div>
+<div class="paragraph">
+<p>Пример:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>3417 е делив со 34 + 17
+5265 е делив со 52 + 65
+6578 е делив со 65 + 78</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Решение <code>p7_5.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> zbir_po_2cifri(<span class="predefined-type">int</span> n) {
+    <span class="keyword">return</span> n % <span class="integer">100</span> + n / <span class="integer">100</span>;
+}
+
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> i;
+    <span class="predefined-type">int</span> count = <span class="integer">0</span>;
+    <span class="keyword">for</span>(i = <span class="integer">1000</span>; i &lt;= <span class="integer">9999</span>; ++i) {
+        <span class="keyword">if</span>(i % zbir_po_2cifri(i) == <span class="integer">0</span>) {
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, i);
+            ++count;
+        }
+    }
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vkupno: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, count);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Задача-3-2">2.6. Задача 3</h3>
+<div class="paragraph">
+<p>Да се напише програма која за даден природен број ја пресметува разликата помеѓу најблискиот поголем од него прост број и самиот тој број.</p>
+</div>
+<div class="paragraph">
+<p>Пример:
+Ако се внесе 573, програмата треба да испечати 577 – 573 = 4</p>
+</div>
+<div class="listingblock">
+<div class="title">Решение <code>p7_6.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> prost(<span class="predefined-type">int</span> n) {
+    <span class="predefined-type">int</span> i;
+    <span class="keyword">for</span>(i = <span class="integer">2</span>; i * i &lt;= n; ++i) {
+        <span class="keyword">if</span>(n % i == <span class="integer">0</span>) {
+            <span class="keyword">return</span> <span class="integer">0</span>;
+        }
+    }
+    <span class="keyword">return</span> <span class="integer">1</span>;
+}
+
+<span class="predefined-type">int</span> prv_pogolem_prost(<span class="predefined-type">int</span> n) {
+    ++n;
+    <span class="keyword">while</span>(!prost(n)) {
+        ++n;
+    }
+    <span class="keyword">return</span> n;
+}
+
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> n;
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);
+    <span class="predefined-type">int</span> pogolem_prost = prv_pogolem_prost(n);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d - %d = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, pogolem_prost, n, pogolem_prost - n);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Задача-4">2.7. Задача 4</h3>
+<div class="paragraph">
+<p>Да се напише програма што ќе ги отпечати сите прости броеви помали од 10000 чиј што збир на цифри е исто така прост број.
+На крајот да се отпечати колку вакви броеви се пронајдени.</p>
+</div>
+<div class="listingblock">
+<div class="title">Решение <code>p7_7.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> is_prime(<span class="predefined-type">int</span> n) {
+    <span class="keyword">if</span>(n &lt; <span class="integer">4</span>) <span class="keyword">return</span> <span class="integer">1</span>;
+    <span class="keyword">else</span> {
+        <span class="keyword">if</span>(n % <span class="integer">2</span> == <span class="integer">0</span>) <span class="keyword">return</span> <span class="integer">0</span>;
+        <span class="keyword">else</span> {
+            <span class="predefined-type">int</span> i;
+            <span class="keyword">for</span>(i = <span class="integer">3</span>; i * i &lt;= n; i += <span class="integer">2</span>) {
+                <span class="keyword">if</span>(n % i == <span class="integer">0</span>) {
+                    <span class="keyword">return</span> <span class="integer">0</span>;
+                }
+            }
+        }
+    }
+    <span class="keyword">return</span> <span class="integer">1</span>;
+}
+
+<span class="predefined-type">int</span> sum_digits(<span class="predefined-type">int</span> n) {
+    <span class="predefined-type">int</span> sum = <span class="integer">0</span>;
+    <span class="keyword">while</span>(n != <span class="integer">0</span>) {
+        sum += n % <span class="integer">10</span>;
+        n /= <span class="integer">10</span>;
+    }
+    <span class="keyword">return</span> sum;
+}
+
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> i, count = <span class="integer">0</span>;
+    <span class="keyword">for</span>(i = <span class="integer">2</span>; i &lt;= <span class="integer">9999</span>; ++i) {
+        <span class="keyword">if</span>(is_prime(i) &amp;&amp; is_prime(sum_digits(i))) {
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="char">\t</span><span class="delimiter">&quot;</span></span>, i);
+            ++count;
+        }
+    }
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="content">Vkupno: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, count);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Задача-5">2.8. Задача 5</h3>
+<div class="paragraph">
+<p>Да се напише програма што ќе ги отпечати сите парови прости броеви помали од 1000 што се разликуваат меѓу себе за 2.
+На крај да се отпечати и нивниот број.</p>
+</div>
+<div class="listingblock">
+<div class="title">Решение <code>p7_8.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> prost(<span class="predefined-type">int</span> n) {
+    <span class="predefined-type">int</span> i;
+    <span class="keyword">for</span>(i = <span class="integer">2</span>; i * i &lt;= n; ++i) {
+        <span class="keyword">if</span>(n % i == <span class="integer">0</span>) {
+            <span class="keyword">return</span> <span class="integer">0</span>;
+        }
+    }
+    <span class="keyword">return</span> <span class="integer">1</span>;
+}
+
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> i, count = <span class="integer">0</span>;
+    <span class="keyword">for</span>(i = <span class="integer">1</span>; i &lt; <span class="integer">998</span>; ++i) {
+        <span class="keyword">if</span>(prost(i) &amp;&amp; prost(i + <span class="integer">2</span>)) {
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, i, i + <span class="integer">2</span>);
+            ++count;
+        }
+    }
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vkupno: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, count);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Задача-6">2.9. Задача 6</h3>
+<div class="paragraph">
+<p>Да се пресмета збирот:</p>
+</div>
+<div class="paragraph">
+<p>1! + (1 + 2)! + (1 + 2 + 3)! + &#8230;&#8203; + (1 + 2 + &#8230;&#8203; + n)!</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Користете функција за пресметување на збирот на првите k природни броеви
+Користете функција за пресметување факториел на еден природен број k
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Решение <code>p7_9.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="predefined-type">int</span> suma(<span class="predefined-type">int</span> n) {
+    <span class="predefined-type">int</span> i;
+    <span class="predefined-type">int</span> s = <span class="integer">0</span>;
+    <span class="keyword">for</span>(i = <span class="integer">1</span>; i &lt;= n; ++i) {
+        s += i;
+    }
+    <span class="keyword">return</span> s;
+}
+
+<span class="predefined-type">int</span> faktoriel(<span class="predefined-type">int</span> n) {
+    <span class="predefined-type">int</span> result = <span class="integer">1</span>;
+    <span class="predefined-type">int</span> i;
+    <span class="keyword">for</span>(i = <span class="integer">1</span>; i &lt;= n; ++i) {
+        result *= i;
+    }
+    <span class="keyword">return</span> result;
+}
+
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> n;
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);
+    <span class="keyword">if</span>(n &gt; <span class="integer">0</span>) {
+        <span class="predefined-type">int</span> i;
+        <span class="predefined-type">int</span> result = <span class="integer">0</span>;
+        <span class="predefined-type">int</span> s;
+        <span class="keyword">for</span>(i = <span class="integer">1</span>; i &lt; n; ++i) {
+            s = suma(i);
+            result += faktoriel(s);
+            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d! + </span><span class="delimiter">&quot;</span></span>, s);
+        }
+        s = suma(n);
+        result += faktoriel(s);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d! = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, s, result);
+    } <span class="keyword">else</span> {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Nevalidna vrednost</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    }
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
 </div>
 </div>
 <div style="page-break-after: always;"></div>
@@ -870,7 +1141,7 @@ table.CodeRay td.code>pre{padding:0}
 <div id="footer">
 <div id="footer-text">
 Верзија 1.0<br>
-Last updated 2016-11-14 17:05:51 +01:00
+Last updated 2016-11-15 10:31:09 +01:00
 </div>
 </div>
 <script type="text/x-mathjax-config">

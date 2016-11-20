@@ -87,13 +87,68 @@ include::{source_dir}/p6_4_en.c[]
 
 === Problem 5
 
+Write a program that will rotate elements of an array for one place in right.
+
+.Solution `p6_5_en.c`
+[source,c]
+----
+include::{source_dir}/p6_5_en.c[]
+----
+
+=== Problem 6
+
+Write a program that will rotate elements of an array for m places in right.
+
+.Solution `p6_6_en.c`
+[source,c]
+----
+include::{source_dir}/p6_6_en.c[]
+----
+
+=== Problem 7
+
 Write a program that will remove duplicate from an array. 
 After the transformation print the array.
 
 .Solution `p6_5_en.c`
 [source,c]
 ----
-include::{source_dir}/p6_5_en.c[]
+include::{source_dir}/p6_7_en.c[]
+----
+
+== Matrices (two dimensional arrays)
+
+=== Problem 1
+
+On matrix read from SI compute the difference of sum of elements of odd columns and sum of elements of even rows. 
+Print the result.
+
+.Solution `p7_1.c`
+[source,c]
+----
+include::{source_dir}/p6_8_en.c[]
+----
+
+=== Problem 2
+
+Write a program that for a given matrix read from SI will replace the elements from the main diagonal with the difference between the maximum and minimum element from the matrix. 
+Print the result matrix.
+
+.Solution `p7_2.c`
+[source,c]
+----
+include::{source_dir}/p6_9_en.c[]
+----
+
+=== Problem 3
+
+Write a program that will print on screen if a given matrix is symetric based on the main diagonal. 
+Dimensions and the matrix are read from SI.
+
+.Solution `p7_3.c`
+[source,c]
+----
+include::{source_dir}/p6_10_en.c[]
 ----
 
 include::parts/footer_en.adoc[]

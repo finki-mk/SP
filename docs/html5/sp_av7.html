@@ -521,155 +521,31 @@ table.CodeRay td.code>pre{padding:0}
 <div id="toc" class="toc2">
 <div id="toctitle">Содржина</div>
 <ul class="sectlevel1">
-<li><a href="#Матрици">1. Матрици</a>
+<li><a href="#Функции">1. Функции</a>
 <ul class="sectlevel2">
-<li><a href="#Задача-1">1.1. Задача 1</a></li>
-<li><a href="#Задача-2">1.2. Задача 2</a></li>
-<li><a href="#Задача-3">1.3. Задача 3</a></li>
+<li><a href="#Потсетување-од-предавања">1.1. Потсетување од предавања</a></li>
+<li><a href="#Функции-од-математичката-библиотека-code-math-h-code">1.2. Функции од математичката библиотека <code>math.h</code></a></li>
+<li><a href="#Најчесто-користени-математички-функции">1.3. Најчесто користени математички функции</a></li>
+<li><a href="#Задача-1">1.4. Задача 1</a></li>
+<li><a href="#Задача-2">1.5. Задача 2</a></li>
+<li><a href="#Задача-3">1.6. Задача 3</a></li>
+<li><a href="#Задача-4">1.7. Задача 4</a></li>
+<li><a href="#Задача-5">1.8. Задача 5</a></li>
+<li><a href="#Задача-6">1.9. Задача 6</a></li>
 </ul>
 </li>
-<li><a href="#Функции">2. Функции</a>
-<ul class="sectlevel2">
-<li><a href="#Потсетување-од-предавања">2.1. Потсетување од предавања</a></li>
-<li><a href="#Функции-од-математичката-библиотека-code-math-h-code">2.2. Функции од математичката библиотека <code>math.h</code></a></li>
-<li><a href="#Најчесто-користени-математички-функции">2.3. Најчесто користени математички функции</a></li>
-<li><a href="#Задача-1-2">2.4. Задача 1</a></li>
-<li><a href="#Задача-2-2">2.5. Задача 2</a></li>
-<li><a href="#Задача-3-2">2.6. Задача 3</a></li>
-<li><a href="#Задача-4">2.7. Задача 4</a></li>
-<li><a href="#Задача-5">2.8. Задача 5</a></li>
-<li><a href="#Задача-6">2.9. Задача 6</a></li>
-</ul>
-</li>
-<li><a href="#Изворен-код-од-примери-и-задачи">3. Изворен код од примери и задачи</a></li>
+<li><a href="#Изворен-код-од-примери-и-задачи">2. Изворен код од примери и задачи</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="Матрици">1. Матрици</h2>
+<h2 id="Функции">1. Функции</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Задача-1">1.1. Задача 1</h3>
-<div class="paragraph">
-<p>Да се напише програма која за матрица внесена од тастатура ќе ја пресмета разликата на збирот на елементите на непарните колони и збирот на елементите на парните редици.
-Матрицата не мора да биде квадратна.</p>
-</div>
-<div class="listingblock">
-<div class="title">Решение <code>p7_1.c</code></div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span><span class="include">&lt;stdio.h&gt;</span>
-<span class="preprocessor">#define</span> MAX <span class="integer">100</span>
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> a[MAX][MAX], n, m, i, j, sumKol = <span class="integer">0</span>, sumRed = <span class="integer">0</span>;
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d %d</span><span class="delimiter">&quot;</span></span>, &amp;n, &amp;m);
-    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; ++i)
-        <span class="keyword">for</span> (j = <span class="integer">0</span>; j &lt; m; ++j)
-            scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;a[i][j]);
-
-    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; ++i)
-        <span class="keyword">for</span> (j = <span class="integer">0</span>; j &lt; m; ++j) {
-            <span class="keyword">if</span> ((j + <span class="integer">1</span>) % <span class="integer">2</span>)
-                sumKol += a[i][j];
-            <span class="keyword">if</span> (!((i + <span class="integer">1</span>) % <span class="integer">2</span>))
-                sumRed += a[i][j];
-        }
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, sumKol - sumRed);
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-2">1.2. Задача 2</h3>
-<div class="paragraph">
-<p>Да се напише програма која за матрица внесена од тастатура ќе ги замени елементите од главната дијагонала со разликата од максималниот и минималниот елемент во матрицата.
-Резултантната матрица да се испечати на екран.</p>
-</div>
-<div class="listingblock">
-<div class="title">Решение <code>p7_2.c</code></div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-<span class="preprocessor">#define</span> MAX <span class="integer">100</span>
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> a[MAX][MAX];
-    <span class="predefined-type">int</span> n;
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);
-    <span class="predefined-type">int</span> i, j;
-    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; ++i) {
-        <span class="keyword">for</span> (j = <span class="integer">0</span>; j &lt; n; ++j) {
-            scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;a[i][j]);
-            <span class="keyword">if</span> (i == <span class="integer">0</span> &amp;&amp; j == <span class="integer">0</span>) {
-                min = max = a[i][j];
-            } <span class="keyword">else</span> <span class="keyword">if</span> (a[i][j] &gt; max) {
-                max = a[i][j];
-            } <span class="keyword">else</span> <span class="keyword">if</span> (a[i][j] &lt; min) {
-                min = a[i][j];
-            }
-        }
-    }
-
-    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; ++i) {
-        a[i][i] = max - min;
-    }
-
-    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; ++i) {
-        <span class="keyword">for</span> (j = <span class="integer">0</span>; j &lt; n; ++j) {
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="char">\t</span><span class="delimiter">&quot;</span></span>, a[i][j]);
-        }
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-    }
-    <span class="keyword">return</span> <span class="integer">0</span>;
-
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-3">1.3. Задача 3</h3>
-<div class="paragraph">
-<p>Да се напише програма која за квадратна матрица внесена од тастатура ќе испечати на екран дали таа е симетрична во однос на главната дијагонала.</p>
-</div>
-<div class="listingblock">
-<div class="title">Решение <code>p7_3.c</code></div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-<span class="preprocessor">#define</span> MAX <span class="integer">100</span>
-<span class="predefined-type">int</span> main () {
-    <span class="predefined-type">int</span> a[MAX][MAX], n, i, j, simetrichna = <span class="integer">1</span>;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesete dimenzija na kvadratna matrica: </span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesete gi elementite: </span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; ++i)
-        <span class="keyword">for</span> (j = <span class="integer">0</span>; j &lt; n; ++j)
-            scanf (<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;a[i][j]);
-    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n - <span class="integer">1</span>; ++i) {
-        <span class="keyword">for</span> (j = i + <span class="integer">1</span>; j &lt; n; ++j)
-            <span class="keyword">if</span> (a[i][j] != a[j][i]) {
-                simetrichna = <span class="integer">0</span>;
-                <span class="keyword">break</span>;
-            }
-        <span class="keyword">if</span> (!simetrichna) <span class="keyword">break</span>;
-    }
-    <span class="keyword">if</span> (simetrichna)
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Matricata e SIMETRICHNA vo odnos na glavnata dijagonala</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-    <span class="keyword">else</span>
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Matricata ne e SIMETRICHNA vo odnos na glavnata dijagonala</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="Функции">2. Функции</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="Потсетување-од-предавања">2.1. Потсетување од предавања</h3>
+<h3 id="Потсетување-од-предавања">1.1. Потсетување од предавања</h3>
 <div class="sect3">
-<h4 id="Дефиниција-на-функција-во-c">2.1.1. Дефиниција на функција во C</h4>
+<h4 id="Дефиниција-на-функција-во-c">1.1.1. Дефиниција на функција во C</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c">tip ime(lista_na_formalni_argumenti) {
@@ -695,7 +571,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect3">
-<h4 id="Повик-на-функција">2.1.2. Повик на функција</h4>
+<h4 id="Повик-на-функција">1.1.2. Повик на функција</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c">ime(lista_na_argumenti);</code></pre>
@@ -713,7 +589,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect3">
-<h4 id="Пример-на-кориснички-дефинирана-функција">2.1.3. Пример на кориснички дефинирана функција</h4>
+<h4 id="Пример-на-кориснички-дефинирана-функција">1.1.3. Пример на кориснички дефинирана функција</h4>
 <div class="paragraph">
 <p>Да се напише програма во која со посебна функција се пресметува куб \$n^3\$ за вчитан природен број n.</p>
 </div>
@@ -740,7 +616,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Функции-од-математичката-библиотека-code-math-h-code">2.2. Функции од математичката библиотека <code>math.h</code></h3>
+<h3 id="Функции-од-математичката-библиотека-code-math-h-code">1.2. Функции од математичката библиотека <code>math.h</code></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -757,7 +633,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Најчесто-користени-математички-функции">2.3. Најчесто користени математички функции</h3>
+<h3 id="Најчесто-користени-математички-функции">1.3. Најчесто користени математички функции</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -821,7 +697,7 @@ table.CodeRay td.code>pre{padding:0}
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="Пример-на-користење-на-функција-од-code-math-h-code">2.3.1. Пример на користење на функција од <code>math.h</code></h4>
+<h4 id="Пример-на-користење-на-функција-од-code-math-h-code">1.3.1. Пример на користење на функција од <code>math.h</code></h4>
 <div class="paragraph">
 <p>Да се напише програма во која со посебна функција се пресметува куб \$n^3\$ за вчитан природен број n.</p>
 </div>
@@ -845,7 +721,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-1-2">2.4. Задача 1</h3>
+<h3 id="Задача-1">1.4. Задача 1</h3>
 <div class="paragraph">
 <p>Да се напишат соодветни функции за пресметување на дијаметар, периметар и плоштина на круг чиј што радиус се предава како аргумент.
 Потоа да се напише и програма во која за внесен (од тастатура) радиус ќе се повикаат овие функции за да се пресметаат дијаметарот, периметарот и плоштината на соодветниот круг.</p>
@@ -890,7 +766,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-2-2">2.5. Задача 2</h3>
+<h3 id="Задача-2">1.5. Задача 2</h3>
 <div class="paragraph">
 <p>Да се напише програма која што ќе ги отпечати сите четирицифрени природни броеви кои се деливи со збирот на двата броја составени од првите две цифри и од последните две цифри на четирицифрениот број.
 На крајот треба да отпечати и колку вакви броеви се пронајдени.</p>
@@ -930,7 +806,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-3-2">2.6. Задача 3</h3>
+<h3 id="Задача-3">1.6. Задача 3</h3>
 <div class="paragraph">
 <p>Да се напише програма која за даден природен број ја пресметува разликата помеѓу најблискиот поголем од него прост број и самиот тој број.</p>
 </div>
@@ -972,7 +848,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-4">2.7. Задача 4</h3>
+<h3 id="Задача-4">1.7. Задача 4</h3>
 <div class="paragraph">
 <p>Да се напише програма што ќе ги отпечати сите прости броеви помали од 10000 чиј што збир на цифри е исто така прост број.
 На крајот да се отпечати колку вакви броеви се пронајдени.</p>
@@ -1022,7 +898,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-5">2.8. Задача 5</h3>
+<h3 id="Задача-5">1.8. Задача 5</h3>
 <div class="paragraph">
 <p>Да се напише програма што ќе ги отпечати сите парови прости броеви помали од 1000 што се разликуваат меѓу себе за 2.
 На крај да се отпечати и нивниот број.</p>
@@ -1057,7 +933,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-6">2.9. Задача 6</h3>
+<h3 id="Задача-6">1.9. Задача 6</h3>
 <div class="paragraph">
 <p>Да се пресмета збирот:</p>
 </div>
@@ -1127,13 +1003,13 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect1">
-<h2 id="Изворен-код-од-примери-и-задачи">3. Изворен код од примери и задачи</h2>
+<h2 id="Изворен-код-од-примери-и-задачи">2. Изворен код од примери и задачи</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://github.com/finki-mk/SP/" class="bare">https://github.com/finki-mk/SP/</a></p>
 </div>
 <div class="paragraph">
-<p><a href="https://finki-mk.github.io/SP/sources/sp_av6_src.zip">Source code ZIP</a></p>
+<p><a href="https://finki-mk.github.io/SP/sources/sp_av7_src.zip">Source code ZIP</a></p>
 </div>
 </div>
 </div>
@@ -1141,7 +1017,7 @@ table.CodeRay td.code>pre{padding:0}
 <div id="footer">
 <div id="footer-text">
 Верзија 1.0<br>
-Last updated 2016-11-15 10:31:09 +01:00
+Last updated 2016-11-17 11:46:13 +01:00
 </div>
 </div>
 <script type="text/x-mathjax-config">

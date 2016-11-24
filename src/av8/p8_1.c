@@ -19,10 +19,13 @@ int main() {
     scanf("%d", &n);
     if (n > 0) {
         for (i = 1; i < n; i++) {
-            result += factorial(sum(i));
+            int s = sum(i);
+            result += factorial(s);
+            printf("%d! + ", s);
         }
-        result += factorial(sum(n));
-        printf("%d! = %d", sum(n), result);
+        int s = sum(n);
+        result += factorial(s);
+        printf("%d! = %d\n", s, result);
     } else
         printf("Wrong input\n");
     return 0;

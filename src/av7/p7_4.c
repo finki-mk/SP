@@ -6,9 +6,9 @@ double perimetar(double radius);
 double ploshtina(double radius);
 
 int main() {
-    float radius, D, L, P;
+    double radius, D, L, P;
     printf("Vnesete radius na krugot: ");
-    scanf("%f", &radius);
+    scanf("%lf", &radius);
 
     D = dijametar(radius);
     L = perimetar(radius);

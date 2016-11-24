@@ -6,78 +6,78 @@ include::parts/attributes_en.adoc[]
 :source_dir: ../../src/av7
 
 
-== Функции
+== Functions
 
-=== Потсетување од предавања
+=== Reminder from lectures
 
-==== Дефиниција на функција во C
+==== Defining a function in C
 
 [source,c]
 ----
-tip ime(lista_na_formalni_argumenti) {
-  telo_na_funkcijata
+return_type name(arguments_list) {
+  function_body
 }
 ----
 
-- tip - типот на вредноста која ја враќа функцијата
-- ime - името на функцијата
-- lista_na_formalni_argumenti - листата со формални аргументи ги содржи аргументите заедно со нивните типови, разделени со запирка
-- telo_na_funkcijata - телото на функцијата ги содржи истите елементи како и самата `main()` функција
+- return_type - type of the return value of the function
+- name - name of the function
+- arguments_list - list of arguments with names and their types, coma separated
+- function_body - the body of the function
 
-==== Повик на функција
+==== Calling (using) function
 
 [source,c]
 ----
-ime(lista_na_argumenti);
+name(arguments_values);
 ----
 
-- ime - името на веќе дефинираната функција
-- lista_na_argumenti - листата на аргументи е со вистински аргументи кои што ако се повеќе ако се одделуваат со запирка
+- name - name of already defined function
+- arguments_values - list of values passed as arguments, coma separated
 
-==== Пример на кориснички дефинирана функција
+==== Example of user defined function
 
-Да се напише програма во која со посебна функција се пресметува куб stem:[n^3] за вчитан природен број n.
+Write a program with a separate function for computing cube of number stem:[n^3] за вчитан природен број n.
 
-.Пример `ex7_1.c`
+.Example `ex7_1_en.c`
 [source,c]
 ----
-include::{source_dir}/ex7_1.c[]
+include::{source_dir}/ex7_1_en.c[]
 ----
 
-=== Функции од математичката библиотека `math.h`
+=== Functions from standard library `math.h`
 
-- Во C постои стандардна математичка библиотека `math.h` која што содржи многу готови математички функции.
-- За да се употребува, треба претходно да се вклучи со:
+- C has standard library `math.h` with many useful mathematical functions
+- To be used, first it needs to be included:
 `#include <math.h>`
-- Сите функции од стандардната библиотека `math.h` примаат аргументи од тип `double` и враќаат вредности од истиот тип.
+- All functions from the standard library `math.h` accepts arguments of type `double` and return values of same type.
 
-=== Најчесто користени математички функции
+=== Most used mathematical functions
 
 [options="header",cols="^,^4"]
 |===
-| Функција     | Објаснување
-| `sqrt(x)`    | квадратен корен од `x`  
-| `exp(x)`     | експоненцијална функција  stem:[е^х]         
-| `log(x)`     | природен логаритам од х (со основа е)
-| `log10(x)`   | логаритам од х со основа 10
-| `fabs(x)`    | апсолутна вредност од х
-| `ceil(x)`    | заокружува х на најмалиот цел број не помал од х
-| `floor(x)`   | заокружува х на најголемиот цел број не поголем од х
-| `pow(x, y)`  | x на степен y
-| `fmod(x, y)` | остаток од х/у како реален број
-| `sin(x)`     | синус од х (во радијани)
-| `cos(x)`     | косинус од х (во радијани)
-| `tan(x)`     | тангенс од х (во радијани)
+| Function     | Explanation
+| `sqrt(x)`    | square root of `x`
+| `exp(x)`     | exponential function  stem:[е^х]
+| `log(x)`     | natural logarithm of x (with base е)
+| `log10(x)`   | logarithm of x of base 10
+| `fabs(x)`    | absolute value of х
+| `ceil(x)`    | rounding х to the smallest integer not smaller than х
+| `floor(x)`   | rounding х to the largest integer not larger than х + 1
+| `pow(x, y)`  | x to the power of y
+| `fmod(x, y)` | residue of х/у as real number
+| `sin(x)`     | sine of х (in radians)
+| `cos(x)`     | cosine of х (in radians)
+| `tan(x)`     | tangent of х (in radians)
 |===
 
-==== Пример на користење на функција од `math.h`
+==== Example using function from `math.h`
 
-Да се напише програма во која со посебна функција се пресметува куб stem:[n^3] за вчитан природен број n.
+Write a program that will compute cube stem:[n^3] for an integer n.
 
-.Пример `ex7_2.c`
+.Example `ex7_2_en.c`
 [source,c]
 ----
-include::{source_dir}/ex7_2.c[]
+include::{source_dir}/ex7_2_en.c[]
 ----
 
 === Problem 1
@@ -85,7 +85,7 @@ include::{source_dir}/ex7_2.c[]
 Да се напишат соодветни функции за пресметување на дијаметар, периметар и плоштина на круг чиј што радиус се предава како аргумент. 
 Потоа да се напише и програма во која за внесен (од тастатура) радиус ќе се повикаат овие функции за да се пресметаат дијаметарот, периметарот и плоштината на соодветниот круг.
 
-.Решение `p7_4.c`
+.Solution `p7_4.c`
 [source,c]
 ----
 include::{source_dir}/p7_4.c[]
@@ -93,73 +93,62 @@ include::{source_dir}/p7_4.c[]
 
 === Problem 2
 
-Да се напише програма која што ќе ги отпечати сите четирицифрени природни броеви кои се деливи со збирот на двата броја составени од првите две цифри и од последните две цифри на четирицифрениот број. 
-На крајот треба да отпечати и колку вакви броеви се пронајдени.
+Write a program that will print all four digit numbers that are divisible with the sum of the numbers formed from the first two and last two digits of the original number.
+Print how many such numbers exist.
 
-Пример:
+Example:
 ----
-3417 е делив со 34 + 17
-5265 е делив со 52 + 65
-6578 е делив со 65 + 78
+3417 is divisible with 34 + 17
+5265 is divisible with 52 + 65
+6578 is divisible with 65 + 78
 ----
 
-.Решение `p7_5.c`
+.Solution `p7_5_en.c`
 [source,c]
 ----
-include::{source_dir}/p7_5.c[]
+include::{source_dir}/p7_5_en.c[]
 ----
 
 === Problem 3
 
-Да се напише програма која за даден природен број ја пресметува разликата помеѓу најблискиот поголем од него прост број и самиот тој број.
+Write a program that for a given natural number will compute the difference between that number and the following prime number.
 
-Пример:
-Ако се внесе 573, програмата треба да испечати 577 – 573 = 4
+Example:
+For the number 573, the program should print 577 – 573 = 4
 
-.Решение `p7_6.c`
+.Solution `p7_6_en.c`
 [source,c]
 ----
-include::{source_dir}/p7_6.c[]
+include::{source_dir}/p7_6_en.c[]
 ----
 
 === Problem 4
 
-Да се напише програма што ќе ги отпечати сите прости броеви помали од 10000 чиј што збир на цифри е исто така прост број. 
-На крајот да се отпечати колку вакви броеви се пронајдени.
+Write a program that will print all pairs of primes up to 1000 that differentiate between themselves for 2.
+At the end print the count.
 
-.Решение `p7_7.c`
+.Solution `p7_7_en.c`
 [source,c]
 ----
-include::{source_dir}/p7_7.c[]
+include::{source_dir}/p7_7_en.c[]
 ----
 
 === Problem 5
 
-Да се напише програма што ќе ги отпечати сите парови прости броеви помали од 1000 што се разликуваат меѓу себе за 2. 
-На крај да се отпечати и нивниот број.
-
-.Решение `p7_8.c`
-[source,c]
-----
-include::{source_dir}/p7_8.c[]
-----
-
-=== Problem 6
-
-Да се пресмета збирот:
+Compute the sum:
 
 1! + (1 + 2)! + (1 + 2 + 3)! + ... + (1 + 2 + ... + n)!
 
-TIP: Користете функција за пресметување на збирот на првите k природни броеви
-Користете функција за пресметување факториел на еден природен број k
+TIP: Use function for computing the sum of the first k natural numbers
+Use a function for computing factorial of k
 
-.Решение `p7_9.c`
+.Solution `p7_9_en.c`
 [source,c]
 ----
-include::{source_dir}/p7_9.c[]
+include::{source_dir}/p7_9_en.c[]
 ----
 
 
-include::parts/footer.adoc[]
+include::parts/footer_en.adoc[]
 
-link:{sources_zip}/sp_av7_src.zip[Source code ZIP]
+link:{sources_zip}/sp_av7_src_en.zip[Source code ZIP]

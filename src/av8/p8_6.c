@@ -24,7 +24,7 @@ int main() {
     int nzd = NZD(a[0], a[1]);
 
     for (i=2; i<n; ++i){
-        nzd = NZD(NZD, a[i]);
+        nzd = NZD(nzd, a[i]);
     }
     
     printf("NZD na elementite od nizata e %d",nzd);

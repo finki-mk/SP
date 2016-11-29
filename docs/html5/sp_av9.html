@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<meta name="author" content="Аудиториски вежби 8">
+<meta name="author" content="Аудиториски вежби 9">
 <title>Структурно програмирање</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -514,429 +514,467 @@ table.CodeRay td.code>pre{padding:0}
 <div id="header">
 <h1>Структурно програмирање</h1>
 <div class="details">
-<span id="author" class="author">Аудиториски вежби 8</span><br>
+<span id="author" class="author">Аудиториски вежби 9</span><br>
 <span id="revnumber">Верзија 1.0,</span>
-<span id="revdate">20 Ноември, 2016</span>
+<span id="revdate">27 Ноември, 2016</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Содржина</div>
 <ul class="sectlevel1">
-<li><a href="#Рекурзивни-функции">1. Рекурзивни функции</a>
+<li><a href="#Потсетување-од-предавања">1. Потсетување од предавања</a>
 <ul class="sectlevel2">
-<li><a href="#Задача-1">1.1. Задача 1</a></li>
-<li><a href="#Задача-2">1.2. Задача 2</a></li>
-<li><a href="#Задача-3">1.3. Задача 3</a></li>
-<li><a href="#Задача-4">1.4. Задача 4</a></li>
-<li><a href="#Задача-5">1.5. Задача 5</a></li>
-<li><a href="#Задача-6">1.6. Задача 6</a></li>
-<li><a href="#Задача-7-strong-За-Дома-strong">1.7. Задача 7 (<strong>За Дома</strong>)</a></li>
-<li><a href="#Задача-8">1.8. Задача 8</a></li>
-<li><a href="#Задача-9-strong-За-Дома-strong">1.9. Задача 9 (<strong>За Дома</strong>)</a></li>
+<li><a href="#Што-е-покажувач">1.1. Што е покажувач</a></li>
+<li><a href="#Декларација-на-покажувач">1.2. Декларација на покажувач</a></li>
+<li><a href="#Пример">1.3. Пример</a></li>
+<li><a href="#За-што-служат-покажувачите">1.4. За што служат покажувачите?</a></li>
 </ul>
 </li>
-<li><a href="#Изворен-код-од-примери-и-задачи">2. Изворен код од примери и задачи</a></li>
+<li><a href="#Задача-1">2. Задача 1</a>
+<ul class="sectlevel2">
+<li><a href="#Пример-2">2.1. Пример:</a></li>
+</ul>
+</li>
+<li><a href="#Задача-2">3. Задача 2</a>
+<ul class="sectlevel2">
+<li><a href="#Пример-3">3.1. Пример</a></li>
+</ul>
+</li>
+<li><a href="#Задача-3">4. Задача 3</a>
+<ul class="sectlevel2">
+<li><a href="#За-дома">4.1. За дома:</a></li>
+<li><a href="#За-дома-2">4.2. За дома:</a></li>
+</ul>
+</li>
+<li><a href="#Задача-4">5. Задача 4</a>
+<ul class="sectlevel2">
+<li><a href="#bubble-sort">5.1. Bubble sort</a></li>
+<li><a href="#selection-sort">5.2. Selection sort</a></li>
+<li><a href="#insertion-sort">5.3. Insertion sort</a></li>
+<li><a href="#Целокупното-решение">5.4. Целокупното решение</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="Рекурзивни-функции">1. Рекурзивни функции</h2>
+<h2 id="Потсетување-од-предавања">1. Потсетување од предавања</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="Што-е-покажувач">1.1. Што е покажувач</h3>
 <div class="paragraph">
-<p>Функциите во програмскиот јазик Ц може да повикуваат други функции. Ова повикување може да оди во произволна длабочина.</p>
-</div>
-<div class="paragraph">
-<p>Доколоку една функција се повикува сама себе, тогаш тоа се нарекува <strong>рекурзивен повик</strong>, односно тој начин на повикување се нарекува <strong>рекурзија</strong></p>
-</div>
-<div class="paragraph">
-<p><em>Пример за рекурзивна функција:</em></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="predefined-type">int</span> factoriel(<span class="predefined-type">int</span> n) {
-    <span class="keyword">if</span> (n==<span class="integer">1</span>) {
-        <span class="keyword">return</span> <span class="integer">1</span>;
-    }
-
-    <span class="keyword">return</span> n * factoriel(n-<span class="integer">1</span>);
-}</code></pre>
+<p>Покажувач е <strong>податочен тип</strong> кој што чува (покажува кон) одредена локација во меморијата. Оваа мемориска локација се чува преку нејзината адреса (позитивен цел број)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-1">1.1. Задача 1</h3>
-<div class="paragraph">
-<p>Да се пресмета збирот:
-\[
-1! + (1+2)! + (1+2+3)! + &#8230;&#8203; + (1+2+&#8230;&#8203;+n)!
-\]
-притоа:</p>
+<h3 id="Декларација-на-покажувач">1.2. Декларација на покажувач</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">pointer_type *name;</code></pre>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Пример">1.3. Пример</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">---
+<span class="predefined-type">float</span> *p;
+---</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Вака декларираниот покажувач не знаеме каде покажува!!!</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="За-што-служат-покажувачите">1.4. За што служат покажувачите?</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>користете <strong>рекурзивна функција</strong> за пресметување на збирот на првите k природни броеви.</p>
+<p>брзо и ефикасно изминување на сложени податочни структури како низи и дрва, &#8230;&#8203;</p>
 </li>
 <li>
-<p>користете <strong>рекурзивна функција</strong> за пресметување на факториел на еден природен број.</p>
+<p>ефикасно пренесување на сложени аргументи во функции. Пренесување на низа, структура и слично</p>
+</li>
+<li>
+<p>пренесување на аргументи чии што вредности сакаме да останат во онаа состојба во која се наоѓаат по извршувањето на функцијата</p>
 </li>
 </ul>
-</div>
-<div class="listingblock">
-<div class="title">Решение <code>p8_1.c</code></div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> factorial(<span class="predefined-type">int</span> n) {
-    <span class="keyword">if</span> (n == <span class="integer">0</span>)
-        <span class="keyword">return</span> <span class="integer">1</span>;
-    <span class="keyword">else</span>
-        <span class="keyword">return</span> n * factorial(n - <span class="integer">1</span>);
-}
-
-<span class="predefined-type">int</span> sum(<span class="predefined-type">int</span> k) {
-    <span class="keyword">if</span> (k == <span class="integer">0</span>)
-        <span class="keyword">return</span> <span class="integer">0</span>;
-    <span class="keyword">else</span>
-        <span class="keyword">return</span> k + sum(k - <span class="integer">1</span>);
-}
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> i, n, result = <span class="integer">0</span>;
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);
-    <span class="keyword">if</span> (n &gt; <span class="integer">0</span>) {
-        <span class="keyword">for</span> (i = <span class="integer">1</span>; i &lt; n; i++) {
-            <span class="predefined-type">int</span> s = sum(i);
-            result += factorial(s);
-            printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d! + </span><span class="delimiter">&quot;</span></span>, s);
-        }
-        <span class="predefined-type">int</span> s = sum(n);
-        result += factorial(s);
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d! = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, s, result);
-    } <span class="keyword">else</span>
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Wrong input</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-2">1.2. Задача 2</h3>
-<div class="paragraph">
-<p>Да се напише програма која за даден природен број ја пресметува разликата помеѓу најблискиот поголем од него прост број и самиот тој број.</p>
-</div>
-<div class="paragraph">
-<p>Програмата треба да користи <strong>рекурзивна</strong> функција за наоѓање на соодветниот прост број, која пак треба да користи рекурзивна функција за проверка дали даден број е прост број.</p>
-</div>
-<div class="sect3">
-<h4 id="Пример">1.2.1. Пример</h4>
-<div class="paragraph">
-<p>Ако се внесе 573, програмата треба да испечати 577 - 573 = 4</p>
-</div>
-<div class="listingblock">
-<div class="title">Решение <code>p8_2.c</code></div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> is_prime(<span class="predefined-type">int</span> n, <span class="predefined-type">int</span> i);
-<span class="predefined-type">int</span> first_larger_prime(<span class="predefined-type">int</span> n);
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> number, difference;
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;number);
-    difference = first_larger_prime(number) - number;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d - %d : %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, first_larger_prime(
-               number), number, difference);
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}
-<span class="predefined-type">int</span> is_prime(<span class="predefined-type">int</span> n, <span class="predefined-type">int</span> i) {
-    <span class="keyword">if</span> (n &lt; <span class="integer">4</span>)
-        <span class="keyword">return</span> <span class="integer">1</span>;
-    <span class="keyword">else</span> <span class="keyword">if</span> ((n % <span class="integer">2</span>) == <span class="integer">0</span>) <span class="keyword">return</span> <span class="integer">0</span>;
-    <span class="keyword">else</span> <span class="keyword">if</span> (n % i == <span class="integer">0</span>) <span class="keyword">return</span> <span class="integer">0</span>;
-    <span class="keyword">else</span> <span class="keyword">if</span> (i * i &gt; n) <span class="keyword">return</span> <span class="integer">1</span>;
-    <span class="keyword">else</span> <span class="keyword">return</span> is_prime(n, i + <span class="integer">2</span>);
-}
-<span class="predefined-type">int</span> first_larger_prime(<span class="predefined-type">int</span> n) {
-    <span class="keyword">if</span> (is_prime(n + <span class="integer">1</span>, <span class="integer">3</span>)) <span class="keyword">return</span> n + <span class="integer">1</span>;
-    <span class="keyword">else</span> <span class="keyword">return</span> first_larger_prime(n + <span class="integer">1</span>);
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-3">1.3. Задача 3</h3>
-<div class="paragraph">
-<p>Да се напише програма што ќе ја испишува вредноста на n-тиот член на низата дефинирана со:
-\[
-   \begin{array}{l}
-   x_1 = 1\\
-   x_2 = 2\\
-   \vdots\\
-   x_n = \frac{n - 1}{n}x_{n - 1} + \frac{1}{n}x_{n - 2}
-   \end{array}
-\]</p>
-</div>
-<div class="listingblock">
-<div class="title">Решение <code>p8_3.c</code></div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-<span class="predefined-type">float</span> xnn(<span class="predefined-type">int</span> n) {
-    <span class="keyword">if</span> (n == <span class="integer">1</span>)
-        <span class="keyword">return</span> <span class="integer">1</span>;
-    <span class="keyword">if</span> (n == <span class="integer">2</span>)
-        <span class="keyword">return</span> <span class="integer">2</span>;
-    <span class="keyword">return</span> (n - <span class="integer">1</span>) * xnn(n - <span class="integer">1</span>) / n + xnn(n - <span class="integer">2</span>) / n;
-}
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> n;
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">xnn(%d) = %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, n, xnn(n));
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-4">1.4. Задача 4</h3>
-<div class="paragraph">
-<p>Да се напише рекурзивна функција која ќе го пресметува збирот на цифрите на еден број.</p>
-</div>
-<div class="sect3">
-<h4 id="Пример-2">1.4.1. Пример:</h4>
-<div class="listingblock">
-<div class="content">
-<pre>sumDigits(126) -&gt; 9
-sumDigits(49) -&gt; 13
-sumDigits(12) -&gt; 3</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Решение <code>p8_4.c</code></div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-<span class="predefined-type">int</span> sum_digits(<span class="predefined-type">int</span> n) {
-    <span class="keyword">if</span> (n == <span class="integer">0</span>) <span class="keyword">return</span> <span class="integer">0</span>;
-    <span class="keyword">return</span> n % <span class="integer">10</span> + sum_digits(n / <span class="integer">10</span>);
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-5">1.5. Задача 5</h3>
-<div class="paragraph">
-<p>За даден број n, да се напише <strong>рекурзивна функција</strong> која ќе ги изброи појавувањата на цифрата 8. Притоа, доколку до некоја цифра 8 има уште една цифра 8 веднаш лево од неа, нејзиното појавување се брои двојно</p>
-</div>
-<div class="sect3">
-<h4 id="Пример-3">1.5.1. Пример:</h4>
-<div class="listingblock">
-<div class="content">
-<pre>count8(8) -&gt; 1
-count8(818) -&gt; 2
-count8(8818) -&gt; 4</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Решение <code>p8_5.c</code></div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> count8(<span class="predefined-type">int</span> n) {
-    <span class="keyword">if</span> (n == <span class="integer">0</span>)
-        <span class="keyword">return</span> <span class="integer">0</span>;
-    <span class="keyword">if</span> ((n / <span class="integer">10</span>) % <span class="integer">10</span> == <span class="integer">8</span> &amp;&amp; n % <span class="integer">10</span> == <span class="integer">8</span>)
-        <span class="keyword">return</span> <span class="integer">2</span> + count8(n / <span class="integer">10</span>);
-    <span class="keyword">if</span> (n % <span class="integer">10</span> == <span class="integer">8</span>)
-        <span class="keyword">return</span> <span class="integer">1</span> + count8(n / <span class="integer">10</span>);
-    <span class="keyword">return</span> count8(n / <span class="integer">10</span>);
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-6">1.6. Задача 6</h3>
-<div class="paragraph">
-<p>Да се напише програма која што за дадена низа од природни броеви (која што се внесува од тастатура) ќе го отпечати најголемиот заеднички делител (НЗД) на нејзините елементи.  Програмата задолжително треба да содржи <strong>рекурзивна функција</strong> за пресметување на НЗД на два природни броја.</p>
-</div>
-<div class="sect3">
-<h4 id="Пример-4">1.6.1. Пример</h4>
-<div class="listingblock">
-<div class="content">
-<pre>48 36 120 72 84</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>На екран треба да се отпечати:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>NZD na elementite na ovaa niza e 12}</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>НЗД за два броја може да се пресмета со користење на Евклидовиот алгоритам.</p>
-</li>
-<li>
-<p>За да се пресмета НЗД на броевите m и n, се пресметува остатокот при делење на m со n.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>ако остатокот не е 0, се пресметува остатокот при делење на n со m % n</p>
-</li>
-<li>
-<p>постапката се повторува се додека се добиваат ненеулти остатоци</p>
-</li>
-<li>
-<p>ако остатокот е 0, НЗД на двата броја е последниот пресметан ненулти остаток.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="Пример-5">1.6.2. Пример</h4>
-<div class="listingblock">
-<div class="content">
-<pre>NZD(20, 12)
-20 % 12 = 8
-12 % 8 = 4
-8 % 4 = 0
-
-NZD(20, 12) = 4</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Решение <code>p8_6.c</code></div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-<span class="preprocessor">#define</span> MAX <span class="integer">100</span>
-
-<span class="predefined-type">int</span> NZD(<span class="predefined-type">int</span> m, <span class="predefined-type">int</span> n){
-    <span class="keyword">if</span> (!n) {
-        <span class="keyword">return</span> m;
-    }
-
-    <span class="keyword">return</span> NZD(n, m % n);
-}
-
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> i, n, a[MAX];
-
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesi ja goleminata na nizata: </span><span class="delimiter">&quot;</span></span>);
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);
-
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesi gi elementite na nizata: </span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
-    <span class="keyword">for</span> (i=<span class="integer">0</span>; i&lt;n; ++i){
-        scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;a[i]);
-    }
-
-    <span class="predefined-type">int</span> nzd = NZD(a[<span class="integer">0</span>], a[<span class="integer">1</span>]);
-
-    <span class="keyword">for</span> (i=<span class="integer">2</span>; i&lt;n; ++i){
-        nzd = NZD(nzd, a[i]);
-    }
-
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">NZD na elementite od nizata e %d</span><span class="delimiter">&quot;</span></span>,nzd);
-
-    <span class="keyword">return</span> <span class="integer">0</span>;
-
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-7-strong-За-Дома-strong">1.7. Задача 7 (<strong>За Дома</strong>)</h3>
-<div class="paragraph">
-<p>Да се напише програма која за дадена низа од цели броеви (која се внесува од тастатура), ќе го отпечати најмалиот заеднички содржател (НЗС) на нејзините елементи. Програмата треба задолжително да содржи рекурзивна функција за пресметување на НЗС на два броја.</p>
-</div>
-<div class="sect3">
-<h4 id="Пример-6">1.7.1. Пример:</h4>
-<div class="paragraph">
-<p>За низата: <code>18 12 24 36 6</code> на екран треба да се отпечати:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>NZS na elementite na ovaa niza e 72</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-8">1.8. Задача 8</h3>
-<div class="paragraph">
-<p>Да се напише програма која за дадена низа од цели броеви (која што се внесува од тастатура) ќе го отпечати збирот на елементите од низата. Програмата треба да содржи рекурзивна функција за наоѓање на збирот на елементите во дадена низа.</p>
-</div>
-<div class="listingblock">
-<div class="title">Решение <code>p8_8.c</code></div>
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
-
-<span class="predefined-type">int</span> sum_elements(<span class="predefined-type">int</span> array[], <span class="predefined-type">int</span> n);
-
-<span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> i, n, a[<span class="integer">100</span>];
-    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);
-
-    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; i++)
-        scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;a[i]);
-
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The sum of all of the array elements is: %d </span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, sum_elements(a, n - <span class="integer">1</span>));
-
-    <span class="keyword">return</span> <span class="integer">0</span>;
-}
-
-<span class="predefined-type">int</span> sum_elements(<span class="predefined-type">int</span> array[], <span class="predefined-type">int</span> n) {
-    <span class="keyword">if</span> (n == <span class="integer">0</span>) {
-        <span class="keyword">return</span> array[n];
-    }
-    <span class="keyword">else</span> {
-        <span class="keyword">return</span> array[n] + sum_elements(array, n-<span class="integer">1</span>);
-    }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Задача-9-strong-За-Дома-strong">1.9. Задача 9 (<strong>За Дома</strong>)</h3>
-<div class="paragraph">
-<p>Да се напише програма која за дадена низа од цели броеви (која што се внесува од тастатура) ќе го отпечати најголемиот елемент. Програмата треба да содржи рекурзивна функција за наоѓање на најголем елемент во дадена низа.</p>
-</div>
-<div class="sect3">
-<h4 id="Пример-7">1.9.1. Пример</h4>
-<div class="paragraph">
-<p>За низата:</p>
-</div>
-<div class="paragraph">
-<p><code>5 8 3 12 9 6</code></p>
-</div>
-<div class="paragraph">
-<p>На екран треба да се отпечати:</p>
-</div>
-<div class="paragraph">
-<p><code>Najgolem element vo nizata e 12</code></p>
-</div>
-<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Изворен-код-од-примери-и-задачи">2. Изворен код од примери и задачи</h2>
+<h2 id="Задача-1">2. Задача 1</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://github.com/finki-mk/SP/" class="bare">https://github.com/finki-mk/SP/</a></p>
+<p>Да се напише функција која за низа од N цели броеви ќе ги пронајде почетокот и должината на најголемата растечка подниза.</p>
+</div>
+<div class="sect2">
+<h3 id="Пример-2">2.1. Пример:</h3>
+<div class="paragraph">
+<p>За низата</p>
 </div>
 <div class="paragraph">
-<p><a href="https://finki-mk.github.io/SP/sources/sp_av8_src.zip">Source code ZIP</a></p>
+<p>2 3 <strong>1 4 7 12</strong> 7 9 1</p>
+</div>
+<div class="paragraph">
+<p>ќе ја најде низата со почеток во индексот 2, со должина од 4</p>
+</div>
+<div class="listingblock">
+<div class="title">Решение <code>p9_1.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+<span class="preprocessor">#define</span> MAX <span class="integer">100</span>
+
+<span class="directive">void</span> max_increasing(<span class="predefined-type">int</span> x[], <span class="predefined-type">int</span> n, <span class="predefined-type">int</span> *pos, <span class="predefined-type">int</span> *len) {
+    <span class="predefined-type">int</span> i, start, currLen;
+    *pos = <span class="integer">0</span>;
+    *len = <span class="integer">1</span>;
+    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n - <span class="integer">1</span>; i++) {
+        start = i;
+        currLen = <span class="integer">1</span>;
+        <span class="keyword">while</span> ((x[i] &lt; x[i + <span class="integer">1</span>])) {
+            currLen++;
+            i++;
+            <span class="keyword">if</span> (i == n - <span class="integer">1</span>) <span class="keyword">break</span>;
+        }
+        <span class="keyword">if</span> (currLen &gt; *len) {
+            *len = currLen;
+            *pos = start;
+        }
+    }
+}
+
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> a[MAX];
+    <span class="predefined-type">int</span> i, n, pos, len;
+
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);
+    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; i++)
+        scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;a[i]);
+
+    max_increasing(a, n, &amp;pos, &amp;len);
+
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Start: %d, Length: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, pos, len);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Задача-2">3. Задача 2</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Да
+се напише програма која влезната низа
+\[
+a_0, a_1, &#8230;&#8203; a_{n-1}
+\]</p>
+</div>
+<div class="paragraph">
+<p>ќе ја трансформира во излезната низа:
+\[ b_0, b_1, b_2, &#8230;&#8203;, b_{n-1} \]</p>
+</div>
+<div class="paragraph">
+<p>на следниот начин:
+\[
+b_0 = a_0 + a_{n-1}
+b_1 = a_1 + a_{n-2}
+.
+.
+.
+b_{n-1} = a_{n-1} + a_0
+\]</p>
+</div>
+<div class="sect2">
+<h3 id="Пример-3">3.1. Пример</h3>
+<div class="paragraph">
+<p>Влезната низа</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>1 2 3 5 7</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>треба да се трансформира во</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>8 7 6 7 8</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Решение <code>p9_2.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+<span class="preprocessor">#define</span> MAX <span class="integer">100</span>
+
+<span class="directive">void</span> transform(<span class="predefined-type">int</span> *a, <span class="predefined-type">int</span> n) {
+    <span class="predefined-type">int</span> i, j;
+    <span class="keyword">for</span> (i = <span class="integer">0</span>, j = n - <span class="integer">1</span>; i &lt; j; i++, j--) {
+        *(a + i) += *(a + j);
+        *(a + j) = *(a + i);
+    }
+    <span class="keyword">if</span> (n % <span class="integer">2</span>) {
+        *(a + n / <span class="integer">2</span>) *= <span class="integer">2</span>;
+    }
+}
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> i, n;
+    <span class="predefined-type">int</span> a[MAX];
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);
+    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; i++)
+        scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;a[i]);
+    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; i++)
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">a[i] = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, a[i]);
+    transform(a, n);
+    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; i++)
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">b[i] = %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, a[i]);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Задача-3">4. Задача 3</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Да се напишат следните функции за пребарување во низа:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Линеарно пребарување</p>
+</li>
+<li>
+<p>Бинарно пребарување</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Потоа да се напише главна програма во која ќе се пополнува низа со броевите од 1 до 1 000 000, а потоа се генерира случаен број во овој опсег чија што позиција треба да се пронајде со повикување на двете функции за пребарување.</p>
+</div>
+<div class="sect2">
+<h3 id="За-дома">4.1. За дома:</h3>
+<div class="paragraph">
+<p>За двете функции избројте го и споредете го бројот на потребни итерации за пронаоѓање на бројот.</p>
+</div>
+<div class="listingblock">
+<div class="title">Решение <code>p9_3.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+<span class="preprocessor">#include</span> <span class="include">&lt;stdlib.h&gt;</span>
+<span class="preprocessor">#include</span> <span class="include">&lt;time.h&gt;</span>
+<span class="preprocessor">#define</span> MAX <span class="integer">1000000</span>
+
+<span class="predefined-type">int</span> linear_search(<span class="predefined-type">int</span> *a, <span class="predefined-type">int</span> n, <span class="predefined-type">int</span> key) {
+    <span class="predefined-type">int</span> i;
+    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; i++) {
+        <span class="keyword">if</span> (*(a + i) == key) <span class="keyword">return</span> i;
+    }
+    <span class="keyword">return</span> -<span class="integer">1</span>;
+}
+<span class="predefined-type">int</span> binary_search(<span class="predefined-type">int</span> *a, <span class="predefined-type">int</span> n, <span class="predefined-type">int</span> key) {
+    <span class="predefined-type">int</span> start = <span class="integer">0</span>;
+    <span class="predefined-type">int</span> end = n - <span class="integer">1</span>;
+    <span class="keyword">while</span> (start &lt;= end) {
+        <span class="predefined-type">int</span> mid = (start + end) / <span class="integer">2</span>;
+        <span class="keyword">if</span> (*(a + mid) == key) <span class="keyword">return</span> mid;
+        <span class="keyword">else</span> <span class="keyword">if</span> (*(a + mid) &gt; key) end = mid - <span class="integer">1</span>;
+        <span class="keyword">else</span> start = mid + <span class="integer">1</span>;
+    }
+    <span class="keyword">return</span> -<span class="integer">1</span>;
+}
+
+
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> i;
+    <span class="predefined-type">int</span> *a = malloc(<span class="keyword">sizeof</span>(<span class="predefined-type">int</span>) * MAX);
+    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; MAX; i++) {
+        *(a + i) = i + <span class="integer">1</span>;
+    }
+    srand(time(<span class="predefined-constant">NULL</span>));
+    <span class="predefined-type">int</span> key = rand() % MAX + <span class="integer">1</span>;
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Element for search: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, key);
+    <span class="predefined-type">int</span> found = linear_search(a, MAX, key);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Found with linear search at position: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, found);
+    found = binary_search(a, MAX, key);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Found with binary search at position: %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, found);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="За-дома-2">4.2. За дома:</h3>
+<div class="paragraph">
+<p>Да се напише рекурзивна функција за бинарно пребарување на низа.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Задача-4">5. Задача 4</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Да се напишат фунции за сортирање на низа со помош на следните методи за сортирање:
+- Метод на меурче (Bubble sort)
+- Метод со избор на елемент (Selection sort)
+- Метод со вметнување (Insertion sort)</p>
+</div>
+<div class="paragraph">
+<p>Да се напишат функции за внесување и печатење на елементите на една низа и да се напише главна програма во која се тестираат сите методи за сортирање.</p>
+</div>
+<div class="sect2">
+<h3 id="bubble-sort">5.1. Bubble sort</h3>
+<div class="listingblock">
+<div class="title">Решение <code>p9_4.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="directive">void</span> bubble_sort(<span class="predefined-type">int</span> *a, <span class="predefined-type">int</span> n) {
+    <span class="predefined-type">int</span> i, j;
+    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; i++) {
+        <span class="keyword">for</span> (j = <span class="integer">0</span>; j &lt; n - i - <span class="integer">1</span>; j++) {
+            <span class="keyword">if</span> (a[j] &gt; a[j + <span class="integer">1</span>])
+                swap(&amp;a[j], &amp;a[j + <span class="integer">1</span>]);
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Се започнува од првиот елемент и се споредуваат секои два соседни додека не се дојде до последниот елемент. При секое споредување, ако претходниот има поголема вредност, тогаш си ги заменуваат местата. Така најголемиот елемент се доведува на последната позиција во низата. Се повторува истата постапка од 1-от до претпоследниот елемент во низата, така што сега на претпоследната позиција ќе исплива елемент помал од најголемиот елемент во низата итн. На крајот се споредуваат само 1-от и 2-от елемент од низата.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selection-sort">5.2. Selection sort</h3>
+<div class="listingblock">
+<div class="title">Решение <code>p9_4.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="directive">void</span> selection_sort(<span class="predefined-type">int</span> a[], <span class="predefined-type">int</span> n, <span class="predefined-type">int</span> m) {
+    <span class="keyword">if</span> (n - m == <span class="integer">1</span>)
+        <span class="keyword">return</span>;
+    <span class="keyword">else</span> {
+        <span class="predefined-type">int</span> smallest = a[m];
+        <span class="predefined-type">int</span> smallest_index = m;
+        <span class="predefined-type">int</span> i;
+        <span class="keyword">for</span> (i = m; i &lt; n; ++i)
+            <span class="keyword">if</span> (a[i] &lt; smallest) {
+                smallest = a[i];
+                smallest_index = i;
+            }
+        swap(&amp;a[m], &amp;a[smallest_index]);
+        selection_sort(a, n, m + <span class="integer">1</span>);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Се  пронаоѓа најмалиот елемент во низата и истиот се заменува со првиот елемент. Потоа, првиот елемент на низата се игнорира (бидејќи се знае дека тој е најмал) и рекурзивно се сортира преостанатата подниза (од вториот елемент, па до крајот). Постапката се повторува сé дури не остане само еден елемент. Тоа е граничниот случај – се престанува со сортирањето</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="insertion-sort">5.3. Insertion sort</h3>
+<div class="listingblock">
+<div class="title">Решение <code>p9_4.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="directive">void</span> insertion_sort(<span class="predefined-type">int</span> a[], <span class="predefined-type">int</span> n) {
+    <span class="predefined-type">int</span> i, j;
+    <span class="keyword">for</span> (i = <span class="integer">1</span>; i &lt; n; i++) {
+        <span class="predefined-type">int</span> temp = a[i];
+        j = i - <span class="integer">1</span>;
+        <span class="keyword">while</span> (temp &lt; a[j] &amp;&amp; j &gt;= <span class="integer">0</span>) {
+            a[j + <span class="integer">1</span>] = a[j];
+            j--;
+        }
+        a[j + <span class="integer">1</span>] = temp;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Со овој метод се сортира на тој начин што секој елемент се вметнува на соодветната позиција, од што и доаѓа самото име. Во првата итерација, вториот елемент a[1] се споредува со првиот елемент a[0]. Во втората итерација третиот елемент се споредува со првиот и вториот. Генерално, во секоја итерација елементот се споредува со сите елементи пред него. Ако при споредбата се покаже дека тој елемент треба да се вметне на соодветната позиција, тогаш се создава простор со поместување на сите елементи десно од тој елемент за еден и се вметнува елементот. Оваа процедура се повторува за секој елемент во низата.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Целокупното-решение">5.4. Целокупното решение</h3>
+<div class="listingblock">
+<div class="title">Решение <code>p9_4.c</code></div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
+
+<span class="directive">void</span> bubble_sort(<span class="predefined-type">int</span> *a, <span class="predefined-type">int</span> n) {
+    <span class="predefined-type">int</span> i, j;
+    <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; i++) {
+        <span class="keyword">for</span> (j = <span class="integer">0</span>; j &lt; n - i - <span class="integer">1</span>; j++) {
+            <span class="keyword">if</span> (a[j] &gt; a[j + <span class="integer">1</span>])
+                swap(&amp;a[j], &amp;a[j + <span class="integer">1</span>]);
+        }
+    }
+}
+
+<span class="directive">void</span> selection_sort(<span class="predefined-type">int</span> a[], <span class="predefined-type">int</span> n, <span class="predefined-type">int</span> m) {
+    <span class="keyword">if</span> (n - m == <span class="integer">1</span>)
+        <span class="keyword">return</span>;
+    <span class="keyword">else</span> {
+        <span class="predefined-type">int</span> smallest = a[m];
+        <span class="predefined-type">int</span> smallest_index = m;
+        <span class="predefined-type">int</span> i;
+        <span class="keyword">for</span> (i = m; i &lt; n; ++i)
+            <span class="keyword">if</span> (a[i] &lt; smallest) {
+                smallest = a[i];
+                smallest_index = i;
+            }
+        swap(&amp;a[m], &amp;a[smallest_index]);
+        selection_sort(a, n, m + <span class="integer">1</span>);
+    }
+}
+
+<span class="directive">void</span> insertion_sort(<span class="predefined-type">int</span> a[], <span class="predefined-type">int</span> n) {
+    <span class="predefined-type">int</span> i, j;
+    <span class="keyword">for</span> (i = <span class="integer">1</span>; i &lt; n; i++) {
+        <span class="predefined-type">int</span> temp = a[i];
+        j = i - <span class="integer">1</span>;
+        <span class="keyword">while</span> (temp &lt; a[j] &amp;&amp; j &gt;= <span class="integer">0</span>) {
+            a[j + <span class="integer">1</span>] = a[j];
+            j--;
+        }
+        a[j + <span class="integer">1</span>] = temp;
+    }
+}
+
+<span class="directive">void</span> insert(<span class="predefined-type">int</span> a[], <span class="predefined-type">int</span> n) {
+    <span class="predefined-type">int</span> i;
+    <span class="keyword">for</span>(i = <span class="integer">0</span>; i &lt; n; i++) {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">a[%d] = </span><span class="delimiter">&quot;</span></span>, i);
+        scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;a[i]);
+    }
+}
+<span class="directive">void</span> print(<span class="predefined-type">int</span> *a, <span class="predefined-type">int</span> n) {
+    <span class="predefined-type">int</span> i;
+    <span class="keyword">for</span>(i = <span class="integer">0</span>; i &lt; n; i++) {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="char">\t</span><span class="delimiter">&quot;</span></span>, *(a + i));
+    }
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+}
+<span class="predefined-type">int</span> main() {
+    <span class="predefined-type">int</span> a[MAX], n;
+    scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="delimiter">&quot;</span></span>, &amp;n);
+    insert(a, n);
+    bubble_sort(a, n);
+    <span class="comment">//selection_sort(a, n, 0);</span>
+    <span class="comment">//insertion_sort(a, n);</span>
+    print(a, n);
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -944,7 +982,7 @@ NZD(20, 12) = 4</pre>
 <div id="footer">
 <div id="footer-text">
 Верзија 1.0<br>
-Last updated 2016-11-20 23:23:16 +01:00
+Last updated 2016-11-29 18:55:09 +01:00
 </div>
 </div>
 <script type="text/x-mathjax-config">

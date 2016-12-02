@@ -1,0 +1,187 @@
+# Structured programming
+Exercises 8
+v1.0, 1 December, 2016
+include::parts/attributes_en.adoc[]
+
+:source_dir: ../../src/av8
+
+== Recursion
+
+Functions in C can call other functions.
+This calling can go into arbitrary depth.
+
+If one functions calls them self, then that call is called *recursive call* and the function is called *recursive* functions.
+
+_Example for recursive function:_
+
+[source,c]
+----
+include::{source_dir}/ex8_1_en.c[lines=4..9]
+----
+
+=== Problem 1
+
+Compute the sum:
+\[
+1! + (1+2)! + (1+2+3)! + ... + (1+2+...+n)!
+\]
+by: 
+
+- using *recursive function* for computing the sum of the first k natural numbers.
+- using *recursive function* for computing the factorial of a natural number.
+
+.Solution `p8_1.c`
+[source,c]
+----
+include::{source_dir}/p8_1_en.c[]
+----
+
+=== Problem 2
+
+Write a program that for a given natural number will compute the difference between that number and the following prime number.
+The program should use *recursive* function for checking if a number is prime.
+
+==== Example
+
+For the number 573, the program should print 577 – 573 = 4
+
+.Solution `p8_2_en.c`
+[source,c]
+----
+include::{source_dir}/p8_2_en.c[]
+----
+
+=== Problem 3
+
+Write a function that will return the value of n-th member of the sequence defined with:
+
+\[
+   \begin{array}{l}
+   x_1 = 1\\
+   x_2 = 2\\ 
+   \vdots\\
+   x_n = \frac{n - 1}{n}x_{n - 1} + \frac{1}{n}x_{n - 2}
+   \end{array}
+\]
+
+.Solution `p8_3_en.c`
+[source,c]
+----
+include::{source_dir}/p8_3_en.c[]
+----
+
+=== Problem 4
+
+Write a recursive function that will compute the sum of the digits of a given number.
+
+==== Example:
+----
+sumDigits(126) -> 9
+sumDigits(49) -> 13
+sumDigits(12) -> 3
+----
+
+.Solution `p8_4_en.c`
+[source,c]
+----
+include::{source_dir}/p8_4_en.c[]
+----
+
+=== Problem 5
+
+Given a non-negative int n, compute recursively (no loops) the count of the occurrences of 8 as a digit, except that an 8 with another 8 immediately to its left counts double, so 8818 yields 4.
+
+==== Example: 
+----
+count8(8) -> 1
+count8(818) -> 2
+count8(8818) -> 4
+----
+
+.Solution `p8_5_en.c`
+[source,c]
+----
+include::{source_dir}/p8_5_en.c[]
+----
+
+=== Problem 6
+
+Write a program that for given array of integers (read from SI) will print the greatest common divisor (GCD) of its elements.
+GCD should be computed using recursive function.
+
+==== Example
+----
+48 36 120 72 84
+----
+
+Should print:
+
+----
+GCD of elements of this array is 12
+----
+
+* GCD for two numbers can be computed using the Euclidean algorithm
+* To compute GCD of numbers m and n, we compute the remainder of division of m with n
+** if remainder is not 0, we compute the remainder of division of n with (m % n)
+** this step is repeated until the remainder is zero
+** If the remainder is 0, GCD of the two numbers is the last non zero remainder.
+
+==== Example
+----
+GCD(20, 12)
+20 % 12 = 8
+12 % 8 = 4
+8 % 4 = 0
+
+GCD(20, 12) = 4
+----
+
+.Solution `p8_6_en.c`
+[source,c]
+----
+include::{source_dir}/p8_6_en.c[]
+----
+
+
+=== Problem 7 (Try at home)
+
+Write a program that for given array of natural numbers (read from SI) will find and print the least common denominator (LCD) of its elements.
+The program should use recursive function for computing LCD of two numbers.
+
+_Example_:
+
+For array: `18 12 24 36 6` the program should print:
+----
+LCD = 72
+----
+
+=== Problem 8
+
+Write a program that fro given array of integers (read from SI) will print the smallest element.
+The program should use recursive function for finding the smallest element of an array.
+
+.Solution `p8_8_en.c`
+[source,c]
+----
+include::{source_dir}/p8_8_en.c[]
+----
+
+=== Problem 9 (Try at home)
+
+Write a program that for given array of natural numbers (read from SI) will compute the sum.
+The program should use recursive function for computing the sum of array of integers.
+
+==== Example
+
+For array:
+
+`5 8 3 11 9 6`
+
+The program should print:
+
+`sum is 42`
+
+
+include::parts/footer_en.adoc[]
+
+link:{sources_zip}/sp_av8_src_en.zip[Source code ZIP]

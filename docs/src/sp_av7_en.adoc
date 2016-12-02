@@ -5,7 +5,6 @@ include::parts/attributes_en.adoc[]
 
 :source_dir: ../../src/av7
 
-
 == Functions
 
 === Reminder from lectures
@@ -82,13 +81,13 @@ include::{source_dir}/ex7_2_en.c[]
 
 === Problem 1
 
-Да се напишат соодветни функции за пресметување на дијаметар, периметар и плоштина на круг чиј што радиус се предава како аргумент. 
-Потоа да се напише и програма во која за внесен (од тастатура) радиус ќе се повикаат овие функции за да се пресметаат дијаметарот, периметарот и плоштината на соодветниот круг.
+Write functions to compute diameter, perimeter and area of circle with radius passed as argument to the functions.
+Then write a program that for radius read from SI will call the functions to compute the diameter, perimeter and area.
 
-.Solution `p7_4.c`
+.Solution `p7_4_en.c`
 [source,c]
 ----
-include::{source_dir}/p7_4.c[]
+include::{source_dir}/p7_4_en.c[]
 ----
 
 === Problem 2

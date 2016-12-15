@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<meta name="author" content="Аудиториски вежби 11">
-<title>Структурно програмирање</title>
+<meta name="author" content="Exercises 11">
+<title>Structured programming</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -512,71 +512,67 @@ table.CodeRay td.code>pre{padding:0}
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Структурно програмирање</h1>
+<h1>Structured programming</h1>
 <div class="details">
-<span id="author" class="author">Аудиториски вежби 11</span><br>
-<span id="revnumber">Верзија 1.0,</span>
-<span id="revdate">9 Декември, 2016</span>
+<span id="author" class="author">Exercises 11</span><br>
+<span id="revnumber">version 1.0,</span>
+<span id="revdate">15 December, 2016</span>
 </div>
 <div id="toc" class="toc2">
-<div id="toctitle">Содржина</div>
+<div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#Датотеки">1. Датотеки</a>
+<li><a href="#files">1. Files</a>
 <ul class="sectlevel2">
-<li><a href="#Потсетување-од-предавања">1.1. Потсетување од предавања</a></li>
-<li><a href="#Задача-1">1.2. Задача 1</a></li>
-<li><a href="#Задача-2">1.3. Задача 2</a></li>
-<li><a href="#Задача-3">1.4. Задача 3</a></li>
-<li><a href="#Задача-4">1.5. Задача 4</a></li>
-<li><a href="#Задача-5">1.6. Задача 5</a></li>
-<li><a href="#Задача-6">1.7. Задача 6</a></li>
+<li><a href="#remainders-from-lectures">1.1. Remainders from lectures</a></li>
+<li><a href="#problem-1">1.2. Problem 1</a></li>
+<li><a href="#problem-2">1.3. Problem 2</a></li>
+<li><a href="#problem-3">1.4. Problem 3</a></li>
+<li><a href="#problem-4">1.5. Problem 4</a></li>
+<li><a href="#problem-5">1.6. Problem 5</a></li>
+<li><a href="#problem-6">1.7. Problem 6</a></li>
 </ul>
 </li>
-<li><a href="#Изворен-код-од-примери-и-задачи">2. Изворен код од примери и задачи</a></li>
+<li><a href="#source-code-of-the-examples-and-problems">2. Source code of the examples and problems</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="Датотеки">1. Датотеки</h2>
+<h2 id="files">1. Files</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Потсетување-од-предавања">1.1. Потсетување од предавања</h3>
+<h3 id="remainders-from-lectures">1.1. Remainders from lectures</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Обработката на датотеки се состои од запишување, вчитување или менување на содржината на датотека зачувана на некој стандарден медиум како хард диск.</p>
+<p>Processing files includes writing, reading and changing contents of files to some standard media as disk.</p>
 </li>
 <li>
-<p>Обработката на датотеки во програмскиот јазик C се прави со помош на структурата <code>FILE</code>, дефинирана во <code>stdio.h</code>.</p>
+<p>Processing files in C is done using the struct <code>FILE</code> defined in <code>stdio.h</code>.</p>
 </li>
 <li>
-<p>За да се започне со обработка на датотеката, прво мора да се отвори истата со помош на функцијата <code>fopen()</code>, која како резултат враќа покажувач кон структура <code>FILE*</code>.</p>
+<p>To start processing the file first it must be open using the function <code>fopen</code> that returns pointer to the struct <code>FILE*</code>.</p>
 </li>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="Отворање-на-датотека-за-читање-запишување">1.1.1. Отворање на датотека за читање/запишување</h4>
+<h4 id="opening-file-for-reading-writing">1.1.1. Opening file for reading/writing</h4>
 <hr>
 <div class="paragraph">
-<p><em>Функција за отворање на датотека:</em></p>
+<p><em>Function for opening file:</em></p>
 </div>
 <div class="paragraph">
-<p><code>FILE* fopen(const char* ime_datoteka, const char* mod);</code></p>
+<p><code>FILE* fopen(const char* file_path, const char* mode);</code></p>
 </div>
 <div class="paragraph">
-<p><code>ime_datoteka</code> - целосната патека каде е зачувана датотеката која сакаме да ја отвориме, заедно со името на датотеката</p>
+<p><code>file_path</code> - full path of the file we want to open</p>
 </div>
 <div class="paragraph">
-<p><code>mod</code> - начин на отворање на датотеката</p>
+<p><code>mode</code> - opening mode</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Можните начини на отворање на дадена датотека (можни вредности за вториот аргумент <code>mod</code> на функцијата <code>fopen()</code>) се дадени во продолжение.</p>
-</li>
-</ul>
 </div>
+<div class="sect3">
+<h4 id="modes-of-opening-files">1.1.2. Modes of opening files</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -584,40 +580,40 @@ table.CodeRay td.code>pre{padding:0}
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top"><strong>Начин</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Значење</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Mode</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Meaning</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>r</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Отвора постоечка датотека само за читање</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opens existing file only for reading</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>w</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Отвора (создава) нова датотека за запишување (ако датотеката веќе постои - ќе ја пребрише нејзината содржина)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opens existing file for writing (the file must exist)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>a</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Отвора датотека за додавање содржина на крајот од датотеката (ако датотеката не постои - ќе се креира)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opens existing file for appending (the file must exist)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>r+</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Отвора постоечка датотека за читање и запишување од почетокот на датотеката</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opens file for reading and writing at the beginning of the file</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>w+</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Отвора (создава) нова датотека за читање и запишување (ако датотеката веќе постои - ќе ја пребрише нејзината содржина)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opens file for reading and writing (deletes the contents of the file)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>a+</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Отвора датотека за читање и за додавање содржина на крајот од датотеката (ако датотеката не постои - ќе се креира)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opens file for reading and writing (appends at the end of the file if it exists)</p></td>
 </tr>
 </tbody>
 </table>
 <hr>
 <div class="listingblock">
-<div class="title">Пример за отворање на датотека</div>
+<div class="title">Example of opening file</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c">FILE* fp = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">test.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>);</code></pre>
 </div>
@@ -625,28 +621,28 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>Се отвора текстуалната датотека "test.txt" во режим за читање.</p>
+<p>Opens the file "test.txt" in reading mode.</p>
 </li>
 <li>
-<p>За да се отвори датотеката во бинарен мод, се додава буквата <code>b</code> на крајот на аргументот за начинот на отворање (пр. <code>"rb"</code>).</p>
+<p>To open in binary mode <code>b</code> should be appended at the mode of opening ex <code>rb</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Затворање-на-датотека">1.1.2. Затворање на датотека</h4>
+<h4 id="closing-file">1.1.3. Closing file</h4>
 <hr>
 <div class="paragraph">
-<p><em>Функција за затворање на датотека:</em></p>
+<p><em>Function for closing file:</em></p>
 </div>
 <div class="paragraph">
 <p><code>int fclose(FILE* fp);</code></p>
 </div>
 <div class="paragraph">
-<p><code>fp</code> - покажувач асоциран на датотеката што сакаме да ја затвориме</p>
+<p><code>fp</code> - pointer to FILE we want to close</p>
 </div>
 <div class="listingblock">
-<div class="title">Пример за затворање на датотека</div>
+<div class="title">Example of closing file</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c">fclose(fp);</code></pre>
 </div>
@@ -654,22 +650,22 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>По завршување со работа со датотеката, таа треба да се затвори со помош на функцијата <code>fclose()</code></p>
+<p>After the end of processing, the file should be closed using the function <code>fclose()</code></p>
 </li>
 <li>
-<p>Со оваа функција се затвора датотеката на која што во моментот е асоциран покажувачот <code>fp</code> што се предава како аргумент на функцијата</p>
+<p>Calling this functions closes the file associated with the file pointer <code>fp</code> passed as argument</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Читање-и-запишување-од-во-датотека">1.1.3. Читање и запишување од/во датотека</h4>
+<h4 id="reading-and-writing-from-to-file">1.1.4. Reading and writing from/to file</h4>
 <hr>
 <div class="paragraph">
-<p><em>Функции за читање од датотека:</em></p>
+<p><em>Functions for reading from file:</em></p>
 </div>
 <div class="paragraph">
-<p><code>int fscanf(FILE* fp, "kontrolna niza", lista_na_argumenti);</code></p>
+<p><code>int fscanf(FILE* fp, "format_specifier", arguments_list);</code></p>
 </div>
 <div class="paragraph">
 <p><code>int fgetc(FILE* fp);</code></p>
@@ -679,10 +675,10 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 <hr>
 <div class="paragraph">
-<p><em>Функции за запишување во датотека:</em></p>
+<p><em>Functions for writing to files:</em></p>
 </div>
 <div class="paragraph">
-<p><code>int fprintf(FILE* fp, "kontrolna niza", lista_na_argumenti);</code></p>
+<p><code>int fprintf(FILE* fp, "format_specifier", arguments_list);</code></p>
 </div>
 <div class="paragraph">
 <p><code>int fputc(char c, FILE* fp);</code></p>
@@ -694,39 +690,39 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-1">1.2. Задача 1</h3>
+<h3 id="problem-1">1.2. Problem 1</h3>
 <div class="paragraph">
-<p>Да се напише програма која за дадена текстуална датотека <code>text.txt</code> ќе го одреди и отпечати на екран односот на самогласките и согласките.</p>
+<p>Write a program that for given textual file <code>text.txt</code> will find the ratio of vowel/consonants.</p>
 </div>
 <div class="paragraph">
-<div class="title">Пример</div>
-<p>Ако датотеката <code>text.txt</code> ја има следнава содржина:</p>
+<div class="title">Example</div>
+<p>If the file <code>text.txt</code> has the following contents:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Zdravo, kako si?
-Eve, dobro sum. A ti?
-I jas dobro.</pre>
+<pre>Hello, how are you?
+I'm OK. How about you?
+I'm fine too.</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>тогаш програмата треба да отпечати:</p>
+<p>then the output should be:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Odnos samoglaski/soglaski: 16/19 = 0.84</pre>
+<pre>Ratio vowels/consonats: 20/18 = 1.11</pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение <code>p11_1.c</code></div>
+<div class="title">Solution <code>p11_1_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 
-<span class="predefined-type">int</span> e_bukva(<span class="predefined-type">char</span> c) {
+<span class="predefined-type">int</span> is_letter(<span class="predefined-type">char</span> c) {
     <span class="keyword">return</span> (c &gt;= <span class="char">'a'</span> &amp;&amp; c &lt;= <span class="char">'z'</span>) || (c &gt;= <span class="char">'A'</span> &amp;&amp; c &lt;= <span class="char">'Z'</span>);
 }
 
-<span class="predefined-type">int</span> e_samoglaska(<span class="predefined-type">char</span> c) {
+<span class="predefined-type">int</span> is_vowel(<span class="predefined-type">char</span> c) {
     c = tolower(c);
     <span class="keyword">switch</span> (c) {
     <span class="keyword">case</span> <span class="char">'a'</span>:
@@ -742,45 +738,45 @@ I jas dobro.</pre>
 
 <span class="predefined-type">int</span> main() {
     <span class="predefined-type">char</span> c;
-    <span class="predefined-type">int</span> soglaski = <span class="integer">0</span>, samoglaski = <span class="integer">0</span>;
+    <span class="predefined-type">int</span> consonants = <span class="integer">0</span>, vowels = <span class="integer">0</span>;
     FILE *dat;
-    <span class="comment">// Otvoranje na datoteka za chitanje</span>
+    <span class="comment">// Opening file for reading</span>
     <span class="keyword">if</span> ((dat = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">text.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Datotekata text.txt ne mozhe da se otvori.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The file `text.txt` can not be opened.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
         <span class="keyword">return</span> -<span class="integer">1</span>;
     }
-    <span class="comment">// Chitanje znak po znak se' dodeka ne se prochita EndOfFile (EOF)</span>
+    <span class="comment">// Reading char by char until EndOfFile (EOF)</span>
     <span class="keyword">while</span> ((c = fgetc(dat)) != <span class="predefined-constant">EOF</span>) {
-        <span class="keyword">if</span> (e_bukva(c)) {
-            <span class="keyword">if</span> (e_samoglaska(c))
-                samoglaski++;
+        <span class="keyword">if</span> (is_letter(c)) {
+            <span class="keyword">if</span> (is_vowel(c))
+                vowels++;
             <span class="keyword">else</span>
-                soglaski++;
+                consonants++;
         }
     }
     fclose(dat);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Odnos samoglaski/soglaski: %d/%d = %5.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, samoglaski, soglaski,
-           (<span class="predefined-type">float</span>) samoglaski / soglaski);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Ratio vowels/consonants: %d/%d = %5.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, vowels, consonants,
+           (<span class="predefined-type">float</span>) vowels / consonants);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-2">1.3. Задача 2</h3>
+<h3 id="problem-2">1.3. Problem 2</h3>
 <div class="paragraph">
-<p>Да се напише програма која секој ред од дадена текстуална датотека <code>vlezna.txt</code> ќе го копира во друга датотека <code>izlezna.txt</code>, така што пред секој прочитан ред од датотеката <code>vlezna.txt</code> ќе додаде уште еден ред во кој ќе стои бројот на знаци што ги содржи прочитаниот ред.
-Во секој ред може да има најмногу 80 знаци.</p>
+<p>Write a program that each row from given input file <code>input.txt</code> will copy in other file <code>output.txt</code>, so that for each row from <code>input.txt</code> will add one more with the length of that row.
+Each row can have at most 80 characters.</p>
 </div>
 <div class="paragraph">
-<div class="title">Пример</div>
-<p>Ако датотеката <code>vlezna.txt</code> ја има следнава содржина:</p>
+<div class="title">Example</div>
+<p>If the file <code>input.txt</code> has the following contents:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Jas ucham Strukturno Programiranje.
-Koga se polaga vtoriot kolokvium?
-Ne znam, seushte ne e objaveno na sajtot.</pre>
+<pre>I'm learning Structured Programming.
+When is the second midterm?
+I don't know, still it is not published on the web.</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -789,51 +785,53 @@ Ne znam, seushte ne e objaveno na sajtot.</pre>
 <div class="listingblock">
 <div class="content">
 <pre>36
-Jas ucham Strukturno Programiranje.
-34
-Koga se polaga vtoriot kolokvium?
-41
-Ne znam, seushte ne e objaveno na sajtot.</pre>
+I'm learning Structured Programming.
+27
+When is the second midterm?
+51
+I don't know, still it is not published on the web.</pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение <code>p11_2.c</code></div>
+<div class="title">Solution <code>p11_2_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="preprocessor">#define</span> MAX <span class="integer">81</span>
 
 <span class="predefined-type">int</span> main() {
-    <span class="predefined-type">char</span> linija[MAX], *c;
-    FILE *vlezna, *izlezna;
-    <span class="keyword">if</span> ((vlezna = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">vlezna.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Datotekata %s ne mozhe da se otvori.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">vlezna.txt</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">char</span> row[MAX], *c;
+    FILE *input, *output;
+    <span class="keyword">if</span> ((input = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">input.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The file `%s` can not be opened.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">input.txt</span><span class="delimiter">&quot;</span></span>);
         <span class="keyword">return</span> -<span class="integer">1</span>;
     }
-    <span class="keyword">if</span> ((izlezna = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">izlezna.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">w</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Datotekata %s ne mozhe da se otvori.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">izlezna.txt</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">if</span> ((output = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">output.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">w</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The file `%s` can not be opened.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">output.txt</span><span class="delimiter">&quot;</span></span>);
         <span class="keyword">return</span> -<span class="integer">1</span>;
     }
 
-    <span class="keyword">while</span> ((fgets(linija, MAX, vlezna)) != <span class="predefined-constant">NULL</span>) {
-        <span class="predefined-type">int</span> br = strlen(linija);
-        fprintf(izlezna, <span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="char">\n</span><span class="content">%s</span><span class="delimiter">&quot;</span></span>, br, linija);
+    <span class="keyword">while</span> ((fgets(row, MAX, input)) != <span class="predefined-constant">NULL</span>) {
+        <span class="predefined-type">int</span> br = strlen(row);
+        fprintf(output, <span class="string"><span class="delimiter">&quot;</span><span class="content">%d</span><span class="char">\n</span><span class="content">%s</span><span class="delimiter">&quot;</span></span>, br, row);
     }
-    fclose(vlezna);
-    fclose(izlezna);
+    fclose(input);
+    fclose(output);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-3">1.4. Задача 3</h3>
+<h3 id="problem-3">1.4. Problem 3</h3>
 <div class="paragraph">
-<p>Да се напише програма која ќе ги прочита елементите од една матрица сместена во текстуална датотека <code>matrica1.txt</code>. Во првиот ред од датотеката се запишани бројот на редици и бројот на колони на матрицата. Секој елемент од матрицата е реален број запишан во посебен ред од датотеката.
-Потоа матрицата треба да се транспонира и да се запише во нова датотека <code>matrica2.txt</code> на истиот начин.</p>
+<p>Write a program that will read elements of a matrix written in text file with name <code>mat1.txt</code>.
+In the first line of the file are written the number of rows and columns of the matrix.
+Each element of the matrix is floating point number written in separate line.
+The transposed matrix write in a new output file <code>mat2.txt</code> using the same format.</p>
 </div>
 <div class="paragraph">
-<div class="title">Пример</div>
-<p>Ако датотеката <code>matrica1.txt</code> ја има следнава содржина:</p>
+<div class="title">Example</div>
+<p>If the file <code>mat1.txt</code> has the following content:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -853,7 +851,7 @@ Ne znam, seushte ne e objaveno na sajtot.</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>тогаш по извршувањето на програмата содржината на датотеката <code>matrica2.txt</code> треба да биде следнава:</p>
+<p>then at the end of the execution of the program, the file <code>mat2.txt</code> should have the following content:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -873,7 +871,7 @@ Ne znam, seushte ne e objaveno na sajtot.</pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение <code>p11_3.c</code></div>
+<div class="title">Solution <code>p11_3_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="preprocessor">#include</span> <span class="include">&lt;stdlib.h&gt;</span>
@@ -882,15 +880,15 @@ Ne znam, seushte ne e objaveno na sajtot.</pre>
     <span class="predefined-type">int</span> i, j, m, n;
     <span class="predefined-type">float</span> a[MAX][MAX], b[MAX][MAX];
     FILE *input, *output;
-    <span class="keyword">if</span> ((input = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">matrica1.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Datotekata matrica1.txt ne se otvora!</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">if</span> ((input = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">mat1.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The file `mat1.txt` can not be opened!</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
         exit(<span class="integer">1</span>);
     }
     <span class="keyword">if</span> (!feof(input))
         fscanf(input, <span class="string"><span class="delimiter">&quot;</span><span class="content">%d %d</span><span class="delimiter">&quot;</span></span>, &amp;m, &amp;n);
 
     <span class="keyword">if</span> ((m &gt; MAX) || (n &gt; MAX)) {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Mnogu golema matrica!</span><span class="delimiter">&quot;</span></span>);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Very large matrix!</span><span class="delimiter">&quot;</span></span>);
         <span class="keyword">return</span> (-<span class="integer">1</span>);
     }
     <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; m &amp;&amp; !feof(input); i++)
@@ -898,17 +896,17 @@ Ne znam, seushte ne e objaveno na sajtot.</pre>
             fscanf(input, <span class="string"><span class="delimiter">&quot;</span><span class="content">%f</span><span class="delimiter">&quot;</span></span>, &amp;a[i][j]);
     fclose(input);
     <span class="keyword">if</span> (i != m || j != n) {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Nema dovolno podatoci vo datotekata!</span><span class="delimiter">&quot;</span></span>);
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Not enough data in the file!</span><span class="delimiter">&quot;</span></span>);
         <span class="keyword">return</span> (-<span class="integer">1</span>);
     }
     <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; m; i++)
         <span class="keyword">for</span> (j = <span class="integer">0</span>; j &lt; n; j++)
             b[j][i] = a[i][j];
-    <span class="keyword">if</span> ((output = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">matrica2.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">w</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Datotekata matrica2.txt ne se otvora!</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">if</span> ((output = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">mat2.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">w</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The file `mat2.txt` can not be opened!</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
         exit(<span class="integer">1</span>);
     }
-    fprintf(output, <span class="string"><span class="delimiter">&quot;</span><span class="content">%d %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, n, m); <span class="comment">/* obratno */</span>
+    fprintf(output, <span class="string"><span class="delimiter">&quot;</span><span class="content">%d %d</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, n, m); <span class="comment">/* reverse */</span>
 
     <span class="keyword">for</span> (i = <span class="integer">0</span>; i &lt; n; i++)
         <span class="keyword">for</span> (j = <span class="integer">0</span>; j &lt; m; j++)
@@ -920,13 +918,14 @@ Ne znam, seushte ne e objaveno na sajtot.</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-4">1.5. Задача 4</h3>
+<h3 id="problem-4">1.5. Problem 4</h3>
 <div class="paragraph">
-<p>Дадена е текстуална датотека <code>SP_primer.txt</code>. Да се напише програма која ќе ја прочита датотеката и на екран ќе го отпечати бројот на редови во кои има повеќе од 10 самогласки, како и вкупниот број на самогласки во датотеката.</p>
+<p>Given is the file <code>SP_example.txt</code>.
+Write a program that will read the file and will print the number of rows with more than 10 vowels, and the total vowels in the file.</p>
 </div>
 <div class="paragraph">
-<div class="title">Пример</div>
-<p>Ако датотеката <code>SP_primer.txt</code> ја има следнава содржина:</p>
+<div class="title">Example</div>
+<p>If the file <code>SP_example.txt</code> has the following content:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -937,60 +936,64 @@ Dobri se i tie. Si kupiv avtomobil.</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>тогаш програмата треба да отпечати:</p>
+<p>then the program should print:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Vkupno 2 reda imaat povekje od 10 samoglaski.
-Vo datotekata ima vkupno 38 samoglaski.</pre>
+<pre>Total 2 rows have more than 10 vowels.
+The file has total 38 vowels.</pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение <code>p11_4.c</code></div>
+<div class="title">Solution <code>p11_4_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="preprocessor">#include</span> <span class="include">&lt;stdlib.h&gt;</span>
-<span class="predefined-type">int</span> e_samoglaska(<span class="predefined-type">char</span> c) {
+<span class="predefined-type">int</span> is_vowel(<span class="predefined-type">char</span> c) {
     <span class="keyword">return</span> c == <span class="char">'a'</span> || c == <span class="char">'e'</span> || c == <span class="char">'i'</span> || c == <span class="char">'o'</span> || c == <span class="char">'u'</span>;
 }
 <span class="predefined-type">int</span> main() {
-    <span class="predefined-type">int</span> red = <span class="integer">0</span>, vkupno = <span class="integer">0</span>;
+    <span class="predefined-type">int</span> row = <span class="integer">0</span>, total = <span class="integer">0</span>;
     FILE *dat; <span class="predefined-type">char</span> c;
-    <span class="keyword">if</span> ((dat = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">SP_primer.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Datotekata SP_primer.txt ne se otvora</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">if</span> ((dat = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">SP_example.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The file `SP_example.txt` can not be opened</span><span class="delimiter">&quot;</span></span>);
         exit(-<span class="integer">1</span>);
     }
-    <span class="predefined-type">int</span> samoglaski = <span class="integer">0</span>;
+    <span class="predefined-type">int</span> vowels = <span class="integer">0</span>;
     <span class="keyword">while</span> ((c = fgetc(dat)) != <span class="predefined-constant">EOF</span>) {
-        <span class="keyword">if</span>(e_samoglaska(tolower(c))) {
-            ++samoglaski;
-            ++vkupno;
+        <span class="keyword">if</span>(is_vowel(tolower(c))) {
+            ++vowels;
+            ++total;
         }
         <span class="keyword">if</span> (c == <span class="char">'\n'</span>) {
-            <span class="keyword">if</span> (samoglaski &gt; <span class="integer">10</span>) {
-                red++;
+            <span class="keyword">if</span> (vowels &gt; <span class="integer">10</span>) {
+                row++;
             }
-            samoglaski = <span class="integer">0</span>;
+            vowels = <span class="integer">0</span>;
         }
     }
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vkupno %d reda imaat povekje od 10 samoglaski</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, red);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vo datotekata ima vkupno %d samoglaski.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, vkupno);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Total of %d rows has more than 10 vowels</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, row);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The file has total %d vowels.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, total);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-5">1.6. Задача 5</h3>
+<h3 id="problem-5">1.6. Problem 5</h3>
 <div class="paragraph">
-<p>Да се напише програма која за дадена текстуална датотека <code>zborovi.txt</code> ќе ги отпечати на екран сите зборови во кои се појавуваат повеќе од две исти букви (некоја буква се појавува три или повеќе пати). Да не се прави разлика помеѓу мали и големи букви. На крајот треба да се отпечати и бројот на зборови што го задоволуваат условот.</p>
+<p>Write a program that for given file <code>words.txt</code> will print all the words that have three or more equal letters (some letter occurs three or more times).
+The comparison of letters is not case sensitive.
+At the end it should print the count of words that satisfy this condition.</p>
 </div>
 <div class="paragraph">
-<p>Секој ред во датотеката содржи по еден збор (зборовите се разделени меѓу себе со знак за нов ред). Секој збор е составен само од букви. Максималната должина на зборовите е 20 знаци.</p>
+<p>The file contains one word per row.
+Each word is composed only from letters.
+The maximal length of a word is 20 chars.</p>
 </div>
 <div class="paragraph">
-<div class="title">Пример</div>
-<p>Ако датотеката <code>zborovi.txt</code> ја има следнава содржина:</p>
+<div class="title">Example</div>
+<p>If the file <code>words.txt</code> has the follwoing content:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1003,7 +1006,7 @@ Kopakabana</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>тогаш програмата треба да отпечати:</p>
+<p>then the program should print:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1011,48 +1014,48 @@ Kopakabana</pre>
 Obratnoto
 binarnata
 Kopakabana
-Vkupno 4 zborovi.</pre>
+Total 4 words.</pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение <code>p11_5.c</code></div>
+<div class="title">Solution <code>p11_5_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="preprocessor">#include</span> <span class="include">&lt;ctype.h&gt;</span>
-<span class="preprocessor">#define</span> DOLZINA <span class="integer">21</span>
+<span class="preprocessor">#define</span> SIZE <span class="integer">21</span>
 
-<span class="predefined-type">int</span> ima_poveke_od2isti(<span class="predefined-type">char</span> *w) {
+<span class="predefined-type">int</span> has_more_than_2eq(<span class="predefined-type">char</span> *w) {
     <span class="predefined-type">char</span> *c;
-    <span class="predefined-type">int</span> isti;
+    <span class="predefined-type">int</span> equal;
     <span class="keyword">while</span> (*w) {
         c = w + <span class="integer">1</span>;
-        isti = <span class="integer">1</span>;
+        equal = <span class="integer">1</span>;
         <span class="keyword">while</span> (*c) {
             <span class="keyword">if</span> (tolower(*w) == tolower(*c))
-                isti++;
+                equal++;
             c++;
         }
-        <span class="keyword">if</span> (isti &gt; <span class="integer">2</span>)
+        <span class="keyword">if</span> (equal &gt; <span class="integer">2</span>)
             <span class="keyword">return</span> <span class="integer">1</span>;
         w++;
     }
     <span class="keyword">return</span> <span class="integer">0</span>;
 }
 <span class="predefined-type">int</span> main() {
-    <span class="predefined-type">char</span> zbor[DOLZINA];
+    <span class="predefined-type">char</span> word[SIZE];
     FILE *f;
-    <span class="predefined-type">int</span> brzb = <span class="integer">0</span>;
-    <span class="keyword">if</span> ((f = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">zborovi.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Datotekata %s ne se otvora.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">zborovi.txt</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">int</span> words_count = <span class="integer">0</span>;
+    <span class="keyword">if</span> ((f = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">words.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The file `words.txt` can not be opened.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
         <span class="keyword">return</span> -<span class="integer">1</span>;
     }
-    <span class="keyword">while</span> (fgets(zbor, DOLZINA, f) != <span class="predefined-constant">NULL</span>) {
-        <span class="keyword">if</span> (ima_poveke_od2isti(zbor)) {
-            puts(zbor);
-            brzb++;
+    <span class="keyword">while</span> (fgets(word, SIZE, f) != <span class="predefined-constant">NULL</span>) {
+        <span class="keyword">if</span> (has_more_than_2eq(word)) {
+            puts(word);
+            words_count++;
         }
     }
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="content">Vkupno %d zborovi.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, brzb);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="content">Total %d words.</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, words_count);
     fclose(f);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
@@ -1060,19 +1063,19 @@ Vkupno 4 zborovi.</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Задача-6">1.7. Задача 6</h3>
+<h3 id="problem-6">1.7. Problem 6</h3>
 <div class="paragraph">
-<p>Да се напише програма која на екран ќе го отпечати бројот на појавувања на даден збор составен само од цифри (зборот се чита од тастатура) во текстуална датотека со име <code>dat.txt</code>.</p>
+<p>Write a program that will print the count of occurrences of a word composed only from digits (read from SI) in a file named <code>dat.txt</code>.</p>
 </div>
 <div class="paragraph">
-<div class="title">Пример</div>
-<p>Ако од тастатура се внесе зборот</p>
+<div class="title">Example</div>
+<p>If we read the word</p>
 </div>
 <div class="paragraph">
 <p><code>123</code></p>
 </div>
 <div class="paragraph">
-<p>и ако датотеката <code>dat.txt</code> ја има следнава содржина:</p>
+<p>and if the file <code>dat.txt</code> has the following content:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1083,52 +1086,51 @@ Dobri se i tie. Si kupiv avtomobil.</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>тогаш програмата треба да отпечати:</p>
+<p>then it should print:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Zborot 123 se pojavuva 3 pati vo datotekata.</pre>
+<pre>The word 123 occurs 3 times in the file.</pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Решение <code>p11_6.c</code></div>
+<div class="title">Solution <code>p11_6_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="preprocessor">#include</span> <span class="include">&lt;stdlib.h&gt;</span>
 <span class="preprocessor">#include</span> <span class="include">&lt;ctype.h&gt;</span>
 <span class="predefined-type">int</span> main() {
     <span class="predefined-type">char</span> c;
-    <span class="predefined-type">int</span> brPojavuvanja = <span class="integer">0</span>;
-    FILE *dat;
-    <span class="keyword">if</span> ((dat = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">dat.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Datotekata %s ne se otvora!</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">dat.txt</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">int</span> occurrences = <span class="integer">0</span>;
+    FILE *file;
+    <span class="keyword">if</span> ((file = fopen(<span class="string"><span class="delimiter">&quot;</span><span class="content">dat.txt</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>)) == <span class="predefined-constant">NULL</span>) {
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The file `dat.txt` can not be opened!</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
         exit(-<span class="integer">1</span>);
     }
-    <span class="predefined-type">char</span> zbor[<span class="integer">50</span>];
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesete zbor za koj kje se bara brojot na pojavuvanja:</span><span class="delimiter">&quot;</span></span>);
-    gets(zbor);
-    <span class="predefined-type">int</span> i = <span class="integer">0</span>, br = <span class="integer">0</span>;
-    <span class="keyword">while</span> ((c = fgetc(dat)) != <span class="predefined-constant">EOF</span>) {
+    <span class="predefined-type">char</span> word[<span class="integer">50</span>];
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter word for searching:</span><span class="delimiter">&quot;</span></span>);
+    gets(word);
+    <span class="predefined-type">int</span> i = <span class="integer">0</span>, counter = <span class="integer">0</span>;
+    <span class="keyword">while</span> ((c = fgetc(file)) != <span class="predefined-constant">EOF</span>) {
         <span class="keyword">if</span> (isdigit(c)) {
-            <span class="keyword">if</span> (c != zbor[i++]) {
-                <span class="keyword">if</span> (br == strlen(zbor)) {
-                    brPojavuvanja++;
+            <span class="keyword">if</span> (c != word[i++]) {
+                <span class="keyword">if</span> (counter == strlen(word)) {
+                    occurrences++;
                 }
-                br = <span class="integer">0</span>;
+                counter = <span class="integer">0</span>;
                 i = <span class="integer">0</span>;
             } <span class="keyword">else</span> {
-                br++;
+                counter++;
             }
         } <span class="keyword">else</span> {
-            <span class="keyword">if</span> (br == strlen(zbor)) {
-                brPojavuvanja++;
+            <span class="keyword">if</span> (counter == strlen(word)) {
+                occurrences++;
             }
-            br = <span class="integer">0</span>;
+            counter = <span class="integer">0</span>;
             i = <span class="integer">0</span>;
         }
     }
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Zborot %s se pojavuva %d pati vo datotekata</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, zbor,
-           brPojavuvanja);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">The word `%s` occurs %d times in the file</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, word, occurrences);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }</code></pre>
 </div>
@@ -1138,19 +1140,19 @@ Dobri se i tie. Si kupiv avtomobil.</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Изворен-код-од-примери-и-задачи">2. Изворен код од примери и задачи</h2>
+<h2 id="source-code-of-the-examples-and-problems">2. Source code of the examples and problems</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://github.com/finki-mk/SP/" class="bare">https://github.com/finki-mk/SP/</a>
-<a href="https://finki-mk.github.io/SP/sources/sp_av11_src.zip">Source code ZIP</a></p>
+<a href="https://finki-mk.github.io/SP/sources/sp_av11_src_en.zip">Source code ZIP</a></p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Верзија 1.0<br>
-Last updated 2016-12-15 14:59:53 +01:00
+Version 1.0<br>
+Last updated 2016-12-15 14:57:56 +01:00
 </div>
 </div>
 <script type="text/x-mathjax-config">

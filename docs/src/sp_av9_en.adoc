@@ -1,0 +1,176 @@
+# Structured programming
+Exercises 9
+v1.0, 13 December, 2016
+include::parts/attributes_en.adoc[]
+
+:source_dir: ../../src/av9
+
+== Remainders from lectures
+
+=== What is a pointer?
+
+Pointer is a *data type* that stores (points to) some memory location.
+This memory location is stored by its address (some number).
+
+=== How to declare pointer?
+
+[source,c]
+----
+pointer_type *name;
+----
+
+.Example
+[source,c]
+----
+float *p;
+----
+
+WARNING: This pointer doesn't point to anything!
+
+=== Why do we use pointers?
+
+- For fast and efficient looping of complex data structures as arrays and trees.
+- For efficient passing of complex arguments in functions.
+Passing array, struct or similar.
+- For passing arguments whose values we want to stay affected after the function call.
+
+== Problem 1
+
+Write a function that for an array of N integers will find the start and length of the largest increasing subarray.
+
+.Example
+For array
+
+2 3 *1 4 7 12* 7 9 1
+
+
+will find the array with start index 2, and length of 4
+
+
+.Solution `p9_1_en.c`
+[source,c]
+----
+include::{source_dir}/p9_1_en.c[]
+----
+
+== Problem 2
+
+Write a program that the input array
+\[
+a_0, a_1, ... a_{n-1}
+\]
+
+will transform into the output array:
+\[ b_0, b_1, b_2, ..., b_{n-1} \]
+
+on the following way:
+\[
+b_0 = a_0 + a_{n-1}
+b_1 = a_1 + a_{n-2}
+.
+.
+.
+b_{n-1} = a_{n-1} + a_0
+\]
+
+.Example
+----
+Input
+1 2 3 5 7
+
+should be transformed into
+8 7 6 7 8
+----
+
+
+.Solution `p9_2_en.c`
+[source,c]
+----
+include::{source_dir}/p9_2_en.c[]
+----
+
+== Problem 3
+
+Write the following functions for searching an array:
+
+- Linear search
+- Binary search
+
+Then write a program that fill an array with numbers from 1 to 1000000, and than generates random number in this range and finds its index by calling the two functions for searching.
+
+=== Homework
+
+For the functions count and compare the number of needed iterations to find the number.
+
+.Solution `p9_3_en.c`
+[source,c]
+----
+include::{source_dir}/p9_3_en.c[]
+----
+
+=== Homework
+
+Write a recursive function for binary search.
+
+== Problem 4
+
+Write functions for sorting array by using the following methods for sorting:
+
+- Bubble sort
+- Selection sort
+- Insertion sort
+
+Write functions fro reading and printing elements of an array, and write main program to test the sort functions.
+
+=== Bubble sort
+
+.Solution `p9_4_en.c`
+[source,c]
+----
+include::{source_dir}/p9_4_en.c[lines=3..11]
+----
+The method starts with comparing the first element with its neighbour until we reach the last element.
+In each comparison, if the previous has larger value, then they swap their values.
+That way the largest element is moved to the last position in the array.
+This method is repeated from 1-st to the last but one element in the array, so this position will float the element that is largest but smaller than the last element in the array.
+At the and we compare only the 1-st and 2-nd element of the array.
+
+=== Selection sort
+
+.Solution `p9_4_en.c`
+[source,c]
+----
+include::{source_dir}/p9_4_en.c[lines=13..28]
+----
+
+We find the smallest element of the array and we swap the value of this element with the first element.
+After that, the first element is ignored (since its smallest) and recursively the method is repeated to rest of the array (second element, until the end).
+The recursion stops when there is only one element left.
+That is the final step, and the sorting is done.
+
+=== Insertion sort
+
+.Solution `p9_4_en.c`
+[source,c]
+----
+include::{source_dir}/p9_4_en.c[lines=30..41]
+----
+
+With this method we sort by inserting each element in appropriate position, hence the name of the sort.
+After the first iteration, the second element `a[1]` is compared to the first element `a[0]`.
+After the second iteration the third element is compared with first and the second.
+In general, in each iteration the element is compared with all elements in front of it.
+If the comparison shows that the element should be inserted at some position, then we make space by shifting all elements one place in right.
+This procedure is repeated for each element in the array.
+
+=== Complete Solution
+
+.Solution `p9_4_en.c`
+[source,c]
+----
+include::{source_dir}/p9_4_en.c[]
+----
+
+include::parts/footer_en.adoc[]
+
+link:{sources_zip}/sp_av9_src_en.zip[Source code ZIP]

@@ -28,3 +28,23 @@ link:sp_av5_en.html[HTML] | link:{pdf_source}/sp_av5_en.pdf[PDF] | link:{sources
 == Exercise 6
 
 link:sp_av6_en.html[HTML] | link:{pdf_source}/sp_av6_en.pdf[PDF] | link:{sources_zip}/sp_av6_src_en.zip[Source code ZIP]
+
+== Exercise 7
+
+link:sp_av7_en.html[HTML] | link:{pdf_source}/sp_av7_en.pdf[PDF] | link:{sources_zip}/sp_av7_src_en.zip[Source code ZIP]
+
+== Exercise 8
+
+link:sp_av8_en.html[HTML] | link:{pdf_source}/sp_av8_en.pdf[PDF] | link:{sources_zip}/sp_av8_src_en.zip[Source code ZIP]
+
+== Exercise 9
+
+link:sp_av9_en.html[HTML] | link:{pdf_source}/sp_av9_en.pdf[PDF] | link:{sources_zip}/sp_av9_src_en.zip[Source code ZIP]
+
+== Exercise 10
+
+link:sp_av10_en.html[HTML] | link:{pdf_source}/sp_av10_en.pdf[PDF] | link:{sources_zip}/sp_av10_src_en.zip[Source code ZIP]
+
+== Exercise 11
+
+link:sp_av11_en.html[HTML] | link:{pdf_source}/sp_av11_en.pdf[PDF] | link:{sources_zip}/sp_av11_src_en.zip[Source code ZIP]

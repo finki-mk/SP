@@ -20,24 +20,24 @@ int is_vowel(char c) {
 
 int main() {
     char c;
-    int count_consonats = 0, count_vowels = 0;
+    int consonants = 0, vowels = 0;
     FILE *dat;
-    // Opening file
+    // Opening file for reading
     if ((dat = fopen("text.txt", "r")) == NULL) {
-        printf("The file %s cannot be open.\n", argv[1]);
+        printf("The file `text.txt` can not be opened.\n");
         return -1;
     }
-    // Reading char by char until the EndOfFile (EOF)
+    // Reading char by char until EndOfFile (EOF)
     while ((c = fgetc(dat)) != EOF) {
         if (is_letter(c)) {
             if (is_vowel(c))
-                count_vowels++;
+                vowels++;
             else
-                count_consonats++;
+                consonants++;
         }
     }
     fclose(dat);
-    printf("Ratio vowel/consonats: %d/%d = %5.2f\n", count_vowels, count_consonats,
-           (float) count_vowels / count_consonats);
+    printf("Ratio vowels/consonants: %d/%d = %5.2f\n", vowels, consonants,
+           (float) vowels / consonants);
     return 0;
 }

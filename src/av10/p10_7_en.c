@@ -10,8 +10,6 @@ void filter(char *str) {
                 str[j] = toupper(str[i]);
             else if (isupper(str[i]))
                 str[j] = tolower(str[i]);
-            else
-                str[j] = str[i];
             j++;
         }
         i++;

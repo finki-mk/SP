@@ -32,3 +32,19 @@ link:sp_av6.html[HTML] | link:{pdf_source}/sp_av6.pdf[PDF] | link:{sources_zip}/
 == Аудиториска вежба 7
  
 link:sp_av7.html[HTML] | link:{pdf_source}/sp_av7.pdf[PDF] | link:{sources_zip}/sp_av7_src.zip[Source code ZIP]
+
+== Аудиториска вежба 8
+
+link:sp_av8.html[HTML] | link:{pdf_source}/sp_av8.pdf[PDF] | link:{sources_zip}/sp_av8_src.zip[Source code ZIP]
+
+== Аудиториска вежба 9
+
+link:sp_av9.html[HTML] | link:{pdf_source}/sp_av9.pdf[PDF] | link:{sources_zip}/sp_av9_src.zip[Source code ZIP]
+
+== Аудиториска вежба 10
+
+link:sp_av10.html[HTML] | link:{pdf_source}/sp_av10.pdf[PDF] | link:{sources_zip}/sp_av10_src.zip[Source code ZIP]
+
+== Аудиториска вежба 11
+
+link:sp_av11.html[HTML] | link:{pdf_source}/sp_av11.pdf[PDF] | link:{sources_zip}/sp_av11_src.zip[Source code ZIP]

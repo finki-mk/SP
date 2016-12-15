@@ -195,8 +195,7 @@ include::{source_dir}/p5_10.c[]
 
 == Контролна структура за повеќекратно гранење (switch)
 
-=== Пример
-
+.Пример
 [source,c]
 ----
 include::{source_dir}/ex5_1.c[]

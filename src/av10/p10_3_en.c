@@ -13,7 +13,6 @@ int main() {
         printf("Result: ");
         puts(dest);
     } else
-        printf("Invalid input, the read string has only %d characters.\n",
-               strlen(s));
+        printf("Invalid input, the read string has only %d characters.\n", strlen(s));
     return 0;
 }

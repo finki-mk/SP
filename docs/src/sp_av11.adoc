@@ -209,13 +209,8 @@ Dobri se i tie. Si kupiv avtomobil.
 
 ----
 Vkupno 2 reda imaat povekje od 10 samoglaski.
-<<<<<<< HEAD
-Vo datotekata ima vkupno 38 samoglaski.
-----
-=======
-
 Vo datotekata ima vkupno 42 samoglaski.
->>>>>>> 853b5f2393b08a9a75e09e5b5e689577ed7acc48
+----
 
 .Решение `p11_4.c`
 [source,c]

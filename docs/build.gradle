@@ -74,6 +74,13 @@ task "kol_zip"(type: Zip) {
     destinationDir = file('./sources')
 }
 
+task "kol2_zip"(type: Zip) {
+    from('../src/kol2')
+    excludes = ["*.out"]
+    archiveName = "sp_kol2_src.zip"
+    destinationDir = file('./sources')
+}
+
 boolean isValidFile(def name) {
     return name.endsWith('.adoc') && !name.contains('footer') && !name.contains('attributes')
 }

@@ -23,6 +23,9 @@ int main() {
             samoglaski = 0;
         }
     }
+    if (samoglaski > 10) {
+            red++;
+    }
     printf("Vkupno %d reda imaat povekje od 10 samoglaski\n", red);
     printf("Vo datotekata ima vkupno %d samoglaski.\n", vkupno);
     return 0;

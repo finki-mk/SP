@@ -255,7 +255,7 @@ Dobri se i tie. Si kupiv avtomobil.
 
 Vkupno 2 reda imaat povekje od 10 samoglaski.
 
-Vo datotekata ima vkupno 38 samoglaski.
+Vo datotekata ima vkupno 42 samoglaski.
 
 .Решение `p11_4.c`
 [source,c]

@@ -160,6 +160,7 @@ include::{source_dir}/p10_5.c[]
  
 ==== Примери за реченици - палиндроми 
 ----
+Jadejne i pienje daj!
 A man, a plan, a canal, Panama.
 Never odd or even.
 Rise to vote sir!

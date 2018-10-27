@@ -1,6 +1,5 @@
 # Structured programming
 Exercises 8
-v1.0, 1 December, 2016
 include::parts/attributes_en.adoc[]
 
 :source_dir: ../../src/av8

@@ -1,6 +1,5 @@
 # Structured programming
 Example midterm problems
-v1.0, 3 November, 2016
 include::parts/attributes_en.adoc[]
 
 :source_dir: ../../src/mt

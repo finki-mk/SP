@@ -1,6 +1,5 @@
 # Структурно програмирање
 Пример задачи од 1 колоквиум
-v1.0, 30 Октомври, 2016
 include::parts/attributes.adoc[]
 
 :source_dir: ../../src/kol

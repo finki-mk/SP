@@ -1,6 +1,5 @@
 # Структурно програмирање
 Аудиториски вежби 3
-v1.0, 3 Октомври, 2016
 include::parts/attributes.adoc[]
 
 :source_dir: ../../src/av3

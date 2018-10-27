@@ -1,6 +1,5 @@
 # Structured programming
 Exercises
-v1.0, 21 September, 2016
 include::parts/attributes_en.adoc[]
 
 :pdf_source: ../pdf

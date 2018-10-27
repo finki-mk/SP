@@ -1,6 +1,5 @@
 # Структурно програмирање
 Аудиториски вежби 8
-v1.0, 20 Ноември, 2016
 include::parts/attributes.adoc[]
 
 :source_dir: ../../src/av8

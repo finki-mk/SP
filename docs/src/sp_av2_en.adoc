@@ -1,6 +1,5 @@
 # Structured programming
 Exercises 2
-v1.0, 22 September, 2016
 include::parts/attributes_en.adoc[]
 
 :source_dir: ../../src/av2

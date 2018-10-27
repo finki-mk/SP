@@ -1,6 +1,5 @@
 # Structured programming
 Exercises 11
-v1.0, 15 December, 2016
 include::parts/attributes_en.adoc[]
 
 :source_dir: ../../src/av11

@@ -1,6 +1,5 @@
 # Structured programming
 Exercises 7
-v1.0, 17 November, 2016
 include::parts/attributes_en.adoc[]
 
 :source_dir: ../../src/av7

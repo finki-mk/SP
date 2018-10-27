@@ -1,6 +1,5 @@
 # Структурно програмирање
 Аудиториски вежби 11
-v1.0, 9 Декември, 2016
 include::parts/attributes.adoc[]
 
 :source_dir: ../../src/av11

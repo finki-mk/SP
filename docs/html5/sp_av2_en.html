@@ -515,8 +515,6 @@ table.CodeRay td.code>pre{padding:0}
 <h1>Structured programming</h1>
 <div class="details">
 <span id="author" class="author">Exercises 2</span><br>
-<span id="revnumber">version 1.0,</span>
-<span id="revdate">22 September, 2016</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -1043,7 +1041,7 @@ will compute and print the value of <code>x<sup>2</sup></code>.</p>
 <h3 id="problem-3">8.3. Problem 3</h3>
 <div class="paragraph">
 <p>Write a program that for a given sides of one triangle, it will print the
-perimeter and area <strong>squared</strong> (values are <code>a = 5</code>, <code>b = 7.5</code>, <code>c = 10.2</code>).</p>
+perimeter and area squared (values are <code>a = 5</code>, <code>b = 7.5</code>, <code>c = 10.2</code>).</p>
 </div>
 <div class="listingblock">
 <div class="title">Solution 3</div>
@@ -1212,9 +1210,24 @@ Each character is represented with its ASCII code.
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0<br>
-Last updated 2016-10-06 22:49:18 +02:00
+Last updated 2018-10-18 14:42:44 +02:00
 </div>
 </div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 </body>
 </html>

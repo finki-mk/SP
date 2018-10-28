@@ -1,6 +1,5 @@
 # Structured programming
 Exercises 3
-v1.0, 3 October, 2016
 include::parts/attributes_en.adoc[]
 
 :source_dir: ../../src/av3

@@ -515,8 +515,6 @@ table.CodeRay td.code>pre{padding:0}
 <h1>Структурно програмирање</h1>
 <div class="details">
 <span id="author" class="author">Аудиториски вежби 3</span><br>
-<span id="revnumber">Верзија 1.0,</span>
-<span id="revdate">3 Октомври, 2016</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Содржина</div>
@@ -1329,9 +1327,24 @@ r=0, z=3</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Верзија 1.0<br>
-Last updated 2016-10-03 22:55:48 +02:00
+Last updated 2018-10-18 14:40:16 +02:00
 </div>
 </div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 </body>
 </html>

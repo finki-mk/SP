@@ -515,8 +515,6 @@ table.CodeRay td.code>pre{padding:0}
 <h1>Structured programming</h1>
 <div class="details">
 <span id="author" class="author">Exercises 7</span><br>
-<span id="revnumber">version 1.0,</span>
-<span id="revdate">17 November, 2016</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -720,43 +718,42 @@ table.CodeRay td.code>pre{padding:0}
 <div class="sect2">
 <h3 id="problem-1">1.4. Problem 1</h3>
 <div class="paragraph">
-<p>Да се напишат соодветни функции за пресметување на дијаметар, периметар и плоштина на круг чиј што радиус се предава како аргумент.
-Потоа да се напише и програма во која за внесен (од тастатура) радиус ќе се повикаат овие функции за да се пресметаат дијаметарот, периметарот и плоштината на соодветниот круг.</p>
+<p>Write functions to compute diameter, perimeter and area of circle with radius passed as argument to the functions.
+Then write a program that for radius read from SI will call the functions to compute the diameter, perimeter and area.</p>
 </div>
 <div class="listingblock">
-<div class="title">Solution <code>p7_4.c</code></div>
+<div class="title">Solution <code>p7_4_en.c</code></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#include</span> <span class="include">&lt;stdio.h&gt;</span>
 <span class="preprocessor">#define</span> PI <span class="float">3</span><span class="float">.14</span>
 
-<span class="predefined-type">double</span> dijametar(<span class="predefined-type">double</span> radius);
-<span class="predefined-type">double</span> perimetar(<span class="predefined-type">double</span> radius);
-<span class="predefined-type">double</span> ploshtina(<span class="predefined-type">double</span> radius);
+<span class="predefined-type">double</span> diameter(<span class="predefined-type">double</span> radius);
+<span class="predefined-type">double</span> perimeter(<span class="predefined-type">double</span> radius);
+<span class="predefined-type">double</span> area(<span class="predefined-type">double</span> radius);
 
 <span class="predefined-type">int</span> main() {
     <span class="predefined-type">double</span> radius, D, L, P;
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Vnesete radius na krugot: </span><span class="delimiter">&quot;</span></span>);
     scanf(<span class="string"><span class="delimiter">&quot;</span><span class="content">%lf</span><span class="delimiter">&quot;</span></span>, &amp;radius);
 
-    D = dijametar(radius);
-    L = perimetar(radius);
-    P = ploshtina(radius);
+    D = diameter(radius);
+    L = perimeter(radius);
+    P = area(radius);
 
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Dijametar na krugot = %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, D);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Perimetar na krugot = %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, L);
-    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Ploshtina na krugot = %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, P);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">diameter of circle = %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, D);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">perimeter of circle = %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, L);
+    printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">area of circle = %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, P);
     <span class="keyword">return</span> <span class="integer">0</span>;
 }
 
-<span class="predefined-type">double</span> dijametar(<span class="predefined-type">double</span> radius) {
+<span class="predefined-type">double</span> diameter(<span class="predefined-type">double</span> radius) {
     <span class="keyword">return</span> <span class="integer">2</span> * radius;
 }
 
-<span class="predefined-type">double</span> perimetar(<span class="predefined-type">double</span> radius) {
+<span class="predefined-type">double</span> perimeter(<span class="predefined-type">double</span> radius) {
     <span class="keyword">return</span> <span class="integer">2</span> * radius * PI;
 }
 
-<span class="predefined-type">double</span> ploshtina(<span class="predefined-type">double</span> radius) {
+<span class="predefined-type">double</span> area(<span class="predefined-type">double</span> radius) {
     <span class="keyword">return</span> radius * radius * PI;
 }</code></pre>
 </div>
@@ -989,8 +986,7 @@ Use a function for computing factorial of k
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0<br>
-Last updated 2016-11-23 23:10:19 +01:00
+Last updated 2018-10-27 21:48:10 +02:00
 </div>
 </div>
 <script type="text/x-mathjax-config">

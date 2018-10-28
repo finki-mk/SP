@@ -515,8 +515,6 @@ table.CodeRay td.code>pre{padding:0}
 <h1>Structured programming</h1>
 <div class="details">
 <span id="author" class="author">Exercises 1</span><br>
-<span id="revnumber">version 1.0,</span>
-<span id="revdate">22 September, 2016</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -1072,9 +1070,24 @@ try to complete at home, so you can be ready for the next exercises.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0<br>
-Last updated 2016-09-23 16:39:40 +02:00
+Last updated 2018-10-18 14:42:30 +02:00
 </div>
 </div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 </body>
 </html>

@@ -50,7 +50,7 @@ TIP: За наједноставна инсталација се препора�
 === Code::Blocks – главен прозорец
 
 .Главен прозорец
-image::./images/cb_main.png[]
+image::cb_main.png[]
 
 
 === Елементи на главниот прозорец
@@ -73,7 +73,7 @@ image::./images/cb_main.png[]
 
 
 .Нов проект
-image::./images/cb_new.png[]
+image::cb_new.png[]
 
 * Стартувајте CodeBlocks
 ** `File -> New -> Project -> Empty Project -> Go`
@@ -82,7 +82,7 @@ image::./images/cb_new.png[]
 `debug` и `release` configuration
 
 .Избор на компајлер
-image::./images/cb_compiler.png[]
+image::cb_compiler.png[]
 
 === Додавање на изворна датотека
 
@@ -93,11 +93,11 @@ image::./images/cb_compiler.png[]
 вклучите  "Add file to active project"
 
 .Додавање на изворна датотека
-image::./images/cb_source.png[]
+image::cb_source.png[]
 
 
 .Избор на конфиуграции
-image::./images/cb_include.png[]
+image::cb_include.png[]
 
 === Програмирање
 
@@ -108,10 +108,10 @@ image::./images/cb_include.png[]
 * За извршување на проектот притиснете `Ctrl + F10`
 
 .Извршување на програмата
-image::./images/cb_run.png[]
+image::cb_run.png[]
 
 .Опции за изградба
-image::./images/cb_flags.png[]
+image::cb_flags.png[]
 
 == Задачи за дома
 
